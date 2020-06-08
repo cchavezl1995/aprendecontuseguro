@@ -1,0 +1,168 @@
+<div style="width:100%;height:300px;
+    background-color: #7849b8;position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span [routerLink]="['/coworking']" class="crumbModulo">Coworking > </span>
+            <span [routerLink]="['/coworking-servicio']" routerLinkActive="router-link-active"  [ngClass]="{'bold': count==1}" class="crumbModulo">Tu coworking </span>
+            <span [ngClass]="{'crumbModulo': true, 'bold':count>=2}" *ngIf="count>=2"><b>> Inscripción</b></span>
+        </div>
+    </div>
+    <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+        <h1 class="tituloModulo">Tu coworking</h1>
+    </div>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="pCabeceraModulo">
+                                Gracias a tu Seguro Independiente Protegido, podrás reservar y utilizar una vez al mes
+                                estos espacios de trabajo, sin costo alguno. Selecciona el que más se ajuste a tu
+                                necesidad.
+                            </p>
+                            <p class="pCabeceraModulo">
+                                Diligencia la siguiente información para formalizar tu agendamiento:
+                            </p>
+                            <!-- <div class="text-center">
+                                <button style="margin: auto" type="submit" (click)="increment()" class="btn btnTop btn-primary mt-4 mb-4">Reservar mi espacio&nbsp;&nbsp;<i style="color:
+                                                #ffb400" class="fa fa-angle-right"></i></button>
+                            </div> -->
+                        </div>
+                    </div>
+                    <form [formGroup]="formCoworking" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-12">
+                                <div class="divDatos">
+                                    <p>Pedro Ramírez</p>
+                                    <h3>Reserva espacio coworking</h3>
+                                    <dl class="row">
+                                        <dt class="col-1"><i class="fas fa-city"></i></dt>
+                                        <dd class="col-11">{{ f.dicCiudad.value | diccionario:cities }}</dd>
+                                        <dt class="col-1"><i class="fas fa-calendar"></i></dt>
+                                        <dd class="col-11">{{ f.fechaAgendamiento.value | date:'dd-M-yyyy'}}</dd>
+                                        <dt class="col-1"><i class="far fa-clock"></i></dt>
+                                        <dd class="col-11">{{ f.horario.value}}</dd> <!--fromato para hora| date:'h:mm a'-->
+                                    </dl>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-xs-12">
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                        <label for="formGroupExampleInput">Ciudad</label>
+                                        <label for="typeId">&nbsp;</label>
+
+                                        <ng-select [items]="cities"
+                                            [ngClass]="{'is-invalid': submitted && f.dicCiudad.errors }"
+                                            bindLabel="text" bindValue="id" placeholder="selecciona una ciudad"
+                                            formControlName="dicCiudad" [clearable]="false">
+                                        </ng-select>
+
+                                        <div class="invalid-feedback" *ngIf="submitted && f.dicCiudad.errors">
+                                            <p *ngIf="f.dicCiudad.errors.required">Campo requerido.</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label>Fecha de inicio</label>
+                                        <div class="input-group">
+                                            <input type="text" bsDatepicker #dp="bsDatepicker"
+                                                [ngClass]="{ 'is-invalid': submitted && f.fechaAgendamiento.errors }"
+                                                formControlName="fechaAgendamiento" class="form-control" maxlength="10"
+                                                [bsConfig]="datePickerConfig" placeholder="Día/Mes/Año" />
+                                            <div class="input-group-append" (click)="dp.toggle()">
+                                                <span class="input-group-text" style="background-color: #ffff !important;">
+                                                    <i style="color: #ec1c24" class="fas fa-calendar"></i>
+                                                </span>
+                                            </div>
+                                            <div class="invalid-feedback"
+                                                *ngIf="submitted && f.fechaAgendamiento.errors">
+                                                <p *ngIf="f.fechaAgendamiento.errors.required">Campo requerido.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label for="formGroupExampleInput"> 
+                                            Horario
+                                        </label>
+                                        <label for="typeId">&nbsp;</label>
+                                        <select formControlName="horario" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && f.horario.errors }" *ngIf="compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" >
+                                            <option value="">Selecciona una hora: </option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 7) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="07:00">07:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 7) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="07:30">07:30</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 8) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="08:00">08:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 8) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="08:30">08:30</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 9) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="09:00">09:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 9) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="09:30">09:30</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 10) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="10:00">10:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 10) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="10:30">10:30</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 11) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="11:00">11:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 11) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="11:30">11:30</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 12) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="12:00">12:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 13) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="13:00">13:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 13) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="13:30">13:30</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 14) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="14:00">14:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 14) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="14:30">14:30</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 15) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="15:00">15:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 15) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="15:30">15:30</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 16) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="16:00">16:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 16) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="16:30">16:30</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 17) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="17:00">17:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 17) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="17:30">17:30</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 18) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="18:00">18:00</option>
+                                            <option *ngIf="(toInt(currentDate | date:'H') < 18) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" value="18:30">18:30</option>
+                                        </select>
+                                        <select formControlName="horario" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && f.horario.errors }" *ngIf="!compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgendamiento.value | date:'dd/MM/yyyy')" >
+                                            <option value="">Selecciona una hora: </option>
+                                            <option value="07:00">07:00</option>
+                                            <option value="07:30">07:30</option>
+                                            <option value="08:00">08:00</option>
+                                            <option value="08:30">08:30</option>
+                                            <option value="09:00">09:00</option>
+                                            <option value="09:30">09:30</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="10:30">10:30</option>
+                                            <option value="11:00">11:00</option>
+                                            <option value="11:30">11:30</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="13:30">13:30</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="14:30">14:30</option>
+                                            <option value="15:00">15:00</option>
+                                            <option value="15:30">15:30</option>
+                                            <option value="16:00">16:00</option>
+                                            <option value="16:30">16:30</option>
+                                            <option value="17:00">17:00</option>
+                                            <option value="17:30">17:30</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="18:30">18:30</option>
+                                        </select>
+                                        <div class="invalid-feedback" *ngIf="submitted && f.horario.errors">
+                                            <p *ngIf="f.horario.errors.required">Campo requerido.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+
+                            <div class="col-md-5 offset-md-3 col-xs-12">
+                                <button type="submit" class="btn btn-lg btn-next btn-block mt-5" data-toggle="modal" (click)="onSubmit()" 
+                                    data-target="#exampleModal">Enviar solicitud</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

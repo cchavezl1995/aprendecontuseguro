@@ -1,0 +1,69 @@
+.fraude-home-out {	
+	.header {
+		red-header: #cf141b;
+	}
+
+	.component {
+		red-btns-&-titles: #ec1c24;
+	}
+
+	.salud-financiera {
+		banner-left: #009dd6;
+		banner-right: #91ddf8;
+	}
+
+	.score {
+		banner-left: #068468;
+		banner-right: #84d8c6;
+	}
+
+	.security {
+		banner-left: #333333;
+		banner-right: #4d4d4d;
+	}
+
+	.alerts {
+		banner-left: #fb6330;
+		banner-right: #feba89;
+	}
+
+	.finanzas-personales {
+		banner-left: #7849b8;
+		banner-right: #afa8f6;
+	}
+}
+
+.itt-home-out {	
+	.header {
+		red-header: #cf141b;
+	}
+
+	.component {
+		red-btns-&-titles: #ec1c24;
+	}
+	
+	.coursera {
+		banner-left: #009dd6;
+		banner-right: #91ddf8;
+	}
+
+	.networking {
+		banner-left: #068468;
+		banner-right: #84d8c6;
+	}
+
+	.legal {
+		banner-left: #333333;
+		banner-right: #4d4d4d;
+	}
+
+	.branding {
+		banner-left: #fb6330;
+		banner-right: #feba89;
+	}
+
+	.coworking {
+		banner-left: #7849b8;
+		banner-right: #afa8f6;
+	}
+}

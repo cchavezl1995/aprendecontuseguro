@@ -1,0 +1,285 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+
+<div *ngIf="count==0">
+    <div class="d-block d-xl-none d-lg-none imgMovil" style="width:100%;height:600px;
+            margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span class="crumbModulo"><b>Coworking</b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">
+            El mejor lugar para gestionar tu emprendimiento
+        </h1>
+    </div>
+    <div class="d-none d-lg-block" style="width:100%;height:499px;
+    background-image: url('assets/img/itt2/coworking/coworking.png'), linear-gradient(90deg, #7849b8 50%,  #afa8f6 50%);
+    background-position: right 200px bottom, right bottom;
+    background-repeat: no-repeat,no-repeat;
+    margin-top: -39px;
+    background-size: 377px 387px, contain;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span class="crumbModulo"><b>Coworking </b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">
+            El mejor lugar para gestionar<br>
+            tu emprendimiento </h1>
+        <button *ngIf="login.isActive()" class="btnPurple" style="margin-top: 55px; margin-left:10%;" [routerLink]="['/coworking-servicio']" routerLinkActive="router-link-active" >
+            Encuéntralo ahora
+        </button>
+        <button *ngIf="!login.isActive()" class="btnPurple" style="margin-top: 55px; margin-left:10%;"
+            (click)="login.goLogin()">Quiero unirme</button>
+    </div>
+    <div class="container">
+        <div class="row m-4">
+                <div class="social-cont">
+                        <div class="social">
+                            <ul>
+                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://ecodesascco.grupomok.com.co/curriculumhome"
+                                target="_blank" class="icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="http://twitter.com/share?url=http://ecodesascco.grupomok.com.co" target="_blank"
+                                class="icon-twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://ecodesascco.grupomok.com.co"
+                                target="_blank" class="icon-linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+            <div class="col-lg-10 col-md-10 offset-md-1 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <h2 class="font-weight-bold text-secondary text-left mt-5 mb-5">
+                            Reserva un espacio perfecto de Coworking
+                        </h2>
+                        <p>El coworking te permite tener un sitio para reuniones y eventos sin pagar alquiler. Con
+                            nuestro directorio de coworking en Colombia, podrás agendar reuniones, entrevistas y eventos
+                            relativos a tu idea de negocio.</p>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <!-- <div style="width:100%;" class="text-center">
+                    <object class="mt-4" style="max-width:988px;width:100%;height: 555px"
+                        data="https://www.youtube.com/embed/u_7oaskZrlo"></object>
+                </div> -->
+                <app-video-material tipoMateriales="des_curriculumhome"></app-video-material>
+            </div>
+        </div>
+        <div class="row m-4">
+            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <p>Coworking es la nueva tendencia a nivel mundial para realizar reuniones sin necesidad de
+                            tener que asumir un alquiler fijo de un sitio.</p>
+                        <p>Dentro de los beneficios que te ofrece tu ecosistema Scotiabank Cardif, podrás elegir de un
+                            catálogo de lugares el mejor para tu evento, entrevista, simposio, convención o cualquiera
+                            que necesites para tu idea de negocio o emprendimiento.</p>
+                        <p>Tan simple como hacer un par de clicks y agendar tu sitio para realizar tu evento. Este
+                            servicio puedes usarlo sin ningún costo y las veces que lo necesites.</p>
+                        <p>Organiza de la mejor manera tus ideas de negocio, sin tener que pagar un alquiler mensual. El
+                            servicio de coworking, te ofrece un sitio perfecto para que puedas reunirte con tu equipo o
+                            tus clientes, sin ningún costo adicional. </p>
+                        <p>Es importante a la hora de empezar con tu marca personal o idea de negocio, poder agendar
+                            reuniones, citas, entrevistas o cualquier otro evento importante.</p>
+                        <p>Puedes reservar ahora sin costo tu lugar para hacer crecer tu emprendimiento.</p>
+
+                        <div style="width:100%;border-bottom: 1px solid lightgray;"
+                            class="pt-4 mt-5 mb-5">
+                            <!-- border-top: 1px solid lightgray; -->
+                            <!-- <h3 style="font-size: 20px !important;font-weight: bold;color: #333333 !important;">
+                                ¿Cómo acceder a tu branding digital dentro del ecosistema de servicios?
+                            </h3>
+                            <table border="0" class="tablaHomePasos mt-5 mb-5">
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">1</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Verifica que tienes activo tu seguro</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">2</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Registra todos los datos de tu idea, marca o
+                                            emprendimiento</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">3</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">
+                                            Agencia el espacio para tu reuniones
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table> -->
+                            <!-- <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-md-12 text-center">
+                        <p>Haz click y disfruta de un espacio perfecto para hacer volar tus ideas de emepredimiento</p>
+                    </div>
+                    <div class="col-md-12 text-center mt-3 mb-5">
+                        <button *ngIf="!login.isActive()" class="btnMain" (click)="login.goLogin()">Quiero
+                            unirme</button>
+                        <button *ngIf="login.isActive()" class="btnMain" [routerLink]="['/coworking-servicio']" routerLinkActive="router-link-active" >Encuéntralo ahora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-interest-material tipoMateriales="itt_coworking"></app-interest-material>
+    <div class="container d-block d-xl-none d-lg-none quieroUnirmeMovile" (click)="login.goLogin()"
+        *ngIf="!login.isActive()">
+        <p><i class="icon-Login iconSize"></i>&nbsp;&nbsp;&nbsp;Quiero unirme</p>
+    </div>
+</div>
+<div class="content-wrapper" style="display:none;margin-left: 0px;padding-top:50px" *ngIf="count==1">
+    <section class="content text-center ">
+        <h1 class="titleCards">Lorem ipsum dolor sit amet coursera. </h1>
+        <div class="text-center" style="width: 100%;margin: auto;max-width: 770px;text-align: left !important;">
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt lab sed do
+                eiusmod tempor incididunt labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+        </div>
+    </section>
+    <section class="content text-center mt-5">
+        <div class="row">
+            <div class="col-lg-2 col-md-12"></div>
+            <div class="col-lg-8 col-md-12">
+                <object style="width:100%;height: 555px" data="https://www.youtube.com/embed/u_7oaskZrlo">
+                </object>
+            </div>
+            <div class="col-lg-2 col-md-12"></div>
+        </div>
+    </section>
+    <section class="content text-center ">
+        <div class="text-center"
+            style="width: 100%;margin: auto;max-width: 770px;text-align: left !important;margin-bottom: 50px;margin-top: 50px">
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt lab sed do
+                eiusmod tempor incididunt labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <br><br>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </span>>
+        </div>
+    </section>
+    <div class="container">
+        <div class="card-deck mb-3 text-center" style="margin-top: 50px">
+            <div class="card mb-4 box-shadow" style="border-radius: 14px 14px 0px 0px">
+                <div class="card-header"
+                    style="border-radius: 14px 14px 0px 0px;background-color: #026ed3;height:144px">
+                    <img src="/assets/img/cuadro 1.png" class="cardImg" />
+                </div>
+                <div class="card-body" style="text-align: left;min-height: 215px;padding:25px">
+                    <h3 class="titleCard">Contar con el seguro activo</h3>
+                    <p class="titleBody">Tu seguro Cuota Protegida.
+                        <br>Asalariados debe estar activo</p>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow" style="border-radius: 14px 14px 0px 0px">
+                <div class="card-header"
+                    style="border-radius: 14px 14px 0px 0px;background-color: #9f3e88;height:144px">
+                    <img src="/assets/img/cuadro 2.png" class="cardImg" />
+                </div>
+                <div class="card-body" style="text-align: left;min-height: 215px;padding:25px">
+                    <h3 class="titleCard">Registrarte en el sitio</h3>
+                    <p class="titleBody">Haz click en la opción "Regístrate" y en sólo tres pasos realiza el proceso.
+                    </p>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow" style="border-radius: 14px 14px 0px 0px">
+                <div class="card-header"
+                    style="border-radius: 14px 14px 0px 0px;background-color: #034797;height:144px">
+                    <img src="/assets/img/cuadro 1.png" class="cardImg" />
+                </div>
+                <div class="card-body" style="text-align: left;min-height: 215px;padding:25px">
+                    <h3 class="titleCard">Disfruta todos los servicios</h3>
+                    <p class="titleBody">Accede a beneficios adicionales a tus coberturas y proyecta tu desarrollo
+                        profesional</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="content" style="background-color: white">
+        <div class="row" style="padding-top: 50px">
+            <div class="col-1"></div>
+            <div class="col-11">
+                <h1 style="font-family: GoogleSans;
+                        font-size: 42px;
+                        font-weight: bold;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.33;
+                        letter-spacing: -0.19px;
+                        color: #002c76;">Preguntas frecuentes.</h1>
+                <p class="pPreguntas">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor
+                    incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <div style="width:100%;margin-top:50px;"></div>
+                <p class="tPreguntas">¿Cómo puedo usar los servicios de Seguro es para tí?</p>
+                <div style="width:100%;margin-top:50px;"></div>
+                <p class="pPreguntas">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor
+                    incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <div style="width:100%;margin-top:50px;"></div>
+                <p class="tPreguntas">¿Si no cuento con un seguro, cómo puedo adquirirlo?</p>
+                <div style="width:100%;margin-top:50px;margin-bottom: 50px;text-align: center">
+                    <a class="btnPreguntas"><span style="color:white">IR A TODAS LAS
+                            PREGUNTAS&nbsp;&nbsp;</span> <i style="color:#ffb400" class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- <div class="ml-5">
+    <button *ngIf="count > 0" class="btn btn-defaul ml-5 mt-5" (click)="decrement()">
+        <i class="fas fa-angle-left"></i> Volver
+    </button>
+</div> -->

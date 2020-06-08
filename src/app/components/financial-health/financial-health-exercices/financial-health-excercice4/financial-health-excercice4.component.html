@@ -1,0 +1,199 @@
+<div style="width:100%;height:300px;
+background-color: #009dd6;
+position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/salud-financiera" class="crumbModulo">Salud financiera > </span>
+            <span routerLink="/salud-financiera-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <h1 class="tituloModulo pad-tit">Salud Financiera</h1>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+<div class="row">
+    <div class="container mb-3">
+        <a routerLink="/salud-financiera-ejercicios" class="btn-volver manito Volver" role="button" style="color: #008ACC;"><i
+                class="fas fa-chevron-circle-left"></i> Volver</a>
+      </div>
+    <h2 class="titleTest col-lg-10 offset-lg-1 mt-3 mb-4 ">Evalúa tu salud financiera</h2>
+    <p class="text-left col-lg-10  offset-lg-1 mt-3 mb-4 font-weight-bold">Mide la frecuencia, nivel y
+        forma de ahorro junto con la capacidad para con el ahorro afrontar emergencias y la
+        perdida inesperada de ingresos.</p>
+    <div class="col-lg-10 offset-lg-1 col-md-12">
+        <div class="form-group">
+            <div style="width:100%;border-bottom: 1px solid lightgray;border-top: 1px solid lightgray;"
+                class="pt-4 mt-5 mb-5">
+                <label>
+                    En los últimos 12 meses, ¿has estado ahorrando dinero?
+                </label>
+                <div class="form-group form-check">
+                    <input type="radio" name="s5s1p1" class="form-check-input" id="test4radio1_1"
+                        value="Todos los meses">
+                    <label class="form-check-label" for="test4radio1_1">&nbsp;Todos los meses</label>
+                    <br>
+                    <input type="radio" name="s5s1p1" class="form-check-input" id="test4radio1_2" value="Algunos meses">
+                    <label class="form-check-label" for="test4radio1_2">&nbsp;Algunos meses</label>
+                    <br>
+                    <input type="radio" name="s5s1p1" class="form-check-input" id="test4radio1_3" value=" Nunca">
+                    <label class="form-check-label" for="test4radio1_3">&nbsp;Nunca</label>
+                </div>
+                <div class="text-center" style="width:100%">
+
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>¿Qué porcentaje de tus ingresos mensuales ahorras en promedio?</label>
+            <select class="form-control" [(ngModel)]="s5s2p2">
+                <option value="">Elige</option>
+                <option value="De 1% a 5%">De 1% a 5%</option>
+                <option value="De 6% a 10%">De 6% a 5%</option>
+                <option value="De 11% a 15%">De 11% a 5%</option>
+                <option value="De 16% a 20%">De 16% a 5%</option>
+                <option value="De 21% a 30%">De 21% a 5%</option>
+                <option value="De 31% a 40%">De 31% a 5%</option>
+                <option value="De 41% a 50%">De 41% a 5%</option>
+                <option value="Más de 50%">Más de 5%</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>
+                ¿En los últimos 12 meses, de qué manera has estas ahorrando?
+            </label>
+            <div class="form-group form-check">
+                <input type="checkbox" class="s5s2p3 mt-4 form-check-input" id="test5check1_1"
+                    value="Empeñé algo que me pertenece">
+                <label class="mt-3 form-check-label" for="test5check1_1">Empeñé algo que me
+                    pertenece</label>
+                <br>
+                <input type="checkbox" class="s5s2p3 mt-4 form-check-input" id="test5check1_2"
+                    value="Hice trabajos extra gané dinero extra">
+                <label class="mt-3 form-check-label" for="test5check1_2">Hice trabajos extra
+                    gané dinero extra</label>
+                <br>
+                <input type="checkbox" class="s5s2p3 mt-4 form-check-input" id="test5check1_3"
+                    value="Ahorra en cadenas de ahorro o natilleras">
+                <label class="mt-3 form-check-label" for="test5check1_3">Ahorra en cadenas
+                    de
+                    ahorro o natilleras</label>
+                <br>
+                <input type="checkbox" class="s5s2p3 mt-4 form-check-input" id="test5check1_4"
+                    value="Compra de productos de inversión financiera distintos de los fondos de pensiones (tales como bonos/ fondos de inversión/ acciones/ inversiones en bolsa/ etc)">
+                <label class="mt-3 form-check-label" for="test5check1_4">Compra de productos
+                    de
+                    inversión financiera distintos de los fondos de pensiones (tales como
+                    bonos/
+                    fondos de inversión/ acciones/ inversiones en bolsa/ etc)</label>
+                <br>
+                <input type="checkbox" class="s5s2p3 mt-4 form-check-input" id="test5check1_5"
+                    value="Ahorra en fondos de pensiones voluntarias">
+                <label class="mt-3 form-check-label" for="test5check1_5">Ahorra en fondos de
+                    pensiones voluntarias</label>
+                <br>
+                <input type="checkbox" class="s5s2p3 mt-4 form-check-input" id="test5check1_6"
+                    value="Ahorra en una cuenta de Ahorro y Fomento a la Construcción AFC">
+                <label class="mt-3 form-check-label" for="test5check1_6">Ahorra en una
+                    cuenta de
+                    Ahorro y Fomento a la Construcción AFC</label>
+                <br>
+                <input type="checkbox" class="s5s2p3 mt-4 form-check-input" id="test5check1_7"
+                    value="Deja una cantidad de dinero en su cuenta de ahorros o corriente">
+                <label class="mt-3 form-check-label" for="test5check1_7">Deja una cantidad
+                    de
+                    dinero en su cuenta de ahorros o corriente</label>
+                <br>
+                <input type="checkbox" class="s5s2p3 mt-4 form-check-input" id="test5check1_8"
+                    value="Ahorra de otra manera como compra de ganado o propiedades">
+                <label class="mt-3 form-check-label" for="test5check1_8">Ahorra de otra
+                    manera
+                    como compra de ganado o propiedades</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>¿Desde hace cuántos años vienes ahorrando dinero, así sea una vez al año?
+            </label>
+            <input type="number" [(ngModel)]="s5s2p4" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>¿Si tuvieras que atender una emergencia o imprevista de manera inmediata
+                de
+                cuánto dinero dispones?</label>
+            <select class="form-control" [(ngModel)]="s5s2p5">
+                <option value="">Elige</option>
+                <option
+                    value="No tengo ahorros disponibles o esta invertido y no puedo disponer del dinero de inmediato">
+                    No tengo ahorros disponibles o esta invertido y no puedo disponer del
+                    dinero
+                    de inmediato</option>
+                <option value="$100.000 - $499.999">$100.000 - $499.999</option>
+                <option value="$500.000 - $999.999">$500.000 - $999.999</option>
+                <option value="$1.000.000 - $1.999.999">$1.000.000 - $1.999.999</option>
+                <option value="$2.000.000 - $2.999.999">$2.000.000 - $2.999.999</option>
+                <option value="$3.000.000 - $3.999.999">$3.000.000 - $3.999.999</option>
+                <option value="$4.000.000 - $4.999.999">$4.000.000 - $4.999.999</option>
+                <option value="> $5.000.000">> $5.000.000</option>
+            </select>
+        </div>
+    </div>
+    <div class="text-left col-lg-10 offset-lg-1 col-md-12">
+        <div style="width:100%;border-bottom: 1px solid lightgray;border-top: 1px solid lightgray;"
+            class="pt-4 mt-5 mb-5">
+            <div class="form-group">
+                <label>
+                    En el caso que perdieras tu principal fuente de ingresos, ¿cuánto tiempo
+                    podrías
+                    seguir cubriendo tus gastos sin pedir prestado dinero?
+                </label>
+                <div class="form-group form-check">
+                    <input type="radio" name="s5s3p6" class="form-check-input mt-3" id="test5radio3_1"
+                        value="Menos de 1 semana" style="padding-right: 15px;">
+                    <label class="form-check-label mt-2" for="test5radio3_1">&nbsp;Menos de 1
+                        semana</label>
+                    <br>
+                    <input type="radio" name="s5s3p6" class="form-check-input mt-3" id="test5radio3_2"
+                        value="Por lo menos 1 semana, pero menos de 1 mes">
+                    <label class="form-check-label mt-2" for="test5radio3_2">&nbsp;Por lo menos 1
+                        semana,
+                        pero menos de 1 mes</label>
+                    <br>
+                    <input type="radio" name="s5s3p6" class="form-check-input mt-3" id="test5radio3_3"
+                        value="Por lo menos 1 mes, pero menos de 3 meses">
+                    <label class="form-check-label mt-2" for="test5radio3_3">&nbsp;Por lo menos 1
+                        mes,
+                        pero menos de 3 meses</label>
+                    <br>
+                    <input type="radio" name="s5s3p7" class="form-check-input mt-3" id="test5radio3_4"
+                        value="Por lo menos 3 meses, pero menos de 6 meses">
+                    <label class="form-check-label mt-2" for="test5radio3_4">&nbsp;Por lo menos 3
+                        meses,
+                        pero menos de 6 meses</label>
+                    <br>
+                    <input type="radio" name="s5s3p7" class="form-check-input mt-3" id="test5radio3_5"
+                        value="Más de 6 meses">
+                    <label class="form-check-label mt-2" for="test5radio3_5">&nbsp;Más de 6
+                        meses</label>
+                    <br>
+                    <input type="radio" name="s5s3p7" class="form-check-input mt-3" id="test5radio3_6" value="No se">
+                    <label class="form-check-label mt-2" for="test5radio3_6">&nbsp;No sé</label>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="width:100%">
+            <button style="margin: auto" type="submit" (click)="guardarIndicador2();subSection=3 ; subSection=2"
+                class="btn btnTop2 btn-primary mt-4 mb-4" routerLink="/salud-financiera-ejercicios">Finalizar
+                cuestionario</button>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+</section>
+</div>
+</div>

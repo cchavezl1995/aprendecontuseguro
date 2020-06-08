@@ -1,0 +1,252 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+<div *ngIf="login.isActive()">
+    <div style="
+        background-color: #ec1c24;
+        background-position: left;
+        background-repeat: no-repeat;
+        width:100%;height:300px;position:absolute;margin-top: -39px">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+            <div style="margin-left: 17.8%;">
+                <span routerLink="/home" class="crumbModulo">Inicio > </span>
+                <span class="crumbModulo"><b>Mi perfil</b></span>
+            </div>
+            <h1 class="tituloModulo pad-tit" >Configura tu perfil</h1>
+        </div>
+    </div>
+    <div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+        <div *ngIf="pagina==0" class="row mt-5">
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+            <section class="col-lg-8 col-md-8 col-sm-12 accordionPerfil pb-5 sectionVTS">
+                <section class="cardsPerfil mb-5">
+                    <div class="card mb-3" style="border:1px solid lightgray !important">
+                        <div class="row">
+                            <div class="col-12" style="padding:6%">
+                                <p class="pCabeceraModulo">
+                                    <!-- Hola {{ login.getDataUser().nombres }}, puedes configurar tu perfil -->
+                                    Hola, bienvenido, estas son las opciones para completar o modificar tu perfil personal
+                                    <br>
+                                </p>
+                                <ul class="nav mb-3 mt-5 pCabeceraModulo" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pills-info-tab" data-toggle="pill"
+                                            href="#pills-info" role="tab" aria-controls="pills-info"
+                                            aria-selected="true">
+                                            Información personal
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill"
+                                            href="#pills-contact" role="tab" aria-controls="pills-contact"
+                                            aria-selected="false">
+                                            Canales de contacto
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-password-tab" data-toggle="pill"
+                                            href="#pills-password" role="tab" aria-controls="pills-password"
+                                            aria-selected="false">
+                                            Contraseña
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content mt-5" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-info" role="tabpanel"
+                                        aria-labelledby="pills-home-tab">
+                                        <div class="divRaya"></div>
+                                        <h3 class="mt-3" style="font-weight: bold;">Tus datos personales</h3>
+                                        <div class="row mt-5">
+                                            <div class="form-group col-lg-6">
+                                                <label>Nombres</label>
+                                                <input type="text" class="form-control" [(ngModel)]="nombres">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label>Apellidos</label>
+                                                <input type="text" class="form-control" [(ngModel)]="apellidos">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label>Tipo de Documento</label>
+                                                <input type="text" class="form-control disabled" disabled
+                                                    [(ngModel)]="tipoDocumento">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label>Número de Documento</label>
+                                                <input type="number" class="form-control disabled" disabled
+                                                    [(ngModel)]="nroDocumento">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label>Correo electrónico</label>
+                                                <input type="text" class="form-control" [(ngModel)]="correoElectronico"
+                                                    pattern="[a-zA-Z ]+.*@[^ÑñáéíóúÁÉÍÓÚ]+.[com,org,co,net,es]">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label>Teléfono celular</label>
+                                                <input type="number" class="form-control"
+                                                [(ngModel)]="numeroCelular" (keydown)="isNumber($event)"  maxlength="12">
+                                                <!--<span style="color: #ec1c24;" *ngIf="numero"> Digite solo numeros </span> -->
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <button (click)="guardarDatosPersonales()" class="btnMain mt-4">
+                                                    Guardar cambios
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                        aria-labelledby="pills-contact-tab">
+                                        <div class="divRaya"></div>
+                                        <h3 class="mt-3" style="font-weight: bold;">Tu información de contacto</h3>
+                                        <div class="mt-5" [sortablejs]="socials"
+                                            [sortablejsOptions]="{ animation: 150, ghostClass: 'border' }">
+                                            <div class="border-bottom p-4" *ngFor="let social of socials">
+                                                <div style="display: inline-block;">
+                                                    <i class="fas fa-bars mr-3 drag" style="color: #d9d9d9;"></i>
+                                                </div>
+                                                <div style="display: inline-block;"
+                                                    [ngClass]="{'circulo1': social.id==1}" class="text-center">
+                                                    <i [class]="social.icon" style="font-size: 20px;color: white;"></i>
+                                                </div>
+                                                <div style="display: inline-block;">
+                                                    <span class="ml-3">{{ social.name }}</span>
+                                                </div>
+                                                <div class="right">
+                                                    <button *ngIf="social.show" id="btn{{social.id}}"
+                                                        (click)="toggleSocial()" type="button" class="btn-vinculo">
+                                                        Añadir canal
+                                                    </button>
+                                                    <div class="row" id="form{{social.id}}" *ngIf="!social.show">
+                                                        <select
+                                                            class="input mb-1 mt-1 col-lg-4 col-md-12 col-sm-12 col-12"
+                                                            [(ngModel)]="social.type" (change)="placeText($event)">
+                                                            <option value="">Selecciona</option>
+                                                            <option value="skype">Skype
+                                                            </option>
+                                                            <option value="celular" >Celular
+                                                            </option>
+                                                            <option value="whatsapp" >
+                                                                Whatsapp</option>
+                                                            <!-- <option value="facebook">Facebook</option> -->
+                                                        </select>
+                                                        <div class="col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                                                        <input type="text" [(ngModel)]="social.value"
+                                                            *ngIf="isplaceNumber" 
+                                                            class="input mb-1 mt-1 col-lg-4 col-md-12 col-sm-12 col-12"
+                                                            placeholder="Cuenta de contacto">
+                                                        <input type="number" [(ngModel)]="social.value" (keydown)="isNumber($event)"
+                                                            *ngIf="!isplaceNumber"
+                                                            class="input mb-1 mt-1 col-lg-4 col-md-12 col-sm-12 col-12"
+                                                            placeholder="Numero de contacto">
+
+                                                        <div
+                                                            class="mb-1 mt-1 col-lg-3 col-md-12 col-sm-12 col-12 text-left">
+                                                            <span class="Guardar mr-3"
+                                                                (click)="addSocial(social.id)">Guardar</span>
+                                                            <i class="xicon fas fa-times"
+                                                                (click)="cancellSocial(social.id)"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- redes -->
+                                        <div class="mb-5" [sortablejs]="redes"
+                                            [sortablejsOptions]="{ animation: 150, ghostClass: 'border' }">
+                                            <div class="border-bottom p-4" *ngFor="let social of redes">
+                                                <div style="display: inline-block;">
+                                                    <i class="fas fa-bars mr-3 drag" style="color: #d9d9d9;"></i>
+                                                </div>
+                                                <div style="display: inline-block;" [ngClass]="{
+                                                'circulo4': social.tipoContacto=='skype',
+                                                'circulo2': social.tipoContacto=='facebook',
+                                                'circulo3': social.tipoContacto=='whatsapp',
+                                                'circulo5': social.tipoContacto=='celular'
+                                            }" class="text-center">
+                                                    <i *ngIf="social.tipoContacto=='skype'" class="fab fa-skype mt-2"
+                                                        style="font-size: 20px;color: white;"></i>
+                                                    <!-- <i *ngIf="social.tipoContacto=='facebook'" class="fab fa-facebook-f mt-2" style="font-size: 20px;color: white;"></i> -->
+                                                    <i *ngIf="social.tipoContacto=='whatsapp'"
+                                                        class="fab fa-whatsapp mt-2"
+                                                        style="font-size: 20px;color: white;"></i>
+                                                    <i *ngIf="social.tipoContacto=='celular'"
+                                                        class="fas fa-phone-alt mt-2"
+                                                        style="font-size: 20px;color: white;"></i>
+                                                </div>
+                                                <div style="display: inline-block;">
+                                                    <span *ngIf="social.tipoContacto=='skype'" class="ml-3">Skype</span>
+                                                    <!-- <span *ngIf="social.tipoContacto=='facebook'" class="ml-3">Facebook</span> -->
+                                                    <span *ngIf="social.tipoContacto=='whatsapp'"
+                                                        class="ml-3">Whatsapp</span>
+                                                    <span *ngIf="social.tipoContacto=='celular'"
+                                                        class="ml-3">Celular</span>
+                                                </div>
+                                                <div class="right" style="display: inline-block;">
+                                                    <span *ngIf="social.contacto1 != ''">
+                                                        {{ social.contacto1 }}
+                                                        <i class="xicon fas fa-times ml-3"
+                                                            (click)="deleteSocial(social.id)"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-password" role="tabpanel"
+                                        aria-labelledby="pills-profile-tab">
+                                        <div class="divRaya"></div>
+                                        <h3 class="mt-3" style="font-weight: bold;">Cambia tu contraseña</h3>
+                                        <div class="row mt-5">
+                                            <div class="form-group col-lg-6">
+                                                <label>Contraseña actual</label>
+                                                <input type="password" placeholder="Contraseña actual"
+                                                    class="form-control" [(ngModel)]="claveActual">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label>Nueva contraseña</label>
+                                                <input type="password" placeholder="Nueva contraseña"
+                                                    (keyup)="onKeyUp($event)" name="claveNueva" class="form-control"
+                                                    [(ngModel)]="claveNueva">
+                                                <div id="popover-password">
+                                                    <p></p>
+                                                    <div class="progress">
+                                                        <div id="password-strength"
+                                                            class="progress-bar progress-bar-success" role="progressbar"
+                                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                            style="width:0%">
+                                                        </div>
+                                                    </div>
+                                                    <p><span style="font-size: 12px" id="result"> </span></p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <label>Confirmación nueva contraseña</label>
+                                                <input type="password" placeholder="Confirmación nueva contraseña"
+                                                    (keyup)="onKeyUp($event)" name="claveConfirmada"
+                                                    class="form-control" [(ngModel)]="claveConfirmada">
+                                                <div id="popover-password2">
+                                                    <p></p>
+                                                    <div class="progress">
+                                                        <div id="password-strength2"
+                                                            class="progress-bar2 progress-bar-success"
+                                                            role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                                                            aria-valuemax="100" style="width:0%">
+                                                        </div>
+                                                    </div>
+                                                    <p><span style="font-size: 12px" id="result2"> </span></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <button (click)="guardarPassword()" class="btnTop2 mt-4">
+                                                    Guardar cambios
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+        </div>
+    </div>
+</div>

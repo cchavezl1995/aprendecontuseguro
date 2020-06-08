@@ -1,0 +1,147 @@
+.iframe-container {
+    overflow: hidden;
+    // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
+    padding-top: 100%;
+    position: relative;
+  }
+   
+  .iframe-container iframe {
+     border: 0;
+     height: 100%;
+     left: 0;
+     position: absolute;
+     top: 0;
+     width: 100%;
+  }
+  
+.btnTop2 {
+   border-color: #ec1c24 2px solid;
+   border: 0px;
+   border-radius: 50px;
+   font-size: px;
+   background-color: #ec1c24;
+   color: white;
+   padding: 10px 15px;
+ }
+ @media only screen and (min-width: 985px) {
+    .redondeado{
+      min-height:360px
+    }
+  }
+ .redondeado:hover{
+  box-shadow: 0px 0px 15px 5px rgba(57, 62, 100, 0.1);
+  cursor: pointer;
+  font-weight: bold !important;
+ }
+ .rdPreguntaRango{
+   margin-top: 6px;
+   margin-left: -2px;
+   cursor: pointer;
+ }
+ .f12{
+   font-size: 12px;
+ }
+ .form-check > input, .form-check > label{
+  cursor: pointer;
+ }
+
+
+//  $des_eco6_backColor: linear-gradient(287deg, #ea8927 107%, #eaa327 1%);
+ $des_eco6_backColor: #009dd6;
+
+.imgMovil{
+  background-image: url("/../../../assets/img/fraude2/finantial/finantial.png") !important;    
+  background-size: 260px; 
+  background-color: #009dd6;
+  background-position: center bottom 0% !important;
+  background-repeat: no-repeat, no-repeat;
+}
+
+input[type="radio"] + label {
+  cursor: pointer;
+  font-weight: normal !important;
+  //margin-left: 19px;
+}
+.tdR{
+  text-align: center;
+}
+.btnMain4 {
+  font-family: GoogleSans;
+  font-weight: bold;
+  border: solid 1px #ec1c24;
+  background-color: #ffffff;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #ec1c24;
+  padding: 10px 35px;
+  width: 80%;
+  cursor: pointer;
+}
+.btnMain4:hover .btnbottom:hover{
+  font-family: GoogleSans;
+  font-weight: bold;
+  border: solid 1px #ec1c24;
+  background-color: #ffffff;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #ec1c24;
+  padding: 10px 35px;
+  width: 80%;
+}
+ .btn-comenzar{
+  position:absolute;
+  bottom: 15px;
+  width: 80%;
+ }
+ .social {
+  position: absolute;
+  left: -75px; 
+  top: 42px;
+}
+.social-cont {
+  position: relative;
+}
+@media (min-width: 845px) {
+  .social {
+    left: 68px;
+    z-index: 999;
+  }
+}
+ 
+  .social ul {
+    list-style: none;
+  }
+ 
+  .social ul li a {
+    border-radius: 50%;
+    display: inline-block;
+    color:gray;
+    background: #fff;
+    padding: 15px 15px;
+    text-decoration: none;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease; 
+  }
+
+  .social ul li .icon-facebook:hover {background:#3b5998;color:white;} 
+  .social ul li .icon-twitter:hover {background: #00abf0;color:white;}
+  .social ul li .icon-linkedin:hover {background: #007bb5;color:white;}
+
+  .card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(255, 255, 255);
+    border-top: 0 solid rgba(0, 0, 0, 0.125);
+  }
+  .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+.icon-facebook {
+  width: 100%;
+  text-align: center;
+}
+@media only screen and (min-width: 769px) {
+  .pad-tit {
+      padding-left: 95px !important;
+  }
+}

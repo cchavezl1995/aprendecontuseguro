@@ -1,0 +1,82 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+<div *ngIf="login.isActive()">
+    <div style="width:100%;height:300px;
+            background-color: #ec1c24;
+            ;position:absolute;margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+            <div style="margin-left: 17.8%;">
+                <span routerLink="/home" class="crumbModulo">Inicio > </span>
+                <span class="crumbModulo"><b>Ayuda</b> </span>
+            </div>
+        </div>
+        <h1 class="tituloModulo pad-tit">Tu centro de ayuda</h1>
+    </div>
+    <div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+        <div *ngIf="pagina==0" class="row mt-5">
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+            <section class="col-lg-9 col-md-8 col-sm-12 accordionPerfil pb-5 sectionVTS">
+                <section class="cardsPerfil mb-5">
+                    <div class="card mb-3" style="border:1px solid lightgray !important">
+                        <div class="row">
+                            <div class="col-12" style="padding:6%">
+                                <p class="pCabeceraModulo">
+                                    <!-- Hola {{ login.getDataUser().nombres }}, aquí tienes tus opciones de ayuda. -->
+                                    Hola, bienvenido, aquí te orientamos en tus dudas sobre nuestro servicio
+                                </p>
+                                <ul class="nav mb-3 mt-5 pCabeceraModulo" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pills-contact-tab" data-toggle="pill"
+                                            href="#pills-contact" role="tab" aria-controls="pills-contact"
+                                            aria-selected="false">
+                                            Líneas de atención
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">                                        
+                                        <a class="nav-link" id="pills-info-tab" data-toggle="pill"
+                                            href="#pills-info" role="tab" aria-controls="pills-info"
+                                            aria-selected="true">
+                                            Agendar asesoría
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content mt-5" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-contact" role="tabpanel"
+                                        aria-labelledby="pills-contact-tab">
+                                        <div class="divRaya"></div>
+                                        <h3>¿Quieres hablar con nosotros? </h3>
+                                        <p>Aquí podemos atender todas tus inquietudes.</p>
+                                        <div class="row mt-5">
+                                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                                <p>
+                                                    <!-- <i style="font-size: 35px;" class="fas fa-phone-alt"></i><br> -->
+                                                    <img src="assets/img/help/phone.svg" width="32px" height="32px"><br>
+                                                    Línea de atención Bogotá<br>
+                                                    <a href="tel:7423197" class="colorTexto">7423197</a>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                                <p>
+                                                    <!-- <i style="font-size: 35px;" class="fas fa-phone-alt"></i><br> -->
+                                                    <img src="assets/img/help/phone.svg" width="32px" height="32px"><br>
+                                                    Línea de atención Nacional<br>
+                                                    <a href="tel:018000 932933 11" class="colorTexto">018000 932933</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-info" role="tabpanel"
+                                        aria-labelledby="pills-home-tab">
+                                        <p>Por favor, ingresa la información requerida para prestarte un servicio adecuado.</p>
+                                        <app-scheduling typeSchedule="2045" module="Ayuda"></app-scheduling>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <div class="col-lg-2 col-md-2 col-sm-0"></div>
+        </div>
+    </div>
+</div>

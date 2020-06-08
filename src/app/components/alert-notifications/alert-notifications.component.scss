@@ -1,0 +1,50 @@
+$des_eco6_backColor: #fb6330;
+
+.imgMovil{
+  background-image: url("/../../../assets/img/fraude2/alerts/alerts-man.png") !important;    
+  background-size: 220px, contain;
+  background-color: $des_eco6_backColor;
+  background-position: center bottom 0% !important;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.social {
+  position: absolute;
+  left: -75px; 
+  top: 42px;
+}
+.social-cont {
+  position: relative;
+}
+@media (min-width: 845px) {
+  .social {
+    left: 68px;
+    z-index: 999;
+  }
+}
+ 
+  .social ul {
+    list-style: none;
+  }
+ 
+  .social ul li a {
+    border-radius: 50%;
+    display: inline-block;
+    color:gray;
+    background: #fff;
+    padding: 15px 15px;
+    text-decoration: none;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease; 
+  }
+
+  .social ul li .icon-facebook:hover {background:#3b5998;color:white;} 
+  .social ul li .icon-twitter:hover {background: #00abf0;color:white;}
+  .social ul li .icon-linkedin:hover {background: #007bb5;color:white;}
+
+ 
+.icon-facebook {
+  width: 100%;
+  text-align: center;
+}

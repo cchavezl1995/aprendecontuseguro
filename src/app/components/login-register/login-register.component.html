@@ -1,0 +1,52 @@
+<div class="content-wrapper" style="margin-left: 0px;padding-bottom: 60px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row pt-5">
+            <!-- /.card -->
+            <div class="col-12" style="margin:auto;max-width: 550px;">
+                <div class="card-body">
+                    <ul class="nav nav-tabs" id="custom-content-below-tab" role="tablist">
+                        <li class="nav-item text-center">
+                            <a [ngClass]="{'active': !activeModule}" class="nav-link" id="custom-content-below-home-tab"
+                                data-toggle="pill" href="#custom-content-below-home" role="tab"
+                                aria-controls="custom-content-below-home" aria-selected="active">Regístrate
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a [ngClass]="{'active': activeModule}" class="nav-link active"
+                                id="custom-content-below-profile-tab" data-toggle="pill"
+                                href="#custom-content-below-profile" role="tab" (click)="limpiarLogin()"
+                                aria-controls="custom-content-below-profile" aria-selected="active">Inicia sesión
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="custom-content-below-tabContent">
+                        <div [ngClass]="{'show': !showModule, 'active': !activeModule}" class="fondo tab-pane fade"
+                            id="custom-content-below-home" role="tabpanel"
+                            aria-labelledby="custom-content-below-home-tab">
+                            <div style="margin-top: -1px;">
+                                <app-register></app-register>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'show': showModule, 'active': activeModule}"
+                            class="fondo tab-pane fade show active" id="custom-content-below-profile" role="tabpanel"
+                            aria-labelledby="custom-content-below-profile-tab">
+                            <div style="margin-top: -1px;">
+                                <app-login></app-login>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>

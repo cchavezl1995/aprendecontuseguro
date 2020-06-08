@@ -1,0 +1,152 @@
+<div style="width:100%;height:300px;
+background-color: #7849b8;
+position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/estudia-economia" class="crumbModulo">Cursos financieros > </span>
+            <span routerLink="/estudia-economia-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+        <h1 class="tituloModulo">Tus Cursos Financieros Personales</h1>
+    </div>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-lg-8 offset-lg-2 col-md-12 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:2%">
+                    <div class="row">
+                        <div class="col-12" style="padding:2%">
+                            <nav class="w-100" style="
+                                height: 250px;
+                                background-color: #9c95e2;
+                                background-image: url(assets/img/economy-study/group-4.png);
+                                background-repeat: no-repeat;
+                                background-position: right;
+                                padding-left: 8%;
+                                padding-top: 80px;
+                            ">
+                                <h3 class="titCurso">Curso ¡Ahorra o nunca!</h3>
+                                <p class="descCurso">Finanzas Personales&nbsp;&nbsp; |&nbsp;&nbsp; 10 niveles</p>
+                                <div class="nav nav-tabs" style="display: flex;
+                                padding-top: 47px;
+                                    border-bottom: 0px;" id="product-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab"
+                                        href="#product-desc" role="tab" aria-controls="product-desc"
+                                        aria-selected="true">Contenidos</a>
+                                    <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab"
+                                        href="#product-comments" role="tab" aria-controls="product-comments"
+                                        aria-selected="false">Ejercicios</a>
+                                </div>
+                            </nav>
+                            <div class="tab-content p-5" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="product-desc" role="tabpanel"
+                                    aria-labelledby="product-desc-tab">
+                                    <div>
+                                        <!-- <p><strong>Clase magistral de educación financiera</strong></p>
+
+                                            <object style="width:100%;height: 555px"
+                                                data="https://www.youtube.com/embed/u_7oaskZrlo">
+                                            </object> -->
+
+                                        <div class="dropdown-divider mt-5 mb-5"></div>
+
+                                        <p><span style="font-weight: 900"><strong>Clase magistral de educación
+                                                    financiera</strong></span></p>
+                                        <br>
+                                        <p>Entiende los mecanismos de ahorro y cómo capitalizar dinero, sin incurrir en
+                                            gastos innecesarios. Administrando inteligentemente el dinero.
+                                        </p>
+
+                                        <div class="card-deck">
+                                            <div routerLink="/estudia-economia-curso"
+                                                class="card manito" style="border:1px solid lightgray !important;">
+                                                <div class="card-body text-center">
+                                                    <img src="assets/img/economy-study/group-30.svg">
+                                                </div>
+                                                <div class="card-footer text-muted texto">
+                                                    Comparativo ahorro Vs deuda
+                                                </div>
+                                            </div>
+                                            <div (click)="goPage()" routerLink="/estudia-economia-curso1"
+                                                class="card manito" style="border:1px solid lightgray !important;">
+                                                <div class="card-body text-center">
+                                                    <img src="assets/img/economy-study/group-21.svg">
+                                                </div>
+                                                <div class="card-footer text-muted texto">
+                                                    ¡El poder de comenzar a ahorrar ya!
+                                                </div>
+                                            </div>
+                                            <div (click)="goPage()" routerLink="/estudia-economia-curso2"
+                                                class="card manito" style="border:1px solid lightgray !important;">
+                                                <div class="card-body text-center">
+                                                    <img src="assets/img/economy-study/group-53.svg">
+                                                </div>
+                                                <div class="card-footer text-muted texto">
+                                                    El interés compuesto
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="dropdown-divider mt-5 mb-5"></div>
+
+                                        <button type="submit" class="btnMain2" data-toggle="modal"
+                                            data-target="#exampleModal" (click)="goPage()">
+                                            Siguiente nivel <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="product-comments" role="tabpanel"
+                                    aria-labelledby="product-comments-tab">
+                                    <div *ngIf="!comparativo && !ahorro && !compuesto">
+                                        <p><strong>Ejercicios Ahorro</strong></p>
+                                        <p>Con los siguientes ejercicios podrás analizar y entender, el poder del
+                                            ahorro, el porque de no generar deudas
+                                            innecesarias, y como puedes verte beneficiado con el poder del interés
+                                            compuesto.
+                                        </p>
+                                        <div class="card-deck">
+                                            <div (click)="goModule('comparativo')" routerLink="/estudia-economia-curso"
+                                                class="card manito" style="border:1px solid lightgray !important;">
+                                                <div class="card-body">
+                                                    <img src="assets/img/economy-study/group-30.svg">
+                                                </div>
+                                                <div class="card-footer text-muted texto">
+                                                    Comparativo ahorro Vs deuda
+                                                </div>
+                                            </div>
+                                            <div (click)="goModule('ahorro')" routerLink="/estudia-economia-curso1"
+                                                class="card manito" style="border:1px solid lightgray !important;">
+                                                <div class="card-body">
+                                                    <img src="assets/img/economy-study/group-21.svg">
+                                                </div>
+                                                <div class="card-footer text-muted texto">
+                                                    ¡El poder de comenzar a ahorrar ya!
+                                                </div>
+                                            </div>
+                                            <div (click)="goModule('compuesto')" routerLink="/estudia-economia-curso2"
+                                                class="card manito" style="border:1px solid lightgray !important;">
+                                                <div class="card-body">
+                                                    <img src="assets/img/economy-study/group-53.svg">
+                                                </div>
+                                                <div class="card-footer text-muted texto">
+                                                    El interés compuesto
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,211 @@
+<div style="width:100%;height:300px;
+background-color: #009dd6;
+position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/salud-financiera" class="crumbModulo">Salud financiera > </span>
+            <span routerLink="/salud-financiera-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <h1 class="tituloModulo pad-tit">Salud Financiera</h1>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+<div class="row">
+    <div class="container mb-3">
+        <a routerLink="/salud-financiera-ejercicios" class="btn-volver manito Volver" role="button" style="color: #008ACC;"><i
+                class="fas fa-chevron-circle-left"></i> Volver</a>
+      </div>
+    <p class="text-center col-lg-10  offset-lg-1 mt-3 mb-4 font-weight-bold">Mide los conocimientos sobre
+        el
+        valor del dinero en el tiempo, intereses pagados,
+        cálculo de interés simple y compuesto, riesgos, inversiones, inflación y
+        diversificación.</p>
+
+    <div class="col-lg-10  offset-lg-1 offset-md-0 col-md-12">
+        <div class="form-group">
+            <label>Imaginate que 5 hermanos reciben un regalo de $1.000.000 pesos. Si los
+                hermanos tienen que compartir el dinero por igual, ¿cuánto recibe cada uno?
+            </label>
+            <input type="number" [(ngModel)]="s8s1p1" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>
+                Ahora imaginate que los hermanos tienen que esperar un año para obtener su
+                parte
+                de los $1.000.000 pesos y la
+                inflación se mantiene en cinco por ciento (5%) anual. Luego de un año,
+                ¿ellos
+                van a poder comprar…?
+            </label>
+            <div class="form-group form-check">
+                <input type="radio" name="s8s1p2" class="form-check-input mt-3" id="test10radio2_1"
+                    value="MÁS (+) con su parte del dinero de lo que podrían comprar hoy">
+                <label class="form-check-label mt-2" for="test10radio2_1">&nbsp; MÁS (+) con su
+                    parte
+                    del dinero de lo que podrían
+                    comprar hoy</label>
+                <br>
+                <input type="radio" name="s8s1p2" class="form-check-input mt-3" id="test10radio2_2"
+                    value="La MISMA (=) cantidad de lo que podrían comprar hoy">
+                <label class="form-check-label mt-2" for="test10radio2_2">&nbsp;La MISMA (=)
+                    cantidad
+                    de lo que podrían comprar
+                    hoy</label>
+                <br>
+                <input type="radio" name="s8s1p2" class="form-check-input mt-3" id="test10radio2_3"
+                    value="MENOS (-) de lo que podrían comprar hoy">
+                <label class="form-check-label mt-2" for="test10radio2_3">&nbsp;MENOS (-) de lo
+                    que
+                    podrían comprar hoy
+                </label>
+                <br>
+                <input type="radio" name="s8s1p2" class="form-check-input mt-3" id="test10radio2_4" value="NO SE">
+                <label class="form-check-label mt-2" for="test10radio2_4">&nbsp;NO SÉ</label>
+
+            </div>
+        </div>
+        <br><br>
+        <hr style="width: 80%">
+        <br><br>
+        <div class="form-group">
+            <label>
+                Imaginate que tu le prestaste $200.000 pesos a un amigo una noche y él te
+                devolvió estos $200.000 pesos al día siguiente. ¿Tu amigo pagó algún interés
+                por este préstamo?
+            </label>
+            <div class="form-group form-check">
+                <input type="radio" name="s8s1p3" class="form-check-input mt-3" id="test8radio3_1"
+                    value="Si pago interés">
+                <label class="form-check-label mt-2" for="test8radio3_1">&nbsp;Si pagó
+                    interés</label>
+                <br>
+                <input type="radio" name="s8s1p3" class="form-check-input mt-3" id="test8radio3_2"
+                    value="NO pago interés">
+                <label class="form-check-label mt-2" for="test8radio3_2">&nbsp;NO pagó
+                    interés</label>
+                <br>
+                <input type="radio" name="s8s1p3" class="form-check-input mt-3" id="test8radio3_3" value="NO SE">
+                <label class="form-check-label mt-2" for="test8radio3_3">&nbsp;NO SÉ
+                </label>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Supongamos que tu pones $100.000 pesos en una cuenta de ahorros con una
+                tasa
+                de interés de dos por ciento (2%) por año. Tu no realizas ningún otro abono
+                en
+                esta cuenta y no retiras dinero. ¿Cuánto habría en la cuenta al final del
+                primer
+                año, una vez que se realiza el pago de intereses?
+            </label>
+            <input type="number" [(ngModel)]="s8s1p4" class="form-control" />
+        </div>
+        <br><br>
+        <hr style="width: 80%;">
+        <br><br>
+        <div class="form-group">
+            <label>
+                ¿Y con la misma tasa de interés de dos por ciento (2%) por año, cuánto
+                tendría
+                la cuenta al final de 5 años? Sería… *
+            </label>
+            <div class="form-group form-check">
+                <input type="radio" name="s8s1p5" class="form-check-input mt-3" id="test8radio5_1"
+                    value="Más de 110.000 pesos">
+                <label class="form-check-label mt-2" for="test8radio5_1">&nbsp; Más de 110.000
+                    pesos</label>
+                <br>
+                <input type="radio" name="s8s1p5" class="form-check-input mt-3" id="test8radio5_2"
+                    value="Exactamente 110.000 pesos">
+                <label class="form-check-label mt-2" for="test8radio5_2">&nbsp;Exactamente 110.000
+                    pesos</label>
+                <br>
+                <input type="radio" name="s8s1p5" class="form-check-input mt-3" id="test8radio5_3"
+                    value="Menos de 110.000 pesos">
+                <label class="form-check-label mt-2" for="test8radio5_3">&nbsp;Menos de 110.000
+                    pesos
+                </label>
+                <br>
+                <input type="radio" name="s8s1p5" class="form-check-input mt-3" id="test8radio5_4" value="No se">
+                <label class="form-check-label mt-2" for="test8radio5_4">&nbsp;No sé
+                </label>
+
+            </div>
+        </div>
+        <br><br>
+        <hr style="width: 80%">
+        <br><br>
+        <div class="form-group">
+            <label>Indica para cada afirmación si consideras si es verdadera o falsa</label>
+            <table class="table table-bordered table-striped" style="font-size: 12px;">
+                <thead>
+                    <tr>
+                        <th class="col-3"></th>
+                        <th class="col-3"><label>Verdadero</label></th>
+                        <th class="col-3"><label>Falso</label></th>
+                        <th class="col-3" style="text-align: center;"><label style="width:50px">No sé</label></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cuando se invierte mucho dinero, también existe la posibilidad
+                            de
+                            que se pierda mucho dinero</td>
+                        <td class="tdR" style="text-align: center;">
+                            <input type="radio" name="s8s1p6t1" class="" id="test8radio6_4_1" value="Verdadero"><label
+                                for="test8radio6_4_1"></label></td>
+                        <td class="tdR" style="text-align: center;">
+                            <input type="radio" name="s8s1p6t1" class="" id="test8radio6_4_2" value="Falso"><label
+                                for="test8radio6_4_2"></label></td>
+                        <td class="tdR" style="text-align: center;">
+                            <input type="radio" name="s8s1p6t1" class="" id="test8radio6_4_3" value="No se"><label
+                                for="test8radio6_4_3"></label></td>
+                    </tr>
+                    <tr>
+                        <td>Una alta inflación significa que el costo de vida está
+                            aumentando rápidamente</td>
+                        <td class="tdR">
+                            <input type="radio" name="s8s1p6t2" class="" id="test8radio6_4_4" value="Verdadero"><label
+                                for="test8radio6_4_4"></label></td>
+                        <td class="tdR">
+                            <input type="radio" name="s8s1p6t2" class="" id="test8radio6_4_5" value="Falso"><label
+                                for="test8radio6_4_5"></label></td>
+                        <td class="tdR">
+                            <input type="radio" name="s8s1p6t2" class="" id="test8radio6_4_6" value="No se"><label
+                                for="test8radio6_4_6"></label></td>
+                    </tr>
+                    <tr>
+                        <td>Es menos probable que usted pierda todo su dinero si lo invierte
+                            en
+                            más de un lugar</td>
+                        <td class="tdR">
+                            <input type="radio" name="s8s1p6t3" class="" id="test8radio6_7" value="Verdadero"><label
+                                for="test8radio6_4_7"></label></td>
+                        <td class="tdR">
+                            <input type="radio" name="s8s1p6t3" class="" id="test8radio6_8" value="Falso"><label
+                                for="test8radio6_4_8"></label></td>
+                        <td class="tdR">
+                            <input type="radio" name="s8s1p6t3" class="" id="test8radio6_9" value="No se"><label
+                                for="test8radio6_4_9"></label></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="text-center" style="width:100%">
+        <button style="margin: auto" type="submit" (click)="guardarIndicadores1()" routerLink="/salud-financiera-ejercicios"
+            class="btn btnTop2 btn-primary mt-4 mb-4">Finalizar cuestionario</button>
+    </div>
+</div>
+</div>
+</section>
+</section>
+</div>
+</div>

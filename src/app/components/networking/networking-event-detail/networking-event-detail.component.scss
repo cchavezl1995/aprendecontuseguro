@@ -1,0 +1,50 @@
+.btn-volver{
+    border-color: #ec1c24 2px solid !important;
+    background-color: #ffffff !important;
+    color: #ec1c24 !important;    
+}
+.btn-volver:hover{
+    border-color: #ec1c24 2px solid !important;
+    background-color: #ffffff !important;
+    color: #ec1c24 !important;    
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #ec1c24;
+    border-color: #ec1c24;
+}
+.textColorRed {
+    color: #ec1c24;
+}
+.bordegris{
+    border-radius: 4px;
+    border: solid 1px #bababa;
+    background-color: #f7f5f5;
+    padding:10px;
+}
+
+.redondeado4 {
+    border-radius: 4px;
+    border: 1px solid #d2d2d2;
+    overflow: hidden;
+    webkit-box-shadow: 0px 0px 4px 1px rgba(57, 62, 100, 0.1);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(57, 62, 100, 0.1);
+    box-shadow: 0px 0px 4px 1px rgba(57, 62, 100, 0.1);
+    height: 100%;
+}
+.cajaaltura {
+    padding: 8% 9% 2% 9%;
+    bottom: 0;
+}
+.cajaaltura h6 {
+    width: 100%;
+    padding-left: 24px;
+}
+.iconfecha {
+    //background: url('../images/calendar.png') no-repeat 0px center;
+    padding-left: 27px;
+}
+.cajaaltura p {
+    width: 100%;
+    padding-left: 24px;
+}   

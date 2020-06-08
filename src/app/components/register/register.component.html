@@ -1,0 +1,368 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+<div *ngIf="count == 0" class="margen formLogin">
+    <div *ngIf="noUser">
+        <h3 class="title titLogin text-center">Regístrate</h3>
+
+        <p class="text-center mt-3">Estás a tres pasos de disfrutar los beneficios que Scotiabank y BNP Paribas Cardif tienen
+            para ti
+        </p>
+        <div *ngIf="errorTipo || errorNum" class="alert alert-dismissible"
+            style="background-color: rgba(235, 34, 48, 0.04);border: solid 1px #d0021b;">
+            <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+            <i class="text-danger icon fas fa-exclamation-triangle"></i>
+            {{message}}
+        </div>
+        <div *ngIf="alert" class="alert alert-dismissible"
+            style="background-color: rgba(235, 34, 48, 0.04);border: solid 1px #f5a623;">
+            <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+            <i class="text-warning icon fas fa-exclamation-triangle" style="position: relative; left: 178px;"></i> <br>
+            <p style="position: relative; left: 34px;"> Ya existe un usuario con este documento. <span style="color: #f5a623;">Inicia sesión aquí.</span> </p>
+        </div>
+        
+        <form action="">
+            <!-- <p-steps [model]="items" [(activeIndex)]="count" styleClass="steps-custom" [readonly]="true"></p-steps> -->
+            <app-steps [step]="1"></app-steps>
+            <div class="form-group">
+                <label for="numeroCelular">Tipo de documento</label>
+                <select [ngClass]="{
+                    'is-invalid': errorTipo
+                    }" id="tipoDocumento" [(ngModel)]="form.idTipoDocumento" name="tipoDocumento" id="cboTipoDocumento" class="form-control"
+                    placeholder="Selecciona el tipo de documento">
+                    <option value="">Selecciona el tipo de documento</option>
+                    <option *ngFor="let doc of tiposDocumento" [ngValue]="doc.id" value="{{doc.id}}"> {{doc.text}} </option>
+                </select>
+                <p *ngIf="errorTipo" class="text-danger">Selecciona el tipo de documento</p>
+            </div>
+            <div class="form-group">
+                <label for="numeroDocumento">Número de documento</label>
+                <input [ngClass]="{
+                    'is-invalid': errorNum
+                    }" [(ngModel)]="form.tipoDocumento" min="0" id="numeroDocumento" name="numeroDocumento"
+                    class="form-control" type="number" placeholder="Ingresa tu número de documento" />
+                <p *ngIf="errorNum" class="text-danger">Ingresa tu número de documento</p>
+            </div>
+            <div class="form-group text-center mt-4">
+                <button (click)="validator()" class="btn-block btnMain" type="submit">
+                    Continuar
+                </button>
+            </div>
+            <p class="text-center">¿Ya tienes una cuenta?
+                <a routerLink="/login" [queryParams]="{p: 1}" style="color: #ec1c24;">Inicia sesión</a>
+            </p>
+        </form>
+    </div>
+
+    <!-- Usuario no existe -->
+    <div *ngIf="!noUser">
+        <h3 class="title text-center mb-5">Regístrate</h3>
+        <div *ngIf="alert" class="alert alert-dismissible"
+            style="background-color: rgba(235, 34, 48, 0.04);border: solid 1px #f5a623;">
+            <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+            <i class="text-warning icon fas fa-exclamation-triangle"></i>
+            {{message}} 
+        </div>
+        <h5 class="title2 text-center mt-3 mb-2">Te recomendamos revisar:</h5>
+
+        <div class="card card-default">
+            <div class="card-header">
+                <span style="font-size: 14px;" class="card-title titPreg"> <h6> ¿Aún no tienes un seguro con nostros? </h6></span>
+                <!-- <button type="button" style="float: right;" class="btn btn-tool" data-widget="collapse"><i class="fas fa-minus"></i></button> -->
+                <button type="button" style="float: right;" class="btn btn-tool oval" data-widget="collapse">
+                    <span class="abrirMas"><i class="fas fa-chevron-down"></i></span>
+                    <span class="abrirMenos"><i class="fas fa-chevron-up"></i></span>
+                </button>
+                <!-- /.card-tools -->
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <p>Si quieres disfrutar los servicios de Scotiabank en alianza con BNP Paribas Cardif acércate a
+                    cualquiera de nuestras sucursales Scotiabank a nivel nacional.</p>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+        <div class="card card-default">
+            <div class="card-header">
+                <span style="font-size: 14px;" class="card-title titPreg"> <h6> ¿Acabas de adquirir un seguro? </h6> </span>
+                <!-- <button type="button" style="float: right;" class="btn btn-tool" data-widget="collapse"><i class="fas fa-plus"></i></button> -->
+                <button type="button" style="float: right;" class="btn btn-tool oval" data-widget="collapse">
+                    <span class="abrirMas"><i class="fas fa-chevron-down"></i></span>
+                    <span class="abrirMenos"><i class="fas fa-chevron-up"></i></span>
+                </button>
+
+                <!-- /.card-tools -->
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <p>No te preocupes. La información de tu cuenta está en proceso de creación. En breve, tendrás acceso a tu cuenta. </p>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <div class="form-group text-center">
+            <button style="color: #ec1c24;" (click)="goback()" class="mt-2 btn btn-link btn-block">
+                <i class="fas fa-chevron-left"></i> &nbsp;&nbsp;Volver
+            </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="count == 1" class="margen">
+
+    <!-- <p-steps [model]="items" [(activeIndex)]="count"></p-steps> -->
+    <app-steps [step]="2"></app-steps>
+    <div class="text-center mt-5">
+        <h5 class="title2">Hola {{userInfo.nombre}}</h5>
+        <label class=" titleDefault1">Confirma tus datos</label>
+    </div>
+    <form  action="">
+        <div class="backDefault text-center mt-4 pt-3 pb-3">
+            <span class="titleDefault">Nombres y apellidos</span><br>
+            <span class="titleNegrita">{{userInfo.nombre}} {{userInfo.paterno}} {{userInfo.materno}} </span>
+            <br><br>
+            <span class="titleDefault"> {{userInfo.nombreTipoIdentificacion}} </span><br>
+            <span class="titleNegrita"> {{userInfo.identificacion}} </span>
+        </div>
+        <div class="form-group text-center mt-4">
+            <button (click)="pass()" class="btn-block btnMain">
+                Continuar
+            </button>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="count == 2" class="margen">
+    <div *ngIf="message!=''" class="alert alert-dismissible"
+        style="background-color: rgba(235, 34, 48, 0.04);border: solid 1px #d0021b;">
+        <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+        <i class="text-danger icon fas fa-exclamation-triangle"></i>
+        {{message}}
+    </div>
+    <!-- <p-steps [model]="items" [activeIndex]="count"></p-steps> -->
+    <app-steps [step]="3"></app-steps>
+    <p class="text-center">Estás a punto de disfrutar los servicios de tu seguro</p>
+
+    <!-- Original form -->
+    <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label>Número de celular</label>
+                <div class="input-group">
+                    <!-- <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon">+57</span>
+                    </div> -->
+                    <input [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone" type="text"
+                        class="form-control" placeholder="Ingresa tu número de celular" id="phonePaso2"/>
+                    <div class="invalid-feedback" *ngIf="submitted && f.phone.errors">
+                        <p *ngIf="f.phone.errors.required">Campo requerido.</p>
+                        <p *ngIf="f.phone.errors?.pattern">Número telefónico inválido, debe contener entre 9 y 15 números</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label>Correo eletrónico</label>
+                <div class="input-group">
+                    <!-- <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                    </div> -->
+                    <input [ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="email" type="text"
+                        class="form-control" placeholder="Ingresa tu correo"  id="emailPaso2"/>
+                    <div class="invalid-feedback" *ngIf="submitted && f.email.errors">
+                        <p *ngIf="f.email.errors.required">Campo requerido.</p>
+                        <p *ngIf="f.email.errors?.pattern">Correo inválido</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label>Contraseña</label>
+                <div class="input-group">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.password.errors }" (keyup)="onKeyUp($event)"
+                        formControlName="password" type="password" class="form-control" id="password"
+                        placeholder="Ingrese una contraseña"/>
+                    <div class="input-group-text"><i *ngIf="eye" (click)="showEye()" class="fa fa-eye"></i>
+                        <i *ngIf="!eye" (click)="showEye()" class="fa fa-eye-slash"></i></div>
+                    <div class="invalid-feedback" *ngIf="submitted && f.password.errors">
+                        <p *ngIf="f.password.errors.required">Campo requerido.</p>
+                        <p *ngIf="f.password.errors.pattern">
+                            La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+                            NO puede tener otros símbolos.
+                            Ejemplo:
+                            w3Unpocodet0d0
+                        </p>
+                    </div>
+                </div>
+                <div id="popover-password">
+                    <p></p>
+                    <div class="progress">
+                        <div id="password-strength" class="progress-bar progress-bar-success" role="progressbar"
+                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        </div>
+                    </div>
+                    <p><span style="font-size: 12px" id="result"> </span></p>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label>
+                    <input type="checkbox" id="chkTC" formControlName="check" required />
+                    <label for="chkTC">Acepto los <span class="btn-link" (click)="showModal()">términos y condiciones del servicio</span></label>
+                </label>
+                <p class="text-danger" *ngIf="submitted && formRegister.get('check').hasError('required')">Debe aceptar
+                    los terminos y condiciones.</p>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn-block btnMain" type="submit">
+                Finalizar mi registro
+            </button>
+        </div>
+
+        <!-- Modal disclamer -->
+        <button style="display: none" id="showModal" type="button" class="btn btn-default" data-toggle="modal"
+            data-target="#modal-default">
+            Show Modal
+        </button>
+        <!-- <div class="modal fade" id="modal-default">
+            <div class="modal-dialog modal-lg  modal-dialog-scrollable" role="document">
+                <div class="modal-content" style="width: 770px; height: 612px;">
+                        <div style="top:0;left:0;margin-left: 520px;z-index: 10;width: 50px;height:0px;">
+                                <button id="btnCierraModal" type="button" class="btnTopCierraModal" data-dismiss="modal"><i style="color: #ec1c24;" class="fas fa-times"></i></button>
+                            </div>
+                    <div class="modal-body text-justify mt-7 ml-5 mr-5 mb-3">
+                        <p>
+                            La compañía se compromete a adoptar una política de confidencialidad, con el fin de proteger los datos personales de los abonados que ingresan sus datos personales para acceder a los servicios del ecosistema de servicios de Scotiabank, que incluyen sus canales de comercialización y contacto. <br><br>
+                            La política de privacidad se rige por las siguientes condiciones: <br><br>
+                            Principios generales que se acogen con el fin de proteger los datos personales de sus clientes, como parte del compromiso legal y corporativo de CARDIF SEGUROS GENERALES S.A. garantizando la confidencialidad de toda la información personal de los clientes, establecidos a su vez, en los principios generales del tratamiento de información contemplados en la Ley 1581 del 2012 y el Decreto 1377 de 2013, a saber: <br><br>
+                            Principio de legalidad: no habrá tratamiento de información personal de los clientes, sin que se observen las reglas de acuerdo a las normativas vigentes
+                        </p>
+                    </div>
+                    <div class="justify-content-center d-flex mb-4">
+                        <button type="button" name="button" class="btnMain" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg  modal-dialog-scrollable" role="document">
+                <div style="top:0;left:0;margin-left: 105%;z-index: 10;width: 50px;height:0px;">
+                    <button style="color: #ec1c24;" id="btnCierraModal" type="button" class="btnTopCierraModal" data-dismiss="modal"><i style="color: #ec1c24;" class="fas fa-times"></i></button>
+                </div>
+                
+            <div class="modal-content" style="width: 454px; height: 420px;margin:auto;
+            padding-top: 40px;
+            padding-bottom: 35px;">
+                    <!-- <div class="mt-6 ml-6 pt-5 pb-5 pl-5" style="width: 430px;height: 22px;font-size: 22px;color: #034797;">
+                        Términos y condiciones
+                    </div> -->
+                    <div class="modal-body mt-7 ml-5 mr-5 mb-3" style="font-size: 14px;color:#8e8e93">
+                        <p class="mt-3">Cardif Colombia Seguros Generales S.A. asume exclusivamente la responsabilidad del cumplimiento de
+                            las obligaciones del contrato de seguro por la red de Scotiabank, La plataforma “Conéctate con tu Seguro” utiliza un sistema automático de alertas y notificaciones. En caso
+                            de que de la utilización de la misma se desprenda el tratamiento de la información o datos personales del
+                            usuario, este será realizado por CARDIF COLOMBIA SEGUROS GENERALES S.A. conforme con su
+                            política de tratamiento de datos y las autorizaciones para su tratamiento contenidas en el contrato del
+                            seguro suscrito por el cliente.
+                        </p>
+                    </div>
+                    <div class="justify-content-center d-flex mb-4">
+                        <button type="button" style="margin-bottom: -30px;" (click)="preRegister()" name="button" class="btnMain" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Modal disclamer -->
+    </form>
+    <!-- End Original form -->
+
+
+    <!-- <form class="form-group" action="">
+        <label >Número de celular</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">+57</span>
+            </div>
+            <input [ngClass]="{
+                    'is-invalid': phoneBool 
+                  }" [(ngModel)]="form2.phone" id="numeroCelular" maxlength="10" name="numeroCelular" class="form-control" type="number" 
+                placeholder="Ingresa tu número de celular"/>
+            </div>
+            <p *ngIf="phoneBool" class="text-danger">Ingresa un número</p>
+            <label>Correo eletrónico</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input [ngClass]="{
+                    'is-invalid': emailBool
+                  }" [(ngModel)]="form2.email" id="email" name="email" class="form-control" type="email" 
+                placeholder="Ingresa tu correo"/>
+            </div>
+            <p *ngIf="emailBool" class="text-danger">Ingresa un correo electrónico</p>
+            <label>Contraseña</label>
+        <div class="input-group">
+            <input [ngClass]="{
+                    'is-invalid': passwordBool
+                  }" [(ngModel)]="form2.password" id="password" name="password" class="form-control" type="password" 
+                placeholder="********" pPassword weakLabel="Baja" promptLabel="Ingrese una contraseña" mediumLabel="Media" strongLabel="Alta"/>
+            </div>
+            <p *ngIf="passwordBool"  class="text-danger">Ingresa una contraseña</p>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" class="flat-red" checked>
+                Acepto los <span class="btn-link" (click)="showModal()">términos y condiciones del servicio</span>
+            </label>
+        </div>
+        <div class="form-group text-center">
+            <button (click)="validator2()" class="btn btn-primary btn-block" type="button">
+                Finalizar mi registro
+            </button>
+        </div>
+        
+        
+    </form> -->
+</div>
+
+<div *ngIf="count == 3" class="margen">
+    <!-- <p-steps [model]="items" [activeIndex]="2"></p-steps> -->
+    <app-steps [step]="4"></app-steps>
+    <h5 class="title3 text-center">Haz finalizado tu registro con éxito</h5>
+    <br>
+    <p class="text-center text-justify texto-plano">Te enviamos un correo electrónico a {{ userInfo.email }} con la
+        información de tu cuenta. Gracias por confiar en nosotros.</p>
+    <br>
+    <p class="text-center texto-plano">Empieza a disfrutar los servicios de tu seguro</p>
+    <a routerLink="/login/3" class="btn-block btnMain text-center mb-5 mt-5">
+        Inicia sesión
+    </a>
+</div>
+
+<!-- Button trigger modal -->
+<button style="display: none" type="button" id="show" class="btn btn-primary" data-toggle="modal"
+    data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+ <!-- Modal terminos y condiciones -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg  modal-dialog-scrollable" role="document">
+            <div style="top:0;left:0;margin-left: 780px;z-index: 10;width: 50px;height:0px;">
+                <button style="color: #ec1c24;" id="btnCierraModal" type="button" class="btnTopCierraModal" data-dismiss="modal"><i style="color: #ec1c24;" class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-content" style="width: 770px; height: 312px;">
+                    <div class="mt-6 ml-6 pt-5 pb-5 pl-5" style="width: 430px;height: 22px;font-size: 22px;color: #333333;">
+                        Términos y condiciones
+                        </div>
+                <div class="modal-body mt-7 ml-5 mr-5 mb-3" style="font-size: 14px;color:#8e8e93">
+                    <p>
+                        Cardif Colombia Seguros Generales S.A. asume exclusivamente la responsabilidad del cumplimiento de las obligaciones del contrato de seguro
+                        por la red de Scotiabank, la plataforma "conéctate con tu seguro" utiliza un sistema automático de alertas y notificaciones. En caso
+                        de que la utilización de la misma se desprenda el tratamiento de la información o datos personales del usuario, estes será realizado por CARDIF COLOMBIA.
+                    </p>
+                </div>
+                <div class="justify-content-center d-flex mb-4">
+                    <button type="button" name="button" class="btnMain" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal terminos y condiciones -->

@@ -1,0 +1,160 @@
+<div>
+    <div class="d-block d-xl-none d-lg-none imgMovil" style="width:100%;height:600px; margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span [routerLink]="['/asesoria-legal-itt']" routerLinkActive="router-link-active"
+                    class="crumbModulo"><b>Asesoría legal</b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">
+            Te asesoramos legalmente<br>
+            en tu emprendimiento
+        </h1>
+    </div>
+    <div class="d-none d-lg-block" style="width:100%;height:499px;
+    background-image: url('assets/img/itt2/legal/legal.png'), linear-gradient(90deg, #333333 50%,  #4d4d4d 50%);
+    background-position: right 350px bottom, right bottom;
+    background-repeat: no-repeat,no-repeat;
+    margin-top: -39px;
+    background-size: 251px 396px, contain">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span [routerLink]="['/asesoria-legal-itt']" routerLinkActive="router-link-active"
+                    class="crumbModulo"><b>Asesoría legal </b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">
+            Te asesoramos legalmente<br>
+            en tu emprendimiento
+            ​</h1>
+        <button *ngIf="login.isActive()" class="btnBlack" style="margin-top: 55px; margin-left:10%;"
+            routerLink="/asesoria-legal-itt-servicio">Agenda tu consultoría</button>
+        <button *ngIf="!login.isActive()" class="btnBlack" style="margin-top: 55px; margin-left:10%;"
+            (click)="login.goLogin()">Quiero unirme</button>
+    </div>
+    <div class="container">
+
+        <div class="row m-4">
+            <div class="social-cont">
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://ecodesascco.grupomok.com.co/curriculumhome"
+                                target="_blank" class="icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="http://twitter.com/share?url=http://ecodesascco.grupomok.com.co" target="_blank"
+                                class="icon-twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://ecodesascco.grupomok.com.co"
+                                target="_blank" class="icon-linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <h2 class="font-weight-bold text-secondary text-left mt-5 mb-5">
+                            Cuenta con nuestra ayuda en temas legales
+                        </h2>
+                        <p>¿Vas a empezar con tu emprendimiento? No te preocupes: te asesoramos legalmente en todo el
+                            proceso</p>
+                        <p>Agenda tu consultoría con un abogado especializado en temas legales para tu emprendimiento.
+                        </p>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div style="width:100%;" class="text-center">
+                    <iframe width="100%" height="555" src="https://www.youtube.com/embed/5MWAbs4pL38" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <app-video-material tipoMateriales="des_curriculumhome"></app-video-material>
+                
+            </div>
+        </div>
+        <div class="row m-4 mt-5">
+            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <p>Un experto te asesorará en todo lo referente a los asuntos legales para empezar tu
+                            emprendimiento como debe ser. </p>
+
+                        <p>Puedes concertar una cita para buscar asesoría en proceso para crear o registrar una marca,
+                            declaración de renta, afiliaciones, contrataciones, registro tributario, entre otros
+                            servicios.</p>
+
+                        <p>Desde cualquier dispositivo puedes agendar tu consultoría legal especializada para tu negocio
+                        </p>
+
+                        <p>Elige la fecha y hora para tu consultoría y nuestro experto estará dispuesto a ayudarte
+                            ¿Sobre qué temas puedes consultar?</p>
+
+                        <p>Liquidación de prestaciones sociales<br>
+                            Contratos de trabajo<br>
+                            Liquidación de contratos<br>
+                            Accidentes laborales<br>
+                            Tramites para solicitar tu pensión</p>
+                        <!-- <p>Te invitamos a que te registres, diligencies tu información personal, académica y laboral; y solicites una consultoría con un experto en selección. Él será una mano amiga para potencializar y sacar lo mejor de ti.</p> -->
+                        <!-- <div style="width:100%;border-bottom: 1px solid lightgray;border-top: 1px solid lightgray;"
+                            class="pt-4 mt-5 mb-5">
+                            <h3 style="font-size: 20px !important;font-weight: bold;color: #333333 !important;">
+                                ¿Cómo acceder a tu branding digital dentro del ecosistema de servicios?
+                            </h3>
+                            <table border="0" class="tablaHomePasos mt-5 mb-5">
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">1</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Debes contar con tu seguro activo</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">2</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Regístrate e ingresa tus datos de tu marca personal, idea o negocio.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">3</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">
+                                            Solicita tu consultoría en branding digital con un experto y al final, 
+                                            recibirás el feedback
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div> -->
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-md-12 text-center">
+                        <p>
+                            Agenda ya tu asesoría legal para empezar con tu idea de negocio sin nigngun problema
+                        </p>
+                    </div>
+                    <div class="col-md-12 text-center mt-3 mb-5">
+                        <button *ngIf="!login.isActive()" class="btnMain" (click)="login.goLogin()">Quiero
+                            unirme</button>
+                        <button *ngIf="login.isActive()" class="btnMain" routerLink="/asesoria-legal-itt-servicio"
+                            routerLinkActive="router-link-active">Agenda tu consultoría</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-interest-material tipoMateriales="itt_legal"></app-interest-material>
+    <div class="container d-block d-xl-none d-lg-none quieroUnirmeMovile" (click)="login.goLogin()"
+        *ngIf="!login.isActive()">
+        <p><i class="icon-Login iconSize"></i>&nbsp;&nbsp;&nbsp;Quiero unirme</p>
+    </div>
+</div>

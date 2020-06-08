@@ -1,0 +1,1413 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+<div *ngIf="login.isActive()">
+  <div style="width:100%;height:300px;
+                background-color: #fb6330;position:absolute;margin-top: -39px;">
+    <div
+      style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+      <div style="margin-left: 19.1%;">
+        <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+        <span routerLink="/mejorar-hoja-de-vida-inicio" class="crumbModulo">Mejora tu hoja de vida > </span>
+        <span routerLink="/mejorar-hoja-de-vida" class="crumbModulo">Mejorar mi hoja de vida > </span>
+        <span class="crumbModulo"><b>Diseñar</b> </span>
+      </div>
+    </div>
+    <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+      <h1 class="tituloModulo">Mejora tu hoja de vida</h1>
+    </div>
+  </div>
+
+  <section>
+    <div class="row" style="padding-top: 190px">
+      <div class="col-lg-2 col-md-2 col-sm-0"></div>
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <div *ngIf="!show" class="card" style="border: solid 1px #d9d9d9 !important;">
+          <div class="card-header" style="padding:6%">
+            <!-- <div class="row">
+                <div class="container mb-3">
+                  <a class="btn-volver manito Volver" role="button" style="color: #7b7b7b;" (click)="volver()" >
+                    <i class="fas fa-chevron-circle-left"></i> Volver</a>
+                </div>
+              </div> -->
+            <h2 class="text-secondary mb-5">Crea tu hoja de vida.</h2>
+            <p>Comienza a crear tu hoja de vida, sigue y completa todos los pasos para mejorar tu perfil laboral y encontrar nuevas y mejores oportunidades laborales. </p>
+            <!-- <button (click)="increment()" >+++</button> -->
+          </div>
+          <div class="card-body col-md-12" style="padding-top: 20px;padding-left: 45px;padding-right: 55px;">
+            <div class="multi-step">
+              <ul class="multi-step-list nav" role="tablist" style="flex-wrap:nowrap">
+                <li class="multi-step-item current">
+                  <a data-toggle="pill" href="#tabMiPerfil" id="hTabMiPerfil" role="tab" (click)="step=1"
+                    aria-controls="custom-content-below-home" aria-selected="true">
+                    <div class="item-wrap" [ngClass]="{'item-wrap-exito': step >= 1}">
+                      <span class="item-title">
+                        <i class="fas fa-check" *ngIf="step >= 1"></i> &nbsp;&nbsp;
+                        Datos Personales
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="multi-step-item" [ngClass]="{'current': step==2}">
+                  <a data-toggle="pill" href="#tabEducacion" id="hTabEducacion" role="tab" (click)="step=2;"
+                    aria-controls="custom-content-below-home" aria-selected="true">
+                    <div class="item-wrap"
+                      [ngClass]="{'item-wrap-exito': infoEducativa.length > 0 || infoComplementaria.length > 0 }">
+                      <span class="item-title">
+                        <i class="fas fa-check" *ngIf="infoEducativa.length > 0"></i> &nbsp;&nbsp;
+                        Educación</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="multi-step-item" [ngClass]="{'current': step==3}">
+                  <a data-toggle="pill" href="#tabTrabajos" id="hTabTrabajos" role="tab" (click)="step=3"
+                    aria-controls="custom-content-below-home" aria-selected="true">
+                    <div class="item-wrap" [ngClass]="{'item-wrap-exito': infoLaboral.length > 0}">
+                      <span class="item-title">
+                        <i class="fas fa-check" *ngIf="infoLaboral.length > 0"></i> &nbsp;&nbsp;
+                        Experiencia</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="multi-step-item" [ngClass]="{'current': step==4}">
+                  <a data-toggle="pill" href="#tabDiseno" id="hTabDiseno" role="tab" (click)="tabPersonalizacion()"
+                    aria-controls="custom-content-below-home" aria-selected="true">
+                    <div class="item-wrap"
+                      [ngClass]="{'item-wrap-exito': ((infoEducativa.length > 0 || infoComplementaria.length > 0) && infoLaboral.length > 0) && created }">
+                      <span class="item-title">
+                        <i class="fas fa-check"
+                          *ngIf="((infoEducativa.length > 0 || infoComplementaria.length > 0) && infoLaboral.length > 0) && created"></i>
+                        &nbsp;&nbsp;
+                        Personalizar</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Informacion básica -->
+            <div class="tab-content" id="custom-content-below-tabContent">
+              <div class="tab-pane fade active show" id="tabMiPerfil" role="tabpanel"
+                aria-labelledby="custom-content-below-home-tab">
+                <h5 class="mb-2" style="color:#ec1c24">Información básica</h5>
+                <div class="row mr-3">
+                  <div class="col-lg-12 col-sm-12 col-md-12 align-items-stretch ml-3"
+                    style="padding-left:0px;padding-right:0px; border: 1px lightgray dashed">
+                    <div class="card bg-light">
+                      <div class="card-body" style="padding:30px;">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <div class="containera">
+                              <div id="imgHV" class="outer my_class"
+                                [ngStyle]="{'background': 'url(' + curriculumArchivos.imagenBase64 + ') no-repeat'}"
+                                style="background-size: 150px;">
+                                <div class="inner">
+                                  <input class="inputfile manito" type="file" id="inputPhoto" name="file" accept="image/*"
+                                    (change)="handleInputChange($event)">
+                                  <label><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"
+                                      viewBox="0 0 20 17">
+                                      <path
+                                        d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z">
+                                      </path>
+                                    </svg></label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-9">
+                            <h5>Carga tu foto</h5>
+                            <ul class="list-unstyled">
+                              <li>1. Elige una foto reciente y de fondo claro.</li>
+                              <li>2. No subas fotos en grupo.</li>
+                              <li>3. Tu foto debe estar de frente.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Ejemplo validacion de formulario -->
+                <!-- <form [formGroup]="myForm" (ngSubmit)="saveData()" novalidate>
+                          <div>
+                            <label for=""></label>
+                            <input formControlName="company" type="text" placeholder="company" />
+                          </div>
+                          <div *ngIf="myForm.get('company').errors && myForm.get('company').dirty" >
+                            <p *ngIf="myForm.get('company').hasError('required')" >Fiel is required</p>
+                            <p *ngIf="myForm.get('company').hasError('minlength')" >Min of 5 characters</p>
+                            <p *ngIf="myForm.get('company').hasError('maxlength')" >Max of 10 characters</p>
+                          </div>
+                          <div>
+                            <button type="submit" [disabled]="myForm.invalid" >Save</button>
+                          </div>
+                        </form> -->
+                <!-- END Ejemplo validacion de formulario -->
+
+                <!-- Original form -->
+                <form [formGroup]="formHv" (ngSubmit)="onSubmit()">
+                  <div class="row mt-3 mb-5">
+                    <div class="form-group col-md-6">
+                      <label>Nombres</label>
+                      <input [ngClass]="{ 'is-invalid': submitted && f.names.errors }" formControlName="names"
+                        type="text" class="form-control" id="names" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.names.errors">
+                        <p *ngIf="f.names.errors.required">Campo requerido.</p>
+                        <p *ngIf="f.names.errors.maxlength">Maximo 30 caracteres para este campo.</p>
+                        <p *ngIf="f.names.errors.pattern">Campo de solo letras</p>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Apellidos</label>
+                      <input [ngClass]="{ 'is-invalid': submitted && f.paternalLastName.errors }"
+                        formControlName="paternalLastName" type="text" class="form-control" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.paternalLastName.errors">
+                        <p *ngIf="f.paternalLastName.errors.required">Campo requerido.</p>
+                        <p *ngIf="f.paternalLastName.errors.maxlength">Maximo 30 caracteres para este campo.</p>
+                        <p *ngIf="f.paternalLastName.errors.pattern">Campo de solo letras</p>
+                      </div>
+                    </div>
+
+                    <!-- <div class="form-group col-md-6">
+                        <label>Apellido materno</label>
+                        <input [ngClass]="{ 'is-invalid': submitted && f.maternalLastName.errors }"
+                          formControlName="maternalLastName" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="submitted && f.maternalLastName.errors">
+                          <p *ngIf="f.maternalLastName.errors.required">Campo requerido.</p>
+                          <p *ngIf="f.maternalLastName.errors.maxlength">Maximo 30 caracteres para este campo.</p>
+                          <p *ngIf="f.maternalLastName.errors.pattern">Campo de solo letras</p>
+                        </div>
+                      </div> -->
+
+                    <div class="form-group col-md-6">
+                      <label>Tipo de documento</label>
+                      <div class="input-group mb-3">
+                        <!-- <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              {{ f.documentType.value | diccionario:tiposDocumento }}
+                            </span>
+                          </div> -->
+                        <select name="tipoDoc" id="tipoDoc" class="form-control disabled" [value]="f.documentType.value">
+                          <option value="">Selecciona un tipo de documento</option>
+                          <option value="5">Cédula de Ciudadanía</option>
+                          <option value="6">Cédula de Extranjería</option>
+                          <option value="7">Pasaporte</option>
+                        </select>
+                      </div>
+                      
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Número de identificación</label>
+                      <div class="input-group mb-3">
+                        <input type="text" formControlName="document" class="form-control"
+                          placeholder="N° Documento" >
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Correo electrónico</label>
+                      <div class="input-group">
+                        <!-- <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                          </div> -->
+                        <input [ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="email"
+                          type="tel" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="submitted && f.email.errors">
+                          <p *ngIf="f.email.errors.required">Campo requerido.</p>
+                          <p *ngIf="f.email.errors.maxlength">Maximo 30 caracteres para este campo.</p>
+                          <p *ngIf="f.email.errors?.pattern">Correo invalido</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="from-group col-md-6">
+                      <label for="phone">Teléfono celular</label>
+                      <div class="input-group">
+                        <!-- <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic">+57</span>
+                          </div> -->
+                        <input [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone"
+                          type="text" class="form-control" maxlength="10" id="phone" DigitOnly
+                          aria-describedby="basic-addon3" />
+                        <div class="invalid-feedback" *ngIf="submitted && f.phone.errors">
+                          <p *ngIf="f.phone.errors.required">Campo requerido.</p>
+                          <p *ngIf="f.phone.errors?.pattern">Número telefónico inválido, debe contener 10 números</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Fecha de nacimiento</label>
+
+                      <div class="input-group">
+
+                        <input type="text" bsDatepicker #dp="bsDatepicker"
+                          [ngClass]="{ 'is-invalid': submitted && f.birthDate.errors }" formControlName="birthDate"
+                          class="form-control" maxlength="10" placeholder="Día/Mes/Año" [bsConfig]="datePickerConfig" />
+
+                        <!-- <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                          </div> -->
+
+                        <div class="invalid-feedback" *ngIf="submitted && f.birthDate.errors">
+                          <p *ngIf="f.birthDate.errors.required">Campo requerido.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Género</label>
+                      <div class="form-check">
+                        <input [ngClass]="{'is-invalid': submitted && f.gender.errors }" formControlName="gender"
+                          class="form-check-input" type="radio" value="M" name="gender" id="r-male">
+                        <label class="form-check-label" for="r-male">&nbsp;Masculino</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input [ngClass]="{'is-invalid': submitted && f.gender.errors }" formControlName="gender"
+                          class="form-check-input" type="radio" value="F" name="gender" id="r-female">
+                        <label class="form-check-label" for="r-female">&nbsp;Femenino</label>
+                        <div class="invalid-feedback" *ngIf="submitted && f.gender.errors">
+                          <p *ngIf="f.gender.errors.required">Campo requerido.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                      <label>Departamento</label>
+
+                      <ng-select 
+                        [items]="departamentos" 
+                        [ngClass]="{'is-invalid': submitted && f.departamento.errors }"
+                        bindLabel="text" 
+                        bindValue="id" placeholder="selecciona un departamento"
+                        formControlName="departamento" 
+                        [clearable]="false"
+                        (change)="changeDepartment($event)"
+                        >
+                      </ng-select>
+
+                      <div class="invalid-feedback" *ngIf="submitted && f.departamento.errors">
+                        <p *ngIf="f.departamento.errors.required">Campo requerido.</p>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                      <label>Ciudad residencia</label>
+
+                      <ng-select [items]="ciudadesHV" [ngClass]="{'is-invalid': submitted && f.residenceCity.errors }"
+                        bindLabel="text" bindValue="id" placeholder="selecciona una ciudad"
+                        formControlName="residenceCity" [clearable]="false">
+                      </ng-select>
+
+                      <div class="invalid-feedback" *ngIf="submitted && f.residenceCity.errors">
+                        <p *ngIf="f.residenceCity.errors.required">Campo requerido.</p>
+                      </div>
+                    </div>
+
+                    
+
+                    <div class="form-group col-md-6">
+                      <label>Dirección de residencia</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                        </div>
+                        <input [ngClass]="{ 'is-invalid': submitted && f.residenceAddress.errors }"
+                          formControlName="residenceAddress" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="submitted && f.residenceAddress.errors">
+                          <p *ngIf="f.residenceAddress.errors.required">Campo requerido.</p>
+                          <p *ngIf="f.residenceAddress.errors.maxlength">Maximo 100 caracteres para este campo.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                  </div>
+                  <h6 class="mb-2" style="color:#ec1c24">Datos complementarios</h6>
+
+                  <div class="row mb-5">
+                    <div class="form-group col-md-6">
+                      <label>Profesión</label>
+
+                      <ng-select [items]="profesiones" [ngClass]="{'is-invalid': submitted && f.ocupation.errors }"
+                        bindLabel="text" bindValue="id" placeholder="selecciona una profesión"
+                        formControlName="ocupation" [clearable]="false">
+                      </ng-select>
+
+                      <div class="invalid-feedback" *ngIf="submitted && f.ocupation.errors">
+                        <p *ngIf="f.ocupation.errors.required">Campo requerido.</p>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Experiencia en años</label>
+                      <select [ngClass]="{'is-invalid': submitted && f.expirience.errors }" class="form-control"
+                        formControlName="expirience">
+                        <option [ngValue]=null>Selecciona experiencia laboral*</option>
+                        <option *ngFor="let anio of aniosExperiencia" [ngValue]="anio.id">{{anio.text}}</option>
+                      </select>
+                      <div class="invalid-feedback" *ngIf="submitted && f.expirience.errors">
+                        <p *ngIf="f.expirience.errors.required">Campo requerido.</p>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Salario al que aspira</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                        </div>
+
+                        <select [ngClass]="{'is-invalid': submitted && f.salary.errors }" class="form-control"
+                          formControlName="salary">
+                          <option [ngValue]=null>Selecciona una opción*</option>
+                          <option *ngFor="let salario of aspiracionSalarial" [ngValue]="salario.id">{{salario.text}}
+                          </option>
+                        </select>
+                        <div class="invalid-feedback" *ngIf="submitted && f.salary.errors">
+                          <p *ngIf="f.salary.errors.required">Campo requerido.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Movilidad laboral (opcional) </label><br />
+                      <input type="checkbox" formControlName='canChange' id="canChange" /><label for="canChange"> Puedo
+                        mudarme a otra ciudad o país</label><br />
+                      <input type="checkbox" formControlName='canTrip' id="canTrip" /><label for="canTrip"> Puedo viajar
+                        a otra ciudad o país</label>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Países en los que puedes trabajar (opcional)</label>
+
+                      <ng-select [items]="paises" [ngClass]="{'is-invalid': submitted && f.country.errors }"
+                        bindLabel="text" bindValue="id" placeholder="selecciona un pais" formControlName="country"
+                        (change)="onCountryChanged($event)" [clearable]="false">
+                      </ng-select>
+
+
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>&nbsp;</label>
+                      <div class="form-control" style="min-height:200px !important;background-color: #fbfbfb; padding: 15px !important;">
+                        <span *ngFor="let pais of paisesTrabajar"
+                          class="badge-curriculum mano">&nbsp;{{ pais | diccionario:paises }}&nbsp;
+                          <i class="fas fa-times" (click)="onRemoveCountry(pais)"></i>
+                        </span>
+
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Área Trabajo</label>
+
+                      <ng-select [items]="areas" [ngClass]="{'is-invalid': submitted && f.area.errors }"
+                        bindLabel="text" bindValue="id" placeholder="selecciona un area trabajo" formControlName="area"
+                        [clearable]="false">
+                      </ng-select>
+
+                      <div class="invalid-feedback" *ngIf="submitted && f.area.errors">
+                        <p *ngIf="f.area.errors.required" class="text-danger">Ingresa tu área de trabajo</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h6 class="mt-3" style="color:#ec1c24">Describe tu perfil</h6>
+
+                  <div class="row ml-1 mr-1">
+                    <div class="col-lg-12 col-sm-12 col-md-12 align-items-stretch"
+                      style="padding-left:0px;padding-right:0px; border: 1px lightgray dashed">
+                      <div class="card bg-light">
+                        <div class="card-body" style="padding:30px;">
+                          <div class="row">
+
+                            <textarea type="text" formControlName="descripcion" id="descripcionPerfilProfesional"
+                              style="height:235px" class="form-control" maxlength="500">
+                            </textarea>
+                            <!-- {{ 500 - data.descripcionPerfilProfesional.length }} characters left</em> -->
+                            <!-- <em>Máximo 500 caractéres. Actual:
+                              {{ f.descripcion ? 500 - f.descripcion.length  : 500 }}
+                            </em> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <h6 class="mb-3" style="color:#ec1c24">Redes Sociales</h6>
+
+                  <div class="mb-5" [sortablejs]="socials"
+                    [sortablejsOptions]="{ animation: 150, ghostClass: 'border' }">
+                    <div class="border-bottom p-4" *ngFor="let social of socials">
+                      <div style="display: inline-block;">
+                        <i class="fas fa-bars mr-3 drag" style="color: #d9d9d9;"></i>
+                      </div>
+                      <div style="display: inline-block;"
+                        [ngClass]="{'circulo1': social.id==1,'circulo2': social.id==2,'circulo3': social.id==3}"
+                        class="text-center">
+                        <i [class]="social.icon" style="font-size: 20px;color: white;"></i>
+                      </div>
+                      <div style="display: inline-block;">
+                        <span class="ml-3">{{ social.name }}</span>
+                      </div>
+                      <div class="right" style="display: inline-block;">
+                        <span *ngIf="social.value != ''">
+                          {{ social.value }}
+                          <i class="xicon fas fa-times ml-3" (click)="deleteSocial(social.id-1)"></i>
+                        </span>
+                        <!-- social.value == '' -->
+                        <button *ngIf="social.value == ''" id="btn{{social.id}}" (click)="toggleSocial(social.id)"
+                          type="button" class="btn-vinculo">
+                          Vinculo
+                        </button>
+                        <div id="form{{social.id}}" style="display: none;" class="text-left">
+                          <input type="text" [formControlName]="social.form" class="input ml-3"
+                            placeholder="Introduce tu url o web">
+                          <span class="Guardar ml-3" (click)="addSocial(social.id-1)">Guardar</span>
+                          <i class="xicon fas fa-times ml-3" (click)="cancellSocial(social.id)"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 text-center mb-5">
+                    <button class="btn btn-next mb-5" type="submit">
+                      Guardar y continuar
+                    </button>
+                  </div>
+                </form>
+                <!-- End Original form -->
+
+
+
+              </div>
+              <div class="tab-pane fade" id="tabEducacion" role="tabpanel"
+                aria-labelledby="custom-content-below-profile-tab">
+                <!--FORMULARIO DE EDUCACION-->
+                <hr>
+                <div class="row mb-5">
+                  <h5 class="mb-4" style="color:#ec1c24; font-size: 14px;">Información educativa</h5>
+                  <div class="scrollbarstyle container mb-2" *ngIf="!muestraFormularioEducacion" style="max-height: 400px; height:100%;overflow-y: auto;border-radius: 6px;
+                      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18);">
+
+                    <!-- <div *ngIf="(infoEducativa.length == 0)" class="alert alert-warning alert-dismissible fade show"
+                        role="alert">
+                        <i class="fas fa-exclamation-triangle"></i> Aún no ha ingresado ningún estudio.
+                      </div> -->
+
+                    <!-- ngFor educación inicio -->
+                    <div class="row d-flex align-items-stretch">
+                      <div *ngFor="let info of infoEducativa"
+                        class="col-lg-12 col-sm-12 col-md-12 d-flex align-items-stretch">
+                        <div class="bg-light border-bottom"
+                          style="width:100%;background-color: #ffff !important;padding: 30px;">
+                          <div>
+                            <div class="row">
+                              <div class="col-9" style="line-height: 0.5 !important;">
+                                <span
+                                  class="studyTitle">{{info.institucionEducativa }}</span><br>
+                                <span class="studyBody">{{info.tituloObtenido}}</span><br>
+                                <span class="studyBody"> {{info.fechaInicio | dateTimeFormat }} -
+                                  <span *ngIf="info.estadoEstudio=='En proceso'">En proceso</span>
+                                  <span
+                                    *ngIf="info.estadoEstudio!='En proceso'">{{info.fechaFin | dateTimeFormat }}</span>
+                                </span><br>
+                              </div>
+                              <div class="col-3" style="padding-left: 13%!important;">
+                                <button class="btn btn-sm btn-outline-warning btn-block btn-study"
+                                  (click)="initializeInfoEducativa(info.idInformacionEducativa)" type="button">
+                                  <i class="fas fa-edit"></i>
+                                  <span>Editar</span>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger btn-block btn-study"
+                                  (click)="deleteInfoEducativa(info.idInformacionEducativa)" type="button">
+                                  <i class="fas fa-trash"></i>
+                                  <span> Eliminar</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <!-- ngFor educación Fin -->
+                    </div>
+                    <!-- educación inicio -->
+                    <!-- educación fin -->
+                  </div>
+                  <div *ngIf="muestraFormularioEducacion || infoEducativa.length == 0">
+                    <form [formGroup]="formStudy" (ngSubmit)="saveInfoEducativa()">
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Institución educativa</label>
+                            <!--
+                              <ng-select [items]="instituciones"
+                              [ngClass]="{'is-invalid': submitted2 && fs.institucionEducativa.errors }" bindLabel="text"
+                              bindValue="id" placeholder="Ingresa el nombre de la institución*"
+                              formControlName="institucionEducativa" [clearable]="false">
+                            </ng-select>
+                            -->
+                            
+
+                            <input [ngClass]="{ 'is-invalid': submitted2 && fs.institucionEducativa.errors }"
+                              formControlName="institucionEducativa" type="text" class="form-control"
+                              placeholder="Ingresa el nombre de la institución*" /> 
+
+                            <div class="invalid-feedback" *ngIf="submitted2 && fs.institucionEducativa.errors">
+                              <p *ngIf="fs.institucionEducativa.errors.required"> Campo requerido.</p>
+                            </div>
+
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Nivel Educativo</label>
+
+
+                            <ng-select [items]="nivelEducativo"
+                              [ngClass]="{'is-invalid': submitted2 && fs.dicNivelEducativo.errors }" bindLabel="text"
+                              bindValue="id" placeholder="Selecciona un nivel educativo"
+                              formControlName="dicNivelEducativo" [clearable]="false">
+                            </ng-select>
+
+
+                            <div class="invalid-feedback" *ngIf="submitted2 && fs.dicNivelEducativo.errors">
+                              <p *ngIf="fs.dicNivelEducativo.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Título</label>
+                            <input type="text" [ngClass]="{ 'is-invalid': submitted2 && fs.tituloObtenido.errors}"
+                              class="form-control" formControlName="tituloObtenido"
+                              placeholder="Ingresa el título que obtuviste*" />
+                            <div class="invalid-feedback" *ngIf="submitted2 && fs.tituloObtenido.errors">
+                              <p *ngIf="fs.tituloObtenido.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Área de estudio</label>
+
+
+                            <ng-select [items]="areas"
+                              [ngClass]="{'is-invalid': submitted2 && fs.dicAreaEstudio.errors }" bindLabel="text"
+                              bindValue="id" placeholder="Selecciona un area de estudio"
+                              formControlName="dicAreaEstudio" [clearable]="false">
+                            </ng-select>
+
+                            <div class="invalid-feedback" *ngIf="submitted2 && fs.dicAreaEstudio.errors">
+                              <p *ngIf="fs.dicAreaEstudio.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Estado</label>
+                            <select formControlName="estadoEstudio"
+                              [ngClass]="{ 'is-invalid': submitted2 && fs.estadoEstudio.errors}" class="form-control">
+                              <option value=''>Seleccione...</option>
+                              <option (ngValue)=1>Finalizado</option>
+                              <option (ngValue)=2>En proceso</option>
+                              <option (ngValue)=3>Aplazado</option>
+                            </select>
+                            <!-- <input id="gender" class="mr-2" type="radio" (ngValue)="1" formControlName="estadoEstudio" name="gender"> <span style="color: #777777;" class="mr-3">Finalizado</span> 
+                              <input id="gender" class="mr-2" type="radio" (ngValue)="2" formControlName="estadoEstudio" name="gender"> <span style="color: #777777;" class="mr-3">En proceso</span> 
+                              <input id="gender" class="mr-2" type="radio" (ngValue)="3" formControlName="estadoEstudio" name="gender"> <span style="color: #777777;" class="mr-3">Aplazado</span>  -->
+
+                            <div class="invalid-feedback" *ngIf="submitted2 && fs.estadoEstudio.errors">
+                              <p *ngIf="fs.estadoEstudio.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>País de estudio</label>
+
+                            <ng-select [items]="paises" bindLabel="text" bindValue="id" placeholder="Selecciona un pais"
+                              formControlName="estudioExtranjero">
+                            </ng-select>
+
+
+                          </div>
+
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Ciudad de estudio</label>
+
+                            <ng-select [items]="ciudades"
+                              [ngClass]="{'is-invalid': submitted2 && fs.dicCiudadEstudio.errors }" bindLabel="text"
+                              bindValue="id" placeholder="Selecciona una ciudad" formControlName="dicCiudadEstudio"
+                              [clearable]="false">
+                            </ng-select>
+
+                            <div class="invalid-feedback" *ngIf="submitted2 && fs.dicCiudadEstudio.errors">
+                              <p *ngIf="fs.dicCiudadEstudio.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Fecha de inicio</label>
+                            <div class="input-group">
+                              <input type="text" bsDatepicker #dp="bsDatepicker"
+                                [ngClass]="{ 'is-invalid': submitted2 && fs.fechaInicio.errors }"
+                                formControlName="fechaInicio" class="form-control" maxlength="10"
+                                [bsConfig]="datePickerConfig" placeholder="Día/Mes/Año" style="border-right: none;" />
+                              <div class="input-group-append" (click)="dp.toggle()">
+                                <span class="input-group-text" style="background-color: #ffff !important;"><i
+                                    class="fas fa-calendar" style="color: #ec1c24"></i></span>
+                              </div>
+                              <div class="invalid-feedback" *ngIf="submitted2 && fs.fechaInicio.errors">
+                                <p *ngIf="fs.fechaInicio.errors.required">Campo requerido.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div *ngIf="fs.estadoEstudio.value == 'Finalizado'"
+                            class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Fecha finalización</label>
+
+                            <div class="input-group">
+                              <input type="text" bsDatepicker #dp="bsDatepicker"
+                                [ngClass]="{ 'is-invalid': submitted2 && fs.fechaFin.errors }"
+                                formControlName="fechaFin" class="form-control" maxlength="10"
+                                [bsConfig]="datePickerConfig" placeholder="Día/Mes/Año" style="border-right: none;" />
+
+                              <div class="input-group-append" (click)="dp.toggle()">
+                                <span class="input-group-text" style="background-color: #ffff !important;"><i
+                                    class="fas fa-calendar" style="color: #ec1c24"></i></span>
+                              </div>
+
+                              <div class="invalid-feedback" *ngIf="submitted2 && fs.fechaFin.errors">
+                                <p *ngIf="fs.fechaFin.errors.required">Campo requerido.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" id="btnCerrarEducativa" class="btn btn-default"
+                          (click)="muestraFormularioEducacion=false" *ngIf="!firstTime">Cerrar</button>
+                        <button type="submit" class="btn btn-lg btn-next mb-5"
+                          style="margin-bottom: 0rem !important;">Guardar</button>
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class=" col-md-12 text-right">
+
+                    <button class="btn btn-next mt-3" *ngIf="infoEducativa.length > 0"
+                      (click)="initializeInfoEducativa(0)">
+                      Agregar otro estudio</button>
+                  </div>
+                </div>
+                <!--FORMULARIO DE EDUCACION END-->
+                <hr>
+                <!--FORMULARIO DE IDIOMA -->
+                <div class="row mb-5">
+                  <h5 class="mb-4" style="color:#ec1c24">Idiomas</h5>
+                  <div class="scrollbarstyle container mb-2" *ngIf="!muestraFormularioIdioma" style="max-height: 400px; height:100%;overflow-y: auto;border-radius: 6px;
+                      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18);">
+
+                    <!-- <div *ngIf="(idiomasSeleccionado.length == 0)"
+                        class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <i class="fas fa-exclamation-triangle"></i> Aún no ha ingresado ningún idioma.
+                      </div> -->
+
+                    <div class="row d-flex align-items-stretch">
+                      <div *ngFor="let idioma of idiomasSeleccionado"
+                        class="col-lg-12 col-sm-12 col-md-12 d-flex align-items-stretch">
+                        <div class="bg-light border-bottom"
+                          style="width:100%;background-color: #ffff !important;padding: 30px;">
+                          <div>
+                            <div class="row">
+                              <div class="col-9" style="line-height: 1.5 !important;">
+                                <span class="studyTitle">{{ idioma.id | diccionario:idiomas }}</span><br>
+                                <span class="text-muted text-sm">
+                                  Nivel
+                                  <span *ngIf="idioma.nivel==1">Básico</span>
+                                  <span *ngIf="idioma.nivel==2">Intermedio</span>
+                                  <span *ngIf="idioma.nivel==3">Avanzado</span>
+                                </span>
+                              </div>
+                              <div class="col-3" style="padding-left: 13%!important;">
+                                <button class="btn btn-sm btn-outline-warning btn-block btn-study"
+                                  (click)="initializeInfoIdioma(idioma.id)" type="button">
+                                  <i class="fas fa-edit"></i>
+                                  <span> Editar</span>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger btn-block btn-study"
+                                  (click)="deleteInfoIdioma(idioma.id)" type="button">
+                                  <i class="fas fa-trash"></i>
+                                  <span> Eliminar</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12" *ngIf="muestraFormularioIdioma || idiomasSeleccionado.length == 0">
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group " style="width:100%;">
+                            <label>Idioma</label>
+                            <ng-select [items]="idiomas" bindLabel="text" bindValue="id"
+                              placeholder="selecciona un idiomas" [clearable]="false" [(ngModel)]="entIdioma.id">
+                            </ng-select>
+
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group ">
+                            <label>Seleccion Nivel</label><br>
+                            <table>
+                              <tr>
+                                <td style="padding-left: 35px;"><input id="rdBasicoNuevo" type="radio" name="optNivel"
+                                    [(ngModel)]="entIdioma.nivel" value="1">
+                                  <label for="rdBasicoNuevo">Basico</label></td>
+                                <td style="padding-left: 35px;"><input id="rdMedioNuevo" type="radio" name="optNivel"
+                                    [(ngModel)]="entIdioma.nivel" value="2">
+                                  <label for="rdMedioNuevo">Medio</label></td>
+                                <td style="padding-left: 35px;"><input id="rdAvanzadoNuevo" type="radio" name="optNivel"
+                                    [(ngModel)]="entIdioma.nivel" value="3">
+                                  <label for="rdAvanzadoNuevo">Avanzado</label></td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="btnCerrarIdioma" class="btn btn-default"
+                        (click)="muestraFormularioIdioma=false" *ngIf="!firstTime">Cerrar</button>
+                      <button type="button" class="btn btn-lg btn-next mb-5" (click)="saveInfoIdioma()"
+                        style="margin-bottom: 0rem !important;">Guardar</button>
+                    </div>
+                  </div>
+                  <div class="col-md-12 text-right">
+                    <button class="btn btn-next mt-3" *ngIf="idiomasSeleccionado.length > 0"
+                      (click)="initializeInfoIdioma(0)">
+                      Agregar otro idioma</button>
+                  </div>
+                </div>
+                <!--FORMULARIO DE IDIOMA END-->
+                <hr>
+                <!--FORMULARIO DE ESTUDIOS COMPLEMENTARIOS-->
+                <div class="row mb-5">
+                  <h5 class="mb-4" style="color:#ec1c24">Estudios Complementarios</h5>
+                  <div class="scrollbarstyle container mb-2" *ngIf="!muestraFormularioComplementario" style="max-height: 400px; height:100%;overflow-y: auto;border-radius: 6px;
+                      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18);">
+
+                    <!-- <div *ngIf="(infoComplementaria.length == 0)"
+                        class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <i class="fas fa-exclamation-triangle"></i> Aún no ha ingresado ningún estudio complementario.
+                      </div> -->
+
+                    <div class="row d-flex align-items-stretch">
+                      <!-- ngFor educación inicio -->
+                      <div *ngFor="let info of infoComplementaria"
+                        class="col-lg-12 col-sm-12 col-md-12 d-flex align-items-stretch">
+                        <div class="bg-light border-bottom"
+                          style="width:100%;background-color: #ffff !important;padding: 30px;">
+                          <div>
+                            <div class="row">
+                              <div class="col-9" style="line-height: 0.5 !important;">
+                                <!-- <h5 class="card-title"><b>{{info.institucionEducativa}}</b></h5>
+                                  <p class="card-text">{{info.dicNivelEducativo|diccionario:nivelEducativo}}</p>
+                                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                                      <li *ngIf="info.estadoEstudio!='Finalizado'" class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar"></i></span>
+                                        {{info.fechaInicio | date: 'dd/MM/yyyy'}}
+                                        - {{ info.estadoEstudio }}</li>
+  
+                                      <li *ngIf="info.estadoEstudio=='Finalizado'" class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar"></i></span>
+                                        {{info.fechaInicio | date: 'dd/MM/yyyy'}}
+                                        - {{info.fechaFin | date: 'dd/MM/yyyy'}}</li>
+                                  </ul> -->
+                                <span class="studyTitle">{{info.institucionEducativa}}</span><br>
+                                <span class="studyBody">{{info.tituloObtenido}}</span><br>
+                                <span class="studyBody"> {{info.fechaInicio | dateTimeFormat }} -
+                                  <span *ngIf="info.estadoEstudio=='En proceso'">En proceso</span>
+                                  <span
+                                    *ngIf="info.estadoEstudio!='En proceso'">{{info.fechaFin | dateTimeFormat }}</span>
+                                </span>
+                              </div>
+                              <div class="col-3" style="padding-left: 13%!important;">
+                                <button class="btn btn-sm btn-outline-warning btn-block btn-study"
+                                  (click)="initializeInfoComplementario(info.idInformacionEducativa)" type="button">
+                                  <i class="fas fa-edit"></i>
+                                  <span> Editar</span>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger btn-block btn-study"
+                                  (click)="deleteInfoComplementaria(info.idInformacionEducativa)" type="button">
+                                  <i class="fas fa-trash"></i>
+                                  <span> Eliminar</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- ngFor educación Fin -->
+                    </div>
+                  </div>
+                  <div *ngIf="muestraFormularioComplementario || infoComplementaria.length == 0">
+                    <form [formGroup]="formComplementary" (ngSubmit)="saveInfoComplementario()">
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Institución educativa</label>
+                            <input type="text" formControlName="institucionEducativa"
+                              [ngClass]="{ 'is-invalid': submitted3 && fc.institucionEducativa.errors}"
+                              class="form-control" placeholder="Ingresa el nombre de la institución*">
+                            <div class="invalid-feedback" *ngIf="submitted3 && fc.institucionEducativa.errors">
+                              <p *ngIf="fc.institucionEducativa.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Tipo de Estudio</label>
+
+                            <ng-select [items]="tipoEstudio"
+                              [ngClass]="{'is-invalid': submitted3 && fc.dicTipoEstudio.errors }" bindLabel="text"
+                              bindValue="id" placeholder="selecciona un tipo de estudio"
+                              formControlName="dicTipoEstudio" [clearable]="false">
+                            </ng-select>
+
+                            <div class="invalid-feedback" *ngIf="submitted3 && fc.dicTipoEstudio.errors">
+                              <p *ngIf="fc.dicTipoEstudio.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Titulo del estudio</label>
+                            <input type="text" placeholder="Ingresa el título que obtuviste*" formControlName="tituloObtenido"
+                              [ngClass]="{ 'is-invalid': submitted3 && fc.tituloObtenido.errors}" class="form-control">
+                            <div class="invalid-feedback" *ngIf="submitted3 && fc.tituloObtenido.errors">
+                              <p *ngIf="fc.tituloObtenido.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <div *ngIf="fc.dicTipoEstudio.value == 1616">
+                              <label>Otro estudio</label>
+                              <input type="text" formControlName="otroEstudio"
+                                [ngClass]="{ 'is-invalid': submitted3 && fc.otroEstudio.errors}" class="form-control">
+                              <div class="invalid-feedback" *ngIf="submitted3 && fc.otroEstudio.errors">
+                                <p *ngIf="fc.otroEstudio.errors.required">Campo requerido.</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Área de curso</label>
+
+
+
+                            <ng-select [items]="areas"
+                              [ngClass]="{'is-invalid': submitted3 && fc.dicAreaEstudio.errors }" bindLabel="text"
+                              bindValue="id" placeholder="Selecciona un area" formControlName="dicAreaEstudio"
+                              [clearable]="false">
+                            </ng-select>
+
+                            <div class="invalid-feedback" *ngIf="submitted3 && fc.dicAreaEstudio.errors">
+                              <p *ngIf="fc.dicAreaEstudio.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Intensidad horaria</label>
+                            <select formControlName="dicIntensidadEstudio"
+                              [ngClass]="{ 'is-invalid': submitted3 && fc.dicIntensidadEstudio.errors}"
+                              class="form-control">
+                              <option [ngValue]=null>Selecciona una intensidad*</option>
+                              <option *ngFor="let intensidad of intensidadHoraria" [ngValue]="intensidad.id">
+                                {{intensidad.text}}</option>
+                            </select>
+                            <div class="invalid-feedback" *ngIf="submitted3 && fc.dicIntensidadEstudio.errors">
+                              <p *ngIf="fc.dicIntensidadEstudio.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Ciudad donde estudiaste</label>
+
+
+                            <ng-select [items]="ciudades"
+                              [ngClass]="{'is-invalid': submitted3 && fc.dicCiudadEstudio.errors }" bindLabel="text"
+                              bindValue="id" placeholder="Selecciona una ciudad" formControlName="dicCiudadEstudio"
+                              [clearable]="false">
+                            </ng-select>
+
+                            <div class="invalid-feedback" *ngIf="submitted3 && fc.dicCiudadEstudio.errors">
+                              <p *ngIf="fc.dicCiudadEstudio.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label >Estado del estudio</label>
+                            <select formControlName="estadoEstudio" 
+                              [ngClass]="{ 'is-invalid': submitted3 && fc.estadoEstudio.errors}" class="form-control" placeholder="Seleccione...">
+                              <option (ngValue)=null>Seleccione...</option>
+                              <option (ngValue)=1>Finalizado</option>
+                              <option (ngValue)=2>En proceso</option>
+                              <option (ngValue)=3>Aplazado</option>
+                            </select>
+                            <div class="invalid-feedback" *ngIf="submitted3 && fc.estadoEstudio.errors">
+                              <p *ngIf="fc.estadoEstudio.errors.required">Campo requerido.</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Estudio Extranjero</label>
+
+                            <ng-select [items]="paises" bindLabel="text" bindValue="id" placeholder="Selecciona un pais"
+                              formControlName="estudioExtranjero">
+                            </ng-select>
+
+
+                          </div>
+
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Fecha de inicio</label>
+
+                            <div class="input-group">
+                              <input type="text" bsDatepicker #dp="bsDatepicker"
+                                [ngClass]="{ 'is-invalid': submitted3 && fs.fechaInicio.errors }"
+                                formControlName="fechaInicio" class="form-control" maxlength="10"
+                                [bsConfig]="datePickerConfig" placeholder="Día/Mes/Año" />
+
+                              <div class="input-group-append" (click)="dp.toggle()">
+                                <span class="input-group-text" style="background-color: #ffff !important;"><i
+                                    class="fas fa-calendar" style="color: #ec1c24"></i></span>
+                              </div>
+
+                              <div class="invalid-feedback" *ngIf="submitted3 && fc.fechaInicio.errors">
+                                <p *ngIf="fc.fechaInicio.errors.required">Campo requerido.</p>
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                          <div *ngIf="fc.estadoEstudio.value == 'Finalizado'"
+                            class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Fecha de finalización</label>
+
+                            <div class="input-group">
+                              <input type="text" bsDatepicker #dp="bsDatepicker"
+                                [ngClass]="{ 'is-invalid': submitted3 && fs.fechaFin.errors }"
+                                formControlName="fechaFin" class="form-control" maxlength="10"
+                                [bsConfig]="datePickerConfig" placeholder="Día/Mes/Año" />
+
+                              <div class="input-group-append" (click)="dp.toggle()">
+                                <span class="input-group-text" style="background-color: #ffff !important;"><i
+                                    class="fas fa-calendar" style="color: #ec1c24"></i></span>
+                              </div>
+
+                              <div class="invalid-feedback" *ngIf="submitted3 && fc.fechaFin.errors">
+                                <p *ngIf="fc.fechaFin.errors.required">Campo requerido.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                            <label>Descripción</label>
+                            <textarea type="text" style="height:100px" class="form-control"
+                              formControlName="descripcionEducacion"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" id="btnCerrarComplementaria" class="btn btn-default"
+                          (click)="muestraFormularioComplementario=false" *ngIf="!firstTime">Cerrar</button>
+                        <button type="submit" class="btn btn-lg btn-next mb-5"
+                          style="margin-bottom: 0rem !important;">Guardar</button>
+                      </div>
+                    </form>
+
+                  </div>
+                  <div class=" col-md-12 text-right">
+                    <button class="btn btn-next mt-3" *ngIf="infoComplementaria.length > 0"
+                      (click)="initializeInfoComplementario(0)">
+                      Agregar otro estudio</button>
+                  </div>
+                </div>
+
+                <div class="col-md-12 text-center mb-5">
+                  <button class="btn btn-next mb-5" (click)="pasoEducacionlaboral()">
+                    Guardar y continuar
+                  </button>
+                </div>
+
+                <!--FORMULARIO DE ESTUDIOS COMPLEMENTARIOS END-->
+              </div>
+
+              <div class="tab-pane fade" id="tabTrabajos" role="tabpanel"
+                aria-labelledby="custom-content-below-messages-tab">
+                <!--FORMULARIO DE LABORAL-->
+                <hr>
+                <div class="row mb-5">
+                  <h5 class="mb-4" style="color:#ec1c24; font-size: 14px;">Información de experiencia Laboral</h5>
+                  <div class="scrollbarstyle container mb-2" *ngIf="!muestraFormularioExperiencia"
+                    style="max-height: 400px; height:100%;overflow-y: auto;">
+
+                    <!-- <div *ngIf="(infoLaboral.length == 0)" class="alert alert-warning alert-dismissible fade show"
+                        role="alert">
+                        <i class="fas fa-exclamation-triangle"></i> Aún no ha ingresado ninguna experiencia laboral.
+                      </div> -->
+
+                    <!-- ngFor Laboral Inicio -->
+                    <div class="row d-flex align-items-stretch">
+                      <div class="col-lg-12 col-sm-12 col-md-12 d-flex align-items-stretch">
+                        <div class="bg-light" style="width:100%">
+                          <div class="">
+                            <div class="row">
+                              <div class="col-12 p-5">
+                                <div class="row">
+                                  <div class="col-xl-5 col-lg-6 col-xs-12" *ngFor="let laboral of infoLaboral">
+                                    <div style="max-width: 330px;
+                                        height: 154px;
+                                        border-radius: 6px;
+                                        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18);
+                                        background-color: #ffffff;
+                                        padding: 25px;
+                                        margin-top: 20px;
+                                      ">
+                                      <span class="studyTitle"> {{laboral.empresa}} </span><br>
+                                      <span class="studyBody">{{laboral.cargo}}</span><br>
+                                      <span class="studyBody"
+                                        *ngIf="laboral.trabajoActualmente=='S'">{{laboral.fechaIngreso | dateTimeFormat}}</span><br>
+                                      <span class="studyBody"
+                                        *ngIf="laboral.trabajoActualmente=='N'">{{laboral.fechaIngreso | dateTimeFormat}}
+                                        - {{laboral.fechaSalida | dateTimeFormat}}</span>
+                                      <br>
+                                      <button class="btn btn-sm btn-outline-danger btn-study  mb-5"
+                                        style="display: inline-block;"
+                                        (click)="deleteInfoLaboral(laboral.idExperienciaLaboral)" type="button">
+                                        <i class="fas fa-edit"></i>
+                                        <span>Eliminar</span>
+                                      </button>
+                                      <button class="btn btn-sm btn-outline-warning btn-study ml-3 mb-5"
+                                        style="display: inline-block;"
+                                        (click)="initializeInfoLaboral(laboral.idExperienciaLaboral)" type="button">
+                                        <i class="fas fa-edit"></i>
+                                        <span>Editar</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <!--ngFor Laboral Fin-->
+                    </div>
+                  </div>
+
+                  <div>
+                    <form [formGroup]="formLabor" (ngSubmit)="saveInfoLaboral()"
+                      *ngIf="muestraFormularioExperiencia || infoLaboral.length == 0">
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                              <label>Empresa</label>
+                              <input type="text" formControlName="empresa"
+                                [ngClass]="{'is-invalid': submitted4 && fl.empresa.errors}" class="form-control">
+                              <div class="invalid-feedback" *ngIf="submitted4 && fl.empresa.errors">
+                                <p *ngIf="fl.empresa.errors">Campo requerido</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                              <label>Cargo</label>
+                              <input type="text" formControlName="cargo"
+                                [ngClass]="{'is-invalid': submitted4 && fl.cargo.errors}" class="form-control">
+                              <div class="invalid-feedback" *ngIf="submitted4 && fl.cargo.errors">
+                                <p *ngIf="fl.cargo.errors">Campo requerido</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                              <label>Funciones y logros</label>
+                              <textarea type="text" formControlName="funcioneslogros"
+                                [ngClass]="{'is-invalid': submitted4 && fl.funcioneslogros.errors}" style="height:235px"
+                                class="form-control" maxlength="500"></textarea>
+                              <div class="invalid-feedback" *ngIf="submitted4 && fl.funcioneslogros.errors">
+                                <p *ngIf="fl.funcioneslogros.errors">Campo requerido</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="col-lg-6 col-md-12 col-sm-12" style="display: inline-block;">
+                              <div class="form-group">
+                                <label>Fecha de inicio</label>
+
+                                <div class="input-group">
+                                  <input type="text" bsDatepicker #dp="bsDatepicker"
+                                    [ngClass]="{ 'is-invalid': submitted4 && fl.fechaIngreso.errors }"
+                                    formControlName="fechaIngreso" class="form-control" maxlength="10"
+                                    [bsConfig]="datePickerConfig" placeholder="Día/Mes/Año" />
+
+                                  <div class="input-group-append" (click)="dp.toggle()">
+                                    <span class="input-group-text" style="background-color: #ffff !important;"><i
+                                        class="fas fa-calendar" style="color: #ec1c24"></i></span>
+                                  </div>
+
+                                  <div class="invalid-feedback" *ngIf="submitted4 && fl.fechaIngreso.errors">
+                                    <p *ngIf="fl.fechaIngreso.errors">Campo requerido</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div *ngIf="!fl.currentJob.value" class="col-lg-6 col-md-12 col-sm-12" style="display: inline-block;">
+                              <div class="form-group">
+                                <label>Fecha de finalización</label>
+
+                                <div class="input-group">
+                                  <input type="text" bsDatepicker #dp="bsDatepicker"
+                                    [ngClass]="{ 'is-invalid': submitted4 && fl.fechaSalida.errors }"
+                                    formControlName="fechaSalida" class="form-control" maxlength="10"
+                                    [bsConfig]="datePickerConfig" placeholder="Día/Mes/Año" />
+
+                                  <div class="input-group-append" (click)="dp.toggle()">
+                                    <span class="input-group-text" style="background-color: #ffff !important;"><i
+                                        class="fas fa-calendar" style="color: #ec1c24"></i></span>
+                                  </div>
+
+                                  <div class="invalid-feedback" *ngIf="submitted4 && fl.fechaSalida.errors">
+                                    <p *ngIf="fl.fechaSalida.errors">Campo requerido</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                              <input type="checkbox" formControlName="currentJob" id="chkTA">
+                              <label for="chkTA">Trabajo actualmente aquí</label>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" id="btnCerrarExperiencia" class="btn btn-default"
+                          (click)="muestraFormularioExperiencia=false" *ngIf="!firstTime2">Cerrar</button>
+                        <button type="submit" class="btn btn-lg btn-next mb-5"
+                          style="margin-bottom: 0rem !important;">Guardar</button>
+                      </div>
+                    </form>
+
+                  </div>
+
+                  <div class=" col-md-12 text-right">
+                    <button class="btn btn-next mt-3" *ngIf="infoLaboral.length > 0" (click)="initializeInfoLaboral(0)">
+                      Agregar experiencia Laboral</button>
+                  </div>
+                </div>
+
+                <hr>
+                <!--FORMULARIO DE ESTUDIOS COMPLEMENTARIOS WUEAS-->
+
+
+                <!-- <div class="row mb-5"> -->
+                <!-- <h5 class="mb-2" style="color:#ec1c24">Habilidades Laborales</h5>  -->
+                <div class="row">
+
+
+                  <div class="form-group col-md-6">
+                    <h5 class="mb-2" style="color:#ec1c24; font-size: 14px;">Habilidades y aptitudes</h5>
+
+                    <ng-select [items]="habilidades" bindLabel="text" bindValue="id"
+                      placeholder="selecciona las habilidades" (change)="onHabilityChanged($event)" [(ngModel)]="hab"
+                      [clearable]="false">
+                    </ng-select>
+
+
+                  </div>
+
+                  <div class="form-group col-md-12">
+                    <label>&nbsp;</label>
+                    <div class="form-control" style="height:180px !important; background-color: #fbfbfb; padding: 25px ">
+                      <span *ngFor="let habilidad of habilidadesTrabajar"
+                        class="badge-curriculum mano">{{ habilidad | diccionario:habilidades }}
+                        <i class="fas fa-times" (click)="onRemoveHability(habilidad)"></i></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 text-center mb-5 mt-2">
+                  <button class="btn btn-next mb-5" (click)="pasoLaboralDiseno()">
+                    Guardar y continuar
+                  </button>
+                </div>
+
+
+              </div>
+              <div class="tab-pane fade" id="tabDiseno" role="tabpanel"
+                aria-labelledby="custom-content-below-settings-tab">
+                <div class="dropdown-divider"></div>
+                <p class="mb-5" style="color:#ec1c24" *ngIf="!created">Personalización hoja de vida</p>
+                <p *ngIf="!created" style="margin-left: -10px;">1. Selecciona un estilo de plantilla</p>
+                <div class="row">
+                  <div class="col-1"></div>
+                  <div class="col-10" *ngIf="created">
+                    <div class="row mb-5">
+                      <div class="col-md-12">
+                        <div class="alert alert-success mt-4" role="alert">
+                          <i class="fas fa-check"></i> Has creado tu hoja de vida con éxito!.
+                        </div>
+                        <p class="mt-4">Agenda tu cita con un coach profesional que te ayudará a revisar el contenido de
+                          la hoja de
+                          vida que acabas de crear, o descárgala y tendrás tu hoja de vida digital en PDF para imprimir
+                          o empezar a aplicar a nuevas vacantes laborales.</p>
+                      </div>
+                      <div class="col-md-12 text-center mt-4">
+                        <button type="button" (click)="showSchedule()" class="btn btn-next mr-2">
+                          AGENDAR REVISIÓN
+                        </button>
+                        <button *ngIf="!pdf" type="button" class="btn-download ml-2 disabled" disabled>
+                          DESCARGAR HOJA DE VIDA
+                        </button>
+                        <button *ngIf="pdf" type="button" class="btn-download ml-2" data-toggle="modal"
+                          data-target="#myModal">
+                          DESCARGAR HOJA DE VIDA
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-10" *ngIf="!created">
+
+                    <div class="card bg-light mb-5 mt-5 " id="hv1">
+                      <div class="card-body text-center">
+                        <div class="swiper-container">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide" *ngFor="let pln of plantillas">
+                              <iframe id="{{'planFrame'+pln.idPlantilla}}"></iframe>
+                            </div>
+                          </div>
+                          <!-- Add Pagination -->
+                          <div class="swiper-pagination" style="color:#ec1c24 !important"></div>
+                          <!-- Add Arrows -->
+                          <div class="d-none d-lg-block swiper-button-next" style="color:#ec1c24" (click)="sigSlide()"></div>
+                            <div class="d-none d-lg-block swiper-button-prev" style="color:#ec1c24" (click)="prevSlide()"></div>
+                        </div>
+                        <button class="btnMain mt-5" (click)="seleccionarPlantilla()">Seleccionar plantilla</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-1"></div>
+                </div>
+                <div *ngIf="idPlantillaAplicada>0 && !created" class="row">
+                  <p class="ml-2">2. Selecciona el color de plantilla</p>
+                  <!-- style="height: 200px;width: 200px;background-color: black;" -->
+                  <div class="col-lg-11 col-sm-12" style="margin: auto;width:100%;">
+                    <div class="card bg-light mb-5 mt-5" id="hv2">
+                      <div class="row">
+                        <div class="col-lg-4 col-md-5 ">
+                          <div class="nav flex-column nav-pills pillColor" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link nav-link-personalizacion tabColor" id="primerTabColor"
+                              [ngClass]="{'active': colorPlantilla==col.colorHex}"
+                              (click)="seleccionarTipoTexto(tipoTextoPlantilla,col.colorHex,newSwiper.activeIndex)"
+                              data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+                              aria-selected="true" *ngFor="let col of jsonColores">
+                              <div style="display: block;" class="colorsito"
+                                [ngStyle]="{'background': 'linear-gradient(to right bottom, ' + col.colorBBDD + ' 50%, #252932 50%)'}">
+                              </div><span style="display: block;">{{col.nombreColor}}</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 ">
+                          <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane show active text-center" id="v-pills-home" role="tabpanel"
+                              aria-labelledby="v-pills-home-tab">
+                              <iframe id="frameColorPlantilla"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1"></div>
+                  </div>
+                </div>
+
+                <div *ngIf="idPlantillaAplicada>0 && !created" class="row">
+                  <p class="ml-2">3. Selecciona una tipografía para la plantilla</p>
+                  <!-- style="height: 200px;width: 200px;background-color: black;" -->
+                  <div class=" col-lg-11 col-sm-12" style="margin: auto;width:100%;">
+                    <div class="card bg-light mb-5 mt-5" id="hv2">
+                      <div class="row">
+                        <div class="col-3">
+                          <div class="nav flex-column nav-pills pillColor" id="v-pills-tab" role="tablist"
+                            aria-orientation="vertical">
+                            <a class="nav-link-personalizacion nav-link tabTipoTexto"
+                              [ngClass]="{'active': tipoTextoPlantilla==tp.tipoTextoStyle}" id="primerTabTexto"
+                              (click)="seleccionarTipoTexto(tp.tipoTextoStyle,colorPlantilla,newSwiper.activeIndex)"
+                              data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+                              aria-selected="true" *ngFor="let tp of jsonTextoTipos">
+                              <span class="ml-5" [ngStyle]="{'font-family': tp.tipoTextoStyle }">{{tp.nombreTipoTexto}}
+                              </span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="col-9">
+                          <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane show active text-center" id="v-pills-home" role="tabpanel"
+                              aria-labelledby="v-pills-home-tab">
+                              <iframe id="frameTipoTexto"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1"></div>
+                  </div>
+                </div>
+                <div class="row" *ngIf="idPlantillaAplicada>0">
+                  <div class="col-12 text-center" *ngIf="!created">
+                    <button (click)="finalizarDatosCurriculum()" type="button" class="btn btn-next">
+                      Guardar mi hoja de vida
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <iframe [src]="pdf" frameborder="0" width="100%" height="600px"></iframe>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" (click)="descargarPdf()">Descargar</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Informacion básica -->
+          </div>
+        </div>
+        <!-- Llamar agendamiento!.. -->
+        <div *ngIf="show" class="card" style="border: solid 1px #d9d9d9 !important;">
+          <div class="card-body" style="padding:6%">
+            <h2 class="text-secondary mb-5">Crea tu hoja de vida.</h2>
+            <p class="mb-5">Para prestarte un servicio adecuado por favor responde las siguientes preguntas:</p>
+            <app-scheduling typeSchedule="2023" module="HojaVida"></app-scheduling>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-0"></div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,78 @@
+<div>
+    <div style="width:100%;height:300px;
+            background-color: #068468;;position:absolute;margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span [routerLink]="['/networking']" routerLinkActive="router-link-active"  class="crumbModulo">Networking > </span>
+                <span [routerLink]="['/networking-servicio']" class="crumbModulo">Servicio > </span>
+                <span [routerLink]="['/networking-eventos']" class="crumbModulo">Eventos > </span>
+                <span [routerLink]="['/networking-detalle-evento']" class="crumbModulo"><b>Detalle evento</b></span>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+            <h1 class="tituloModulo">Networking</h1>
+        </div>
+    </div>
+    <!-- Page Content  -->
+    <div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+        <section class="col-8 mt-5 offset-2 accordionPerfil mb-5 sectionVTS">
+            <section class="cardsPerfil pb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;">
+                    <div class="card-body pb-5" style="padding:6%">
+
+                        <div class="row">
+                        <div class="container">
+                            <a [routerLink]="['/networking-eventos']" routerLinkActive="router-link-active"  class="btn-volver mb-2 manito" role="button"><i
+                                    class="fas fa-chevron-circle-left"></i> Volver</a>
+                        </div>
+                    </div> 
+                        <h1 class="h1TituloModulo textColorGray">Crea tu red de contactos</h1>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 separar">
+
+                                <div class="redondeado4 col p-2 m-1 bordegris caja2">
+                                    <img [src]="evento.rutaImagen" class="w-100" alt="" /> </div>
+                            </div>
+
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 separar">
+                                <div class="redondeado4 col m-1 bordegris ">
+                                    <div class="fecha1 cajaaltura">
+                                        <h6 class="iconfecha textColorRed"><strong>Fecha</strong></h6>
+                                        <p>{{evento.fechaEvento}}<br>A partir de las {{evento.horaEvento}}</p>
+                                        <br>
+                                        <h6 class="iconlugar textColorRed">Lugar</h6>
+                                        <p>{{evento.lugarEvento}}<p>
+                                    </div>
+                                    <div class="w-100">
+                                        <button [disabled]="evento.inscrito" class="btn btn-secondary azulosc w-100"
+                                            data-toggle="modal"
+                                            (click)="inscribirEvento(evento.idEvento)">{{evento.inscrito ? 'Ya estas inscrito en este Evento' : 'Inscribirme a este evento'}}</button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col parrafo mt-5">
+                                <h3 class="textColorRed"><strong>Descripción</strong></h3>
+                                <br>
+                                <p>{{evento.descripcionEvento}}</p>
+
+                                <h3 class="textColorRed">Conferencista</h3>
+                                <br>
+                                <p>
+                                    <strong>{{evento.nombreConferencista}}</strong>
+                                    <br>
+                                    <br> {{evento.conferencista}}
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

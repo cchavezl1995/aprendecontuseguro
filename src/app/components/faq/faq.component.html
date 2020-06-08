@@ -1,0 +1,113 @@
+<div class="container-fluid bg-gradient opSans">
+        <div class="container">
+          <h1 class="text-center w-100 mt-5 mb-5 dtlargo font-weight-bold">Déjanos darte una mano</h1>
+          <!--search-->
+          <div class="row text-center">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+              <div class="input-group mb-3 txtPregunta">
+                  <input type="text" [(ngModel)]="pregunta" (focus)="muestraListado()" (focusout)="ocultaListado()" list="dtPreguntas" class="form-control fa-fonticons lupa pl-5 " style="border: none !important" placeholder="Haz una pregunta..." aria-label="Haz una pregunta..." aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <button type="submit" (click)="buscarPregunta(0); AddLog('preguntas-frecuentes','Ingresó una pregunta en Haz una pregunta')" class="btn btn-primary float-right rojo pl-5 pr-5">Buscar</button>
+                  </div>
+                </div>
+                <div class="listaPregunta" *ngIf="listaPregunta">
+                  <ul class="ulPregunta">
+                      <li class="liPregunta" (click)="colocarPregunta(item.Pregunta)" *ngFor="let item of jsonPreguntas">{{item.Pregunta}}</li>
+                  </ul>
+                </div>
+          </div>
+          </div>
+          <p class="mt-4 mb-4 text-center text-secondary ">O escoge una categoría para encontrar rápidamente la ayuda que necesitas.</p>
+          </div>  
+          
+           <!--cajas-->
+           <div class="row p-5">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-10 col-sm-12">
+                  <div class="row">
+                      <div class="col-lg-3">
+                          <div class="row p-2">
+                              <div (click)="buscarPregunta(1);AddLog('preguntas-frecuentes','Seleccionó Registro en preguntas frecuentes')" class="cajaCategoria pt-5 pl-2 pr-2 text-center col-lg"> <img class="card mx-auto" style="margin-top:-20px;margin-bottom:20px" src="/assets/img/group-22.png" alt="Card image cap">
+                                  <h4 style="color: #696969;" class="card-title">Registro</h4>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3">
+                          <div class="row p-2">
+                              <div (click)="buscarPregunta(2); ;AddLog('preguntas-frecuentes','Seleccionó Inicio de sesión en preguntas frecuentes')" class="cajaCategoria pt-5 pl-2 pr-2 text-center col-lg"> <img class="card mx-auto" style="margin-top:-20px;margin-bottom:20px" src="/assets/img/group-24.png" alt="Card image cap">
+                                  <h4 style="color: #696969;" class="card-title">Inicio de sesión</h4>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3">
+                          <div class="row p-2">
+                              <div (click)="buscarPregunta(3)" class="cajaCategoria pt-5 pl-2 pr-2 text-center col-lg"> <img class="card mx-auto" style="margin-top:-20px;margin-bottom:20px" src="/assets/img/group-22.png" alt="Card image cap">
+                                  <h4 style="color: #696969;" class="card-title">Uso de los servicios</h4>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3">
+                          <div class="row p-2">
+                              <div (click)="buscarPregunta(4)" class="cajaCategoria pt-5 pl-2 pr-2 text-center col-lg"> <img class="card mx-auto" style="margin-top:-20px;margin-bottom:20px" src="/assets/img/group-24.png" alt="Card image cap">
+                                  <h4 style="color: #696969;" class="card-title">Adquirir un nuevo producto</h4>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!--<div class="row col-2"> </div>-->
+              </div>
+          </div>
+        <div class="container">
+          <div class="row mt-5">
+            <div class=" col-lg-2"></div>
+            <div class="col-lg-8 col-md-12">
+              <h1 class="mb-4 text-center dtlargo font-weight-bold">Preguntas frecuentes</h1>
+              <!-- <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p> -->
+              <br>
+              <br>
+              <div id="accordion">
+                <!-- <div *ngFor="let item of jsonPreguntasFiltro">
+                  <div class="card mb-2">
+                    <div class="card-header" id="headingOne"></div></div>
+                    <div class="card">
+                      <div class="card-header pl-0 pr-0" id="headingOne">
+                        <h5 class="mb-0 text-secondary negrilla"> {{item.Pregunta}}
+                          <button class="btn btn-link oval" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
+                              <span class="abrirMas">+</span>
+                              <span class="abrirMenos">-</span> 
+                            </button>
+                        </h5>
+                      </div>
+                      <div [id]="'collapse'+i" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body pl-0 pr-0 pPregunta">
+                          {{item.Respuesta}}
+                        </div>
+                      </div>
+                  </div>
+                </div> -->
+                <div *ngFor="let item of jsonPreguntasFiltro; index as i">
+                    <div class="card mb-2">
+                      <div class="card-header" id="headingOne"></div></div>
+                      <div class="card">
+                        <div class="card-header pl-0 pr-0 respuestaClase" id="headingOne">
+                          <h5 class="mb-0 divTituloPregunta text-secondary negrilla"> {{item.Pregunta}}  </h5>
+                            <button [id]="'btnCollapse'+i" class="btn btn-link oval" [ngClass]="{'collapsed': i>0}" data-toggle="collapse" [attr.data-target]="'#collapse'+i" [attr.aria-controls]="'collapse'+i" [attr.aria-expanded]="{'true': i==0,'false': i>0}"> 
+                                <span class="abrirMas"><i class="fas fa-chevron-down"></i></span>
+                                <span class="abrirMenos"><i class="fas fa-chevron-up"></i></span> 
+                              </button>
+                        </div>
+                        <div [id]="'collapse'+i" [ngClass]="{'collapse show': i==0,'collapse': i>0}" aria-labelledby="headingOne" data-parent="#accordion">
+                          <div class="card-body pl-0 pr-0 pPregunta" [outerHTML]="item.Respuesta">
+                            
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class=" col-1"></div>
+          </div>
+          <br>
+        </div>
+        <app-contact-help></app-contact-help>

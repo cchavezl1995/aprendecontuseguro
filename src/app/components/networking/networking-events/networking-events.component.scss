@@ -1,0 +1,36 @@
+.titleInserColapVTS {
+    color: #ec1c24;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.resumenLittleVTS{
+    border-radius: 4px;
+    border: solid 1px #cacaca !important;
+    background-color: #ffffff;
+}
+.divImagenEvento{
+    width: 100% !important;
+    height: 226px !important;
+    background-color: #f2f5f8;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.btnRegistroEvento{
+    width: 90%;
+    height: 50px;
+    border-radius: 25px;
+    border: solid 1px #ec1c24;
+    background-color: #ffffff;
+    color: #ec1c24;
+}
+.btnRegistroEvento:hover{
+    border-radius: 25px;
+    border: solid 1px #ec1c24;
+    background-color: #ec1c24;
+    color: #ffffff;
+}
+.plusEventos {
+    float: right;
+    margin-top: 164px;
+}

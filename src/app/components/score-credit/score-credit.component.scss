@@ -1,0 +1,138 @@
+.cardScore{
+    min-height: 417px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px 0 rgba(3, 3, 3, 0.34);
+    background-color: #ffffff;
+}
+.cardScoreDetalle{
+    border-radius: 4px;
+    box-shadow: 0 2px 6px 0 rgba(3, 3, 3, 0.34);
+    background-color: #ffffff;
+}
+.botonera{
+    margin:20px;
+    border: 1px lightgray solid;
+}
+.botonera > li {
+    cursor: pointer;
+}
+.botonera > li > i {
+    float: right;margin-right: 1rem;margin-top: 0.3rem
+}
+.botonera > li:first-child {
+    border-top: 0px 
+}
+.botonera > li:hover{
+    background-color: lightgray;
+}
+.cabeceraScore{
+    border: solid 1px #d5d5d5;
+}
+.tituloScoreCard{
+    // font-family: OpenSans;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.88;
+    letter-spacing: normal;
+    color: #696969;
+    text-align: left;
+    font-family: sans-serif;
+}
+.barraAtras{
+    background-color: #f2f2f2;
+    position: absolute;
+    width:100%;
+    height: 17px;
+    z-index: 1;  
+    border-radius: 9.5px;
+}
+.barraVerde{
+    height: 17px;
+    position: absolute;
+    font-family: Helvetica;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.82;
+    letter-spacing: normal;
+    color: #5e5e5e;
+    background-color: #c5e47a;
+    z-index: 2;  
+    border-radius: 9.5px;
+}
+
+.barraAmarilla{
+    height: 17px;
+    position: absolute;
+    font-family: Helvetica;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.82;
+    letter-spacing: normal;
+    color: #5e5e5e;
+    background-color: #ffd200;
+    z-index: 2;  
+    border-radius: 9.5px;
+}
+
+.barraRoja{
+    height: 17px;
+    position: absolute;
+    font-family: Helvetica;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.82;
+    letter-spacing: normal;
+    color: white;
+    background-color: #c92d2d;
+    z-index: 2;  
+    border-radius: 9.5px;
+}
+.tituloDetalle{
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.88;
+    letter-spacing: normal;
+    color: #ec1c24;
+}
+
+.btnTop2 {
+    border-color: #ec1c24 2px solid;
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    background-color: #ec1c24;
+    color: white;
+    padding: 10px 15px;
+    width: 256px;
+  }
+
+// $des_eco6_backColor: linear-gradient(90deg, #068468 50%,  #84d8c6 50%);
+$des_eco6_backColor: #068468;
+
+.imgMovil{
+    background-image: url("/../../../assets/img/fraude2/score/score-woman.png") !important;    
+    background-size: 270px;
+    background-color: $des_eco6_backColor;
+    background-position: center bottom 0% !important;
+    background-repeat: no-repeat;
+}
+
+.red {
+    color: #ec1c24;
+}
+
+#chartdiv {
+    width: 100%;
+    height: 500px;
+}

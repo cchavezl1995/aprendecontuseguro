@@ -1,0 +1,79 @@
+
+  .outer {
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px !important; /* any size */
+    max-height: 150px !important; /* any size */
+    background-size: 150px;
+    margin: auto;
+    background-color: #6eafd4;
+    border-radius: 100%;
+    position: relative;
+    } 
+
+.btnTop2 {
+  border-color: #fff 2px solid;
+  border: 0px;
+  border-radius: 50px;
+  font-size: px;
+  background-color: #fff;
+  color: #fb6330;
+  padding: 10px 15px;
+  width: 256px;
+}
+
+$des_eco1_backColor: linear-gradient(90deg, #fb6330 100%,  #feba89 50%);
+
+.imgMovil{
+  background-image: url("/../../../assets/img/itt2/branding/branding.png"),$des_eco1_backColor !important;
+  background-size: 350px, 100%;
+  background-position: center bottom 0%;
+  background-repeat: no-repeat;
+}
+.social {
+  position: absolute;
+  left: -75px; 
+  top: 42px;
+}
+.social-cont {
+  position: relative;
+}
+@media (min-width: 845px) {
+  .social {
+    left: 30px;
+    z-index: 999;
+  }
+}
+ 
+  .social ul {
+    list-style: none;
+  }
+ 
+  .social ul li a {
+    border-radius: 50%;
+    display: inline-block;
+    color:gray;
+    background: #fff;
+    padding: 15px 15px;
+    text-decoration: none;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease; 
+  }
+
+  .social ul li .icon-facebook:hover {background:#3b5998;color:white;} 
+  .social ul li .icon-twitter:hover {background: #00abf0;color:white;}
+  .social ul li .icon-linkedin:hover {background: #007bb5;color:white;}
+
+  .card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(255, 255, 255);
+    border-top: 0 solid rgba(0, 0, 0, 0.125);
+  }
+  .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+.icon-facebook {
+  width: 100%;
+  text-align: center;
+}

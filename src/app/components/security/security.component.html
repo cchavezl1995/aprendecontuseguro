@@ -1,0 +1,170 @@
+<div>
+    <div class="d-block d-xl-none d-lg-none imgMovil" style="width:100%;height:600px;
+            margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span routerLink="/seguridad-informatica" class="crumbModulo"><b>Seguridad informática</b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">¡Navega tranquilo! Conoce cómo proteger
+            tu información en la red </h1>
+    </div>
+    <div class="d-none d-lg-block" style="width:100%;height:499px;
+        background-image: url('assets/img/fraude2/security/security-man.png'), linear-gradient(90deg, #333333 50%,  #4d4d4d 50%);
+        background-position: right 350px bottom, right bottom;
+        background-repeat: no-repeat,no-repeat;
+        margin-top: -39px;
+        background-size: auto, contain;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span routerLink="/seguridad-informatica" class="crumbModulo"><b>Seguridad informática </b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">¡Navega tranquilo! <br>
+            Conoce cómo proteger <br>
+            tu información en la red </h1>
+        <button *ngIf="login.isActive()" class="btnBlack" style="margin-top: 55px; margin-left:20%;"
+            routerLink="/seguridad-informatica-servicio">
+            Comenzar asesoría
+        </button>
+        <button *ngIf="!login.isActive()" class="btnBlack" style="margin-top: 55px; margin-left:20%;"
+            (click)="login.goLogin()">QUIERO UNIRME
+        </button>
+    </div>
+    <div class="container">
+        <div class="row m-4">
+            <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <h2 class="font-weight-bold text-secondary text-left mt-5 mb-5">
+                            Refuerza tu seguridad informática </h2>
+                        <p> Evita que tus datos e información valiosa, caigan en manos de delincuentes y personas
+                            inescrupulosas y aprende blindar tu información.</p>
+
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" width="640" height="360"
+                        src="https://player.vimeo.com/video/385395698" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+        <div class="row m-4">
+            <div class="col-lg-2 col-md-1 col-sm-0"></div>
+            <div class="col-lg-8 col-md-10 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <p>¿Cuántos datos expones día a día en tu vida digital? La seguridad informática es parte
+                            esencial de tus actividades. Asegúrala ahora con esta herramienta de tu ecosistema
+                            Scotiabank Cardif </p>
+
+                        <p> Con tu seguro Tarjeta Protegida podrás tener a un solo clic una consultoría especializada
+                            para atender y/o resolver casos de seguridad informática; tales como suplantación, robo de
+                            información, fraudes en la red, entre otros. </p>
+
+                        <p> Aprende cómo mejorar tu seguridad digital por medio de herramientas educativas que te ofrece
+                            tu ecosistema ScotiaBank Cardif, a través de Coursera, la mejor plataforma del mundo para
+                            educación online. Las mejores universidades del mundo te formarán como experto en seguridad
+                            informática.</p>
+
+                        <p> Mantente alerta en tu entorno digital. Los delincuentes informáticos permanecen atentos a
+                            cualquier error que cometes en tu vida digital. A lo largo de nuestra actividad en línea,
+                            dejamos un rastro.
+                            No permitas que vulneren tu información y datos de acceso, como claves, etc. Conoce como
+                            optimizar tu seguridad informática por medio de los servicios de tu ecosistema Scotiabank
+                            Cardif.</p>
+                        <!-- <div style="width:100%;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;"
+                            class="pt-4 mt-5 mb-5">
+                            <table border="0" class="tablaHomePasos mb-5">
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">1</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Diligencia tus datos</p>
+                                        <p>personales, información académica y experiencia laboral</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">2</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Selecciona la plantilla</p>
+                                        <p>que deseas y personalízala</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">3</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Agenda cita con un experto</p>
+                                        <p>en selección para sacar el mayor provecho a tu perfil resaltando tus
+                                            habilidades y aptitudes
+                                            <br>Podrás descargar tu hoja de vida y modificar o adicionar información
+                                            cuando desees.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> -->
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-md-12 text-center">
+                        <p>Conoce cómo administrar tu futuro financiero ahora</p>
+                    </div>
+                    <div class="col-md-12 text-center mt-3 mb-5">
+                        <button *ngIf="!login.isActive()" class="btnMain" (click)="login.goLogin()">QUIERO
+                            UNIRME</button>
+                        <button *ngIf="login.isActive()" class="btnMain"
+                            routerLink="/seguridad-informatica-servicio">Comenzar
+                            asesoría </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-interest-material tipoMateriales="fr_legal"></app-interest-material>
+    <div class="container d-block d-xl-none d-lg-none quieroUnirmeMovile" (click)="login.goLogin()"
+        *ngIf="!login.isActive()">
+        <p><i class="icon-Login iconSize"></i>&nbsp;&nbsp;&nbsp;Quiero unirme</p>
+    </div>
+</div>

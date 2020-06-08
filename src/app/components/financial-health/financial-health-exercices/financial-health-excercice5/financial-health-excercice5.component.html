@@ -1,0 +1,269 @@
+<div style="width:100%;height:300px;
+background-color: #009dd6;
+position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/salud-financiera" class="crumbModulo">Salud financiera > </span>
+            <span routerLink="/salud-financiera-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <h1 class="tituloModulo pad-tit">Salud Financiera</h1>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+<div class="row">
+    <div class="container mb-3">
+        <a routerLink="/salud-financiera-ejercicios" class="btn-volver manito Volver" role="button" style="color: #008ACC;"><i
+                class="fas fa-chevron-circle-left"></i> Volver</a>
+      </div>
+
+    <p class="text-center col-lg-8 offset-lg-2 mt-3 mb-4 font-weight-bold">Mide el nivel de respaldo
+        vía
+        seguros que tiene la familia o el individuo
+        ante la muerte incapacidad permanente o enfermedad grave que impida la generación de
+        ingresos.
+    </p>
+    <div class="col-lg-8 offset-lg-2 offset-md-0 col-md-12">
+        <div class="form-group">
+            <label>
+                Si llegaras a fallecer o quedar totalmente impedido para generar ingresos
+                ¿Tienes un plan de respaldo para tu familia?
+            </label>
+            <div class="form-group form-check">
+                <input (change)="formMuerte=2" type="radio" name="s6s1p1" class="form-check-input" id="s6s1p1_1"
+                    value="Soy soltero y no tengo responsabilidades sobre nadie">
+                <label class="form-check-label" for="s6s1p1_1">&nbsp;Soy soltero y no tengo
+                    responsabilidades sobre nadie</label>
+                <br>
+                <input (change)="formMuerte=0" type="radio" name="s6s1p1" class="form-check-input" id="s6s1p1_2"
+                    value="No tendrían un plan de respaldo, ni ahorros ni bienes para vender, ni quien se encargue de ellos">
+                <label class="form-check-label" for="s6s1p1_2">&nbsp;No tendrían un plan de
+                    respaldo,
+                    ni ahorros ni bienes para vender, ni quien se encargue de ellos</label>
+                <br>
+                <input (change)="formMuerte=0" type="radio" name="s6s1p1" class="form-check-input" id="s6s1p1_3"
+                    value="No tendrían un plan de respaldo, ni ahorros ni bienes para vender, pero mi familia o amigos se harían cargo de ellos">
+                <label class="form-check-label" for="s6s1p1_3">&nbsp;No tendrían un plan de
+                    respaldo, ni ahorros ni bienes para vender, pero mi familia o amigos se harían
+                    cargo de ellos</label>
+                <br>
+                <input (change)="formMuerte=1" type="radio" name="s6s1p1" class="form-check-input" id="s6s1p1_4"
+                    value="Si tengo un plan de respaldo (Ahorros, bienes, inversiones o un seguro de vida)">
+                <label class="form-check-label" for="s6s1p1_4">&nbsp;Si tengo un plan de respaldo
+                    (Ahorros, bienes, inversiones o un seguro de vida)</label>
+            </div>
+        </div>
+        <div class="form-group" *ngIf="formMuerte==1">
+            <label>
+                ¿Si sumaras todos tus ahorros, inversiones, bienes y seguros de vida, para
+                cuánto tiempo te alcanzarían ese dinero para cubrir los gastos de tu
+                familia, si llegaras a faltar o no pudieras continuar generando ingresos?
+            </label>
+            <div class="form-group form-check">
+                <input type="radio" name="s6s1p2" class="form-check-input" id="s6s1p2_1" value="Menos de 3 meses">
+                <label class="form-check-label" for="s6s1p2_1">&nbsp;Menos de 3 meses</label>
+                <br>
+                <input type="radio" name="s6s1p2" class="form-check-input" id="s6s1p2_2" value="3 a 6 meses">
+                <label class="form-check-label" for="s6s1p2_2">&nbsp;3 a 6 meses</label>
+                <br>
+                <input type="radio" name="s6s1p2" class="form-check-input" id="s6s1p2_3" value="6 a 12 meses">
+                <label class="form-check-label" for="s6s1p2_3">&nbsp;6 a 12 meses</label>
+                <br>
+                <input type="radio" name="s6s1p2" class="form-check-input" id="s6s1p2_4" value="1 a 2 años">
+                <label class="form-check-label" for="s6s1p2_4">&nbsp;1 a 2 años</label>
+                <br>
+                <input type="radio" name="s6s1p2" class="form-check-input" id="s6s1p2_5" value="2 a 3 años">
+                <label class="form-check-label" for="s6s1p2_5">&nbsp;2 a 3 años</label>
+                <br>
+                <input type="radio" name="s6s1p2" class="form-check-input" id="s6s1p2_6" value="3 a 4 años">
+                <label class="form-check-label" for="s6s1p2_6">&nbsp;3 a 4 años</label>
+                <br>
+                <input type="radio" name="s6s1p2" class="form-check-input" id="s6s1p2_7" value="4 a 5 años">
+                <label class="form-check-label" for="s6s1p2_7">&nbsp;4 a 5 años</label>
+                <br>
+                <input type="radio" name="s6s1p2" class="form-check-input" id="s6s1p2_8" value="Más de 5 años">
+                <label class="form-check-label" for="s6s1p2_8">&nbsp;Más de 5 años</label>
+            </div>
+        </div>
+        <div class="form-group" *ngIf="formMuerte==1">
+            <label>
+                ¿Qué nivel de cobertura le provee tu seguro de vida a tu familia?
+            </label>
+            <div class="form-group form-check">
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_1"
+                    value="No tengo un seguro de vida">
+                <label class="form-check-label" for="s6s1p3_1">No tengo un seguro de
+                    vida</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_2"
+                    value="$1.000.000 a $5.000.000">
+                <label class="form-check-label" for="s6s1p3_2">$1.000.000 a
+                    $5.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_3"
+                    value="$5.000.000 a $10.000.000">
+                <label class="form-check-label" for="s6s1p3_3">$5.000.000 a
+                    $10.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_4"
+                    value="$10.000.000 a $20.000.000">
+                <label class="form-check-label" for="s6s1p3_4">$10.000.000 a
+                    $20.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_5"
+                    value="$20.000.000 a $30.000.000">
+                <label class="form-check-label" for="s6s1p3_5">$20.000.000 a
+                    $30.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_6"
+                    value="$30.000.000 a $50.000.000">
+                <label class="form-check-label" for="s6s1p3_6">$30.000.000 a
+                    $50.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_7"
+                    value="$50.000.000 a $75.000.000">
+                <label class="form-check-label" for="s6s1p3_7">$50.000.000 a
+                    $75.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_8"
+                    value="$75.000.000 a $100.000.000">
+                <label class="form-check-label" for="s6s1p3_8">$75.000.000 a
+                    $100.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_9"
+                    value="$100.000.000 a $150.000.000">
+                <label class="form-check-label" for="s6s1p3_9">$100.000.000 a
+                    $150.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_10"
+                    value="$150.000.000 a $300.000.000">
+                <label class="form-check-label" for="s6s1p3_10">$150.000.000 a
+                    $300.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_11"
+                    value="$300.000.000 a $600.000.000">
+                <label class="form-check-label" for="s6s1p3_11">$300.000.000 a
+                    $600.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p3" class="form-check-input" id="s6s1p3_12" value="más de $600.000.000">
+                <label class="form-check-label" for="s6s1p3_12">más de $600.000.000</label>
+            </div>
+        </div>
+        <div class="form-group" *ngIf="formMuerte==2">
+            <label>
+                ¿Si sumaras todos tus ahorros, inversiones, bienes y seguros, para cuánto
+                tiempo
+                te alcanzarían ese dinero para cubrir tus gastos personales, si llegaras a
+                quedar impedido totalmente para generar ingresos?
+            </label>
+            <div class="form-group form-check">
+                <input type="radio" name="s6s1p4" class="form-check-input" id="s6s1p4_1" value="Menos de 3 meses">
+                <label class="form-check-label" for="s6s1p4_1">Menos de 3 meses</label>
+                <br>
+                <input type="radio" name="s6s1p4" class="form-check-input" id="s6s1p4_2" value="3 a 6 meses">
+                <label class="form-check-label" for="s6s1p4_2">3 a 6 meses</label>
+                <br>
+                <input type="radio" name="s6s1p4" class="form-check-input" id="s6s1p4_3" value="6 a 12 meses">
+                <label class="form-check-label" for="s6s1p4_3">6 a 12 meses</label>
+                <br>
+                <input type="radio" name="s6s1p4" class="form-check-input" id="s6s1p4_4" value="1 a 2 años">
+                <label class="form-check-label" for="s6s1p4_4">1 a 2 años</label>
+                <br>
+                <input type="radio" name="s6s1p4" class="form-check-input" id="s6s1p4_5" value="2 a 3 años">
+                <label class="form-check-label" for="s6s1p4_5">2 a 3 años</label>
+                <br>
+                <input type="radio" name="s6s1p4" class="form-check-input" id="s6s1p4_6" value="3 a 4 años">
+                <label class="form-check-label" for="s6s1p4_6">3 a 4 años</label>
+                <br>
+                <input type="radio" name="s6s1p4" class="form-check-input" id="s6s1p4_7" value="4 a 5 años">
+                <label class="form-check-label" for="s6s1p4_7">4 a 5 años</label>
+                <br>
+                <input type="radio" name="s6s1p4" class="form-check-input" id="s6s1p4_8" value="Más de 5 años">
+                <label class="form-check-label" for="s6s1p4_8">Más de 5 años</label>
+            </div>
+        </div>
+        <div class="form-group" *ngIf="formMuerte==2">
+            <label>
+                ¿Al sumar el valor asegurado de tus seguros de vida, accidentes y
+                enfermedades
+                graves que nivel total de cobertura tienes?
+            </label>
+            <div class="form-group form-check">
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_1"
+                    value="No tengo un seguros de vida, accidentes o enfermedades graves">
+                <label class="form-check-label" for="s6s1p5_1">No tengo un seguros de vida,
+                    accidentes o enfermedades graves</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_2" value="Menos de $1.000.000">
+                <label class="form-check-label" for="s6s1p5_2">Menos de $1.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_3"
+                    value="$1.000.000 a $5.000.000">
+                <label class="form-check-label" for="s6s1p5_3">$1.000.000 a
+                    $5.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_4"
+                    value="$5.000.000 a $10.000.000">
+                <label class="form-check-label" for="s6s1p5_4">$5.000.000 a
+                    $10.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_5"
+                    value="$10.000.000 a $20.000.000">
+                <label class="form-check-label" for="s6s1p5_5">$10.000.000 a
+                    $20.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_6"
+                    value="$20.000.000 a $30.000.000">
+                <label class="form-check-label" for="s6s1p5_6">$20.000.000 a
+                    $30.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_7"
+                    value="$30.000.000 a $50.000.000">
+                <label class="form-check-label" for="s6s1p5_7">$30.000.000 a
+                    $50.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_8"
+                    value="$50.000.000 a $75.000.000">
+                <label class="form-check-label" for="s6s1p5_8">$50.000.000 a
+                    $75.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_9"
+                    value="$75.000.000 a $100.000.000">
+                <label class="form-check-label" for="s6s1p5_9">$75.000.000 a
+                    $100.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_10"
+                    value="$100.000.000 a $150.000.000">
+                <label class="form-check-label" for="s6s1p5_10">$100.000.000 a
+                    $150.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_11"
+                    value="$150.000.000 a $300.000.000">
+                <label class="form-check-label" for="s6s1p5_11">$150.000.000 a
+                    $300.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_12"
+                    value="$300.000.000 a $600.000.000">
+                <label class="form-check-label" for="s6s1p5_12">$300.000.000 a
+                    $600.000.000</label>
+                <br>
+                <input type="radio" name="s6s1p5" class="form-check-input" id="s6s1p5_13" value="más de $600.000.000">
+                <label class="form-check-label" for="s6s1p5_13">más de $600.000.000</label>
+            </div>
+        </div>
+    </div>
+    <div class="text-center" style="width:100%">
+        <button style="margin: auto" type="submit" (click)="guardarIndicador7()" routerLink="/salud-financiera-ejercicios"
+            class="btn btnTop2 btn-primary mt-4 mb-4">Finalizar cuestionario</button>
+    </div>
+</div>
+</div>
+</section>
+</section>
+</div>
+</div>

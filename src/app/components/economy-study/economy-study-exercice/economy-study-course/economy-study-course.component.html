@@ -1,0 +1,154 @@
+<div style="width:100%;height:300px;
+background-color: #7849b8;
+position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/estudia-economia" class="crumbModulo">Cursos financieros > </span>
+            <span routerLink="/estudia-economia-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+        <h1 class="tituloModulo">Cursos Financieros Personales</h1>
+    </div>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-lg-8 offset-lg-2 col-md-12 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:2%">
+                    <div class="row">
+                        <div class="col-12" style="padding:2%">
+                            <nav class="w-100" style="
+                                height: 250px;
+                                background-color: #9c95e2;
+                                background-image: url(assets/img/economy-study/group-4.png);
+                                background-repeat: no-repeat;
+                                background-position: right;
+                                padding-left: 8%;
+                                padding-top: 80px;
+                            ">
+                                <h3 class="titCurso">Curso ¡Ahorra o nunca!</h3>
+                                <p class="descCurso">Finanzas Personales&nbsp;&nbsp; |&nbsp;&nbsp; 10 niveles</p>
+                                <div class="nav nav-tabs" style="display: flex;
+                                padding-top: 47px;
+                                    border-bottom: 0px;" id="product-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab"
+                                        href="#product-desc" role="tab" aria-controls="product-desc"
+                                        aria-selected="true" routerLink="/estudia-economia-ejercicio">Contenidos</a>
+                                    <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab"
+                                        href="#product-comments" role="tab" aria-controls="product-comments"
+                                        aria-selected="false" routerLink="/estudia-economia-ejercicio">Ejercicios</a>
+                                </div>
+                            </nav>
+                            <div>
+                                <button routerLink="/estudia-economia-ejercicio" class="btn">
+                                    <i class="fas fa-chevron-left"></i> Ver todos los ejercicios
+                                </button>
+                                <div id="res1" class="ml-2 mt-2">
+                                    <p><strong>Ejercicio comparativo entre ahorro y deuda</strong></p>
+                                    <br>
+                                    <p>Se te propone un ejercicio a continuación. Se pondrá de un lado el
+                                        ahorro versus la generación de deuda, analizando ambos estados. La
+                                        intención del mismo es generar un hábito y mentalidad financiera
+                                        diferente frente al ahorro.
+                                    </p>
+                                    <br>
+                                    <p><strong>Ingresa la siguiente información:</strong></p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label>Artículo</label>
+                                                <input type="text" class="form-control" [(ngModel)]="selArticuloTxt"
+                                                    placeholder="Ingresa el artículo a comprar">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Valor</label>
+                                                <input type="number" class="form-control" [(ngModel)]="selValorTxt"
+                                                    placeholder="Ej: 3,000,000">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label>Plazo</label>
+                                                <select [(ngModel)]="selPlazoTxt" class="form-control">
+                                                    <option [ngValue]=12>12 Meses</option>
+                                                    <option [ngValue]=24>24 Meses</option>
+                                                    <option [ngValue]=36>36 Meses</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Tasa de interés</label>
+                                                <select class="form-control" [(ngModel)]="selInteresTxT">
+                                                    <option *ngFor="let inter of interes" [ngValue]="inter">
+                                                        {{inter}} %</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="text-left">
+                                            <button style="margin: auto" type="submit" (click)="calcularEjercicio1()"
+                                                class="btnMain mt-4 mb-4">
+                                                Calcular
+                                            </button>
+                                        </div>
+                                        <div class="mt-3" #screen1 *ngIf="solve1">
+                                            <p class="mt-3"><strong>Resultado comparativo:</strong></p>
+                                            <div class="row card-deck"
+                                                style="border: #d5d5d5 1px solid;background-color: #faf9f9; padding:30px;width: 100%;">
+                                                <div class="card col-6"
+                                                    style="width: 28rem;border:1px solid lightgray !important">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item"><i class="fas fa-piggy-bank"></i>
+                                                            Ahorro</li>
+                                                        <li class="list-group-item">
+                                                            <p>Monto ahorro mensual: <strong>$
+                                                                    {{selValor / selPlazo  | number:'1.0-0'}}</strong>
+                                                            </p>
+                                                            <p>Total pagado: <strong style="color: #70aa51">$
+                                                                    {{selValor  | number:'1.0-0'}}</strong>
+                                                            </p>
+                                                            <p>Valor pagado adicional <strong>$: 0</strong>
+                                                            </p>
+                                                            <p>Valor pagado adicional <strong>%: 0</strong>
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="card col-6"
+                                                    style="width: 28rem;border:1px solid lightgray !important">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item"><i class="fas fa-credit-card"></i>
+                                                            Crédito</li>
+                                                        <li class="list-group-item">
+                                                            <p>Valor cuota mensual: <strong>$
+                                                                    {{(selValor *(selInteres/100))/(1 - elevar(1+(selInteres/100),-1*selPlazo)) | number:'1.0-0'}}</strong>
+                                                            </p>
+                                                            <p>Total pagado: <strong style="color: #ec1c24">$
+                                                                    {{(selValor *(selInteres/100))*selPlazo/(1 - elevar(1+(selInteres/100),-1*selPlazo)) | number:'1.0-0'}}</strong>
+                                                            </p>
+                                                            <p>Valor pagado adicional <strong>$:
+                                                                    {{(selValor *(selInteres/100))*selPlazo/(1 - elevar(1+(selInteres/100),-1*selPlazo)) - selValor | number:'1.0-0'}}</strong>
+                                                            </p>
+                                                            <p>Valor pagado adicional <strong>%:
+                                                                    {{100*((selValor *(selInteres/100))*selPlazo/(1 - elevar(1+(selInteres/100),-1*selPlazo)) - selValor)/selValor | number:'1.0-0'}}%</strong>
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div (click)="handlePdf('res1')" style="cursor:pointer" class="row mt-5"
+                                                style="background-color: #d5d5d5; padding:20px;width: 100%;">
+                                                <span class="PDF ml-3">PDF</span>
+                                                <img src="assets/img/study/download.svg" class="download ml-5">
+                                                <span class="ml-3">Descarga el resultado de tu ejercicio en
+                                                    PDF</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>

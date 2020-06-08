@@ -1,0 +1,339 @@
+<section class="" style="background-color: #fff;">
+    <form [formGroup]="formContact" (ngSubmit)="onsubmit()">
+        <!-- Nuevo agendamiento -->
+        <div class="">
+            <div *ngIf="!created" class="row">
+                <div class="col-xl-3 col-lg-10 col-md-0 col-sm-0 col-0 cajaconsulta redondeado">
+                    <!-- <div class="text-center">
+                <button class="btn btn-defaul" (click)="decrement()">
+                  <i class="fas fa-calendar-alt"></i> Ver agendas
+                </button>
+              </div> -->
+                    <p> {{ login.getDataUser().nombres }} {{ login.getDataUser().apellidoPaterno }}</p>
+                    <h5 class="mt-3 titleSchedule" *ngIf="typeSchedule==2044">Seguridad informática</h5>
+                    <h5 class="mt-3 titleSchedule" *ngIf="typeSchedule==2045">Asesoría personal</h5>
+                    <h5 class="mt-3 titleSchedule" *ngIf="typeSchedule==2023">Agendamiento Revisión Hoja de Vida</h5>
+                    <h5 class="mt-3 titleSchedule" *ngIf="typeSchedule==2024">Simulación de entrevista laboral</h5>
+                    <h5 class="mt-3 titleSchedule" *ngIf="module=='Legal ITT'">Consultoría legal laboral</h5>
+                    <h5 class="mt-3 titleSchedule" *ngIf="module=='Branding'">Asesoría <br>Branding digital</h5>
+
+                    <div *ngIf="step==1">
+                        <p><i class="fas fa-clock"></i> {{ f.horaAgenda.value }}</p>
+                        <p><i class="fas fa-calendar-alt"></i>
+                            {{ f.fechaAgenda.value | date:'MMMM' | titlecase }}
+                            {{ f.fechaAgenda.value | date:'d \'de\' y' }} </p>
+                        <!-- <p><i class="fas fa-globe-americas"></i> Bogota, Jamaica, Lima Time</p> -->
+                        <p><i id="contacto" class=""></i> {{ f.contacto.value }} </p>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-10 col-md-0 col-sm-12 cajaconsulta redondeado">
+                    <!-- <div *ngIf="step==1" class="volver">
+                        <button class="btn btn-default" type="button" (click)="step=0" style="color:#717171;">
+                            <i class="fas fa-angle-left"></i> Volver
+                        </button>
+                    </div> -->
+
+                    <div *ngIf="step==0" class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 volver">
+                            <button type="button"
+                                class="btn btn-default col-xl-3 col-lg-12 col-md-0 col-sm-12 mb-2 manito"
+                                routerLink="/security-service" style="color:#717171;">
+                                <i class="fas fa-angle-left"></i> Volver
+                            </button>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mt-5">
+                            <p class="blacktxt selec-fecha">Seleccione fecha y hora </p>
+                        </div>
+                        <div class="col-lg-8 col-md-12 col-sm-12 col-12 mb-3">
+                            <div class="calendario">
+                                <div class="text-center">
+                                    <!-- [bsValue]="bsInlineValue" -->
+                                    <bs-datepicker-inline [bsConfig]="datePickerConfig"
+                                        (bsValueChange)="onDateChange($event)">
+                                    </bs-datepicker-inline>
+                                </div>
+                            </div>
+                            <form class="zonahoraria" style="display: none;">
+                                <div class="form-group text-center">
+                                    <select class="form-control zonahor" id="exampleFormControlSelect1">
+                                        <option>Zona horaria GTM Bogotá: {{ currentDate | date:'h:mm a' }}</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12 col-12 text-center">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-3 col-sm-2"></div>
+                                <div class="col-lg-12 col-md-8 col-sm-8 text-center">
+                                    <div class="date"> {{ f.fechaAgenda.value | date:'EEEE, MMM d' | titlecase }}</div>
+                                    <div class="scroll text-center ml-5"
+                                        *ngIf="compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')">
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 7) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">07:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 7) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">07:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 8) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">08:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 8) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">08:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 9) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">09:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 9) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">09:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 10) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">10:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 10) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">10:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 11) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">11:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 11) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">11:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 12) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">12:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 12) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">12:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 13) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">13:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 13) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">13:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 14) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">14:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 14) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">14:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 15) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">15:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 15) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">15:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 16) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">16:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 16) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">16:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 17) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">17:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 17) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">17:30</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 18) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">18:00</button>
+                                        <button
+                                            *ngIf="(toInt(currentDate | date:'H') < 18) && compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')"
+                                            type="button" (click)="onTimeChange($event)" class="hour">18:30</button>
+                                        <button *ngIf="showConfirm" (click)="step=1" type="button"
+                                            class="btn btn-dark rojo btnconfirmar">Confirmar
+                                        </button>
+                                    </div>
+                                    <div class="scroll text-center"
+                                        *ngIf="!compareDates(currentDate | date:'dd/MM/yyyy' , f.fechaAgenda.value | date:'dd/MM/yyyy')">
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">07:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">07:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">08:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">08:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">09:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">09:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">10:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">10:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">11:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">11:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">12:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">12:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">13:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">13:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">14:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">14:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">15:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">15:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">16:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">16:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">17:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">17:30</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">18:00</button>
+                                        <button type="button" (click)="onTimeChange($event)" class="hour">18:30</button>
+                                        <button *ngIf="showConfirm" (click)="step=1" type="button"
+                                            class="btn btn-dark rojo btnconfirmar">Confirmar
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-2 col-sm-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="step==1" class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 6%;"> <br>
+
+                            <!--llamadas -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <p class="blacktxt">Selecciona tu medio de contacto</p>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button"
+                                        [ngClass]="{'borderContact': submitted && f.DiscriminadorAgendamiento.errors}"
+                                        id="whatsapp" (click)="alerta('whatsapp')" class="btn1">
+                                        <i id="iconWa" class="fab fa-whatsapp whatsapp d-none"></i>
+                                        <img src="assets/img/scheduling/whatsapp.svg" id="whatsappImg"
+                                            style="display: block;margin-left: 30px;" width="40px" height="40px">
+                                    </button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button"
+                                        [ngClass]="{'borderContact': submitted && f.DiscriminadorAgendamiento.errors}"
+                                        id="skype" (click)="alerta('skype')" class="btn1">
+                                        <i class="fab fa-skype skype"></i>
+                                    </button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button"
+                                        [ngClass]="{'borderContact': submitted && f.DiscriminadorAgendamiento.errors}"
+                                        id="phone" (click)="alerta('phone')" class="btn1">
+                                        <i class="fas fa-phone-alt phone"></i>
+                                    </button>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="form-group">
+                                        <label for="element"> Ingresa tu número de contacto para recibir atención
+                                            personalizada</label>
+                                        <div class="input-group mb-3">
+                                            <!-- <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                          </div> -->
+                                            <input [ngClass]="{ 'is-invalid': submitted && f.contacto.errors }"
+                                                id="element" type="text" formControlName="contacto"
+                                                placeholder="Ingresa dato o contacto" class="form-control" />
+                                            <button type="button" class="btn btn-default" popover="Para telefonía fija es necesario ingresar el indicativo de la ciudad
+                                correspondiente, ejemplo: (53) 662 4520">
+                                                <i class="fas fa-question-circle"></i>
+                                            </button>
+                                            <br>
+                                            <div class="invalid-feedback" *ngIf="submitted && f.contacto.errors">
+                                                <p style="color: red;" *ngIf="f.contacto.errors.required">Campo
+                                                    requerido.</p>
+                                                <p style="color: red;" *ngIf="f.contacto.errors.pattern">
+                                                    Formato incorrecto <br>
+                                                    Ejemplo:
+                                                    <span *ngIf="f.DiscriminadorAgendamiento.value != 2">(3006624520)
+                                                    </span>
+                                                    <span
+                                                        *ngIf="f.DiscriminadorAgendamiento.value == 2">(correo@correo.com)</span>
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-next pull-right">
+                                        Agendar revisión
+                                    </button>
+                                </div>
+                                <div class="col-4"></div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="created">
+                <div class="manito mb-4" (click)="goHome()">
+                    <i style="color: #ec1c24;" class="fas fa-chevron-left"></i>&nbsp;&nbsp;&nbsp;
+                    <span style="color: #949494;">Volver</span>
+                </div>
+                <div class="row" style="border-radius: 8px; border: solid 1px #d2d2d2;">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div *ngIf="step==2">
+                                    <div class="text-center">
+                                        <i style="font-size: 45px;
+                          color: #7dc855;
+                          margin-bottom: 15px;" class="far fa-check-circle"></i>
+                                        <p style="color: #7dc855">Confirmación de agenda exitosa</p>
+                                    </div>
+                                    <div class="text-left">
+                                        <div class="alert alert-success" style="opacity: 0.6;
+                          border-radius: 2px;
+                          border: solid 1px #00915a;
+                          background-color: #eeffe6;">
+                                            <i class="icon fas fa-check"></i> Pronto recibirás un email o SMS con los
+                                            datos de confirmación.
+                                        </div>
+                                        <p>La siguiente es la información de tu solicitud:</p>
+                                    </div>
+                                    <!-- card -->
+                                    <div class="alert alert-dark pt-4 pb-4" style="border-radius: 4px;
+                      border: solid 1px #dbe4ef;
+                      background-color: #f6f8fa;
+                      padding-left:10%">
+                                        <p><i class="fas fa-calendar-alt"></i>
+                                            {{ f.fechaAgenda.value | date:'MMMM' | titlecase }}
+                                            {{ f.fechaAgenda.value | date:'d \'de\' y' }}</p>
+                                        <p><i class="fas fa-clock"></i> {{ f.horaAgenda.value }}</p>
+                                        <p><i class="far fa-id-badge"></i> {{ f.contacto.value }} </p>
+                                    </div>
+
+                                    <div class="alert alert-dark" style="border-radius: 4px;
+                        border: solid 1px #dbe4ef;
+                        background-color: #f6f8fa;
+                        padding-left:10%">
+                                        <span style="color: #ca1a1a" class="touch mr-3"
+                                            (click)="delete(f.idAgenda.value)"><i class="fas fa-trash-alt"></i>
+                                            &nbsp;&nbsp;Cancelar </span>
+                                        <span class="touch" (click)="loadData(f.idAgenda.value)"><i
+                                                class="fas fa-pen"></i>
+                                            Editar </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- End nuevo agendamiento -->
+    </form>
+</section>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe [src]="iframe" frameborder="0" width="100%" height="600px"></iframe>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="descargarPdf()">Descargar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

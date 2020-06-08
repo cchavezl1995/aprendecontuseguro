@@ -1,0 +1,246 @@
+.activated {
+    color: #ffb400 !important;
+  }
+  .divHomeCabecera{
+    background-image: url(/assets/img/curriculum-vitae/fill-1.svg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    width:100%;height:532px;background-color:#eea800
+  }
+  .navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.9rem 0rem;
+  }
+  
+  .iconSize {
+    font-size: 17px;
+  }
+  
+  .colorLabel {
+    color: #034797 !important;
+  }
+  
+  .content-header {
+    padding: 0px;
+  }
+  
+  .btnTop2 {
+    border-color: #002c76 2px solid;
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    background-color: #002c76;
+    color: white;
+    padding: 10px 15px;
+    width: 256px;
+  }
+  
+  .btnBotton2 {
+    border-color: #ffb400 2px solid;
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    background-color: #ffb400;
+    color: #034797;
+    padding: 10px 15px;
+    width: 256px;
+  }
+  
+  .btnTopModal {
+    border-color: #002c76 2px solid;
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    background-color: #002c76;
+    color: white;
+    padding: 10px 15px;
+    width: 269px;
+  }
+  
+  .titulo {
+    font-family: GoogleSans;
+    font-size: 50px !important;
+    color: white;
+    margin-top: 50px;
+  }
+  
+  .parrafoTitulo {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  
+  .modal.left.fade.show .modal-dialog {
+    left: 0;
+  }
+  .foto1{
+    position:absolute; z-index: 1;
+    margin-left: 6%;
+    margin-top: 110px;
+    width: 393px;
+    height: 633px;
+  }
+  
+  .foto2{
+    position:absolute;
+    z-index: 2;
+    margin-left: 6%;
+    right:20%;
+  }
+  .btnTopCierraModal {
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    /* color: white; */
+    padding: 0px;
+    width: 44px;
+    height: 44px;
+    margin-top: 5px;
+    color: #034797;
+    font-size: 20px
+  }
+  
+  .tituloModal {
+    font-family: GoogleSans;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #034797;
+  }
+  
+  .parrafoModal {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #5e5e5e;
+  }
+  
+  .tituloSalario {
+    font-family: GoogleSans;
+    font-size: 42px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: -0.19px;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .parrafoSalario {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  
+  .card{
+    border: solid 1px #d9d9d9 !important;
+  }
+  .card-header > h2{
+    font-family: GoogleSans;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: -0.15px;
+    color: #60666b;
+  }
+   
+  .amarillo {
+    background-color: #eea800 !important;
+    border-color: transparent !important;
+    border-radius: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    height:50px;
+  } 
+  
+  // $des_eco1_backColor: linear-gradient(70deg, #fb6330 11%, #feba89 153%);
+  $des_eco1_backColor: #feba89;
+  
+  .imgMovil{
+    background-image: url("/../../../assets/img/desempleo2/curriculum/curriculum.png") !important;
+    background-size: 284px;
+    background-color: $des_eco1_backColor;
+    background-position: center bottom 0%;
+    background-repeat: no-repeat;
+  }
+  
+  
+  .social {
+    position: absolute;
+    left: -75px; 
+    top: 42px;
+  }
+  .social-cont {
+    position: relative;
+  }
+  @media (min-width: 845px) {
+    .social {
+      left: 68px;
+      z-index: 999;
+    }
+  }
+   
+    .social ul {
+      list-style: none;
+    }
+   
+    .social ul li a {
+      border-radius: 50%;
+      display: inline-block;
+      color:gray;
+      background: #fff;
+      padding: 15px 15px;
+      text-decoration: none;
+      -webkit-transition:all 500ms ease;
+      -o-transition:all 500ms ease;
+      transition:all 500ms ease; 
+    }
+  
+    .social ul li .icon-facebook:hover {background:#3b5998;color:white;} 
+    .social ul li .icon-twitter:hover {background: #00abf0;color:white;}
+    .social ul li .icon-linkedin:hover {background: #007bb5;color:white;}
+  
+    .card-footer {
+      padding: 0.75rem 1.25rem;
+      background-color: rgb(255, 255, 255);
+      border-top: 0 solid rgba(0, 0, 0, 0.125);
+    }
+    .card-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0);
+  }
+  .icon-facebook {
+    width: 100%;
+    text-align: center;
+  }
+  .badge .badge-pill .badge-primary {
+    background-color: #ec1c24 !important;
+  }
+  

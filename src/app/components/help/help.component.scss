@@ -1,0 +1,48 @@
+$base-color: #ec1c24;
+
+.tab-content{
+    border: 1px solid lightgray;
+    padding: 35px;
+}
+.tab-pane > h3{
+    color: black;
+}
+.nav-link{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #58595b;
+}
+.nav-link.active{
+    color: $base-color;
+    font-weight: bold;
+    border-bottom: 3px $base-color solid;
+}
+.divRaya{ 
+    background: $base-color; 
+    left: 0; 
+    width: 40px;
+    height: 3px;
+    margin-bottom: 10px;
+}
+.btnTop2 {
+  border-color: $base-color 2px solid;
+  border: 0px;
+  border-radius: 50px;
+  font-size: px;
+  background-color: $base-color;
+  color: white;
+  padding: 15px 15px;
+  width: 250px;
+}
+.nav{
+    border-bottom: 1px solid lightgray;
+}
+.colorTexto{
+    color: $base-color !important;
+    font-weight: bold;
+}
+@media only screen and (min-width: 769px) {
+    .pad-tit {
+        padding-left: 95px !important;
+    }
+}

@@ -1,0 +1,70 @@
+<div style="width:100%;height:300px;
+        background-color: #fb6330;
+        position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/alertas-notificaciones" class="crumbModulo">Alertas y notificaciones > </span>
+            <span routerLink="/alertas-notificaciones-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+        <h1 class="tituloModulo">Alertas y Notificaciones</h1>
+    </div>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="pCabeceraModulo">
+                                Para activar tus alertas y notificaciones confirma los siguientes datos:
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="form-group col-md-4 col-xs-12">
+
+                            <label for="typeId">Número de celular</label>
+                            <input type="text" [(ngModel)]="fono" class="form-control"
+                                placeholder="Ingresa tu número de celular">
+
+                        </div>
+                        <div class="form-group col-md-4 col-xs-12">
+
+                            <label for="typeId">Correo electrónico</label>
+                            <input type="text" [(ngModel)]="mail" class="form-control"
+                                placeholder="Ingresa tu correo electrónico">
+
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label>Activación</label>
+                            <br>
+                            <label class="switch">
+                                <input type="checkbox" class="success" [(ngModel)]="habilitado">
+                                <span class="slider round"></span>
+
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button *ngIf="habilitado" style="margin: auto;width:265px" type="submit"
+                                (click)="endNotification()" routerLink="/alertas-notificaciones-confirmado" class="btnMain mt-4 mb-4">
+                                Activa tus notificaciones
+                            </button>
+                            <button *ngIf="!habilitado" style="margin: auto;width:265px" type="submit"
+                                (click)="endNotification()" routerLink="/alertas-notificaciones-confirmado" class="btnMain mt-4 mb-4">
+                                Desactiva tus notificaciones
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,198 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+<div *ngIf="pagina==0">
+  <div class="d-block d-xl-none d-lg-none imgMovil" style="width:100%;height:600px;
+            margin-top: -39px;">
+    <div
+      style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+      <div style="margin-left: 19.1%;">
+        <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+        <span class="crumbModulo"><b>Branding digital</b></span>
+      </div>
+    </div>
+    <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+      <h1 class="tituloModulo">
+      Crea una marca perdurable, única y relevante</h1>
+    </div>
+  </div>
+  <div class="d-none d-lg-block" style="width:100%;height:499px;
+  background-image: url('assets/img/itt2/branding/branding.png'), linear-gradient(90deg, #fb6330 50%,  #feba89 50%);
+  background-position: right 200px bottom, right bottom;
+  background-repeat: no-repeat,no-repeat;
+  margin-top: -39px;
+  background-size: 348px 378px, contain;">
+    <div
+      style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+      <div style="margin-left: 19.1%;">
+        <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+        <span class="crumbModulo"><b>Branding digital </b></span>
+      </div>
+    </div>
+    <h1 class="tituloModulo">
+      Crea una marca perdurable,<br>
+      única y relevante
+    </h1>
+
+    <button *ngIf="login.isActive()" class="btnTop2" style="margin-top: 55px; margin-left:10%;" routerLink="/branding-digital-servicio">
+      Iniciar mi consultoría
+    </button>
+    <button *ngIf="!login.isActive()" class="btnTop2" style="margin-top: 55px; margin-left:10%;"
+      (click)="login.goLogin()">
+      Quiero unirme
+    </button>
+  </div>
+  <div class="container">
+    <div class="row m-4">
+        <div class="social-cont">
+            <div class="social">
+                <ul>
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://ecodesascco.grupomok.com.co/curriculumhome"
+                                    target="_blank" class="icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="http://twitter.com/share?url=http://ecodesascco.grupomok.com.co" target="_blank"
+                                    class="icon-twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://ecodesascco.grupomok.com.co"
+                                    target="_blank" class="icon-linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                </div>
+        </div>
+      <div class="col-lg-1 col-md-1 col-sm-0"></div>
+      <div class="col-lg-10 col-md-10 col-sm-12">
+        <div class="row">
+          <div class="col-lg-2 col-md-1 col-sm-0"></div>
+          <div class="col-lg-8 col-md-10 col-sm-12">
+            <h2 class="font-weight-bold text-secondary text-left mt-5 mb-5">
+              Un buen branding digital es esencial para que tu marca entre en las grandes ligas
+            </h2>
+            <p>
+              ¿Tienes una marca o idea de negocio, pero no sabes cómo impulsarla? No te preocupes, con nuestra
+              asesoría en branding digital, tu marca o idea crecerá <br> <br>
+            </p>
+            <p>
+              Gestiona y comunica de manera óptima tu marca personal o idea. A través del análisis y la<br>
+              segmentación de tu mercado potencial, consigue atraer la atención y despegar tu emprendimiento.
+            </p>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        <div style="width:100%;" class="text-center">
+          <iframe class="mt-4" style="max-width:988px;width:100%;height: 555px;border: 0px" src="https://player.vimeo.com/video/378915660"></iframe>
+        </div>
+        <app-video-material tipoMateriales="des_curriculumhome"></app-video-material>
+      </div>
+    </div>
+    <div class="row m-4">
+      <div class="col-lg-1 col-md-1 col-sm-0"></div>
+      <div class="col-lg-10 col-md-10 col-sm-12">
+        <div class="row">
+          <div class="col-lg-2 col-md-1 col-sm-0"></div>
+          <div class="col-lg-8 col-md-10 col-sm-12">
+            <p>
+              Tu Seguro te permite desarrollar una estrategia de branding digital ajustado a las expectativas de tu
+              marca o idea de negocio.
+            </p>
+            <p>
+              Una marca necesita una identidad y un plan para ser reconocida. Pide asesoría para tu emprendimiento y
+              conoce de qué manera planificar tu estrategia de negocio: posiciona tu sitio web o aplicación en Internet
+              y
+              redes sociales. Atrae más y nuevos clientes potenciales. Crece. Nuestros expertos te dirán cómo.
+            </p>
+            <p>
+              Un experto te asesorará en cada paso para hacer volar tu idea de negocio. Desde el nombre de tu marca, el
+              logotipo, estrategia de pauta, página web, posicionamiento en internet, todo lo tendrás a un click.
+            </p>
+            <p>
+              Desarrollar un buen branding digital, permite que una marca tenga recordación e impacto. Resulta esencial
+              que puedas tener en cuenta cada aspecto de tu emprendimiento o marca personal para que tengas impacto en
+              el competitivo mercado digital.
+            </p>
+            <p>
+              Te damos las herramientas para hacer todo desde el principio: desde el desarrollo de tu idea, tu página
+              web, tu estrategia publicitaria hasta tus redes sociales.
+            </p>
+
+
+            <div style="width:100%;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;"
+              class="pt-4 mt-5 mb-5">
+              <h3 style="font-size: 20px !important;font-weight: bold;color: #333333 !important;">
+                ¿Cómo acceder a tu branding digital dentro del ecosistema de servicios?
+              </h3>
+              <table border="0" class="tablaHomePasos mt-5 mb-5">
+                <tr>
+                  <td>
+                    <div class="circuloNumero">1</div>
+                  </td>
+                  <td>
+                    <p class="tituloHomePasos">Debes contar con tu seguro activo.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="circuloNumero">2</div>
+                  </td>
+                  <td>
+                    <p class="tituloHomePasos">Regístrate e ingresa tus datos de tu marca personal, idea o negocio.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="circuloNumero">3</div>
+                  </td>
+                  <td>
+                    <p class="tituloHomePasos">
+                      Solicita tu consultoría en branding digital con un experto y al final,
+                      recibirás el feedback.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              <!-- <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">First</th>
+                          <th scope="col">Last</th>
+                          <th scope="col">Handle</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div> -->
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-1 col-sm-0"></div>
+          <div class="col-md-12 text-center">
+            <p>Tu branding digital hará crecer tu marca o idea de negocio. ¿Qué esperas para hacerlo?</p>
+          </div>
+          <div class="col-md-12 text-center mt-3 mb-5">
+            <button *ngIf="!login.isActive()" class="btnMain" (click)="login.goLogin()">Quiero unirme</button>
+            <button *ngIf="login.isActive()" class="btnMain" routerLink="/branding-digital-servicio">Iniciar mi consultoría</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-interest-material tipoMateriales="itt_branding"></app-interest-material>
+  <div class="container d-block d-xl-none d-lg-none quieroUnirmeMovile" (click)="login.goLogin()"
+    *ngIf="!login.isActive()">
+    <p><i class="icon-Login iconSize"></i>&nbsp;&nbsp;&nbsp;Quiero unirme</p>
+  </div>
+</div>

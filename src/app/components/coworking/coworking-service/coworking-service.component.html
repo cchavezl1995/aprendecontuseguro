@@ -1,0 +1,51 @@
+<div  style="width:100%;height:300px;
+    background-color: #7849b8;position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span [routerLink]="['/coworking']" routerLinkActive="router-link-active"  class="crumbModulo">Coworking > </span>
+            <span [routerLink]="['/coworking-servicio']"class="crumbModulo">Tu coworking </span>
+        </div>
+    </div>
+    <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+        <h1 class="tituloModulo">Tu coworking</h1>
+    </div>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="pCabeceraModulo">
+                                Apoyamos las ideas innovadoras de la comunidad de emprendimiento en Colombia. Por eso,
+                                conoce y selecciona espacios de trabajo destinados a potencializar tus ideas,
+                                productividad y tu red de contactos.
+                            </p>
+                            <p class="pCabeceraModulo">
+                                <strong>Importante:</strong>
+                            </p>
+                            <p class="pCabeceraModulo">
+                                Podrás disfrutar de éste beneficio una vez al mes durante 6 meses sin costo. Sin
+                                embargo, si necesitas reservar más de una vez durante en el mismo mes, podrás acceder a
+                                tarifas preferenciales.
+                                <br><br>
+                                *A partir del séptimo mes podrás continuar agendando y accediendo a tarifas
+                                preferenciales.
+                            </p>
+                            <div class="text-center">
+                                <button style="margin: auto" [disabled]="coworkings.length > 0" type="submit"
+                                    (click)="increment()" class="btnTop2 btn-primary mt-4 mb-4 manito">
+                                    {{coworkings.length > 0 ? 'Ya estas inscrito en coworking' : 'Elige tu espacio'}}
+                                    &nbsp;&nbsp;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+
+</div>

@@ -1,0 +1,198 @@
+<div>
+  <div style="width:100%;height:300px;
+      background-color: #fb6330;position:absolute;margin-top: -39px;">
+    <div
+      style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+      <div style="margin-left: 17.8%;">
+        <span routerLink="/inicio" class="crumbModulo"> Inicio > </span>
+        <span routerLink="/branding-digital" class="crumbModulo"> Branding digital > </span>
+        <span routerLink="/branding-digital-servicio" class="crumbModulo">Servicio > </span>
+        <span routerLink="/branding-digital-formulario" class="crumbModulo"><b>Programar mi asesoría</b></span>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-6 offset-md-1 col-sm-12 offset-sm-0"></div>
+    <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+      <h1 class="tituloModulo">Branding digital</h1>
+    </div>
+  </div>
+  <div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS mt-5" style="margin:auto">
+      <section class="cardsPerfil mb-5">
+
+        <div class="card mb-3" style="border:1px solid lightgray !important">
+          <div class="card-body pb-5">
+            <div class="col-md-12 mb-5"> Para tener una consultoría más efectiva, cuéntanos de tu emprendimiento:
+            </div>
+            <div class="col-12">
+
+              <form [formGroup]="formDigitalBranding" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Nombre de la empresa</label>
+                      <input type="text" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" formControlName="name"
+                        class="form-control" placeholder="Ingresa el nombre de tu empresa*">
+                      <div class="invalid-feedback" *ngIf="submitted && f.name.errors">
+                        <p *ngIf="f.name.errors.required">Campo requerido.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Sector al que pertenece tu empresa</label>
+                      <select id="areas" name="areas" class="form-control" placeholder="Selecciona el área"
+                        [ngClass]="{ 'is-invalid': submitted && f.sector.errors }" formControlName="sector"
+                        (change)="onItemChangeSector($event)">
+                        <option value="">Selecciona un sector</option>
+                        <option *ngFor="let ar of sectorList" [ngValue]="ar.id"> {{ar.text}} </option>
+                      </select>
+                      <div class="invalid-feedback" *ngIf="submitted && f.sector.errors">
+                        <p *ngIf="f.sector.errors.required">Campo requerido.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-xs-12">
+
+                  </div>
+
+                  <div class="col-md-6 col-xs-12">
+                    <div class="form-group" *ngIf="otroSector">
+                      <label for="formGroupExampleInput">Otro Sector</label>
+                      <input type="text" [ngClass]="{ 'is-invalid': submitted && f.sectorName.errors }"
+                        formControlName="sectorName" class="form-control" placeholder="Ingresa el nombre del sector">
+                      <div class="invalid-feedback" *ngIf="submitted && f.sectorName.errors">
+                        <p *ngIf="f.sectorName.errors.required">Campo requerido.</p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Correo electrónico de tu empresa</label>
+                      <input type="text" class="form-control" placeholder="Ingresa el correo electrónico*"
+                        formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                      <div class="invalid-feedback" *ngIf="submitted && f.email.errors">
+                        <p *ngIf="f.email.errors.required">Campo requerido.</p>
+                        <p *ngIf="f.email.errors?.pattern">Correo inválido.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-xs-12">
+                    <label for="phone">Número celular</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic">+57</span>
+                      </div>
+                      <input [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone"
+                        type="text" class="form-control" maxlength="10" id="phone" DigitOnly
+                        aria-describedby="basic-addon3" />
+                      <div class="invalid-feedback" *ngIf="submitted && f.phone.errors">
+                        <p *ngIf="f.phone.errors.required">Campo requerido.</p>
+                        <p *ngIf="f.phone.errors?.pattern">Número telefónico inválido, debe contener 10 números.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 col-xs-12 mt-2">
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">En tu emprendimiento, actualmente cuentas con:</label>
+                      <br>
+                      <div class="checks_companyITT">
+
+                        <div class="form-check d-inline mr-4 chkBrand">
+                          <input type="checkbox" formControlName="marcaCheck" class="form-check-input"
+                            id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Marca</label>
+                        </div>
+
+                        <div class="form-check d-inline mr-4 chkBrand">
+                          <input type="checkbox" formControlName="logoCheck" class="form-check-input"
+                            id="exampleCheck2">
+                          <label class="form-check-label" for="exampleCheck2">Logo</label>
+                        </div>
+
+                        <div class="form-check d-inline mr-4 chkBrand">
+                          <input type="checkbox" formControlName="portafolioCheck" class="form-check-input"
+                            id="exampleCheck3">
+                          <label class="form-check-label" for="exampleCheck3">Portafolio</label>
+                        </div>
+
+                        <div class="form-check d-inline mr-4 chkBrand">
+                          <input type="checkbox" formControlName="paginaWebCheck" class="form-check-input"
+                            id="exampleCheck4">
+                          <label class="form-check-label" for="exampleCheck4">Página web</label>
+                        </div>
+
+                        <div class="form-check d-inline mr-4 chkBrand">
+                          <input type="checkbox" formControlName="redesSocialesCheck" class="form-check-input"
+                            id="exampleCheck5">
+                          <label class="form-check-label" for="exampleCheck5">Redes sociales</label>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-xs-12 mb-4">
+                    <div class="containera">
+                      <div class="outer my_class" [ngStyle]="getMyStyles()" style="background-size: 150px;">
+                        <!-- 
+                                <img class="outer" [src]="curriculumArchivos.imagenBase64"
+                                (load)="handleImageLoad()" [ngStyle]="{'display:none': !curriculumArchivos.imagenBase64}"
+                                /> -->
+
+                        <div class="inner">
+                          <input class="inputfile" type="file" id="inputPhoto" name="file" accept="image/*"
+                            (change)="handleInputChange($event)">
+                          <label><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                              <path
+                                d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z">
+                              </path>
+                            </svg></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6 col-xs-12">
+                    <label for="phone">Página web de la empresa (opcional)</label>
+                    <div class="input-group">
+                      <input [ngClass]="{ 'is-invalid': submitted && f.webPage.errors }" formControlName="webPage"
+                        type="text" class="form-control" id="webPage" aria-describedby="basic-addon3" />
+                    </div>
+                  </div>
+
+                  <div class="col-md-12 col-xs-12 ">
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">¿ Qué servicios o productos ofreces?</label>
+                      <span class="text-warning rightNumbers">
+                        <em>
+                          {{f.description.value ? 300 - f.description.value.length : 300 }} de 300</em>
+                      </span>
+                      <textarea type="text" formControlName="description" id="descripcionBranding" style="height:200px"
+                        class="form-control" maxlength="300"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="col-md-5 offset-md-3 col-xs-12 text-center">
+                    <!-- <button type="submit" class="btn btn-lg btn-primary btn-block mt-5">Siguiente</button> -->
+                    <button type="submit" (Click)="iniciarBranding()" class="btnMain"
+                      style="margin-top: 55px; ">
+                      Continuar
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>

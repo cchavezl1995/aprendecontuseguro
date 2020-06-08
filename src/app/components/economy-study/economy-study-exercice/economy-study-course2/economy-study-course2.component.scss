@@ -1,0 +1,121 @@
+.bordegris{
+    border-radius: 4px;
+    border: solid 1px #bababa;
+    background-color: #f7f5f5;
+    padding:10px;
+}
+.tituloEmpresa{
+    font-family: GoogleSans;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.28px;
+    color: #ec1c24;
+}
+.parrafoEmpresa{
+    width: 239px;
+  height: 166px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #5e5e5e;
+}
+.logoEmpresa{
+    border: solid 1px #e3e3e3;
+    background-color: #f9f9f9;
+    height: 164px;
+    width:100%;
+    margin:auto;
+}
+
+.resumenLittleVTS{
+    border-radius: 4px;
+    padding-top: 0px;
+    border: solid 1px #cacaca !important;
+    background-color: #ffffff;
+}
+
+.btnRegistroEvento{
+    width: 205px;
+    height: 50px;
+    border-radius: 25px;
+    border: solid 1px #ec1c24;
+    background-color: #ffffff;
+    color: #ec1c24;
+}
+.btnRegistroEvento:hover{
+    border-radius: 25px;
+    border: solid 1px #ec1c24;
+    background-color: #ec1c24;
+    color: #ffffff;
+}
+
+.btnTop2 {
+    border-color: #ec1c24 2px solid;
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    background-color: #ec1c24;
+    color: white;
+    padding: 10px 15px;
+    width: 256px;
+  }
+
+.texto {
+    font-size: 16px;
+}
+
+.PDF {
+    width: 28px;
+    height: 35.6px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    color: #c44242;
+    font-size: 10px;
+}
+
+.download {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.fondo {
+    background-color: #ffff;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.tabla-1{
+    border: 0.1rem solid lightgray;
+    font-size: 13px;
+}
+
+// $des_eco1_backColor: linear-gradient(115deg, #ec1c24 -8%, #ec1c24 101%);
+$des_eco1_backColor: #7849b8;
+
+.imgMovil{
+  background-image: url("/../../../assets/img/fraude2/finanzas/finanzas-woman.png") !important;
+  background-size: 250px;
+  background-color: $des_eco1_backColor;
+  background-position: center bottom 0%;
+  background-repeat: no-repeat;
+}
+
+.nav-link{
+    color:white
+}
+.nav-link:hover{
+    border-color: transparent;
+}
+.titCurso,.descCurso{
+    color: white
+}

@@ -1,0 +1,172 @@
+<!-- <app-block-loader [blocked]="loader"></app-block-loader> -->
+<div>
+    <div class="d-block d-xl-none d-lg-none imgMovil" style="width:100%;height:600px;
+            margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inio" class="crumbModulo">Inicio > </span>
+                <span routerLink="/salud-financiera" class="crumbModulo"><b>Salud financiera</b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo"> Diagnostica de manera simple tu salud financiera</h1>
+    </div>
+    <div class="d-none d-lg-block" style="width:100%;height:499px;
+            background-image: url('assets/img/fraude2/finantial/finantial.png'), linear-gradient(90deg, #009dd6 50%,  #91ddf8 50%);
+            background-position: right 350px bottom, right bottom;
+            background-repeat: no-repeat,no-repeat;
+            margin-top: -39px;
+            background-size: 292px 396px, contain;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span routerLink="/salud-financiera" class="crumbModulo"><b>Salud financiera </b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">Diagnostica de manera <br>
+            simple tu salud financiera
+        </h1>
+        <button *ngIf="login.isActive()" class="btnBlue" style="margin-top: 55px; margin-left:20%;"
+            routerLink="/salud-financiera-servicio">Inicia aquí
+        </button>
+        <button *ngIf="!login.isActive()" class="btnBlue" style="margin-top: 55px; margin-left:20%;"
+            (click)="login.goLogin()">QUIERO UNIRME
+        </button>
+    </div>
+    <div class="container">
+        <div class="row m-4">
+            <div class="social-cont">
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://ecodesascco.grupomok.com.co/curriculumhome"
+                                target="_blank" class="icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="http://twitter.com/share?url=http://ecodesascco.grupomok.com.co" target="_blank"
+                                class="icon-twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://ecodesascco.grupomok.com.co"
+                                target="_blank" class="icon-linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 col-sm-12">
+                <div class="row">
+
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12" style="width: 770px;">
+                        <h2 class="font-weight-bold text-secondary text-left mt-5 mb-5">
+                            Conoce cómo está tu salud en materia de finanzas.
+                        </h2>
+                        <p>Las finanzas son una parte importante de tu vida. Por esa razón, te ofrecemos una herramienta
+                            para conocer el estado en que se encuentra tu estado financiero.. </p>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" width="640" height="360"
+                        src="https://player.vimeo.com/video/385395626" allowfullscreen></iframe>
+                </div>
+               
+            </div>
+        </div>
+        <div class="row m-4">
+            <div class="col-lg-2 col-md-1 col-sm-0"></div>
+            <div class="col-lg-8 col-md-10 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12" style="width: 770px;">
+
+                        <p>A la hora de avanzar en todos los aspectos de tu actividad profesional y personal, necesitas
+                            estar al tanto de tus finanzas. Con nuestro servicio podrás diagnosticar el estado actual de
+                            tu situación y adicional a esto, tendrás la oportunidad de aprender técnicas de ahorro.</p>
+
+                        <p>Avanza, aprende, crece y vive disfrutando de los beneficios de tener en buen estado todos
+                            tus productos dentro del mercado financiero y crediticio.
+                            Recuerda que tu futuro depende de ti. </p>
+
+                        <p>Disfruta de tus beneficios con tu Ecosistema de Servicios en tres simples pasos: </p>
+
+                        <!-- <div style="width:100%;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;"
+                            class="pt-4 mt-5 mb-5">
+                            <table border="0" class="tablaHomePasos mb-5">
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">1</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Diligencia tus datos</p>
+                                        <p>personales, información académica y experiencia laboral</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">2</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Selecciona la plantilla</p>
+                                        <p>que deseas y personalízala</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">3</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Agenda cita con un experto</p>
+                                        <p>en selección para sacar el mayor provecho a tu perfil resaltando tus
+                                            habilidades y aptitudes
+                                            <br>Podrás descargar tu hoja de vida y modificar o adicionar información
+                                            cuando desees.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> -->
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-md-12 text-center">
+                        <p>Conoce y mejora tu estado de salud fianciera aquí:</p>
+                    </div>
+                    <div class="col-md-12 text-center mt-3 mb-5">
+                        <button *ngIf="!login.isActive()" class="btnMain" (click)="login.goLogin()">QUIERO
+                            UNIRME</button>
+                        <button *ngIf="login.isActive()" class="btnMain" routerLink="/salud-financiera-servicio">Inicia aquí </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-interest-material tipoMateriales="fr_healt"></app-interest-material>
+    <div class="container d-block d-xl-none d-lg-none quieroUnirmeMovile" (click)="login.goLogin()"
+        *ngIf="!login.isActive()">
+        <p><i class="icon-Login iconSize"></i>&nbsp;&nbsp;&nbsp;Quiero unirme</p>
+    </div>
+</div>

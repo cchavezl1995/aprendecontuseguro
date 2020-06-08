@@ -1,0 +1,62 @@
+<div class="sticky-top">
+<app-header></app-header>
+</div>
+<div class="wrapper">
+<router-outlet>
+    <!-- Mok -->
+    <!-- Google Tag Manager (noscript) -->
+  <!-- <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M32VG3X" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> -->
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+
+
+</router-outlet>
+<app-footer></app-footer>
+</div>
+
+<div style="display: none;">
+    <a data-toggle="modal" id="btnModalTime" data-target="#modalTime" data-dismiss="modal" href="#"
+        style="font-size: 12px; color:#8e8e93"></a>
+</div>
+
+
+<div class="modal fade" id="modalTime" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="width:1250px;">
+    <div class="modal-content" style="height:288px;width:416px">
+      <div class="container-fluid text-center mt-5">
+          <img width="42px" height="42px"
+          src="assets/img/ICO/iconClock.svg"
+          style="vertical-align: middle;;width:40px" />
+        <h5 class="modal-title text-center" style="margin-top: 4% !important;">Tu sesión ha expirado</h5>
+        <p class="text-center" style="margin-top: 3% !important;">Hemos cerrado tu sesión por inactividad.</p>
+        <button class="btnMain" data-dismiss="modal" style="margin: 10px !important;width: 203px;">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', `${analytics}`);
+
+  router.events.subscribe(
+    event => {
+      if(event instanceof NavigationEnd){
+        gtag('config', `${analytics}`,
+          {
+            'page_path': event.urlAfterRedirects
+          }
+        );
+      }
+    }
+  );
+</script> -->

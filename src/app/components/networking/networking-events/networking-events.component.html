@@ -1,0 +1,114 @@
+<div>
+    <div style="width:100%;height:300px;
+        background-color: #068468;position:absolute;margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 17.8%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span [routerLink]="['/networking']" routerLinkActive="router-link-active"  class="crumbModulo">Networking > </span>
+                <span [routerLink]="['/networking-servicio']" routerLinkActive="router-link-active"  class="crumbModulo">Servicio > </span>
+                <span [routerLink]="['/networking-eventos']" routerLinkActive="router-link-active"  class="crumbModulo"><b>Eventos</b></span>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+            <h1 class="tituloModulo">Networking</h1>
+        </div>
+    </div>
+    <!-- Page Content  -->
+    <div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+        <section class="col-8 mt-5 offset-2 accordionPerfil mb-5 sectionVTS">
+            <section class="cardsPerfil pb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;">
+                    <div class="card-body pb-5" style="padding:6%">
+                        <div class="row">
+                        <div class="container">
+                            <a [routerLink]="['/networking-servicio']" routerLinkActive="router-link-active"  class="mb-2 manito volver" role="button" style="color: #7b7b7b;"><i
+                                    class="fas fa-chevron-circle-left"></i> Volver</a>
+                        </div>
+                    </div>
+                        <h1 class="h1TituloModulo textColorGray">Crea tu red de contactos</h1>
+                        <p class="pCabeceraModulo">
+                            Aquí puedes verificar todos los eventos disponibles por ciudad y por industria. Prográmate y
+                            selecciona el evento de tu interés.
+                        </p>
+                        <h2 class="h2TituloModulo textColorGray">Eventos del mes</h2>
+                        <div style="border-top:1px solid #c4d4e2;margin-bottom: 20px"></div>
+                        <div class="row">
+
+                            <div class="form-group col-md-4 col-xs-12">
+
+                                <label for="typeId">Ciudad</label>
+
+                                <ng-select [items]="filtroCiudades" bindLabel="text" bindValue="id"
+                                    placeholder="selecciona una ciudad" [(ngModel)]="filterIdCiudad"
+                                    (change)="filtrarEventos()" [clearable]="false">
+                                </ng-select>
+
+
+                            </div>
+
+                            <div class="form-group col-md-4 col-xs-12">
+                                <label for="typeId">Tipo de evento</label>
+                                <select class="form-control" [(ngModel)]="filterIdEvento"
+                                    (change)="filtrarEventos()">
+                                    <option [ngValue]='0'>Todos</option>
+                                    <option [ngValue]='1'>Foro</option>
+                                    <option [ngValue]='2'>Seminario</option>
+                                    <option [ngValue]='3'>Demodays</option>
+                                    <option [ngValue]='4'>Charlas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div *ngIf="listaEventos.length == 0" class="col-md-12">
+                            <span class="titleInserColapVTS">No existen coincidencias con el filtro.</span>
+                        </div>
+
+                        <div *ngIf="listaEventos.length > 0" class="col-md-12">
+                            <span class="titleInserColapVTS textColorGray">Eventos del mes</span>
+                            <div class="row">
+                                <div *ngFor="let evento of listaEventos | paginate: config" class="col-lg-4 col-md-6 mt-3">
+                                    <div class="card resumenLittleVTS">
+                                        <div class="divImagenEvento">
+                                            <div class="plusEventos">
+                                                <div class="container-fluid" (click)="moreOrLess(evento.$id)" style="float: right;"> 
+                                                    <a   data-toggle="collapse" href="#{{'evento'+evento.$id}}"   role="button" aria-expanded="false">
+                                                       <div> <img  src="../../../assets/img/psico/mok-scotia-botones-psico_1.png" > </div>
+                                                       <!-- <div *ngIf="!more"> <img src="../../../assets/img/psico/mok-scotia-botones-psico_2.png"> </div>  -->
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="divImagenEvento"
+                                             [ngStyle]="{'background-image': 'url('+evento.rutaImagen+')'}"></div>
+                                        </div>
+                                        
+                                        
+                                        <div *ngIf="more" class="collapse" id="{{'evento'+evento.$id}}">
+                                            {{evento.descripcionEvento}}
+                                        </div>
+                                        <div *ngIf="!more" class="collapse" id="{{'evento'+evento.$id}}"> </div>
+                                        <div class="card-body text-center">
+                                            <button type="submit" class="btnRegistroEvento" data-toggle="modal"
+                                                data-target="#exampleModal"
+                                                (click)="detalleEvento(evento)">Regístrate aquí
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="width:100%; margin-top: 25px;" class="text-center mb-5">
+                                    <pagination-controls id="paginarOfertas" (pageChange)="pageChanged($event)"
+                                        maxSize="7" directionLinks="true" autoHide="true" responsive="true"
+                                        previousLabel="Atrás" nextLabel="Siguiente"
+                                        screenReaderPaginationLabel="Pagination" screenReaderPageLabel="página"
+                                        screenReaderCurrentLabel="Página:">
+                                    </pagination-controls>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

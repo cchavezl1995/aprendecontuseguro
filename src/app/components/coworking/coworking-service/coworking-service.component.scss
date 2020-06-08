@@ -1,0 +1,77 @@
+.bold {
+  font-weight: bold;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #ec1c24 !important;
+}
+
+  
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #ec1c24 !important;
+}
+
+.btnTop2 {
+  border-color: #ec1c24 2px solid;
+  border: 0px;
+  border-radius: 50px;
+  font-size: px;
+  background-color: #ec1c24;
+  color: white;
+  padding: 10px 15px;
+  min-width: 221px;
+  height:50px;
+}
+.btnTop2:hover {
+  background-color: #ec1c24;
+}
+.btnTop2:active {
+  background-color: #ec1c24;
+}
+// boton siguiente
+.btn-next { 
+  color: #FFFFFF; 
+  background-color: #ec1c24; 
+  border-color: #ec1c24; 
+  border-radius: 25px;
+} 
+ 
+.btn-next:hover, 
+.btn-next:focus, 
+.btn-next:active, 
+.btn-next.active, 
+.open .dropdown-toggle.btn-next { 
+  color: #FFFFFF; 
+  background-color: #ec1c24; 
+  border-color: #ec1c24; 
+} 
+ 
+.btn-next:active, 
+.btn-next.active, 
+.open .dropdown-toggle.btn-next { 
+  background-image: none; 
+} 
+ 
+.btn-next.disabled, 
+.btn-next[disabled], 
+fieldset[disabled] .btn-next, 
+.btn-next.disabled:hover, 
+.btn-next[disabled]:hover, 
+fieldset[disabled] .btn-next:hover, 
+.btn-next.disabled:focus, 
+.btn-next[disabled]:focus, 
+fieldset[disabled] .btn-next:focus, 
+.btn-next.disabled:active, 
+.btn-next[disabled]:active, 
+fieldset[disabled] .btn-next:active, 
+.btn-next.disabled.active, 
+.btn-next[disabled].active, 
+fieldset[disabled] .btn-next.active { 
+  background-color: #ec1c24; 
+  border-color: #ec1c24; 
+} 
+ 
+.btn-next .badge { 
+color: #ec1c24; 
+background-color: #FFFFFF; 
+}

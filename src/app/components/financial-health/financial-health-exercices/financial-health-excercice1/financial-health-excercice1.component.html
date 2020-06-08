@@ -1,0 +1,117 @@
+
+<div style="width:100%;height:300px;
+background-color: #009dd6;
+position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/salud-financiera" class="crumbModulo">Salud financiera > </span>
+            <span routerLink="/salud-financiera-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <h1 class="tituloModulo pad-tit">Salud Financiera</h1>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+<div class="row" >
+    <div class="container mb-3">
+        <a routerLink="/salud-financiera-ejercicios" class="btn-volver manito Volver" role="button" style="color: #008ACC;"><i
+                class="fas fa-chevron-circle-left"></i> Volver</a>
+      </div>
+    <p class="text-center col-lg-10 offset-lg-1 mt-3 mb-4 font-weight-bold">Mide si se hace un presupuesto
+        mensual, con qué nivel de detalle se arma y si se cumple.</p>
+    <div class="col-lg-8 offset-lg-2 offset-md-0 col-md-12">
+        <div class="form-group">
+            <label>
+                ¿Quién es el responsable de las decisiones relacionadas con el manejo diario del
+                dinero en tu hogar?
+            </label>
+            <select class="form-control mt-2" [(ngModel)]="respuestas3.campo_1_1">
+                <option value="">Elige</option>
+                <option value="Yo">Yo</option>
+                <option value="Yo y mi pareja">Yo y mi pareja</option>
+                <option value="Mi pareja">Mi pareja</option>
+                <option value="Otro miembro familiar">Otro miembro familiar</option>
+                <option value="Otra persona no familiar">Otra persona no familiar</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-8 offset-lg-2 offset-md-0 col-md-12">
+        <div class="form-group">
+            <label>
+                Nivel total de ingresos mensuales de tu hogar (Sumatoria de tus ingresos y de
+                todos aquellos que aporte a la economía del hogar)
+            </label>
+            <select class="form-control mt-2" [(ngModel)]="respuestas3.campo_1_2">
+                <option value="">Elige</option>
+                <option value="$0 - 999.999">$0 - $999.999</option>
+                <option value="$1.1000.000 - 1.999.999">$1.000.000 - $1.999.999</option>
+                <option value="$2.000.000 - 2.999.999">$2.000.000 - $2.999.999</option>
+                <option value="$3.000.000 - 3.999.999">$3.000.000 - $3.999.999</option>
+                <option value="$4.000.000 - 5.999.999">$4.000.000 - $5.999.999</option>
+                <option value="$6.000.000 - 7.999.999">$6.000.000 - $7.999.999</option>
+                <option value="$8.000.000 - 9.999.999">$8.000.000 - $9.999.999</option>
+                <option value="$10.000.000 - 11.999.999">$10.000.000 - $11.999.999</option>
+                <option value="$12.000.000 - 13.999.999">$12.000.000 - $13.999.999</option>
+                <option value="$14.000.000 - 15.999.999">$14.000.000 - $15.999.999</option>
+                <option value="> $16.999.999">> $16.000.000</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-8 offset-lg-2 offset-md-0 col-md-12">
+        <div class="form-group">
+            <label>
+                ¿Haces un presupuesto familiar o personal mensualmente?
+            </label>
+            <select class="form-control mt-2" [(ngModel)]="respuestas3.campo_1_3">
+                <option value="">Elige</option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+                <option value="A veces">A veces</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-8 offset-lg-2 offset-md-0 col-md-12">
+        <div class="form-group">
+            <label>
+                ¿Sea personal o familiar utilizas este presupuesto para hacer un plan detallado
+                y exacto del uso del dinero o para hacer un plan muy aproximado y agregado del
+                uso del dinero?
+            </label>
+            <select class="form-control mt-2" [(ngModel)]="respuestas3.campo_1_4">
+                <option value="">Elige</option>
+                <option value="Para hacer un plan EXACTO y DETALLADO">Para hacer un plan EXACTO
+                    y DETALLADO</option>
+                <option value="Para hacer un plan APROXIMADO y AGREGADO">Para hacer un plan
+                    APROXIMADO y AGREGADO</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-8 offset-lg-2 offset-md-0 col-md-12">
+        <div class="form-group">
+            <label>
+                ¿Personalmente o a nivel familiar revisas y sigues mensualmente este plan de
+                presupuesto para la utilización del dinero?
+            </label>
+            <select class="form-control mt-2" [(ngModel)]="respuestas3.campo_1_5">
+                <option value="">Elige</option>
+                <option value="Siempre">Siempre</option>
+                <option value="A veces">A veces</option>
+                <option value="Nunca">Nunca</option>
+            </select>
+        </div>
+    </div>
+    <div class="text-center" style="width:100%">
+        <button style="margin: auto" type="submit" (click)="guardarIndicador3()" routerLink="/salud-financiera-ejercicios"
+            class="btn btnTop2 btn-primary mt-4 mb-4">Finalizar cuestionario</button>
+    </div>
+</div>
+</div>
+</section>
+</section>
+</div>
+</div>

@@ -1,0 +1,367 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+<div >
+    <div style="width:100%;height:240px;background-color: #ec1c24!important;
+    background: url('assets/img/desempleo-bdb/joboffers-woman-service-2.png') no-repeat; background-position: left bottom; background-size: auto 100%;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);color: white;padding-top: 5px">
+            <div style="margin-left: 17.8%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span [routerLink]="['/ofertas-laborales']" routerLinkActive="router-link-active"
+                    class="crumbModulo">Conoce ofertas laborales > </span>
+                <span [routerLink]="['/ofertas-laborales-servicio']" routerLinkActive="router-link-active"
+                    class="crumbModulo"><b>Servicio</b></span>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+            <h1 class="tituloModulo">Conoce ofertas laborales</h1>
+        </div>
+    </div>
+<div>
+   
+    <section class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0 accordionPerfil pb-5 sectionVTS"
+        style="margin-top:-86px;">
+        <section class="cardsPerfil mb-5">
+            <div class="card mb-3" style="border:1px solid lightgray !important">
+                <div class="row">
+                    <div class="col-12" style="padding:6%">
+                        <ul class="nav mb-3 mt-5 pCabeceraModulo" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-info-tab" data-toggle="pill" href="#pills-info"
+                                    role="tab" aria-controls="pills-info" aria-selected="true" >
+                                    Ofertas laborales
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" 
+                                (click)="AddLog('ofertas-laborales-servicio','Ingreso a página de material de consulta')" role="tab" aria-controls="pills-contact" aria-selected="false">
+                                    Material de consulta
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-3" id="pills-tabContent" style="border:0px">
+                            <div class="tab-pane fade show active" id="pills-info" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <p class="pCabeceraModulo mb-5" style="
+                                margin-left: -15px;
+                                margin-right: -15px;">
+                                    Aquí tienes miles de ofertas actualizadas con las grandes empresas de Colombia
+                                    diferenciadas por las industrias.
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-12 col-sm-12 mt-4 desktopVisible">
+                                        <div class="row">
+                                            <div class="col-md-12 col-xs-12 filterJobs pt-2 pb-2">
+                                                <div class="titleFilters"><i
+                                                        class="fas fa-filter mr-3"></i><span>Filtros</span></div>
+                                                <div class="col-md-12 col-xs-12 noPadding">
+                                                    <div class="form-group">
+                                                        <label for="typeId">{{lblUbicacion}}</label>
+                                                        <select id="ubicaciones" name="ubicaciones"
+                                                            [(ngModel)]="txtCiudad" class="form-control"
+                                                            placeholder="Selecciona el área">
+                                                            <option value="" style="font-weight: bold">Todas las
+                                                                ubicaciones</option>
+                                                            <option
+                                                                *ngFor="let filUBI of filterUbicacion | ofertasUnique"
+                                                                [ngValue]="filUBI"> {{filUBI}} </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-xs-12 noPadding">
+                                                    <div class="form-group">
+                                                        <label for="typeId">{{lblSector}}</label>
+                                                        <select id="sectores" name="sectores" [(ngModel)]="txtSector"
+                                                            class="form-control" placeholder="Selecciona el área">
+                                                            <option value="">Todos los sectores</option>
+                                                            <option *ngFor="let filSE of filterSector | ofertasUnique"
+                                                                [ngValue]="filSE"> {{filSE}} </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-xs-12 noPadding">
+                                                    <div class="form-group">
+                                                        <label for="typeId mt-2 mb-2">Rango salarial (en
+                                                            millones)</label>
+                                                        <div style="width:100%;height:400px;overflow-y: auto">
+                                                            <div class="form-check mt-3"
+                                                                *ngFor="let filSAL of filterSalario | ofertasUnique; let i = index">
+                                                                <input class="form-check-input checkSalario"
+                                                                    (change)="setSalario($event.target.value,filSAL)"
+                                                                    id="chkSal-{{i}}" type="checkbox">
+                                                                <label class="form-check-label"
+                                                                    for="chkSal-{{i}}"><span>{{filSAL}}</span></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-xs-12 noPadding">
+                                                    <a (click)="confirmarFiltrado()"
+                                                        class="btn btnVisitar btn-block mt-4 mb-4"><i
+                                                            class="fas fa-filter"></i> Filtrar</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-12 col-sm-12 mt-4 desktopVisible">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                    <select id="txtOrden" [(ngModel)]="txtOrden"
+                                                        (ngModelChange)="ordenarOfertas()" class="form-control">
+                                                        <option value="1" selected="true">Más reciente</option>
+                                                        <option value="2">Menos reciente</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" [(ngModel)]="txtCargo" id="txtCargo"
+                                                        class="form-control fa-fonticons"
+                                                        placeholder="¿Qué cargo estás buscando?"
+                                                        style="padding-right: 40px;">
+                                                    <div class="input-group-append">
+                                                        <a class="btn" (click)="confirmarFiltrado()" style="
+                                                        float: right;
+                                                        position: absolute;
+                                                        right: 0px;"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 col-xs-12 mb-4c resultsJobs"
+                                                *ngIf="existenRegistros">
+                                                <div class="alert alert-success" role="alert" style="display: none;">
+                                                    <b><span></span></b>
+                                                    <br>
+                                                    <span></span>
+                                                </div>
+                                                <b id="pagesTop" class="text-left mb-2" style="display: none;">
+                                                    <span>{{cantidadOfertasDesde}}</span> al
+                                                    <span>{{cantidadOfertasHasta}}</span> de
+                                                    <span>{{cantidadOfertas}}</span> ofertas
+                                                </b>
+                                                <div class="card mb-4 cardOferta"
+                                                    *ngFor="let ofe of ofertas | paginate: config">
+                                                    <div class="card-header offerJob pt-2">
+                                                        <div class="row">
+                                                            <div class="col-8">
+                                                                <span
+                                                                    style="font-size:20px"><b>{{ofe.tituloOferta}}</b></span>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <span class="float-lg-right mt-1 float-sm-left">
+                                                                    <span>Publicado
+                                                                        <label>{{formatearFecha(ofe.fechaPublicacionOferta)}}</label></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body cuerpoOferta" style="padding:40px;">
+                                                        <img src="assets/img/job-offers/{{ofe.proveedorEmpleo.toLowerCase()}}.png"
+                                                            style="width:100px;max-height: 100px;" /><br><br>
+                                                        <p>Descripción general</p>
+                                                        <p [outerHTML]="ofe.descripcionOferta"></p>
+                                                        <!-- <div class="mt-3" *ngIf="!(ofe.requisitos=='' || ofe.requisitos==null)">
+                                                            <p><b>Requisitos</b></p>
+                                                            <p [outerHTML]="ofe.requisitos"></p>
+                                                        </div> -->
+                                                        <p class="mt-3" *ngIf="!(ofe.area=='' || ofe.area==null)"><b>Área:</b>
+                                                            {{ofe.area}}</p>
+                                                        <p *ngIf="!(ofe.razonSocial=='' || ofe.razonSocial==null)">
+                                                            <b>Razón Social:</b> {{ofe.razonSocial}}</p>
+                                                    </div>
+                                                    <div class="card-footer bg-transparent" style="padding-left: 40px;">
+                                                        <div class="row">
+                                                            <div class="col-lg-9 col-md-12 col-sm-12 pl-4 pt-4"
+                                                                style="padding-top: 15px !important;">
+                                                                <label class="mr-3 float-lg-left">
+                                                                    <i class="fas fa-map-marker-alt"></i>&nbsp;
+                                                                    {{normalizaComas(ofe.ciudadOferta)}}
+                                                                    <a class="hiddenInfo"
+                                                                        style="visibility: hidden;">Otras</a>
+                                                                </label>
+                                                                <label class="mr-3 float-lg-left">
+                                                                    <i class="fas fa-cogs"></i>&nbsp;
+                                                                    {{normalizaComas(ofe.sector)}}
+                                                                    <a class="hiddenInfo"
+                                                                        style="visibility: hidden;">Otras</a>
+                                                                </label>
+                                                                <label class="mr-3 float-lg-left mb-3"><i
+                                                                        class="fas fa-dollar-sign"></i>&nbsp;{{ofe.salarioOferta}}</label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-12 col-sm-12 mt-lg-0 mt-sm-4"
+                                                                style="
+                                                            padding-bottom: 10px;">
+                                                                <a href="{{ofe.link}}" (click)="AddLog('ofertas-laborales-servicio','Se redirige a página para postular a vacante')" target="_blank"
+                                                                    class="btn mt-2 btn-block float-lg-right float-sm-left btnVisitar">
+                                                                    Postularme
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div style="width:100%" class="text-center">
+                                                    <pagination-controls id="paginarOfertas"
+                                                        (pageChange)="pageChanged($event)" maxSize="7"
+                                                        directionLinks="true" autoHide="true" responsive="true"
+                                                        previousLabel="Atrás" nextLabel="Siguiente"
+                                                        screenReaderPaginationLabel="Pagination"
+                                                        screenReaderPageLabel="página"
+                                                        screenReaderCurrentLabel="Página:">
+                                                    </pagination-controls>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 col-xs-12 mb-4c resultsJobs"
+                                                *ngIf="!existenRegistros">
+                                                <div class="alert "
+                                                    style="background-color: rgba(235, 34, 48, 0.04);border: solid 1px #f5a623;">
+                                                    <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+                                                    <i class="text-warning icon fas fa-exclamation-triangle"></i>
+                                                    {{mensajeOfertas}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Filters control start-->
+                                    <!--Filters control ends-->
+
+                                    <!--Results control start-->
+                                    <!--Results control ends-->
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                aria-labelledby="pills-contact-tab">
+                                <!-- <div class="divRaya"></div> -->
+                                <!-- <h3>¿Necesitas ayuda? Llámanos</h3>
+                                <p>Nuestras líneas están disponibles para resolver tus consultas e inquietudes.
+                                </p>
+                                <div class="row mt-5">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <p><i style="font-size: 35px;" class="fas fa-phone-alt"></i><br>
+                                            Línea de atención Bogotá<br><span class="colorTexto">745553</span>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <p><i style="font-size: 35px;" class="fas fa-phone-alt"></i><br>
+                                            Línea de atención Nacional<br><span class="colorTexto">01 800 96 00
+                                                11</span>
+                                        </p>
+                                    </div>
+                                </div> -->
+                                <p>
+                                    Aquí encuentras material para fortalecerte, entrenarte y mejorar tus aptitudes para
+                                    aplicar a ofertas laborales.
+                                </p>
+                                <div class="container mb-5">
+                                    <!-- <p>Podrás saber sobre más temas de interés para que complementes tus
+                                        preguntas sobre consultoría legal.
+                                    </p> -->
+                                    <object style="width:100%;height: 555px"
+                                        data="https://www.youtube.com/embed/u_7oaskZrlo">
+                                    </object>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <!--
+                                    <div>
+                                    <p>Videos recomendados</p>
+                                </div>
+                                <div class="card-deck">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <object class="card-img-top"
+                                                data="https://www.youtube.com/embed/u_7oaskZrlo">
+                                            </object>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">This is a wider card with
+                                                supporting text below as a natural lead-in to
+                                                additional content. This content is a little bit
+                                                longer.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <object class="card-img-top"
+                                                data="https://www.youtube.com/embed/u_7oaskZrlo">
+                                            </object>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">This card has supporting text below
+                                                as a natural lead-in to additional content.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <object class="card-img-top"
+                                                data="https://www.youtube.com/embed/u_7oaskZrlo">
+                                            </object>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">This is a wider card with
+                                                supporting text below as a natural lead-in to
+                                                additional content. This card has even longer
+                                                content than the first to show that equal height
+                                                action.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-deck mt-5">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <object class="card-img-top"
+                                                data="https://www.youtube.com/embed/u_7oaskZrlo">
+                                            </object>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">This is a wider card with
+                                                supporting text below as a natural lead-in to
+                                                additional content. This content is a little bit
+                                                longer.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <object class="card-img-top"
+                                                data="https://www.youtube.com/embed/u_7oaskZrlo">
+                                            </object>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">This card has supporting text below
+                                                as a natural lead-in to additional content.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <object class="card-img-top"
+                                                data="https://www.youtube.com/embed/u_7oaskZrlo">
+                                            </object>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">This is a wider card with
+                                                supporting text below as a natural lead-in to
+                                                additional content. This card has even longer
+                                                content than the first to show that equal height
+                                                action.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                -->
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>

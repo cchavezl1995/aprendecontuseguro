@@ -1,0 +1,147 @@
+<div *ngIf="false" class="progress-bar-container">
+    <div class="progress-bar">
+        <div class="progress-bar__circles">
+            <div class="progress-bar__circle progress-bar__circle--completed">
+                <span class="number">&#10003;</span>
+                <!-- <span class="progress-bar__circle__label">Sleep</span> -->
+            </div>
+            
+            <div class="progress-bar__bar progress-bar__bar--completed"></div>
+            
+            <div class="progress-bar__circle progress-bar__circle--completed">
+                <!-- <span class="number">2</span> -->
+                <span class="progress-bar__circle__label">Stress</span>
+            </div>
+            
+            <div class="progress-bar__bar progress-bar__bar--completed"></div>
+            
+            <div class="progress-bar__circle progress-bar__circle--selected">
+                <!-- <span class="number">3</span> -->
+                <span class="progress-bar__circle__label">Exercise</span>
+            </div>
+            
+            <div class="progress-bar__bar"></div>
+            
+            <div class="progress-bar__circle">
+                <!-- <span class="number">4</span> -->
+                <span class="progress-bar__circle__label">Coffee</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="padding-left: 0px;padding-right: 0px;">
+    <div class="row">
+    <div class="col-4 text-left">
+        <span class="progress-bar__circle__label" style="padding-left: 10px;">Paso 1</span>
+    </div>
+    <div class="col-4 text-center">        
+        <span class="progress-bar__circle__label">Paso 2</span>        
+    </div>
+    <div class="col-4 text-right">
+        <span class="progress-bar__circle__label" style="padding-right: 10px;">Paso 3</span>
+    </div>
+    </div>
+</div>
+<div *ngIf="step == 1" class="progress-bar-container">
+    <div class="progress-bar">
+        <div class="progress-bar__circles">
+
+            <div class="progress-bar__circle progress-bar__circle--selected">
+                <!-- <span class="number">3</span> -->
+            
+            </div>
+            
+            <div class="progress-bar__bar"></div>
+            
+            <div class="progress-bar__circle">
+                <!-- <span class="number">4</span> -->
+                
+            </div>
+            
+            <div class="progress-bar__bar"></div>
+            
+            <div class="progress-bar__circle">
+                <!-- <span class="number">4</span> -->
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="step == 2" class="progress-bar-container">
+    <div class="progress-bar">
+        <div class="progress-bar__circles">
+                        
+            <div class="progress-bar__circle progress-bar__circle--completed">
+                <span class="number">&#10003;</span>
+                <span class="progress-bar__circle__label"></span>
+            </div>
+            
+            <div class="progress-bar__bar progress-bar__bar--completed"></div>
+            
+            <div class="progress-bar__circle progress-bar__circle--selected">
+                <!-- <span class="number">3</span> -->
+                <span class="progress-bar__circle__label"></span>
+            </div>
+            
+            <div class="progress-bar__bar"></div>
+            
+            <div class="progress-bar__circle">
+                <!-- <span class="number">4</span> -->
+                <span class="progress-bar__circle__label"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="step == 3" class="progress-bar-container">
+    <div class="progress-bar">
+        <div class="progress-bar__circles">
+                        
+            <div class="progress-bar__circle progress-bar__circle--completed">
+                <span class="number">&#10003;</span>
+                <span class="progress-bar__circle__label"></span>
+            </div>
+
+            <div class="progress-bar__bar progress-bar__bar--completed"></div>
+            
+            <div class="progress-bar__circle progress-bar__circle--completed">
+                <span class="number">&#10003;</span>
+                <span class="progress-bar__circle__label"></span>
+            </div>
+            
+            <div class="progress-bar__bar progress-bar__bar--completed"></div>
+            
+            <div class="progress-bar__circle progress-bar__circle--selected">
+                <!-- <span class="number">3</span> -->
+                <span class="progress-bar__circle__label"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="step == 4" class="progress-bar-container">
+    <div class="progress-bar">
+        <div class="progress-bar__circles">
+                        
+            <div class="progress-bar__circle progress-bar__circle--completed">
+                <span class="number">&#10003;</span>
+                <span class="progress-bar__circle__label"></span>
+            </div>
+
+            <div class="progress-bar__bar progress-bar__bar--completed"></div>
+            
+            <div class="progress-bar__circle progress-bar__circle--completed">
+                <span class="number">&#10003;</span>
+                <span class="progress-bar__circle__label"></span>
+            </div>
+            
+            <div class="progress-bar__bar progress-bar__bar--completed"></div>
+            
+            <div class="progress-bar__circle progress-bar__circle--completed">
+                <span class="number">&#10003;</span>
+                <span class="progress-bar__circle__label"></span>
+            </div>
+        </div>
+    </div>
+</div>

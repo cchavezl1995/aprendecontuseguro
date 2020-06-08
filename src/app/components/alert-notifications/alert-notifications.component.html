@@ -1,0 +1,187 @@
+<div>
+    <div class="d-block d-xl-none d-lg-none imgMovil" style="width:100%;height:600px;
+            margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span class="crumbModulo"><b>Alertas y notificaciones</b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">Todas las alertas
+            financieras en un solo lugar</h1>
+    </div>
+    <div class="d-none d-lg-block" style="width:100%;height:499px;
+        background-image: url('assets/img/fraude2/alerts/alerts-man.png'), linear-gradient(90deg, #fb6330 50%,  #feba89 50%);
+        background-position: right 350px bottom, right bottom;
+        background-repeat: no-repeat,no-repeat;
+        margin-top: -39px;
+        background-size: auto, contain;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span routerLink="/alertas-notificaciones" class="crumbModulo"><b>Alertas y notificaciones </b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">Todas las alertas <br>
+            financieras en un solo lugar </h1>
+        <button *ngIf="login.isActive()" class="btnOrange" routerLink="/alertas-notificaciones-servicio"
+            style="margin-top: 55px; margin-left:20%;">
+            Activar mis alertas
+        </button>
+        <button *ngIf="!login.isActive()" class="btnOrange" style="margin-top: 55px; margin-left:20%;"
+            (click)="login.goLogin()">QUIERO UNIRME
+        </button>
+    </div>
+    <div class="container">
+        <div class="row m-4">
+            <div class="social-cont">
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://ecodesascco.grupomok.com.co/curriculumhome"
+                                target="_blank" class="icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="http://twitter.com/share?url=http://ecodesascco.grupomok.com.co" target="_blank"
+                                class="icon-twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://ecodesascco.grupomok.com.co"
+                                target="_blank" class="icon-linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10 offset-md-1 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12" style="width: 770px;">
+                        <h2 class="font-weight-bold text-secondary text-left mt-5 mb-5">
+                            Permanece al tanto de tus movimientos financieros
+                        </h2>
+                        <p>Con tu Seguro Tarjeta Protegida puedes conocer en tiempo real las notificaciones por la
+                            compra y
+                            adquisición de productos y/o servicios financieros.</p>
+
+                        <p> Nuestro sistema de alertas, enviará un mensaje de texto a tu celular con el fin de que estés
+                            al
+                            tanto y evites ser victima de algún fraude cibernético.</p>
+
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div style="width:100%;" class="text-center">
+                    <iframe width="100%" height="555" src="https://www.youtube.com/embed/X-50s-rpGRA" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row m-4">
+            <div class="col-lg-10 col-md-10 offset-md-1 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12" style="width: 770px;">
+                        <p>Gestiona todos tus productos en la palma de tu mano. Recibe todas las notificaciones y
+                            permanece al tanto de lo que pasa con tus servicios y productos Scotiabank Cardif
+
+                            <p> Puedes estar seguro, donde quiera que te encuentres, de qué pasa con tus productos. Con
+                                tu
+                                servicio de alertas, aprende a tener el control de toda tu vida relacionada con el
+                                ecosistema de servicios Scotiabank Cardif. Gestiona toda tu vida sin moverte de donde
+                                estés.
+                            </p>
+                            <P> Todos tus servicios al alcance de tu mano. Tu ecosistema de servicios Scotiabank Cardif,
+                                te
+                                ofrece una constante oferta en todos los campos de tu vida que te harán crecer y
+                                alcanzar
+                                tus objetivos.
+                                Activa tu seguro y haz parte de los beneficios que te ofrece todo el ecosistema. Avanza,
+                                evoluciona y desarróllate integralmente.
+                            </P>
+                            <p> Aprovecha este y otros beneficios sin ningún costo adicional. Tu ecosistema de
+                                servicios te
+                                mantiene actualizado e informado sobre tu vida con solo hacer un click.</p>
+
+                            <!-- <div style="width:100%;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;"
+                            class="pt-4 mt-5 mb-5">
+                            <table border="0" class="tablaHomePasos mb-5">
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">1</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Diligencia tus datos</p>
+                                        <p>personales, información académica y experiencia laboral</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">2</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Selecciona la plantilla</p>
+                                        <p>que deseas y personalízala</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">3</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Agenda cita con un experto</p>
+                                        <p>en selección para sacar el mayor provecho a tu perfil resaltando tus
+                                            habilidades y aptitudes
+                                            <br>Podrás descargar tu hoja de vida y modificar o adicionar información
+                                            cuando desees.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> -->
+                            <div style="width:100%;border-top: 1px solid lightgray;" class="pt-4 mt-5 mb-5"></div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <p>Queremos acompañarte para que te acerques a tus sueños</p>
+                    </div>
+                    <div class="col-md-12 text-center mt-3 mb-5">
+                        <button *ngIf="!login.isActive()" class="btnMain" (click)="login.goLogin()">QUIERO
+                            UNIRME</button>
+                        <button *ngIf="login.isActive()" class="btnMain"
+                            routerLink="/alertas-notificaciones-servicio">Activar mis alertas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-interest-material tipoMateriales="fr_alertas"></app-interest-material>
+        <div class="container d-block d-xl-none d-lg-none quieroUnirmeMovile" (click)="login.goLogin()"
+            *ngIf="!login.isActive()">
+            <p><i class="icon-Login iconSize"></i>&nbsp;&nbsp;&nbsp;Quiero unirme</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,262 @@
+<nav (clickOutside)="onClickedOutside()" class="navbar navbar-expand-lg navbar-light NAVBAR"
+  style="z-index: 777;background-color:white">
+  <button (click)="showCollapse(); opcionesMovilFun()" class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <a class="navbar-brand logoBanco d-none d-lg-block" href="#">
+    <img (click)="goHome()" class="logoResponsive" src="assets/img/logo-cardif.png" alt="CarDif" />
+  </a>
+  <a class="navbar-brand logoBanco d-block d-xl-none d-lg-none" href="#" (clickOutside)="onClickedOutsideDatos()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="82" height="29" viewBox="0 0 82 29">
+      <g fill="none" fill-rule="evenodd">
+        <g fill="#EC111A" fill-rule="nonzero">
+          <g>
+            <path
+              d="M21.2 5.38h-8.17a9.057 9.057 0 0 0-9.001 8.05A9.057 9.057 0 0 1 11.952 0h14.086l-4.839 5.38zM4.853 23.495h8.176a9.064 9.064 0 0 0 9.001-8.05 9.057 9.057 0 0 1-7.93 13.431H0l4.853-5.38z" />
+            <circle cx="13.029" cy="14.438" r="7.275" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </a>
+
+  <button (click)=" personaMovilFun()" class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation"> <span class="icon-user iconSize"></span> </button>
+
+  <div *ngIf="personaMovil" class="collapse navbar-collapse botonResponsive" id="navbarSupportedContent2">
+    <ul class="navbar-nav ml-auto botonResponsive listaMovil">
+      <li class="nav-item dropdown" *ngIf="!login.isActive()"> <a class="nav-link active enlace txt-nav"
+          routerLink="/inicia-sesion/1" routerLinkActive="activated"><i class="icon-user iconSize "></i><span
+            class="textLi  " style="font-size: 17.6px !important;"> Inicia sesión</span></a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="!login.isActive()"> <a class="nav-link active enlace txt-nav linkRegistro"
+          routerLink="/registro/2" routerLinkActive="activated"><i class="fas fa-sign-in-alt"></i><span class="textLi "
+            style="font-size: 17.6px !important;">Regístrate</span></a> </li>
+      <li class="nav-item dropdown" *ngIf="login.isActive()">
+        <a href="/inicio" (click)="datosSesionFun()" (clickOutside)="onClickedOutsideDatos()"
+          class="nav-link active enlace txt-nav txt-nav" id="datosSesion" data-toggle="dropdown"> <i
+            class="icon-user iconSize"></i>
+          <span class="textLi " style="font-size: 17.6px !important;">&nbsp;Hola,
+            {{login.getDataUser().nombres}}&nbsp;</span><i class="fas fa-chevron-down"></i><b class="caret"></b></a>
+        <ul (clickOutside)="onClickedOutsideDatos()" class="dropdown-menu show" *ngIf="datosSesion">
+          <a class="dropdown-item" routerLink="/perfil" routerLinkActive="activated">Mi perfil &nbsp;&nbsp;</a>
+          <a class="dropdown-item" routerLink="/ayuda" routerLinkActive="activated">Ayuda &nbsp;&nbsp;</a>
+          <a class="dropdown-item" (click)="login.logOut(); exitLogin()">Cerrar sesión &nbsp;&nbsp;</a>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="opcionesMovil" class="collapse navbar-collapse botonResponsive manito" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto botonResponsive">
+      <li class="nav-item active">
+        <a class="nav-link active enlace" routerLink="/inicio"
+          (click)="goHome(); AddLog('inicio','Navega a la página de inicio')" routerLinkActive="activated">
+          <span class="textLi">Inicio</span><span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <li class="nav-item dropdown ">
+        <a class="nav-link active enlace" id="ourServices" role="button" (click)="serviciosFun()"
+          (clickOutside)="onClickedOutsideDatos()" data-toggle="collapse" aria-haspopup="true" aria-expanded="false"
+          style="cursor: pointer !important;" *ngIf="!login.isActive()">
+          <span style="cursor: pointer !important;" class="textLi">&nbsp;Nuestros servicios &nbsp;</span><i
+            class="fas fa-chevron-down"></i></a>
+        <div *ngIf="servicios" class="dropdown-menu show d-block d-xl-none d-lg-none manito"
+          style="border: none !important" id="nuestrosServicios" aria-labelledby="navbarDropdown">
+          <a *ngIf="menuEcosistemas" class="nav-link active enlace " id="navbarDropdown" role="button"
+            (click)="ecosistemas = !ecosistemas" aria-haspopup="true" aria-expanded="false"><img
+              src="../../../assets/img/combined-shape.png">
+            <span class="textLi" style="color: #ec1c24 !important;">&nbsp;Ecosistema
+              {{login.cobertura}} &nbsp;</span></a>
+          <a [routerLink]="['/inicio']" routerLinkActive="router-link-active"
+            *ngIf="coberturas.includes('Desempleo') && ecosistemas"
+            (click)="mostrarFun('desempleo');setCobertura('Desempleo')"
+            class="dropdown-header ecoHeaderMovil ecoHeaderNoMovil"><img width="26px" height="26px"
+              src="../../../assets/img/ICO/ic-desempleo.svg" style="vertical-align: middle;;width:40px" />Desempleo</a>
+          <a [routerLink]="['/inicio']" routerLinkActive="router-link-active"
+            *ngIf="coberturas.includes('Itt') && ecosistemas" (click)="mostrarFun('itt');setCobertura('Itt')"
+            class="dropdown-header ecoHeaderMovil ecoHeaderNoMovil"><img width="26px" height="26px"
+              src="../../../assets/img/ICO/ic-desempleo.svg" style="vertical-align: middle;;width:40px" />ITT</a>
+          <a [routerLink]="['/inicio']" routerLinkActive="router-link-active"
+            *ngIf="coberturas.includes('Fraude') && ecosistemas" (click)="mostrarFun('fraude');setCobertura('Fraude')"
+            class="dropdown-header ecoHeaderMovil ecoHeaderNoMovil"><img width="26px" height="26px"
+              src="../../../assets/img/ICO/ic-fruade.svg" style="vertical-align: middle;;width:40px" />Fraude</a>
+      <li *ngIf="desempleo 
+          " class="ecoHeaderMovil">
+        <div class="dropdown-divider"></div>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/mejorar-hoja-de-vida-inicio"
+          routerLinkActive="activated">Mejora tu hoja de vida </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/estudiar-coursera"
+          routerLinkActive="activated">Estudia con Coursera </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/preparar-entrevistas"
+          routerLinkActive="activated">Prepara entrevistas </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/comparar-salario"
+          routerLinkActive="activated">Compara tu salario </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/ofertas-laborales"
+          routerLinkActive="activated">Conoce ofertas laborales </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/asesoria-legal"
+          routerLinkActive="activated">Necesito una consultoría legal </a>
+      </li>
+      <li *ngIf="itt && ecosistemas" class="ecoHeaderMovil">
+        <div class="dropdown-divider"></div>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/branding-digital"
+          routerLinkActive="activated">Branding Digital </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/estudiar-coursera-itt"
+          routerLinkActive="activated">Estudia con Coursera </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/networking"
+          routerLinkActive="activated">Networking </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/coworking"
+          routerLinkActive="activated">Coworking </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/asesoria-legal-itt"
+          routerLinkActive="activated">Necesito una consultoría legal </a>
+      </li>
+      <li *ngIf="fraude && ecosistemas" class="ecoHeaderMovil">
+        <div class="dropdown-divider"></div>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/score-credito"
+          routerLinkActive="activated">Score de Crédito </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/alertas-notificaciones"
+          routerLinkActive="activated">Alertas y notificaciones </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/salud-financiera"
+          routerLinkActive="activated">Prueba salud financiera </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/estudia-economia"
+          routerLinkActive="activated">Cursos finanzas personales </a>
+        <a (click)="onClickedOutside()" class="dropdown-item text-center" routerLink="/seguridad-informatica"
+          routerLinkActive="activated">Seguridad informática </a>
+      </li>
+  </div>
+  <div *ngIf="servicios" class="dropdown-menu show d-none d-lg-block" id="nuestrosServicios"
+    aria-labelledby="navbarDropdown">
+    <div>
+      <a *ngIf="menuEcosistemas" class="nav-link active enlace" id="navbarDropdown" role="button"
+        (click)="this.ecosistemas = !this.ecosistemas;" aria-haspopup="true" aria-expanded="false"><img
+          src="../../../assets/img/combined-shape.png">
+        <span class="textLi" style="color: #ec1c24 !important;">&nbsp;Ecosistema
+          {{login.cobertura}} &nbsp;</span><i class="fas fa-chevron-down"></i></a>
+      <div *ngIf="ecosistemas">
+        <span style=" padding-left: 32px; font-size: 13px; color: #717171; ">Mis ecosistemas </span>
+        <a [routerLink]="['/inicio']" routerLinkActive="router-link-active" *ngIf="coberturas.includes('Desempleo')"
+          (click)="mostrarFun('desempleo');setCobertura('Desempleo')" class="dropdown-header"><img width="26px"
+            height="26px" src="../../../assets/img/ICO/ic-desempleo.svg"
+            style="vertical-align: middle;;width:40px" />Desempleo</a>
+        <a [routerLink]="['/inicio']" routerLinkActive="router-link-active" *ngIf="coberturas.includes('Itt')"
+          (click)="mostrarFun('itt');setCobertura('Itt')" class="dropdown-header"><img width="26px" height="26px"
+            src="../../../assets/img/ICO/ic-desempleo.svg" style="vertical-align: middle;;width:40px" />ITT</a>
+        <a [routerLink]="['/inicio']" routerLinkActive="router-link-active" *ngIf="coberturas.includes('Fraude')"
+          (click)="mostrarFun('fraude');setCobertura('Fraude')" class="dropdown-header"><img width="26px" height="26px"
+            src="../../../assets/img/ICO/ic-fruade.svg" style="vertical-align: middle;;width:40px" />Fraude</a>
+      </div>
+    </div>
+    <div>
+      <li *ngIf="desempleo">
+        <div class="dropdown-divider" style="width: 100% !important; position: relative; left: -8px;"
+          *ngIf="!muestraMenuPadreEcosistemas"></div>
+        <a (click)="onClickedOutside();AddLog('inicio','Navega a mejora tu hoja de vida desde el header')"
+          class="dropdown-item" routerLink="/mejorar-hoja-de-vida-inicio" routerLinkActive="activated">Mejora tu hoja de
+          vida </a>
+        <a (click)="onClickedOutside(); AddLog('inicio','Navega a estudia con coursera desde el header')"
+          class="dropdown-item" routerLink="/estudiar-coursera" routerLinkActive="activated">Estudia
+          con
+          Coursera </a>
+        <a (click)="onClickedOutside(); AddLog('inicio','Navega a prepara entrevistas desde el header')"
+          class="dropdown-item" routerLink="/preparar-entrevistas" routerLinkActive="activated">Prepara
+          entrevistas </a>
+        <a (click)="onClickedOutside(); AddLog('inicio','Navega a compara tu salario desde el header')"
+          class="dropdown-item" routerLink="/comparar-salario" routerLinkActive="activated">Compara
+          tu
+          salario </a>
+        <a (click)="onClickedOutside(); AddLog('inicio','Navega a conoce ofertas laborales desde el header')"
+          class="dropdown-item" routerLink="/ofertas-laborales" routerLinkActive="activated">Conoce
+          ofertas laborales </a>
+        <a (click)="onClickedOutside(); AddLog('inicio','Navega a necesito una asesoria legal desde el header')"
+          class="dropdown-item" routerLink="/asesoria-legal" routerLinkActive="activated">Necesito
+          una consultoría legal </a>
+      </li>
+      <li *ngIf="itt">
+        <div class="dropdown-divider" *ngIf="!muestraMenuPadreEcosistemas"></div>
+        <a (click)="onClickedOutside()" class="dropdown-item" routerLink="/branding-digital"
+          routerLinkActive="activated">Branding Digital </a>
+        <a (click)="onClickedOutside()" class="dropdown-item" routerLink="/estudiar-coursera-itt"
+          routerLinkActive="activated">Estudia con
+          Coursera </a>
+        <a (click)="onClickedOutside()" class="dropdown-item" routerLink="/networking"
+          routerLinkActive="activated">Networking </a>
+        <a (click)="onClickedOutside()" class="dropdown-item" routerLink="/coworking"
+          routerLinkActive="activated">Coworking </a>
+        <a (click)="onClickedOutside()" class="dropdown-item" routerLink="/asesoria-legal-itt"
+          routerLinkActive="activated">Necesito una consultoría legal </a>
+      </li>
+      <li *ngIf="fraude">
+        <div class="dropdown-divider" *ngIf="!muestraMenuPadreEcosistemas"></div>
+        <a (click)="onClickedOutside()" class="dropdown-item" routerLink="/score-credito"
+          routerLinkActive="activated">Score
+          de Crédito </a>
+        <a (click)="onClickedOutside()" class="dropdown-item" routerLink="/alertas-notificaciones"
+          routerLinkActive="activated">Alertas y notificaciones </a>
+        <a (click)="onClickedOutside()" class="dropdown-item" routerLink="/salud-financiera"
+          routerLinkActive="activated">Prueba salud financiera </a>
+        <a (click)="onClickedOutside()" class="dropdown-item" routerLink="/estudia-economia"
+          routerLinkActive="activated">Cursos finanzas personales </a>
+        <a (click)="onClickedOutside()" class="dropdown-item" routerLink="/seguridad-informatica"
+          routerLinkActive="activated">Seguridad informática </a>
+      </li>
+    </div>
+  </div>
+  </li>
+  <li class="nav-item inicia" *ngIf="!login.isActive()"> <a class="nav-link active enlace" routerLink="/inicia-sesion/1"
+      routerLinkActive="activated">
+      <table>
+        <tr>
+          <td><i class="icon-user iconSize mr-1"></i></td><span class="textLi"> Inicia sesión</span>
+          <td></td>
+        </tr>
+      </table>
+    </a>
+  </li>
+  <li class="nav-item registrate" style="box-shadow: #cf141b !important" *ngIf="!login.isActive()"> <a
+      style="width:240px" class="nav-link active btn-info enlace linkRegistro" routerLink="/registro/2"
+      routerLinkActive="activated">
+      <table>
+        <tr>
+          <td><i class="icon-Login iconSize mr-1"></i></td>
+          <td><span style="color: #fff;padding-bottom: 2px;" class="textLi">&nbsp; Regístrate</span></td>
+        </tr>
+      </table>
+    </a> </li>
+  <li class="nav-item dropdown inicia" *ngIf="login.isActive()">
+    <a (click)="datosSesionFun()" (clickOutside)="onClickedOutsideDatos()" href="#" id="datosSesion"
+      class="nav-link active enlace" data-toggle="dropdown">
+      <table>
+        <tr>
+          <td><i class="icon-user iconSize"></i></td>
+          <td><span class="textLi">&nbsp;Hola, {{login.getDataUser().nombres}}&nbsp;</span><i
+              class="fas fa-chevron-down"></i><b class="caret"></b></td>
+        </tr>
+      </table>
+    </a>
+    <ul (clickOutside)="onClickedOutsideDatos()" class="dropdown-menu show lineRed" *ngIf="datosSesion">
+      <a class="dropdown-item" routerLink="/perfil" routerLinkActive="activated">Mi perfil</a>
+      <a class="dropdown-item" routerLink="/ayuda" routerLinkActive="activated">Ayuda</a>
+      <a class="dropdown-item" (click)="login.logOut(); exitLogin()">Cerrar sesión</a>
+    </ul>
+  </li>
+  <li class="nav-item " *ngIf="login.isActive()">
+    <div class="nav-link active enlace" style="width:10%">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  </li>
+  </ul>
+  </div>
+</nav>
+
+
+
+
+<!-- Mok -->
+<!-- Google Tag Manager -->
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M32VG3X');</script> -->
+<!-- End Google Tag Manager -->

@@ -1,0 +1,263 @@
+<div *ngIf="count==0">
+    <div class="d-block d-xl-none d-lg-none imgMovil" style="width:100%;height:600px;
+        margin-top: -39px;">
+        <!-- <div style="width:100%;height:300px;
+    background: url('assets/img/digital-branding/fondoDigitalBranding.png') no-repeat left bottom, linear-gradient(256deg, #8bd15a, #448019);
+    ;position:absolute;margin-top: -39px;"> -->
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span routerLink="/mejorar-hoja-de-vida-inicio" [queryParams]="{p: 0}" class="crumbModulo"><b>Mejora tu
+                        hoja de vida</b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">Tu hoja de vida es tu <br> carta de presentación​</h1>
+        <!-- <button *ngIf="login.isActive()" class="btnTop2" style="margin-top: 55px; margin-left:17.5%;" (click)="increment()">MEJORAR MI HOJA DE VIDA <i style="color:#ffb400" class="fa fa-angle-right"></i></button>
+        <button *ngIf="!login.isActive()" class="btnTop2" style="margin-top: 55px; margin-left:17.5%;" (click)="login.goLogin()">QUIERO UNIRME <i style="color:#ffb400" class="fa fa-angle-right"></i></button> -->
+    </div>
+    <div class="d-none d-lg-block" style="width:100%;height:499px;
+    background-image: url('assets/img/desempleo2/curriculum/curriculum.png'), linear-gradient(90deg, #fb6330 50%,  #feba89 50%);
+    background-position: right 350px bottom, right bottom;
+    background-repeat: no-repeat,no-repeat;
+    margin-top: -39px;
+    background-size: 283px 401px, contain;">
+        <!-- <div style="width:100%;height:300px;
+    background: url('assets/img/digital-branding/fondoDigitalBranding.png') no-repeat left bottom, linear-gradient(256deg, #8bd15a, #448019);
+    ;position:absolute;margin-top: -39px;"> -->
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span routerLink="/mejorar-hoja-de-vida-inicio" [queryParams]="{p: 0}" class="crumbModulo"><b>Mejora tu
+                        hoja de vida</b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">Tu hoja de vida es tu <br> carta de presentación​</h1>
+        <button *ngIf="login.isActive()" class="btnOrange" style="margin-top: 55px; margin-left:10%;"
+            (click)="increment(); AddLog('mejorar-hoja-de-vida-inicio','Ingresó al página de hoja de vida desde boton sup')"
+            routerLink="/mejorar-hoja-de-vida-inicio" [queryParams]="{p: 1}">Mejora tu hoja de vida</button>
+        <button *ngIf="!login.isActive()" class="btnOrange" style="margin-top: 55px; margin-left:10%;"
+            (click)="login.goLogin()">Únete ahora</button>
+    </div>
+
+    <div class="container">
+        <div class="row m-4">
+            <div class="social-cont">
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://ecodesascco.grupomok.com.co/curriculumhome"
+                                target="_blank" class="icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="http://twitter.com/share?url=http://ecodesascco.grupomok.com.co" target="_blank"
+                                class="icon-twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://ecodesascco.grupomok.com.co"
+                                target="_blank" class="icon-linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <div class="row">
+
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <h2 class="font-weight-bold text-secondary text-left mt-5 mb-5">Crea, mejora y personaliza tu
+                            hoja de vida.</h2>
+                        <p> Una buena hoja de vida te abre las puertas al mundo laboral.</p>
+
+                        <p>Gracias a tu Seguro tienes la posiblidad de mejorar tu perfil y porque no, acercarte al
+                            trabajo que siempre has querido.</p>
+
+                        <p>Te invitamos a que te registres, diligencies tu informacion personal, académica y laboral; y
+                            solicites una consultoría con un experto en selección. Él será una mano amiga para
+                            potencializar y sacar lo mejor de ti.</p>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div style="width:100%;" class="text-center">
+                    <iframe class="mt-4" style="max-width:988px;width:100%;height: 555px;border: 0px"
+                        src="https://player.vimeo.com/video/368886666"></iframe>
+                </div>
+                <app-video-material tipoMateriales="des_curriculumhome"></app-video-material>
+            </div>
+        </div>
+        <div class="row m-4">
+            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <p>¿Cómo usar este servicio?
+                            Una vez estás registrado, te vas a la sección “Mejora tu hoja de vida”.</p>
+
+                        <p>Selecciona la opción que más se ajuste a lo que necesitas: ya sea diseñar una hoja desde
+                            cero o solicitar que un experto revise una ya existente.</p>
+
+                        <p>Una vez validado el perfil, el asesor se comunicará contigo y te dará algunos
+                            consejos para mejorar tu marca personal.
+                        </p>
+                        <!-- <p>Gracias a tu Seguro Cuota Protegida tienes la posibilidad de mejorar tu perfil y porque no, acercarte al trabajo que siempre has querido.</p> -->
+                        <!-- <p>Te invitamos a que te registres, diligencies tu información personal, académica y laboral; y solicites una consultoría con un experto en selección. Él será una mano amiga para potencializar y sacar lo mejor de ti.</p> -->
+                        <div style="width:100%;border-bottom: 1px solid lightgray;border-top: 1px solid lightgray;"
+                            class="pt-4 mt-5 mb-5">
+                            <table border="0" class="tablaHomePasos mb-5">
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">1</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Diligencia tus datos</p>
+                                        <p>personales, información académica y experiencia laboral</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">2</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Selecciona la plantilla</p>
+                                        <p>que deseas y personalízala</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">3</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Agenda cita con un experto</p>
+                                        <p>en selección para sacar el mayor provecho a tu perfil resaltando tus
+                                            habilidades y aptitudes.
+                                            <br>Podrás descargar tu hoja de vida y modificar o adicionar
+                                            información
+                                            cuando desees.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-md-12 text-center mt-3 mb-5">
+                        <button *ngIf="!login.isActive()" class="btnMain" (click)="login.goLogin()">QUIERO UNIRME
+                        </button>
+                        <button *ngIf="login.isActive()" class="btnMain"
+                            (click)="increment(); AddLog('mejorar-hoja-de-vida-inicio','Ingresó al página de hoja de vida desde boton inf')"
+                            routerLink="/mejorar-hoja-de-vida-inicio" [queryParams]="{p: 1}">Mejora tu hoja de vida
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row m-4">
+            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <h2 class="text-secondary text-left">¿Cómo usar este servicio?</h2>
+                <p>Una vez estas registrado, te vas a la sección “Mejora tu hoja de vida”.</p>
+                <p>Selecciona la opción que más se ajuste a lo que necesitas: ya sea diseñar una hoja desde cero o solicitar que un experto revise una ya existente.</p>
+                <p>Una vez validado el perfil, el asesor se comunicará contigo y te dará algunos consejos para mejorar tu marca personal.</p>
+                <div class="dropdown-divider"></div>
+                <div class="col-md-12 mb-1  mt-5 text-center">
+                    <p>
+                        Queremos acompañarte para que te acerques a tus sueños
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="col-1"></div>
+        </div> -->
+    </div>
+    <app-interest-material tipoMateriales="des_curriculumhome"></app-interest-material>
+    <div class="container d-block d-xl-none d-lg-none quieroUnirmeMovile" (click)="login.goLogin()"
+        *ngIf="!login.isActive()">
+        <p><i class="icon-Login iconSize"></i>&nbsp;&nbsp;&nbsp;Quiero unirme</p>
+    </div>
+</div>
+
+<div *ngIf="count==1" class="content-wrapper" style="margin-left: 0px !important">
+    <div style="width:100%;height:300px;background-color: #fb6330;position:absolute;margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 17.4%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span (click)="decrement()" routerLink="/mejorar-hoja-de-vida-inicio" [queryParams]="{p: 0}"
+                    class="crumbModulo">Mejora tu hoja de vida > </span>
+                <span class="crumbModulo" routerLink="/mejorar-hoja-de-vida-inicio" [queryParams]="{p: 1}"><b>Mejorar mi
+                        hoja de vida </b></span>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+            <h1 class="tituloModulo" style="text-align: left;">Mejora tu hoja de vida</h1>
+        </div>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row" style="padding-top: 190px;background-color: #f6f8fa">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-10 offset-md-1 col-sm-12 offset-lg-2">
+                            <div class="card card-outline">
+                                <div class="card-header" style="padding:50px 15%">
+                                    <h2>Crea, mejora y personaliza tu hoja de vida</h2>
+                                    <p>Selecciona la opción que más se ajuste a lo que necesitas, ya sea diseñar una
+                                        hoja desde cero
+                                        o solicitar que un experto revise una ya existente.
+                                    </p>
+                                </div>
+                                <div class="card-footer" style="padding-top:25px;padding-bottom:25px;">
+                                    <div class="row" *ngIf="count == 1">
+                                        <div class="col-lg-1 col-md-1"></div>
+                                        <div class="col-md-5 col-sm-12 col-xs-12">
+                                            <div class="card card-widget widget-user" style="border-radius:20px">
+                                                <div class="widget-user-header text-white text-center"
+                                                    style="border-radius:20px 20px 0px 0px;height:184px;background-color: #f07c05;padding-top:23px">
+                                                    <img src="assets/img/curriculum-vitae/img-5.png" />
+                                                </div>
+                                                <div class="card-body" style="min-height:220px;padding:25px">
+                                                    <h3 style="color:#333333;font-size: 22px;">¿Cómo diseñar una hoja
+                                                        de vida?</h3>
+                                                    <p>Descubre lo fácil que es crear y personalizar tu hoja de vida,
+                                                        diligencia tus datos y diséñala según tu estilo.
+                                                    </p>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <button class="btnMain"
+                                                        (click)="AddLog('mejorar-hoja-de-vida','Ingresó a la página de Diseña tu hoja de vida')"
+                                                        routerLink="/mejorar-hoja-de-vida" style="width: 95%;">Diseña tu
+                                                        hoja de vida </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 col-sm-12 col-xs-12">
+                                            <div class="card card-widget widget-user" style="border-radius:20px">
+                                                <div class="widget-user-header text-white text-center"
+                                                    style="border-radius:20px 20px 0px 0px;height:184px;background-color: #ffb400;padding-top:10px">
+                                                    <img src="assets/img/desempleo2/curriculum/curriculum-man.png" />
+                                                </div>
+                                                <div class="card-body" style="min-height:220px;padding:25px">
+                                                    <h3 style="color:#333333;font-size: 22px;">¿Tienes una hoja de vida
+                                                        y la quieres mejorar?</h3>
+                                                    <p>
+                                                        Un experto en selección laboral te indicará qué puedes hacer para
+                                                        mejorar tu currículo.
+                                                    </p>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <button class="btnMain"
+                                                        (click)="increment(); AddLog('mejorar-hoja-de-vida-agenda','Ingreso a mejora tu hoja de vida desde Boton')"
+                                                        style="width: 95%;"
+                                                        routerLink="/mejorar-hoja-de-vida-agenda">Mejora tu hoja de vida
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,146 @@
+<div style="width:100%;height:300px;
+background-color: #009dd6;
+position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/salud-financiera" class="crumbModulo">Salud financiera > </span>
+            <span routerLink="/salud-financiera-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <h1 class="tituloModulo pad-tit">Salud Financiera</h1>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+<div class="row" >
+    <div class="container mb-3">
+        <a routerLink="/salud-financiera-ejercicios" class="btn-volver manito Volver" role="button" style="color: #008ACC;"><i
+                class="fas fa-chevron-circle-left"></i> Volver</a>
+      </div>
+    <p class="text-center col-lg-12 mt-3 mb-4 font-weight-bold">Mide si los ingresos alcanzan
+        para cubrir los gastos y si no se recurre a la deuda para cubrir el exceso de gastos.
+    </p>
+    <div class="col-lg-8 offset-lg-2 offset-md-0 col-md-12">
+        <div class="form-group">
+            <label>
+                En los últimos 12 meses me ha ocurrido que mis ingresos no me han alcanzan para
+                cubrir los gastos personales del hogar.
+            </label>
+            <div class="form-group form-check">
+                <input type="radio" class="form-check-input" id="test2radio1_1" value="Verdadero, al menos un mes"
+                    name="s4s1p1">
+                <label class="form-check-label" for="test2radio1_1">&nbsp;Verdadero, al menos un
+                    mes</label>
+                <br>
+                <input type="radio" class="form-check-input" name="s4s1p1" id="test2radio1_2"
+                    value="Falso, ni un solo mes">
+                <label class="form-check-label" for="test2radio1_2">&nbsp;Falso, ni un solo
+                    mes</label>
+            </div>
+        </div>
+    </div>
+    <!--<div class="text-center" style="width:100%">
+                                <button style="margin: auto" type="submit" (click)="subSection=2"
+                                    class="btn btnTop2 btn-primary mt-4 mb-4">Continuar</button>
+                            </div>-->
+    <div class="col-lg-8 offset-lg-2 offset-md-0 col-md-12">
+        <div class="form-group">
+            <label>
+                ¿Qué hiciste para cubrir tus gastos personales o del hogar la última vez que
+                esto sucedió?
+            </label>
+            <div class="form-group form-check">
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_1"
+                    value="Empeñé algo que me pertenece">
+                <label class="mt-3 form-check-label" for="test3check1_1">Empeñé algo que me
+                    pertenece</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_2"
+                    value="Hice trabajos extra gané dinero extra">
+                <label class="mt-3 form-check-label" for="test3check1_2">Hice trabajos extra
+                    gané dinero extra</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_3"
+                    value="Hipotequé un activo (por ejemplo poner en hipoteca o en garantía contra préstamo la vivienda)">
+                <label class="mt-3 form-check-label" for="test3check1_3">Hipotequé un activo
+                    (por ejemplo poner en hipoteca o en garantía contra préstamo la
+                    vivienda)</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_4"
+                    value="Obtuve préstamos de mi empleador o sueldos adelantados">
+                <label class="mt-3 form-check-label" for="test3check1_4">Obtuve préstamos de mi
+                    empleador o sueldos adelantados</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_5"
+                    value="Pagué mis cuentas tarde fallé en los pagos">
+                <label class="mt-3 form-check-label" for="test3check1_5">Pagué mis cuentas tarde
+                    fallé en los pagos</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_6"
+                    value="Reduje los gastos">
+                <label class="mt-3 form-check-label" for="test3check1_6">Reduje los
+                    gastos</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_7"
+                    value="Retiré dinero de los ahorros">
+                <label class="mt-3 form-check-label" for="test3check1_7">Retiré dinero de los
+                    ahorros</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_8"
+                    value="Compre bienes o alimentos fiados">
+                <label class="mt-3 form-check-label" for="test3check1_8">Compre bienes o
+                    alimentos fiados</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_9"
+                    value="Retiré dinero de mi fondo de pensiones voluntarias">
+                <label class="mt-3 form-check-label" for="test3check1_9">Retiré dinero de mi
+                    fondo de pensiones voluntarias</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_10"
+                    value="Tomé prestados alimentos o dinero de familiares o amigos">
+                <label class="mt-3 form-check-label" for="test3check1_10">Tomé prestados
+                    alimentos o dinero de familiares o amigos</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_11"
+                    value="Tomé un préstamo de fondos colectivos (por ejemplo cadenas de ahorro o natilleras)">
+                <label class="mt-3 form-check-label" for="test3check1_11">Tomé un préstamo de
+                    fondos colectivos (por ejemplo cadenas de ahorro o natilleras)</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_12"
+                    value="Tomé un préstamo de un proveedor informal / prestamista">
+                <label class="mt-3 form-check-label" for="test3check1_12">Tomé un préstamo de un
+                    proveedor informal / prestamista</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_13"
+                    value="Tomé un préstamo personal de una entidad financiera (incluidas las cooperativas de crédito bancarias o de microfinanzas)">
+                <label class="mt-3 form-check-label" for="test3check1_13">Tomé un préstamo
+                    personal de una entidad financiera (incluidas las cooperativas de crédito
+                    bancarias o de microfinanzas)</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_14"
+                    value="Usé la tarjeta de crédito para un avance de dinero en efectivo o para pagar las facturas / comprar alimentos">
+                <label class="mt-3 form-check-label" for="test3check1_14">Usé la tarjeta de
+                    crédito para un avance de dinero en efectivo o para pagar las facturas /
+                    comprar alimentos</label>
+                <br>
+                <input type="checkbox" class="s4s2p2 mt-4 form-check-input" id="test3check1_15"
+                    value="Vendí algo que me pertenece">
+                <label class="mt-3 form-check-label" for="test3check1_15">Vendí algo que me
+                    pertenece</label>
+            </div>
+        </div>
+    </div>
+    <div class="text-center" style="width:100%">
+        <button style="margin: auto" type="submit" (click)="guardarIndicador5()" routerLink="/salud-financiera-ejercicios"
+            class="btn btnTop2 btn-primary mt-4 mb-4">Finalizar cuestionario</button>
+    </div>
+</div>
+</div>
+</section>
+</section>
+</div>
+</div>

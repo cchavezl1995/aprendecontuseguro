@@ -1,0 +1,29 @@
+.background {
+    background-color: #7d8489;
+    height: 100%;
+}
+
+.modal.left.fade.show .modal-dialog {
+  left: 0;
+}
+.tab-content{
+  // border: 1px solid lightgray;
+  padding: 15px;
+}
+.tab-pane > h3{
+  color: black;
+}
+.nav-link{
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #58595b;
+}
+.nav-link.active{ 
+  border-bottom: 3px #ec1c24 solid;
+}
+
+$des_eco6_backColor: linear-gradient(90deg, #333333 100%,  #4d4d4d 50%);
+ 
+  .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}

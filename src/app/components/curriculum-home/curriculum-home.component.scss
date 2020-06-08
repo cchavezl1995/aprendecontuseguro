@@ -1,0 +1,94 @@
+.iconSize {
+  font-size: 17px;
+}
+.btnTop2 {
+  border-color: #002c76 2px solid;
+  border: 0px;
+  border-radius: 50px;
+  font-size: px;
+  background-color: #002c76;
+  color: white;
+  padding: 10px 15px;
+  width: 256px;
+}
+.titulo {
+  font-family: GoogleSans;
+  font-size: 50px !important;
+  color: white;
+  margin-top: 50px;
+}
+.modal.left.fade.show .modal-dialog {
+  left: 0;
+}
+.card{
+  border: solid 1px #d9d9d9 !important;
+}
+.card-header > h2{
+  font-family: GoogleSans;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.75;
+  letter-spacing: -0.15px;
+  color: #60666b;
+}
+$des_eco1_backColor: #feba89;
+
+.imgMovil{
+  background-image: url("/../../../assets/img/desempleo2/curriculum/curriculum.png") !important;
+  background-size: 284px;
+  background-color: $des_eco1_backColor;
+  background-position: center bottom 0%;
+  background-repeat: no-repeat;
+}
+.social {
+  position: absolute;
+  left: -75px; 
+  top: 42px;
+}
+.social-cont {
+  position: relative;
+}
+@media (min-width: 845px) {
+  .social {
+    left: 68px;
+    z-index: 999;
+  }
+}
+ 
+  .social ul {
+    list-style: none;
+  }
+ 
+  .social ul li a {
+    border-radius: 50%;
+    display: inline-block;
+    color:gray;
+    background: #fff;
+    padding: 15px 15px;
+    text-decoration: none;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease; 
+  }
+
+  .social ul li .icon-facebook:hover {background:#3b5998;color:white;} 
+  .social ul li .icon-twitter:hover {background: #00abf0;color:white;}
+  .social ul li .icon-linkedin:hover {background: #007bb5;color:white;}
+
+  .card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(255, 255, 255);
+    border-top: 0 solid rgba(0, 0, 0, 0.125);
+  }
+  .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+.icon-facebook {
+  width: 100%;
+  text-align: center;
+}
+.badge .badge-pill .badge-primary {
+  background-color: #ec1c24 !important;
+}

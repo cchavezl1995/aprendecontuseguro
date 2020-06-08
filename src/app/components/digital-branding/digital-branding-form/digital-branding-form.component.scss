@@ -1,0 +1,127 @@
+
+.containera {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .outer {
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px !important; /* any size */
+    max-height: 150px !important; /* any size */
+    background-size: 150px;
+    margin: auto;
+    background-color: #6eafd4;
+    border-radius: 100%;
+    position: relative;
+    } 
+  .inner {
+    background-color: #ff1414;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .inner:hover {
+    background-color: #5555ff;
+  }
+  .inputfile {
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: 1;
+      width: 50px;
+      height: 50px;
+  }
+  .inputfile + label {
+      font-size: 1.25rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      overflow: hidden;
+      width: 50px;
+      height: 50px;
+      pointer-events: none;
+      cursor: pointer;
+      line-height: 50px;
+      text-align: center;
+  }
+  .inputfile + label svg {
+      fill: #fff;
+  }
+
+  
+  .my_class {
+    width: 100% !important;
+    height: 100% !important;
+    background-size: 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+.chkBrand{
+  display: inline !important;
+}
+
+@media only screen and (min-width: 300px) {
+  .chkBrand{
+    display: block !important;
+  }
+}
+/* SMARTPHONES LANDSCAPE */
+
+@media only screen and (min-width: 480px) {
+  .chkBrand{
+    display: block !important;
+  }
+}
+/* TABLETS PORTRAIT */
+
+@media only screen and (min-width: 768px) {
+  .chkBrand{
+    display: block !important;
+  }
+}
+/* TABLET LANDSCAPE / DESKTOP */
+
+@media only screen and (min-width: 1024px) {
+}
+
+.social {
+  position: absolute;
+  left: -75px; 
+  top: 42px;
+}
+.social-cont {
+  position: relative;
+}
+@media (min-width: 845px) {
+  .social {
+    left: 30px;
+    z-index: 999;
+  }
+}
+ 
+  .social ul {
+    list-style: none;
+  }
+ 
+  .social ul li a {
+    border-radius: 50%;
+    display: inline-block;
+    color:gray;
+    background: #fff;
+    padding: 15px 15px;
+    text-decoration: none;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease; 
+  }
+
+  .social ul li .icon-facebook:hover {background:#3b5998;color:white;} 
+  .social ul li .icon-twitter:hover {background: #00abf0;color:white;}
+  .social ul li .icon-linkedin:hover {background: #007bb5;color:white;}

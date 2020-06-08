@@ -1,0 +1,207 @@
+.pTituloAyuda{
+    font-family: OpenSans;
+    font-size: 28px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: -0.6px;
+    color: #ffb400;
+  }
+  .rectangle > img {
+    display: none;
+    bottom: 0;
+  }
+  .caja{
+    width:100% !important;
+    padding-bottom: 20px;
+  }
+  
+  @media only screen and (min-width: 300px) {
+    .pTituloAyuda{
+        margin-top: -15px !important;
+    }
+    .caja{
+        text-align: center;
+    }
+    .caja > p{
+      margin:auto !important;
+    }
+    .rectangle > img {
+      display: none;
+    }
+  }
+  /* SMARTPHONES LANDSCAPE */
+  
+  @media only screen and (min-width: 480px) {
+    .pTituloAyuda{
+        margin-top: -15px !important;
+    }
+    .caja{
+        text-align: center;
+    }
+    .caja > p{
+      margin:auto !important;
+    }
+    .rectangle > img{
+      left: 7%;
+      position: absolute;
+      display: none;
+    }
+    .footerEnd{ 
+      height: 478px; 
+    }
+    .rectangle > .caja > p{
+      margin-top: 20px !important;
+    }
+    .rectangle {
+      height: 523px !important;
+      margin-bottom: 50px !important;
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+    .datosContacto{
+      text-align: left;
+    }
+    .datosContacto > label{
+      padding:25px;
+      display: table !important;
+    }
+    .datosContacto > label > i{
+      padding:25px !important;
+      display:table-cell !important
+    }
+  }
+  /* TABLETS PORTRAIT */
+  
+  @media only screen and (min-width: 768px) {
+    .pTituloAyuda{
+        margin-top: -15px !important;
+    }
+    .caja{
+        text-align: center;
+    }
+    .rectangle > .caja > p{
+      margin-top: 20px !important;
+    }
+    .rectangle > img{
+      left: 7%;
+      position: absolute;
+      display: none;
+    }
+    
+    .footerEnd{ 
+      height: 478px; 
+    }
+    .rectangle {
+      height: 523px;
+      margin-bottom: 50px;
+      padding-left: 35px;
+      padding-right: 35px;
+    } 
+    .datosContacto{
+      text-align: left;
+    }
+    .datosContacto > label{
+      padding:25px;
+      display: table !important;
+      float: left;
+    }
+    .datosContacto > label > i{
+      padding:25px !important;
+      display:table-cell !important
+    }
+    
+  }
+  /* TABLET LANDSCAPE / DESKTOP */
+  
+  @media only screen and (min-width: 1024px) {
+    .pTituloAyuda{
+        margin-top: -15px !important;
+    }
+    .caja{
+        text-align: left;
+    }
+    .caja > p{
+      margin-left: 25% !important;
+    }
+    .rectangle > img{
+      left: 7%;
+      position: absolute;
+      display: block;
+    } 
+    .rectangle{
+      z-index: 2;
+      margin-bottom: 60px;
+      max-width:1366px;
+      margin:auto;
+      height: auto !important;
+    }
+    .rectangle > .caja > p{
+      margin-top: 5px !important;
+    }
+    .datosContacto > label{
+      padding:0px;
+      display: block;
+    }
+    .datosContacto > label > i{
+      padding-right: 20px !important;
+      display: block;
+      padding-left: 0px !important;
+      padding-top: 10px !important;
+      padding-bottom: 0px !important;
+    }
+    
+  }
+  .footerEnd{
+    position: absolute;
+    z-index: 1;
+    background-color: #f6f8fa;
+    width: 100%;
+    height: 220px;
+    top: 20;
+    margin-top: 95px;
+  }
+  .rectangle{
+    z-index: 2;
+    margin-bottom: 60px;
+    max-width:1366px;
+    margin:auto;
+    height: auto;
+  }
+  .rectangle > .caja > p{
+    margin-top: 5px !important;
+  }
+  .datosContacto > label{
+    padding:0px;
+    display: block;
+  }
+  .datosContacto > label > i{
+    padding:0px;
+    display: block
+  }
+
+  .black {
+    color: #000000;
+  }
+
+  .grey {
+    color: #58595b;
+    background: #fff;
+    font-size: 16px;
+  }
+
+  .iconContact {
+    font-size: 29px;
+    margin-bottom: 20px;
+  }
+
+  .colorTexto{
+    color: #58595b !important;
+    // font-weight: bold;
+  }
+  @media only screen and (max-width: 992px) {
+    .txt-footer-movil{
+      font-size: 22px !important;
+    }
+  }

@@ -1,0 +1,14 @@
+.VTSSuccess{
+    // opacity: 0.6;
+    border-radius: 2px;
+    border: solid 1px #00915a;
+    background-color: #eeffe6;
+}
+
+.VTSSuccess span{
+    margin-left: 5%
+}
+
+input.success:checked + .slider {
+  background-color: #ec1c24;
+}

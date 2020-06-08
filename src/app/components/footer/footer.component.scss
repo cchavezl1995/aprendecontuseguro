@@ -1,0 +1,99 @@
+.vigilado {
+    width: 14px;
+    height: 147px;
+    object-fit: contain;
+  }
+
+  .Banco-de-bogota {
+    width: 144px;
+    height: 27.5px;
+    object-fit: contain;
+  }
+  .codensa {
+    width: auto;
+    height: 27.5px;
+    object-fit: contain;
+  }
+
+  .images {
+    width: 144px;
+    height: 36px;
+    object-fit: contain;
+  }
+
+  .Artboard-202x {
+    width: 128px;
+    height: 22.6px;
+    object-fit: contain;
+  }
+
+
+  .bg-inverse-grey {
+    background-color: #f4f4f4;
+  }
+
+
+  .Stroke-88 {
+    width: 1.1px;
+    height: 31px;
+    border: solid 0.8px #aaaaaa;
+  }
+
+  .Grupo_Aval_logo {
+    width: 86.2px;
+    height: 23.6px;
+    object-fit: contain;
+  }
+
+//.borde { 
+//  border-left:solid 1px rgba(255,255,255,0.10); 
+//}
+
+.borde { 
+   border-right:solid 1px #aaaaaa; 
+}
+
+@media screen and (max-width: 1224px) {
+  .mostrarMovil {
+      display: true !important;
+  }
+  .ocultarMovil {
+    display: none !important;
+}
+}
+
+@media screen and (min-width: 1224px) {
+  .mostrarMovil {
+      display: none !important;
+  }
+  .ocultarMovil {
+    display: true !important;
+}
+}
+
+.btnTopCierraModal {
+  border: 0px;
+  border-radius: 50px;
+  font-size: px;
+  /* color: white; */
+  padding: 0px;
+  width: 44px;
+  height: 44px;
+  margin-top: 5px;
+  color: #034797;
+  font-size: 20px;
+  cursor:pointer;
+}
+
+.colorTexto{
+  color: #ec1c24 !important;
+  font-weight: bold;
+}
+@media only screen and (max-width: 992px) {
+  .txt-footer-movil{
+    font-size: 20px !important;
+  }
+  .txt-footer-movil-2 {
+    font-size: 14px !important;
+  }
+}

@@ -1,0 +1,427 @@
+.background {
+    background-color: #ec1c24;
+    height: 100%;
+}
+
+.card-title{
+    color:#ec1c24;
+    font-weight: bold;
+}
+
+.foto1{
+    position:absolute; z-index: 1;
+    margin-left: 3%;
+    height: 450px;
+    width: 332px;
+    margin-top: 60px;
+
+}
+
+.foto2{
+    position:absolute; z-index: 2;
+    margin-left: 6%;
+    margin-top: 60px;
+    height: 525px;
+}
+
+.mensaje {
+    margin-top: 70px;
+    text-align: right;
+    padding-right: 70px;
+}
+
+.mensaje > h1 {
+    text-align: left !important;
+    font-family: GoogleSans;
+    font-size: 30px !important;
+    color: white;
+
+}
+.filterJobs{
+    background: #fbfbfb;  
+    border: solid 1px #c0c0c0;
+}
+.titleFilters{
+    border-bottom: 1px solid #c0c0c0;
+    padding: 6px 0 12px 0;
+    margin-bottom: 20px; 
+    font-size: 1.2rem;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    color: #58595b;
+    height: 60px;
+    padding-top: 15px;
+    padding-left: 25px;
+}
+.containerPager{
+    display: grid;
+    min-width: 540px;
+    max-width: 540px;
+    margin: 0 auto;
+}
+.numResults{
+    text-align: left;
+    margin: 0;
+    min-width: 190px;
+}
+.numTotalResults{
+    min-width: 200px;
+    font-size: 0.9rem;
+    margin: 10px 0 0 0;
+}
+.pagerPhones{
+    margin: 0;
+    width: 164px;
+}
+.btnTop2 {
+    border-color: #ec1c24 2px solid;
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    background-color: #ec1c24;
+    color: white;
+    padding: 10px 15px;
+    max-width: 256px;
+    widtH: 100%;
+  }
+  .noPadding{
+      padding:0px;
+  }
+
+  .activated {
+    color: #ffb400 !important;
+  }
+  
+  .navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.9rem 0rem;
+  }
+  
+  .iconSize {
+    font-size: 17px;
+  }
+  
+  .colorLabel {
+    color: #ec1c24 !important;
+  }
+  
+  .content-header {
+    padding: 0px;
+  }
+  .titleCards{
+    font-family: GoogleSans;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.15px;
+    color: #60666b;
+  }
+  .btnTop {
+    border-color: #ffb400 2px solid;
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    background-color: #ffb400;
+    color: #ec1c24;
+    // padding: 10px 15px;
+    width: 221px;
+    height:50px;
+  }
+  
+  .btnTopModal {
+    border-color: #ec1c24 2px solid;
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    background-color: #ec1c24;
+    color: white;
+    padding: 10px 15px;
+    width: 269px;
+  }
+  
+  .titulo {
+    font-family: GoogleSans;
+    font-size: 50px !important;
+    color: white;
+    margin-top: 50px;
+  }
+  
+  .parrafoTitulo {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  
+  .modal.left.fade.show .modal-dialog {
+    left: 0;
+  }
+  .foto1{
+    position:absolute; z-index: 1;
+    margin-left: 6%;
+    margin-top: 110px;
+    width: 393px;
+    height: 633px;
+  }
+  
+  .foto2{
+    position:absolute;
+    z-index: 2;
+    margin-left: 6%;
+    right:20%;
+  }
+  .btnTopCierraModal {
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    /* color: white; */
+    padding: 0px;
+    width: 44px;
+    height: 44px;
+    margin-top: 5px;
+    color: #ec1c24;
+    font-size: 20px
+  }
+  
+  .tituloModal {
+    font-family: GoogleSans;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ec1c24;
+  }
+  
+  .parrafoModal {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #5e5e5e;
+  }
+  
+  .tituloSalario {
+    font-family: GoogleSans;
+    font-size: 42px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: -0.19px;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .parrafoSalario {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  
+  .card-header{
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03) !important;
+    border-bottom: 1px solid rgba(0,0,0,.125) !important;
+  }
+  .card{
+    
+    border: 1px solid rgba(0,0,0,.125) !important;
+  }
+  .mb-4{
+    padding-left: 0px !important;
+    padding-right: 0px !important
+  }
+
+  .mb-4c{
+    padding-left: 15px !important;
+    padding-right: 15px !important
+  }
+  
+  $des_eco5_backColor: linear-gradient(90deg, #ec1c24 100%,  #ff979e 50%);
+
+  .imgMovil{
+    background-image: url("/../../../assets/img/desempleo2/joboffers/joboffers.png"),$des_eco5_backColor !important;
+    background-size: 230px, 100% !important;
+    background-position: center bottom 0% !important;
+    background-repeat: no-repeat !important;
+  }
+
+
+  $base-color: #ec1c24;
+
+.tab-content{
+    border: 1px solid lightgray;
+    padding: 35px;
+}
+.tab-pane > h3{
+    color: black;
+}
+.nav-link{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #58595b;
+}
+.nav-link.active{
+    color: $base-color;
+    font-weight: bold;
+    border-bottom: 3px $base-color solid;
+}
+.divRaya{ 
+    background: $base-color; 
+    left: 0; 
+    width: 40px;
+    height: 3px;
+    margin-bottom: 10px;
+}
+.btnTop2 {
+  border-color: $base-color 2px solid;
+  border: 0px;
+  border-radius: 50px;
+  font-size: px;
+  background-color: $base-color;
+  color: white;
+  padding: 15px 15px;
+  width: 250px;
+}
+.nav{
+    border-bottom: 1px solid lightgray;
+}
+.colorTexto{
+    color: $base-color;
+    font-weight: bold;
+}
+.cuerpoOferta{
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  color: #58595b;
+}
+.cardOferta{
+  border-radius: 4px !important;
+  border: solid 1px #c0c0c0 !important;
+}
+.offerJob{
+  min-height: 68px;
+  height:auto;
+  padding: 40px;
+  padding-top: 20px !important;
+  background: #fbfbfb;  
+} 
+.btnVisitar{
+  border-radius: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;  
+  border-radius: 24px;
+  color: #ec1c24 !important;
+  border: solid 1px #ec1c24;
+  background-color: #ffffff;
+  width: 138px;
+  height: 42px;
+  font-family: OpenSans;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: -0.2px; 
+  cursor: pointer !important;
+}
+.btnVisitar:hover{
+  color: white !important;
+  background-color: #ec1c24;
+  cursor: pointer;
+}
+
+.btnMainRed {
+  border: solid 1px #ec1c24;
+  background-color: #ffffff;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #ec1c24;
+  padding: 10px 15px;
+  width: 256px;
+  font-family: GoogleSans;
+}
+.social {
+  position: absolute;
+  left: -75px; 
+  top: 42px;
+}
+.social-cont {
+  position: relative;
+}
+@media (min-width: 845px) {
+  .social {
+    left: 68px;
+    z-index: 999;
+  }
+}
+ 
+  .social ul {
+    list-style: none;
+  }
+ 
+  .social ul li a {
+    border-radius: 50%;
+    display: inline-block;
+    color:gray;
+    background: #fff;
+    padding: 15px 15px;
+    text-decoration: none;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease; 
+  }
+
+  .social ul li .icon-facebook:hover {background:#3b5998;color:white;} 
+  .social ul li .icon-twitter:hover {background: #00abf0;color:white;}
+  .social ul li .icon-linkedin:hover {background: #007bb5;color:white;}
+
+  .card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(255, 255, 255);
+    border-top: 0 solid rgba(0, 0, 0, 0.125);
+  }
+  .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+.icon-facebook {
+  width: 100%;
+  text-align: center;
+}
+.ngx-pagination .li .current {
+  background-color: #ec1c24 !important;
+}

@@ -1,0 +1,193 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+<div class="container" *ngIf="page==0">
+    <h1 style="color: black;" class="text-center mt-3">Administración</h1>
+    <div class="row mt-3">
+        <div *ngFor="let item of modules" class="col-lg-3 col-md-3 col-sm-12 col-12">
+            <div class="card border ml-3" style="width: 18rem;">
+                <img src="assets/img/networking/bg-decore-min.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.text }}</p>
+                    <button (click)="increment()" class="btnMain3">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5" *ngIf="page==1">
+    <h1 style="color: black;" class="text-center mt-5">Networking Admin</h1>
+    <div class="row mt-2">
+        <div class="col-lg-2 col-md-2 col-sm-0"></div>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <ul class="nav mb-3 mt-5 pCabeceraModulo" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-info-tab" data-toggle="pill" href="#pills-info" role="tab"
+                        aria-controls="pills-info" aria-selected="true">
+                        Creación de eventos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                        aria-controls="pills-contact" aria-selected="false">
+                        Eventos
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content mt-5" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-info" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="divRaya"></div>
+                    <h3 class="mt-3 mb-3" style="font-weight: bold;">Regístra eventos</h3>
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="inputPhoto">Imagen evento</label>
+                                    <div class="containera">
+                                        <div class="outer my_class" [ngStyle]="getMyStyles()" style="background-size: 150px;">
+                                            <div class="inner">
+                                                <input class="inputfile" type="file" id="inputPhoto" name="file" accept="image/*"
+                                                    (change)="handleInputChange($event)">
+                                                <label>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                                                        <path
+                                                            d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    <small *ngIf="submitted && f.image.errors" id="ciudadHelp" class="form-text text-danger">
+                                        Debe propocionar una imagen.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12"></div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="descripcionConferencista">Título de la conferencia</label>
+                                    <textarea formControlName="talkDescription" class="form-control" name="descripcionConferencista"
+                                        id="descripcionConferencista" placeholder="Ingresa un Título" cols="30"
+                                        rows="10"></textarea>
+                                    <small *ngIf="submitted && f.talkDescription.errors" id="descripcionConferencistaHelp" class="form-text text-danger">
+                                        Debes proporcionar la título del conferencista.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="idCiudad">Ciudad de evento</label>
+                                    <ng-select [items]="ciudades" [ngClass]="{'is-invalid': submitted && f.city.errors }"
+                                        bindLabel="text" bindValue="id" placeholder="selecciona una ciudad"
+                                        formControlName="city" [clearable]="false">
+                                    </ng-select>
+                                    <small *ngIf="submitted && f.city.errors" id="ciudadHelp" class="form-text text-danger">
+                                        Debe propocionar una cuidad
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="idTipoEvento">Tipo de evento</label>
+                                    <select formControlName="eventType" class="form-control" id="idTipoEvento" aria-describedby="tipoEventoHelp"
+                                        placeholder="Tipo evento">
+                                        <option value="">Selecciona tipo evento</option>
+                                        <option value="2">Único</option>
+                                    </select>
+                                    <small *ngIf="submitted && f.eventType.errors" id="tipoEventoHelp" class="form-text text-danger">
+                                        Debe propocionar una cuidad    
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="descripcionEvento">Descripción del evento</label>
+                                    <textarea formControlName="eventDescription" class="form-control" name="descripcionEvento" id="descripcionEvento"
+                                        placeholder="Ingresa una descripción" cols="30" rows="10"></textarea>
+                                    <small *ngIf="submitted && f.eventDescription.errors" id="descripcionEventoHelp" class="form-text text-danger">
+                                        Debe propocionar una descripción para el evento.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="nombreConferencista">Nombre del conferencista</label>
+                                    <input formControlName="talkName" type="text" class="form-control" id="nombreConferencista"
+                                        aria-describedby="nombreConferencistaHelp" placeholder="Nombre">
+                                    <small *ngIf="submitted && f.talkName.errors" id="nombreConferencistaHelp" class="form-text text-danger">
+                                        Debe propocionar el nombre del conferencista.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="fechaEvento">Fecha del evento</label>
+                                    <input formControlName="eventDate" type="date" class="form-control" id="fechaEvento" [min]="currentDate" placeholder="Password">
+                                    <small *ngIf="submitted && f.eventDate.errors" id="fechaHelp" class="form-text text-danger">
+                                        Debes proporcionar la fecha del evento.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="horaEvento">Hora del evento</label>
+                                    <input formControlName="eventHour" type="time" class="form-control" id="horaEvento" aria-describedby="hourHelp"
+                                        placeholder="Enter email">
+                                    <small *ngIf="submitted && f.eventHour.errors" id="hourHelp" class="form-text text-danger">
+                                        Debes proporcionar la hora del evento.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="lugarEvento">Lugar del evento</label>
+                                    <input formControlName="eventPlace" type="text" class="form-control" id="lugarEvento"
+                                        aria-describedby="lugarEventoHelp" placeholder="Lugar">
+                                    <small *ngIf="submitted && f.eventPlace.errors" id="lugarEventoHelp" class="form-text text-danger">
+                                        Debes proporcionar el lugar del evento.
+                                    </small>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                                <button type="submit" class="btnMain">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="divRaya"></div>
+                    <h3 class="mt-3 mb-5" style="font-weight: bold;">Consulta de eventos</h3>
+                    <div class="row">
+                        <div *ngFor="let item of events" class="col-lg-6 col-md-6 col-sm-12 col-12 mb-5">
+                            <div class="card border" style="width: 18rem;">
+                                <img src="{{'data:image/png;base64,'+ item.rutaImagen}}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ item.conferencista }}</h5>
+                                    <p class="card-text">
+                                        {{ item.descripcionEvento }} <br>
+                                        {{ item.fechaEvento }} <br>
+                                        {{ item.horaEvento }} <br>
+                                        {{ item.glosaCiudad }} <br>
+                                        {{ item.lugarEvento }} <br>
+                                        {{ item.nombreConferencista }}
+                                    </p>
+                                </div>
+                                <div class="card-body text-right">
+                                    <span style="color: #ca1a1a;cursor: pointer;" class="touch mr-3" (click)="delete(item.idEvento)"><i class="fas fa-trash-alt"
+                                        ></i> &nbsp;&nbsp;Eliminar </span>
+                                    <!-- <span class="touch" (click)="loadData(item)"><i class="fas fa-pen"></i> 
+                                      Editar </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-0"></div>
+    </div>
+
+</div>

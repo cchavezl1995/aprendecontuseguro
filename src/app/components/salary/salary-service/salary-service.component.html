@@ -1,0 +1,397 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+
+
+<section class="content">
+    <div class="fabs" routerLink="/comparar-salario" [queryParams]="{p: 2}">
+      <a id="prime" style="margin-right:30px" class="fab" data-toggle="modal" data-target="#exampleModalCenter"
+        *ngIf="calculadora" data-backdrop="static"><i style="color:white;margin-top: 7px;"
+          class="fa fa-calculator" ></i></a>
+    </div>
+    <div class="row">
+      <div class="d-block d-xl-none d-lg-none imgMovil2" style="width:100%;height:600px;">
+        <div style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);color: white;padding-top: 5px">
+          <div style="margin-left: 19.1%;">
+            <span routerLink="/Inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/comparar-salario" class="crumbModulo">Compara tu salario > </span>
+            <span class="crumbModulo"><b>Comparar mi salario </b></span>
+          </div>
+        </div>
+        <h1 class="tituloModulo">Conoce nuestro reporte salarial 2019</h1>
+        <p class="col-12 mt-2 pSalaryResponsive">
+          Conoce y compara tu salario actual y la oferta de paquetes de remuneración en el mercado laboral,
+           a través de un estudio basado en datos de industria, cargo, carrera y experiencia, entre otros. </p>
+        <div class="text-center col-12">
+          <button *ngIf="login.isActive() && !calculadora" data-toggle="modal" data-target="#exampleModalCenter"
+            data-backdrop="static" class="btnGreen mt-5">Comparar mi salario &nbsp;&nbsp;&nbsp; <i
+              class="fas fa-chevron-right" style="color:#068468"></i></button>
+          <!-- <button *ngIf="login.isActive()" class="btnTop2" style="margin-top: 55px; margin-left:17.5%;" (click)="increment()">MEJORAR MI HOJA DE VIDA <i style="color:#ffb400" class="fa fa-angle-right"></i></button>
+          <button *ngIf="!login.isActive()" class="btnTop2" style="margin-top: 55px; margin-left:17.5%;" (click)="login.goLogin()">QUIERO UNIRME <i style="color:#ffb400" class="fa fa-angle-right"></i></button> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- modal formulario -->
+    <div class="row">
+      
+      <div class="d-none d-lg-block" style="width:100%;height:825px;
+      background-image: url(../../../assets/img/fraude/img-man-8-min.png);
+      background-position: left 20% bottom;
+      background-repeat: no-repeat;
+      background-size: 380px;
+      background-color: #84d8c6;">
+      <div style="width:100%;height:40px;color: white;padding-top: 5px;background: linear-gradient(90deg, #7fbeb1 50%,  #096e58 50%);background-color: rgba(0,0,0,0.1);">
+        <div style="margin-left: 19.1%;">
+          <span routerLink="/home" class="crumbModulo">Inicio > </span>
+          <span routerLink="/comparar-salario" class="crumbModulo">Compara tu salario > </span>
+          <span class="crumbModulo"><b>Comparar mi salario </b></span>
+        </div>
+      </div>
+  
+  
+        
+        <div style="width: 50%;float: right; height:760px;background-color:#068468 ;margin-bottom:240px;"></div>
+        <div class="col-lg-7 col-md-12"
+          style="height:546px;background-color:transparent;float:right;z-index:3;border-top-left-radius:100px;z-index: 5;position: absolute;right: 0">
+          <div style="padding-top:15px;padding-left:181px; padding-right: 50px">
+            <h1 class="titulo" style="margin-left: 10%;"><b>Conoce Nuestro Reporte salarial 2019</b></h1>
+            <p class="parrafoTitulo" style="margin-top:30px;margin-bottom:30px;max-width:580px;margin-left: 10%;">
+              La oferta de paquetes de remuneración del mercado laboral, te muestra con precisión tu salario,
+              comparándolo con datos de la industria como carrera, cargo, experiencia y otras variables.
+            </p>
+  
+            <button *ngIf="!login.isActive()" (click)="login.verifySesion()" style="margin-left: 10%;" class="btnGreen">Comparar mi salario</button>
+            <button *ngIf="login.isActive() && !calculadora" data-toggle="modal" style="margin-left: 10%;" data-target="#exampleModalCenter"
+              data-backdrop="static" class="btnGreen" (click)="AddLog('comparar-salario-servicio','Ingresó a  modal de compara salario')" routerLink="/comparar-salario-servicio" [queryParams]="{p: 2}">Comparar mi salario</button>
+              
+            <p class="parrafoDisclaimer" *ngIf="!calculadora" style="margin-top:15px;margin-bottom:30px;max-width:580px;margin-left: 10%;">
+                * El estudio salarial está respaldado por la información suministrada por elempleo.com, basado en una muestra real de 336 empresas, 
+                evaluando 650 cargos en 17 sectores económicos. Este estudio muestra una tendencia de una posible remuneración y no es una garantía 
+                salarial para las personas que lo consultan.
+            </p>
+            <a *ngIf="login.isActive() && calculadora" class="parrafoTitulo" (click)="scrollToElement('parrafo1')"
+              style="cursor: pointer;margin-left: 10%;margin-top: 40px;font-weight: bold;">
+              <svg class="mr-3 animFlecha" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px"
+                viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
+                <g>
+                  <path fill="white"
+                    d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+                 c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+                 c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z" />
+                </g>
+              </svg>
+              Ver mi comparación salarial</a>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        style="margin-top: 15px;padding-right: 0px; padding-left: 0px;" aria-hidden="true">
+        <div class="col-lg-8 offset-lg-2 col-md-12"
+          style="background-color:#f6f8fa;height:750px;margin-top:45px; position:absolute;padding-right: 6%;padding-left: 6%;padding-top:40px;"
+          role="document">
+          <div style="top:0;left:0;margin-left: -60px;z-index: 10;margin-top: 30px;" class="d-none d-lg-block">
+            <button id="btnCierraModal" type="button" class="btnTopCierraModal" data-dismiss="modal"><i style="color: #ec1c24;" class="fas fa-times"></i></button>
+          </div>
+          <div class="modalFiltroSalario" style="margin-top: -40px;">
+            <section class="content"
+              style="padding:40px;border:1px solid gray;border-radius: 4px;border: solid 1px #d2d2d2;background-color: #ffffff;">
+              <form [formGroup]="formValidation" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-12">
+                    <h3 class="tituloModal mb-3">Tu información personal</h3>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <p class="parrafoModal">Aquí puedes ingresar la información salarial basada en tu perfil y hacer la
+                      comparación con otras industrias. </p>
+                  </div>
+                  <div class="col-6 form-group">
+                    <label>Tu salario actual</label>
+                    <input type="text" id="salario" maxlength="11" class="form-control" DigitOnly
+                      [ngClass]="{ 'is-invalid': submitted && f.salary.errors }" formControlName="salary"
+                      placeholder="Ingresa tu salario" [ngModel]="amount" (ngModelChange)="transformAmount($event)" />
+  
+                    <div class="invalid-feedback" *ngIf="submitted && f.salary.errors">
+                      <p *ngIf="f.salary.errors.required">Campo requerido.</p>
+                      <p *ngIf="f.salary.errors.pattern">Campo de solo número.</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-6 form-group">
+                    <label>Sector de la industria</label>
+                    <select id="areas" name="areas" (ngModelChange)="cargarNivelesJerarquicos($event)"
+                      class="form-control" placeholder="Selecciona el área"
+                      [ngClass]="{ 'is-invalid': submitted && f.cmbSector.errors }" formControlName="cmbSector">
+                      <option value="">Seleccione un área</option>
+                      <option *ngFor="let ar of areas" [ngValue]="ar.Text"> {{ar.Text}} </option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="submitted && f.cmbSector.errors">
+                      <p *ngIf="f.cmbSector.errors.required">Campo requerido.</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-6 form-group">
+                    <label>Nivel Jerárquico</label>
+                    <select id="niveles" name="niveles" (ngModelChange)="cargarCargos($event)" class="form-control"
+                      placeholder="Selecciona el Nivel" [ngClass]="{ 'is-invalid': submitted && f.cmbLevel.errors }"
+                      formControlName="cmbLevel">
+                      <option value="">Seleccione un nivel jerárquico</option>
+                      <option *ngFor="let ni of niveles" [ngValue]="ni.Text"> {{ni.Text}} </option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="submitted && f.cmbLevel.errors">
+                      <p *ngIf="f.cmbLevel.errors.required">Campo requerido.</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-6 form-group">
+                    <label>Cargo</label>
+                    <select id="cargos" name="cargos" (ngModelChange)="cargarTamanosCiudades($event)" class="form-control"
+                      placeholder="Selecciona un Cargo" [ngClass]="{ 'is-invalid': submitted && f.cmbCargo.errors }"
+                      formControlName="cmbCargo">
+                      <option value="">Seleccione un cargo</option>
+                      <option *ngFor="let ca of cargos" [ngValue]="ca.Text"> {{ca.Text}} </option>
+                    </select>
+  
+                    <div class="invalid-feedback" *ngIf="submitted && f.cmbCargo.errors">
+                      <p *ngIf="f.cmbCargo.errors.required">Campo requerido.</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-6 form-group">
+                    <label>Tamaño empresa</label>
+                    <select id="tamanos" name="tamanos" class="form-control"
+                      placeholder="Selecciona el tamaño de la empresa"
+                      [ngClass]="{ 'is-invalid': submitted && f.cmbTamano.errors }" formControlName="cmbTamano">
+                      <option value="">Seleccione un Tamaño</option>
+                      <option *ngFor="let ta of tamanos" [ngValue]="ta.Text"> {{ta.Text}} </option>
+                    </select>
+  
+                    <div class="invalid-feedback" *ngIf="submitted && f.cmbTamano.errors">
+                      <p *ngIf="f.cmbTamano.errors.required">Campo requerido.</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-6 form-group">
+                    <label>Ciudad</label>
+                    <select id="regiones" name="regiones" class="form-control" placeholder="Selecciona la ciudad"
+                      [ngClass]="{ 'is-invalid': submitted && f.cmbCiudad.errors }" formControlName="cmbCiudad">
+                      <option value="">Seleccione una Ciudad</option>
+                      <option *ngFor="let ci of regiones" [ngValue]="ci.Text"> {{ci.Text}} </option>
+                    </select>
+  
+                    <div class="invalid-feedback" *ngIf="submitted && f.cmbCiudad.errors">
+                      <p *ngIf="f.cmbCiudad.errors.required">Campo requerido.</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-12 text-center">
+                    <button type="submit" (click)="AddLog('comparar-salario-servicio','Guardó fomulario con comparación de salario')" class="btnMain" style="margin-top:20px" routerLink="/comparar-salario-servicio" [queryParams]="{p: 3}">Comparar mi salario
+                      &nbsp;&nbsp;&nbsp; </button>
+                    <button id="btnCierraModal" type="button" class="btnTopCierraModalMobile d-block d-xl-none d-lg-none"
+                      data-dismiss="modal" style="color: #ec1c24; border: #ec1c24 1px solid;">Cerrar</button>
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- resultado -->
+    <div *ngIf="cargaSalario==1" style="background-color: #ebf0f6">
+      <div class="row">
+        <div style="background-color:#068468" class="col-lg-5 col-md-12" id="parrafo1">
+          
+            <svg xmlns="http://www.w3.org/2000/svg" width="123" height="31" viewBox="0 0 123 31"
+            style="
+            position: absolute;
+            bottom: 0;
+            margin-left: 15%;cursor: pointer;" (click)="scrollToElement('parrafo2')">
+              <g fill="none" fill-rule="evenodd">
+                  <path fill="#6BC09F" d="M-23 30.988H.35c12.703.333 25.026-6.059 36.97-19.177 17.916-19.676 37.881-11.268 47.57 0 9.688 11.27 21.03 19.177 38.401 19.177H151-23z"/>
+                  <g transform="translate(49 7)">
+                      <ellipse cx="12.5" cy="12" fill="#EC1C24" rx="12.5" ry="12"/>
+                      <path fill="#FFF" fill-rule="nonzero" d="M7.865 8.964l-1.241 1.568 5.679 4.496 5.57-4.503-1.257-1.555-4.326 3.497z"/>
+                  </g>
+              </g>
+          </svg>
+          <div class="row" style="padding-top:120px;padding-bottom:183px">
+            <div class="col-lg-8 offset-lg-2 col-md-8 col-sm-8 offset-md-2 offset-sm-2" style="margin: auto;">
+              <h1 class="tituloSalario">
+                
+  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+    <path fill="#FFF" fill-rule="nonzero" d="M17.016 0H2.02C.915 0 0 .913 0 2.016v14.93C0 18.087.915 19 2.02 19h14.958c1.105 0 2.02-.913 2.02-2.016V2.016C19.054.913 18.14 0 17.015 0zM5.43 14.93a.688.688 0 0 1-.667.666h-.667a.688.688 0 0 1-.667-.666V11.22c0-.361.324-.665.667-.665h.667c.362 0 .667.323.667.665v3.709zm3.41 0a.688.688 0 0 1-.667.666h-.666a.688.688 0 0 1-.667-.666V6.105c0-.361.324-.666.667-.666h.666c.362 0 .667.324.667.666v8.825zm3.411 0a.688.688 0 0 1-.667.666h-.667a.688.688 0 0 1-.667-.666V4.09c0-.362.324-.667.667-.667h.667c.362 0 .667.324.667.666v10.84zm3.373 0a.688.688 0 0 1-.667.666h-.667a.688.688 0 0 1-.667-.666V8.463c0-.36.324-.665.667-.665h.667c.362 0 .667.323.667.665v6.467z"/>
+  </svg>
+  
+                &nbsp;&nbsp;&nbsp;¿Conoces el valor real
+                de tu salario en el mercado?</h1>
+              <p class="parrafoSalario mt-5">
+                Al momento de ingresar tu información hacemos la comparación de tu salario actual junto a la oferta de
+                paquetes de remuneración del mercado laboral. Este estudio* se basa en datos concretos y 100% reales
+                divididos por industria, cargo, profesión, experiencia y otros.
+                <br /><br />
+                La gráfica de la derecha, indica tu salario actual, comparado con el salario promedio, máximo o mínimo del
+                mercado laboral.
+                <br><br>
+                * El estudio salarial está respaldado por la información suministrada por elempleo.com, basado en una muestra real de 336 empresas, evaluando 650 cargos en 17 sectores económicos. Este estudio muestra una tendencia de una posible remuneración y no una garantía salarial para las personas que lo consultan.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div style="background-color:#ebf0f6;padding-left: 10%;padding-right: 10%;padding-top: 10%;padding-bottom: 10%"
+          class="col-lg-7 col-md-12 text-center">
+          <div style="text-align:center" id="divCanvasChart1">
+  
+            <canvas #Chart id="barChart" width="400" height="400"></canvas>
+  
+          </div>
+  
+  
+        </div>
+      </div>
+      <div class="row" id="parrafo2">
+        <div style="background-color:#6bc09f" class="col-lg-5 col-md-12">
+          
+            <svg xmlns="http://www.w3.org/2000/svg" width="123" height="31" viewBox="0 0 123 31"
+            style="
+            position: absolute;
+            bottom: 0;
+            margin-left: 15%;;cursor: pointer" (click)="scrollToElement('parrafo3')">
+              <g fill="none" fill-rule="evenodd">
+                  <path fill="#068468" d="M-23 30.988H.35c12.703.333 25.026-6.059 36.97-19.177 17.916-19.676 37.881-11.268 47.57 0 9.688 11.27 21.03 19.177 38.401 19.177H151-23z"/>
+                  <g transform="translate(49 7)">
+                      <ellipse cx="12.5" cy="12" fill="#EC1C24" rx="12.5" ry="12"/>
+                      <path fill="#FFF" fill-rule="nonzero" d="M7.865 8.964l-1.241 1.568 5.679 4.496 5.57-4.503-1.257-1.555-4.326 3.497z"/>
+                  </g>
+              </g>
+          </svg>
+          <div class="row" style="padding-top:120px;padding-bottom:183px">
+            <div class="col-lg-8 offset-lg-2 col-md-8 col-sm-8 offset-md-2 offset-sm-2" style="margin: auto;">
+              <h1 class="tituloSalario">
+                
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <path fill="#FFF" fill-rule="nonzero" d="M14.1 8.75l-4.073 2.5v-2c0-.5-.564-.813-.94-.5l-4.073 2.5v-2c0-.5-.564-.813-.94-.5l-3.76 2.313c-.189.124-.314.312-.314.5v7.812c0 .313.313.625.627.625h13.787c.314 0 .627-.313.627-.625V9.25c.063-.5-.501-.813-.94-.5zm-9.65 5c0 .313-.314.625-.627.625H2.57c-.314 0-.627-.313-.627-.625v-.625c0-.313.313-.625.627-.625h1.253c.313 0 .627.313.627.625v.625zm4.387 0c0 .313-.314.625-.627.625H6.956c-.313 0-.626-.313-.626-.625v-.625c0-.313.313-.625.626-.625H8.21c.313 0 .627.313.627.625v.625zM17.047 0c.313 0 .563.25.626.563l2.319 18.75c.063.375-.25.687-.627.687h-3.133c.062-.188.125-.438.125-.625V9.25c0-1.063-.815-1.875-1.88-1.875-.313 0-.627.063-.94.25l.877-7.063c.063-.312.314-.562.627-.562zm-4.45 12.5c.313 0 .627.313.627.625v.625c0 .313-.314.625-.627.625h-1.254c-.313 0-.626-.313-.626-.625v-.625c0-.313.313-.625.626-.625h1.254z"/>
+  </svg>
+  &nbsp;&nbsp;&nbsp;¿Sabés cómo
+                ganarías en otras industrias?</h1>
+              <p class="parrafoSalario mt-5">
+                Además de comparar tu salario con el mercado, en este espacio te mostramos la oferta de remuneración que
+                tiene tu perfil en otras industrias, de esta forma puedes conocer a cuánto podrías aspirar si decides
+                arriesgarte a un cambio.
+                <br /><br />
+                
+                * Esta información también es respaldada por elempleo.com, basada en una muestra real de 336 empresas, evaluando 650 cargos en 17 sectores económicos.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          style="background-color:#f4faff;display: table;padding-left: 10%;padding-right: 10%;padding-top: 5%;padding-bottom: 10%"
+          class="col-lg-7 col-md-12 text-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="chart-title form-group d-block d-xl-none d-lg-none" style="width: 200px;
+                                  z-index: 20;
+                                  left: 15px;
+                                  position: absolute;text-align: left">
+                <label>Sector de la industria</label>
+                <select class="form-control" [(ngModel)]="filtro" (change)="onChangeFilter($event.target.value)">
+                  <option *ngFor="let a of cboFiltro" [ngValue]="a"> {{a}} </option>
+                </select>
+              </div>
+              <div class="chart-title form-group d-none d-lg-block" style="width: 200px;
+                                  z-index: 20;
+                                  position: absolute;text-align: left">
+                <label>Sector de la industria</label>
+                <select class="form-control" [(ngModel)]="filtro" (change)="onChangeFilter($event.target.value)">
+                  <option *ngFor="let a of cboFiltro" [ngValue]="a"> {{a}} </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="chart-wrap col-lg-8 col-md-12">
+            <div id="dashboard-stats" class="chart bars-horizontal brand-primary"
+              style="overflow: initial !important;width:88% !important;padding-top: 90px">
+              <div class="row" *ngFor="let detail of grafico2" style="margin-top: 20px;">
+                <span class="label" style="
+                  margin-top: -25px;
+                  margin-left: -10px;
+                  width: 100%;">{{detail.industria}}</span>
+                <div class="bar-wrap" style="background-color:light;width:90% !important">
+                  <div class="bar" [style.width]="detail.avance + '%'" [style.margin-left]="detail.avance + '%'"
+                    style="background-color: #51c08a"></div>
+                </div>
+                <span class="numeroGrafico" style="top:-10px">{{detail.valor}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-12"></div>
+          <!-- <img src="assets/img/salary/g2.JPG" alt=""/> -->
+        </div>
+      </div>
+      <div class="row" id="parrafo3">
+        <div style="background-color:#068468" class="col-lg-5 col-md-12">
+          <div class="row" style="padding-top:120px;padding-bottom:183px">
+            <div class="col-lg-8 offset-lg-2 col-md-8 col-sm-8 offset-md-2 offset-sm-2" style="margin: auto;">
+              <h1 class="tituloSalario">
+                
+  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="29" viewBox="0 0 12 29">
+    <path fill="#FFF" fill-rule="nonzero" d="M3.496 7.25c.264 0 .462.194.528.421l1.35 6.094.198-4.96a.528.528 0 0 1-.363-.485v-.26c0-.291.231-.518.527-.518h.495c.296 0 .527.227.527.518v.26a.528.528 0 0 1-.363.486l.198 4.96 1.383-6.062a.527.527 0 0 1 .528-.422h2.108c.823 0 1.45.681 1.383 1.46l-1.054 7.552a1.107 1.107 0 0 1-1.12 1.004h-.263L8.174 28.32c-.033.39-.428.681-.922.681H4.748c-.494 0-.89-.292-.922-.68L2.442 17.297H2.18a1.13 1.13 0 0 1-1.12-1.004L.005 8.74A1.372 1.372 0 0 1 1.388 7.25zM6.6 0c1.657 0 3 1.623 3 3.625S8.257 7.25 6.6 7.25s-3-1.623-3-3.625S4.943 0 6.6 0z"/>
+  </svg>
+  &nbsp;&nbsp;&nbsp;¿Sabés cuál sería tu
+                salario si te ascienden? </h1>
+              <p class="parrafoSalario mt-5">
+                Resolvemos el misterio de cuánto podría estar ganando tu jefe y te contamos cuál es tu plan de carrera
+                de acuerdo si continúas en el mismo camino. En este espacio te mostramos a cúanto podrías aspirar si te
+                ascienden.
+                <br /><br />
+                * Esta información también es respaldada por elempleo.com, basada en una muestra real de 336 empresas, evaluando 650 cargos en 17 sectores económicos.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          style="background-color:#ebf0f6;display: table;padding-left: 10%;padding-right: 10%;padding-top: 5%;margin-bottom: 10%"
+          class="col-lg-7 col-md-12 text-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="chart-title form-group d-block d-xl-none d-lg-none" style="width: 150px;
+                    z-index: 20;
+                    left: 15px;
+                    position: absolute;text-align: left">
+                <label>Nivel jerárquico</label>
+                <select class="form-control" [(ngModel)]="filtro" (change)="onChangeFilter($event.target.value)">
+                  <option *ngFor="let a of cboFiltro" [ngValue]="a"> {{a}} </option>
+                </select>
+              </div>
+              <div class="chart-title form-group d-none d-lg-block" style="width: 150px;
+                    z-index: 20;
+                    position: absolute;text-align: left">
+                <label>Nivel jerárquico</label>
+                <select class="form-control" [(ngModel)]="filtro" (change)="onChangeFilter($event.target.value)">
+                  <option *ngFor="let a of cboFiltro" [ngValue]="a"> {{a}} </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="chart-wrap col-lg-8 col-md-12">
+            <div id="dashboard-stats" class="chart bars-horizontal brand-primary"
+              style="overflow: initial !important;width:88% !important;padding-top: 90px">
+              <div class="row" *ngFor="let detail of grafico3" style="margin-top: 20px;">
+                <span class="label" style="
+                margin-top: -25px;
+                margin-left: -10px;
+                width: 100%;">{{detail.nivel}}</span>
+                <div class="bar-wrap" style="background-color:light;width:90% !important">
+                  <div class="bar" [style.width]="detail.avance + '%'" [style.margin-left]="detail.avance + '%'"
+                    style="background-color: #f99d1c"></div>
+                </div>
+                <span class="numeroGrafico" style="top:-10px">{{detail.valor}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-12"></div>
+          <!-- <img src="assets/img/salary/g2.JPG" alt=""/> -->
+        </div>
+      </div>
+    </div>
+  </section>

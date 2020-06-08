@@ -1,0 +1,58 @@
+stages:
+  - install
+  # - test
+  - compile
+  - deploy
+
+install:
+  stage: install
+  script: 
+    - git pull http://john.bolanos:Mok.2019@gitlab.aprilcolombia.com/codigo_fuente/Cardif/Scotiabank-Colombia/Front-Scotiabank-col.git
+    - npm install
+  cache:
+    paths:
+      - node_modules/
+
+# test:
+#   stage: test
+#   variables:
+#     CHROME_BIN: google-chrome
+#   dependencies:
+#     - install
+#   before_script:
+#     - apt-get update && apt-get install -y apt-transport-https
+#     - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+#     - sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+#     - apt-get update && apt-get install -y google-chrome-stable
+#   script:
+#     - npm run test:ci
+#   coverage: '/Statements.*?(\d+(?:\.\d+)?)%/'
+#   artifacts:
+#     expire_in: 1h
+#     paths:
+#       - node_modules/
+#   cache:
+#     paths:
+#       - node_modules/
+
+compile:
+  stage: compile
+  dependencies:
+    - install
+  script:
+    - ng build --prod
+  cache:
+    paths:
+      - node_modules/
+      - dist/
+
+deply:
+  stage: deploy
+  dependencies:
+    - compile
+  script:
+    - cd dist/cardif-lte3
+    - cp -r * /var/www/html/
+  cache:
+    paths:
+      - dist/

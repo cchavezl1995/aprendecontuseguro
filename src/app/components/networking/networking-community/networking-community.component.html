@@ -1,0 +1,108 @@
+<div>
+    <div style="width:100%;height:300px;
+        background-color: #068468;position:absolute;margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 17.8%;">
+                <span routerLink="/home" class="crumbModulo">Inicio > </span>
+                <span [routerLink]="['/networking']" routerLinkActive="router-link-active"  class="crumbModulo">Networking > </span>
+                <span [routerLink]="['/networking-servicio']" routerLinkActive="router-link-active"  class="crumbModulo">Servicio > </span>
+                <span [routerLink]="['/networking-comunidad']" routerLinkActive="router-link-active"  class="crumbModulo"><b>Comunidad</b></span>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+            <h1 class="tituloModulo">Networking</h1>
+        </div>
+    </div>
+    <!-- Page Content  -->
+    <div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+        <section class="col-8 mt-5 offset-2 accordionPerfil mb-5 sectionVTS">
+            <section class="cardsPerfil pb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;">
+                    <div class="card-body pb-5" style="padding:6%">
+                        <div class="row">
+                        <div class="container">
+                            <a [routerLink]="['/networking-servicio']" routerLinkActive="router-link-active"  class="btn-volver mb-2 manito" role="button"><i
+                                    class="fas fa-chevron-circle-left"></i> Volver</a>
+                        </div>
+                    </div> 
+                        <h1 class="h1TituloModulo textColorGray">Crea tu red de contactos</h1>
+                        <p class="pCabeceraModulo">
+                            Amplía tus redes de contactos, conéctate con empresas, emprendedores y freelance (servicios
+                            de terceros) y materializa fácilmente tus ideas y necesidades de negocio.
+                        </p>
+                        <p>
+                            De acuerdo al sector de tu emprendimiento o idea, selecciona un tipo de comunidad
+                        </p>
+                        <h2 class="h2TituloModulo textColorGray">Comunidad de emprendedores</h2>
+                        <div style="border-top:1px solid #c4d4e2;margin-bottom: 20px"></div>
+                        <div class="col-md-12 mb-3">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="typeId">Sector</label>
+                                        <select class="form-control" [(ngModel)]="filterSector"
+                                            (change)="onChangeSector($event)">
+                                            <option *ngFor="let ar of filtroSectores" [ngValue]="ar.id"> {{ar.text}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div *ngIf="listaEmpresa.length==0" class="col-md-12 bussinesCards">
+                            <span class="titleInserColapVTS"><b>No Existen Empresas en este sector.</b></span>
+                        </div>
+
+                        <div *ngFor="let num of sect" class="col-md-12 bussinesCards" style="margin-top: 10px">
+                            <span class="titleInserColapVTS"><b>{{num | diccionario:sectores }}</b></span>
+                            <div class="row">
+                                <div *ngFor="let empresa of listaEmpresa | arrayFilters:num" class="col-md-4 mt-3">
+                                    <div class="card resumenLittleVTS">
+                                        <div class="card-img mt-3 logoEmpresa"
+                                            [ngStyle]="{'background-image': 'url('+empresa.rutaImagen+')'}"></div>
+                                        <div class="card-body">
+                                            <div class="card-text">
+                                                <h5 class="card-title tituloEmpresa d-block mb-0 pb-0">
+                                                    {{empresa.nombreEmpresa}}</h5>
+                                                <span class="parrafoEmpresa">{{empresa.descripcionEmpresa}}</span>
+                                                <div
+                                                    style="border-top:1px solid #c4d4e2;margin-top:20px;margin-bottom: 20px">
+                                                </div>
+                                                <b class="tituloEmpresa d-block">Datos de contacto</b>
+                                                <br>
+                                                <div style="width:100%;margin-top:10px">
+                                                    <span class="d-block"
+                                                        style="color: #5e5e5e;font-size: 14px"><b>Teléfonos:</b><br>
+                                                        <a style="color:#5e5e5e"
+                                                            [href]="'tel:' + empresa.telefonoEmpresarial">{{empresa.telefonoEmpresarial}}</a></span>
+                                                </div>
+                                                <div style="width:100%;margin-top:10px">
+                                                    <span class="d-block"
+                                                        style="color: #5e5e5e;font-size: 14px"><b>Correo
+                                                            electrónico:</b><br>
+                                                        <a style="color:#5e5e5e"
+                                                            [href]="'mailto:' + empresa.mailEmpresarial">{{empresa.mailEmpresarial}}</a></span>
+
+                                                </div>
+                                                <div style="width:100%;margin-top:10px">
+                                                    <span class="d-block"
+                                                        style="color: #5e5e5e;font-size: 14px"><b>Página
+                                                            web</b><br>
+                                                        <a [href]="empresa.paginaWeb">{{empresa.paginaWeb}}</a></span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

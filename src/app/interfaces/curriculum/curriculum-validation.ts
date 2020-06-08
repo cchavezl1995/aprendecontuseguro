@@ -1,0 +1,30 @@
+export interface CurriculumValidation {
+    idDatosPersonalesBool?: boolean;
+    idUsuarioBool?: boolean;
+    idPlantillaAplicadaBool?: boolean;
+    dicCiudadResidenciaBool?: boolean;
+    dicTipoDocumentoBool?: boolean;
+    dicProfesionBool?: boolean;
+    dicAreaTrabajoBool? :boolean;
+    dicAspiracionSalarialBool? :boolean;
+    nombresBool? :boolean;
+    apellidoPaternoBool? :boolean;
+    apellidoMaternoBool? :boolean;
+    rutaFotoBool? :boolean;
+    identificacionBool?: boolean;
+    correoElectronicoBool?: boolean;
+    telefonoCelularBool? :boolean;
+    direccionResidenciaBool? :boolean;
+    anosExperienciaBool? :boolean;
+    paisesTrabajarBool? :boolean;
+    redesSocialesBool? :boolean;
+    descripcionPerfilProfesionalBool? :boolean;
+    generoBool? :boolean;
+    movilidadLaboralBool? :boolean;
+    idiomaNivelBool? :boolean;
+    habilidadesBool? :boolean;
+    fechaNacimientoBool? :boolean;
+    fechaCreacionBool? :boolean;
+    fechaActualizacionBool? :boolean;
+    vigenteBool?: boolean;
+}

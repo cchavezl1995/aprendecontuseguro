@@ -1,0 +1,42 @@
+<div style="width:100%;height:300px;
+background-color: #009dd6;
+position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/salud-financiera" class="crumbModulo">Salud financiera > </span>
+            <span routerLink="/salud-financiera-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <h1 class="tituloModulo pad-tit">Salud Financiera</h1>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+                    <div class="row">
+                        <div class="col-12" style="padding:6%">
+                            <p class="pCabeceraModulo">
+                                Esta prueba pretende medir actitudes, comportamientos y conocimientos en finanzas
+                                personales. Identificarás los aspectos que debes mejorar y conocerás que medidas
+                                correctivas implementar.
+                            </p>
+                            <p class="pCabeceraModulo">
+                                La información suministrada será manejada de forma confidencial y su uso está
+                                limitado exclusivamente a fines estadísticos.
+                            </p>
+                            <div class="text-center">
+                                <button style="margin: auto" type="submit" (click)="startNotification()" routerLink="/salud-financiera-ejercicios"
+                                    class="btnMain mt-4 mb-4">
+                                    Continuar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

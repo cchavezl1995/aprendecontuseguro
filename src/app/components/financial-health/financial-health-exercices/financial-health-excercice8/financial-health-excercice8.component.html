@@ -1,0 +1,267 @@
+<div style="width:100%;height:300px;
+background-color: #009dd6;
+position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/salud-financiera" class="crumbModulo">Salud financiera > </span>
+            <span routerLink="/salud-financiera-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <h1 class="tituloModulo pad-tit">Salud Financiera</h1>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section class="col-8 offset-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+<div class="row" >
+    <div class="container mb-3">
+        <a routerLink="/salud-financiera-ejercicios" class="btn-volver manito Volver" role="button" style="color: #008ACC;"><i
+                class="fas fa-chevron-circle-left"></i> Volver</a>
+      </div>
+    <p class="text-center col-lg-10 offset-lg-1 mt-3 mb-4 font-weight-bold">Mide el nivel y tipo de
+        endeudamiento, junto con la carga de la deuda
+        con relación al pago mensual y el valor total adeudado con relación al ingreso
+        anual.
+    </p>
+    <div class="col-lg-8 offset-lg-2 offset-md-0 col-md-12">
+        <div class="form-group">
+            <label>
+                Tienes algún préstamo o deuda con alguna entidad, persona ó familiar
+            </label>
+            <div class="form-group form-check">
+                <input type="radio" (change)="formDeuda=true" name="s9s1p1" class="form-check-input" id="test9radio1_1"
+                    value="Si">
+                <label class="form-check-label" for="test9radio1_1">&nbsp;Si</label>
+                <br>
+                <input type="radio" (change)="formDeuda=false" name="s9s1p1" class="form-check-input" id="test9radio1_2"
+                    value="No">
+                <label class="form-check-label" for="test9radio1_2">&nbsp;No</label>
+            </div>
+        </div>
+        <div class="form-group" *ngIf="formDeuda">
+            <label>
+                ¿Qué tipo de préstamos o créditos tienes?
+            </label>
+            <div class="form-group form-check">
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_1"
+                    value="Hipotecario - Vivienda">
+                <label class="mt-3 form-check-label" for="test9s1p2_1">Hipotecario -
+                    Vivienda</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_2" value="Vehículo - Moto">
+                <label class="mt-3 form-check-label" for="test9s1p2_2">Vehículo -
+                    Moto</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_3" value="Educativo">
+                <label class="mt-3 form-check-label" for="test9s1p2_3">Educativo</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_4" value="Tarjeta de Crédito">
+                <label class="mt-3 form-check-label" for="test9s1p2_4">Tarjeta de
+                    Crédito</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_5" value="Libranza bancaria">
+                <label class="mt-3 form-check-label" for="test9s1p2_5">Libranza
+                    bancaria</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_6"
+                    value="Crédito de libre inversión bancaria">
+                <label class="mt-3 form-check-label" for="test9s1p2_6">Crédito de libre
+                    inversión bancaria</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_7"
+                    value="Crédito comercial o para negocios">
+                <label class="mt-3 form-check-label" for="test9s1p2_7">Crédito comercial o
+                    para
+                    negocios</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_8"
+                    value="Préstamos con el fondo de empleados de la empresa">
+                <label class="mt-3 form-check-label" for="test9s1p2_8">Préstamos con el
+                    fondo de
+                    empleados de la empresa</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_9"
+                    value="Préstamo otorgado por la empresa directamente">
+                <label class="mt-3 form-check-label" for="test9s1p2_9">Préstamo otorgado por
+                    la
+                    empresa directamente</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_10"
+                    value="Préstamos informal con un amigo o familiar">
+                <label class="mt-3 form-check-label" for="test9s1p2_10">Préstamos informal
+                    con
+                    un amigo o familiar</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_11"
+                    value="Compra fiada en tienda">
+                <label class="mt-3 form-check-label" for="test9s1p2_11">Compra fiada en
+                    tienda</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_12"
+                    value="Préstamos de consumo otorgados por tiendas o almacenes de cadena">
+                <label class="mt-3 form-check-label" for="test9s1p2_12">Préstamos de consumo
+                    otorgados por tiendas o almacenes de cadena</label><br>
+                <input type="checkbox" class="s9s1p2 mt-4 form-check-input" id="test9s1p2_12" value="Otros">
+                <label class="mt-3 form-check-label" for="test9s1p2_12">Otros</label><br>
+            </div>
+        </div>
+        <div class="form-group mt-3" *ngIf="formDeuda">
+            <label>
+                ¿Cuántas tarjetas de crédito tienes?
+            </label>
+            <select class="form-control mt-2" [(ngModel)]="s9s1p3">
+                <option value="">Elige</option>
+                <option value="No tengo tarjetas de crédito">No tengo tarjetas de crédito
+                </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="Más de 10">Más de 10</option>
+            </select>
+        </div>
+        <div class="form-group mt-3" *ngIf="formDeuda">
+            <label>
+                ¿Cuándo compras usando tu tarjeta de crédito típicamente a cuántas cuotas
+                difieres el pago?
+            </label>
+            <select class="form-control mt-2" [(ngModel)]="s9s1p4">
+                <option value="">Elige</option>
+                <option value="No tengo o no uso la uso">No tengo o no uso la uso</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="12">12</option>
+                <option value="De 13 a 23">De 13 a 23</option>
+                <option value="24">24</option>
+                <option value="De 25 a 35">De 25 a 35</option>
+                <option value="36">36</option>
+                <option value="Más de 36">Más de 36</option>
+            </select>
+        </div>
+        <div class="form-group mt-3" *ngIf="formDeuda">
+            <label>
+                ¿Qué porcentaje de tus ingresos MENSUALES destinas para pagar deudas y
+                préstamos
+                diferentes de tu crédito de vivienda?
+            </label>
+            <select class="form-control mt-2" [(ngModel)]="s9s1p5">
+                <option value="">Elige</option>
+                <option value="Mi única deudas es la del crédito de vivienda">Mi única
+                    deudas es
+                    la del crédito de vivienda</option>
+                <option value="De 1% a 5%">De 1% a 5%</option>
+                <option value="De 6% a 10%">De 6% a 10%</option>
+                <option value="De 11% a 15%">De 11% a 15%</option>
+                <option value="De 16% a 20%">De 16% a 20%</option>
+                <option value="De 16% a 20%">De 21% a 25%</option>
+                <option value="De 16% a 20%">De 26% a 30%</option>
+                <option value="De 16% a 20%">De 31% a 35%</option>
+                <option value="De 16% a 20%">De 36% a 40%</option>
+                <option value="De 16% a 20%">De 41% a 45%</option>
+                <option value="De 16% a 20%">De 46% a 50%</option>
+                <option value="De 16% a 20%">De 51% a 55%</option>
+                <option value="De 16% a 20%">De 56% a 60%</option>
+                <option value="De 16% a 20%">De 61% a 65%</option>
+                <option value="De 16% a 20%">De 66% a 70%</option>
+                <option value="De 16% a 20%">Más de 70%</option>
+            </select>
+        </div>
+        <div class="form-group mt-3" *ngIf="formDeuda">
+            <label>
+                ¿Qué porcentaje de tus ingresos MENSUALES destinas para pagar tu crédito de
+                vivienda?
+            </label>
+            <select class="form-control mt-2" [(ngModel)]="s9s1p6">
+                <option value="">Elige</option>
+                <option value="No tengo crédito de vivienda">No tengo crédito de vivienda
+                </option>
+                <option value="De 1% a 5%">De 1% a 5%</option>
+                <option value="De 6% a 10%">De 6% a 10%</option>
+                <option value="De 11% a 15%">De 11% a 15%</option>
+                <option value="De 16% a 20%">De 16% a 20%</option>
+                <option value="De 16% a 20%">De 21% a 25%</option>
+                <option value="De 16% a 20%">De 26% a 30%</option>
+                <option value="De 16% a 20%">De 31% a 35%</option>
+                <option value="De 16% a 20%">De 36% a 40%</option>
+                <option value="De 16% a 20%">De 41% a 45%</option>
+                <option value="De 16% a 20%">De 46% a 50%</option>
+                <option value="De 16% a 20%">De 51% a 55%</option>
+                <option value="De 16% a 20%">De 56% a 60%</option>
+                <option value="De 16% a 20%">De 61% a 65%</option>
+                <option value="De 16% a 20%">De 66% a 70%</option>
+                <option value="De 16% a 20%">Más de 70%</option>
+            </select>
+        </div>
+        <div class="form-group mt-3" *ngIf="formDeuda">
+            <label>
+                Si sumaras todas tus deudas diferentes del crédito de vivienda ¿a cuántas
+                veces
+                equivale la sumatoria de tus deudas con respecto a tus ingresos anuales?
+            </label>
+            <br>
+            <label style="font-weight: normal;">Suma todas tus deudas diferentes al crédito
+                de
+                vivienda y divídelo entre la sumatoria de los ingresos de todo 1 año = Total
+                Deudas de consumo / Ingresos Anuales</label>
+            <select class="form-control mt-2" [(ngModel)]="s9s1p7">
+                <option value="">Elige</option>
+                <option value="Mi única deuda es la del crédito de vivienda">Mi única deuda
+                    es
+                    la del crédito de vivienda</option>
+                <option value="De 1% a 10%">De 1% a 10%</option>
+                <option value="De 11% a 20%">De 11% a 20%</option>
+                <option value="De 21% a 30%">De 21% a 30%</option>
+                <option value="De 31% a 40%">De 31% a 40%</option>
+                <option value="De 41% a 50%">De 41% a 50%</option>
+                <option value="De 51% a 60%">De 51% a 60%</option>
+                <option value="De 61% a 70%">De 61% a 70%</option>
+                <option value="De 71% a 80%">De 71% a 80%</option>
+                <option value="De 81% a 90%">De 81% a 90%</option>
+                <option value="De 91% a 100%">De 91% a 100%</option>
+                <option value="De 101% a 125%">De 101% a 125%</option>
+                <option value="De 126% a 150%">De 126% a 150%</option>
+                <option value="De 151% a 200%">De 151% a 200%</option>
+                <option value="Más del 200%">Más del 200%</option>
+            </select>
+        </div>
+        <div class="form-group mt-3" *ngIf="formDeuda">
+            <label>
+                ¿A cuántas veces equivale tu deuda del crédito de vivienda con relación a
+                tus
+                ingresos anuales?
+            </label>
+            <br>
+            <label style="font-weight: normal;">Divide el valor del saldo de tu crédito de
+                vivienda y divídelo entre la sumatoria de los ingresos de todo 1 año = Saldo
+                Crédito de Vivienda / Ingresos Año</label>
+            <select class="form-control mt-2" [(ngModel)]="s9s1p8">
+                <option value="">Elige</option>
+                <option value="NO tengo crédito de vivienda">NO tengo crédito de vivienda
+                </option>
+                <option value="De 1% a 50%">De 1% a 50%</option>
+                <option value="De 51% a 100%">De 51% a 100%</option>
+                <option value="De 101% a 150%">De 101% a 150%</option>
+                <option value="De 151% a 200%">De 151% a 200%</option>
+                <option value="De 201% a 250%">De 201% a 250%</option>
+                <option value="De 251% a 300%">De 251% a 300%</option>
+                <option value="De 301% a 350%">De 301% a 350%</option>
+                <option value="De 351% a 400%">De 351% a 400%</option>
+                <option value="De 401% a 450%">De 401% a 450%</option>
+                <option value="De 451% a 500%">De 451% a 500%</option>
+                <option value="De 501% a 550%">De 501% a 550%</option>
+                <option value="De 551% a 600%">De 551% a 600%</option>
+                <option value="Más de 600%">Más de 600%</option>
+            </select>
+        </div>
+    </div>
+    <div class="text-center" style="width:100%">
+        <button style="margin: auto" type="submit" (click)="guardarIndicadores4()" routerLink="/salud-financiera-ejercicios"
+            class="btn btnTop2 btn-primary mt-4 mb-4">Finalizar cuestionario</button>
+    </div>
+</div>
+</div>
+</section>
+</section>
+</div>
+</div>

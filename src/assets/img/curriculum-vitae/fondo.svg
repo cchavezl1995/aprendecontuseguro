@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="694" height="449" viewBox="0 0 694 449">
+    <defs>
+        <path id="a" d="M0 0h793v449H0z"/>
+        <linearGradient id="c" x1="6.999%" x2="95.1%" y1="93.001%" y2="4.9%">
+            <stop offset="0%" stop-color="#FF8500"/>
+            <stop offset="100%" stop-color="#F6A82B"/>
+        </linearGradient>
+        <linearGradient id="d" x1="6.999%" x2="95.1%" y1="93.001%" y2="4.9%">
+            <stop offset="0%" stop-color="#FF9A00"/>
+            <stop offset="100%" stop-color="#F6A82B"/>
+        </linearGradient>
+        <linearGradient id="e" x1="6.999%" x2="95.1%" y1="93.001%" y2="4.9%">
+            <stop offset="0%" stop-color="#EA9827"/>
+            <stop offset="100%" stop-color="#F6A82B"/>
+        </linearGradient>
+        <linearGradient id="f" x1="7.901%" x2="94.57%" y1="92.099%" y2="5.43%">
+            <stop offset="0%" stop-color="#EA9627"/>
+            <stop offset="100%" stop-color="#F6A82B"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-99)">
+        <mask id="b" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <g mask="url(#b)">
+            <path fill="url(#c)" d="M784.03 322.646L393.646 713.03c-39.939 39.96-104.715 39.96-144.676 0-39.96-39.94-39.96-104.716 0-144.676L639.354 177.97c39.939-39.96 104.737-39.96 144.676 0 39.96 39.96 39.96 104.737 0 144.676z" transform="translate(74 -141)"/>
+            <path fill="url(#d)" d="M718.649 497.351c36.468 36.468 36.468 95.584 0 132.032L362.383 985.649c-36.448 36.468-95.564 36.468-132.032 0-36.468-36.448-36.468-95.564 0-132.032l356.266-356.266c36.448-36.468 95.584-36.468 132.032 0" transform="translate(74 -141)"/>
+            <path fill="url(#e)" d="M515.649 231.351c36.468 36.468 36.468 95.584 0 132.032L159.383 719.649c-36.448 36.468-95.564 36.468-132.032 0-36.468-36.448-36.468-95.564 0-132.032l356.266-356.266c36.448-36.468 95.584-36.468 132.032 0" transform="translate(74 -141)"/>
+            <path fill="url(#f)" d="M440.29 21.71c28.947 28.946 28.947 75.868 0 104.798L157.508 409.29c-28.93 28.947-75.852 28.947-104.798 0-28.947-28.93-28.947-75.852 0-104.798L335.492 21.71c28.93-28.947 75.868-28.947 104.798 0" transform="translate(74 -141)"/>
+        </g>
+    </g>
+</svg>

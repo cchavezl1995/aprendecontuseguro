@@ -1,0 +1,158 @@
+<!-- <app-block-loader [blocked]="loader"></app-block-loader> -->
+<div>
+    <div class="d-block d-xl-none d-lg-none imgMovil" style="width:100%;height:600px;
+            margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span routerLink="/estudia-economia" class="crumbModulo"><b>Cursos financieros</b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">Aprende a manejar tus finanzas personales</h1>
+    </div>
+    <div class="d-none d-lg-block" style="width:100%;height:499px;
+        background-image: url('assets/img/fraude2/finanzas/finanzas-woman.png'), linear-gradient(90deg, #7849b8 50%,  #afa8f6 50%);
+        background-position: right 350px bottom, right bottom;
+        background-repeat: no-repeat,no-repeat;
+        margin-top: -39px;
+        background-size: auto, contain;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span routerLink="/estudia-economia-servicio" class="crumbModulo"><b>Cursos financieros </b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">Aprende a manejar <br>
+            tus finanzas personales </h1>
+        <button *ngIf="login.isActive()" class="btnPurple" style="margin-top: 55px; margin-left:20%;"
+            routerLink="/estudia-economia-servicio">
+            Comenzar curso
+        </button>
+        <button *ngIf="!login.isActive()" class="btnPurple" style="margin-top: 55px; margin-left:20%;"
+            (click)="login.goLogin()">Quiero unirme
+        </button>
+    </div>
+    <div class="container">
+        <div class="row m-4">
+            <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <h2 class="font-weight-bold text-secondary text-left mt-5 mb-5">
+                            Te ofrecemos formación constante sobre el uso adecuado de tus finanzas.
+                        </h2>
+                        <p>Resulta importante aprender a conocer la mejor manera de tener bajo control tus finanzas.
+                            Conocer de qué manera puedes hacerlo, es un aspecto fundamental de tu vida actual y tu
+                            futuro.? Gracias a tu seguro Tarjeta Protegida tienes la oportunidad de aprender a sacar el
+                            máximo provecho de tu vida financiera?.</p>
+                        <p>Sabemos lo importante que es tu vida financiera. Por ese motivo, tu ecosistema de servicios
+                            te permite organizarlas y aprender más al respecto. </p>
+
+                        <p> Conoce de qué manera mejorar tus finanzas personales, desarrollarte en todos los campos y
+                            crecer integralmente. Tu ecosistema Scotiabank Cardif, te permite no solo gestionar tus
+                            finanzas, sino tomar cursos para controlar tus gastos y tu vida financiera.</p>
+
+                        <p> Aprende cómo tomar el control de tus finanzas personales y mejora tu vida usando los
+                            beneficios de tu seguro.</p>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" width="640" height="360"
+                        src="https://player.vimeo.com/video/385395808" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row m-4">
+            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <div style="width:100%;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;"
+                            class="pt-4 mt-5 mb-5">
+                            <!-- <table border="0" class="tablaHomePasos mb-5">
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">1</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Diligencia tus datos</p>
+                                        <p>personales, información académica y experiencia laboral</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">2</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Selecciona la plantilla</p>
+                                        <p>que deseas y personalízala</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">3</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Agenda cita con un experto</p>
+                                        <p>en selección para sacar el mayor provecho a tu perfil resaltando tus
+                                            habilidades y aptitudes
+                                            <br>Podrás descargar tu hoja de vida y modificar o adicionar información
+                                            cuando desees.</p>
+                                    </td>
+                                </tr>
+                            </table> -->
+                            <!-- <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-md-12 text-center">
+                        <p>Aprende y conoce innvodaores métodos para mejorar tus finanzas personales </p>
+                    </div>
+                    <div class="col-md-12 text-center mt-3 mb-5">
+                        <button *ngIf="!login.isActive()" class="btnMain" (click)="login.goLogin()">QUIERO UNIRME
+                        </button>
+                        <button *ngIf="login.isActive()" class="btnMain" routerLink="/estudia-economia-servicio">Comenzar curso </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-interest-material tipoMateriales="fr_study"></app-interest-material>
+    <div class="container d-block d-xl-none d-lg-none quieroUnirmeMovile" (click)="login.goLogin()"
+        *ngIf="!login.isActive()">
+        <p><i class="icon-Login iconSize"></i>&nbsp;&nbsp;&nbsp;Quiero unirme</p>
+    </div>
+</div>

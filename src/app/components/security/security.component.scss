@@ -1,0 +1,19 @@
+.iconSize {
+  font-size: 17px;
+}
+
+.modal.left.fade.show .modal-dialog {
+  left: 0;
+}   
+  
+// $des_eco6_backColor: radial-gradient(circle at 1% 43%, #7d8489, #686f75 134%);
+$des_eco6_backColor: #333333;
+
+.imgMovil{
+  background-image: url("/../../../assets/img/fraude2/security/security-man.png") !important;
+  background-color: $des_eco6_backColor;    
+  background-size: 300px;
+  background-position: center bottom 0% !important;
+  background-repeat: no-repeat, no-repeat;
+}
+

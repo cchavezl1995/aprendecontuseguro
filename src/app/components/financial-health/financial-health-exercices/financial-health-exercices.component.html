@@ -1,0 +1,118 @@
+<div style="width:100%;height:300px;
+        background-color: #009dd6;
+        position:absolute;margin-top: -39px;">
+    <div
+        style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+        <div style="margin-left: 17.8%;">
+            <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+            <span routerLink="/salud-financiera" class="crumbModulo">Salud financiera > </span>
+            <span routerLink="/salud-financiera-servicio" class="crumbModulo"><b>Servicio</b></span>
+        </div>
+    </div>
+    <h1 class="tituloModulo pad-tit">Salud Financiera</h1>
+</div>
+<div class="content" style="padding-top: 130px;background-color: #f6f8fa">
+    <div class="mt-5">
+        <section
+            class="offset-sm-0 col-sm-12 col-lg-8 col-xl-10 offset-xl-1 offset-lg-2 accordionPerfil pb-5 sectionVTS">
+            <section class="cardsPerfil mb-5">
+                <div class="card mb-3" style="border:1px solid lightgray !important;padding:6%">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="row text-left">
+                                <h3 class="text-left col-lg-12 mt-5 mb-4 font-weight-bold">Evalúa tu indicador
+                                    respondiendo cada categoría</h3>
+                                <!--          <div class="col-lg-6 offset-lg-3">Click outside the blue container to select this <strong>row</strong>. Columns are always contained within a row. <strong>Rows are indicated by a dashed grey line and rounded corners</strong>.
+                                         </div>-->
+                                <p style="width: 100%; padding-left: 15px;">
+                                    Mide de manera integral las 10 dimensiones de la salud financiera.Corresponde a
+                                    un cálculo ponderado:
+                                </p>
+                                <p style="width: 100%; padding-left: 15px;">
+                                    Conocimiento 7%, Ahorro 18%, Presupuesto 18%, Endeudamiento 15%, Vivir dentro de
+                                    las capacidades 10%, Jubilación 8%, Respaldo ante la muerte e incapacidad 8%,
+                                    Cultura financiera 6%, Actitud hacia las compras 6% y Dar 4%
+                                </p>
+                                <!-- <p>
+                                        No es común encontrar personas con BUENOS puntajes ¡Felicitaciones! Aún tienes varios aspectos en donde puedes mejorar: (1) Respaldo de tus seguros de vida, enfermedades graves y accidentes aumentando la cobertura. (2) Tu plan de jubilación redoblando esfuerzos en el ahorro y estrategias de inversión. (3) Actitudes hacia las compras en donde aún tienes comportamientos imprudentes e impulsivos. (4) Aprovechar las bendiciones del dar y ayudar a otros.
+                                    </p> -->
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-3 text-center">
+                                    <svg height="24" width="24">
+                                        <circle cx="12" cy="12" r="10" stroke="red" fill="red" />
+                                    </svg>
+                                    <br>
+                                    <b>Crítico:</b> 0% - 20%
+                                </div>
+                                <div class="col-3 text-center">
+                                    <svg height="24" width="24">
+                                        <circle cx="12" cy="12" r="10" stroke="orange" fill="orange" />
+                                    </svg>
+                                    <br>
+                                    <b>Deficiente:</b> 21% - 50%
+                                </div>
+                                <div class="col-3 text-center">
+                                    <svg height="24" width="24">
+                                        <circle cx="12" cy="12" r="10" stroke="#3366FF" fill="#3366FF" />
+                                    </svg>
+                                    <br>
+                                    <b>Regular:</b> 51% - 75%
+                                </div>
+                                <div class="col-3 text-center">
+                                    <svg height="24" width="24">
+                                        <circle cx="12" cy="12" r="10" stroke="green" fill="green" />
+                                    </svg>
+                                    <br>
+                                    <b>Bueno:</b> 76% - 100%
+                                </div>
+                            </div>
+                            <div class="row mt-5" *ngIf="todosTerminados==true">
+                                <div class="col-lg-12 text-left">
+                                    Tu ponderación total es:
+                                    <span style="font-weight: bold;font-size: 26px;"
+                                        [ngStyle]="{color: totalIndicadores>=0 && totalIndicadores<=20 ? 'red' : 
+                                    totalIndicadores>=21 && totalIndicadores<=50 ? 'orange' : 
+                                    totalIndicadores>=51 && totalIndicadores<=75 ? '#3366FF' : 'green'}">{{totalIndicadores}}% </span>
+                                </div>
+                                <div class="col-12 mt-3 text-left">
+                                    <span style="font-weight: bold;font-size: 20px;"
+                                        [ngStyle]="{color: totalIndicadores>=0 && totalIndicadores<=20 ? 'red' : 
+                                        totalIndicadores>=21 && totalIndicadores<=50 ? 'orange' : 
+                                        totalIndicadores>=51 && totalIndicadores<=75 ? '#3366FF' : 'green'}">{{totalResolucion}}</span>
+                                </div>
+                            </div>
+                            <div class="row pb-5 mt-5">
+                                <div class="col-xl-4 col-lg-6 col-sm-12 mb-4" *ngFor="let in of indicadores">
+                                    <div class="card redondeado ml-1 mr-1" routerLink="/salud-financiera-ejercicio{{in.sectionEcosistema-1}}" (click)="setSection(in.sectionEcosistema)">
+                                        <!-- [ngStyle]="{'pointer-events': in.resolucionUsuario!='' ? 'none' : 'all'}" -->
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title">{{in.nombreSaludFinancieraTipo}}</h5>
+                                            <p class="card-text">{{in.descripcion}}</p>
+                                            <p *ngIf="in.resolucionUsuario!=''"><b>Ponderación:</b></p>
+                                            <p *ngIf="in.resolucionUsuario!=''" style="font-size:30px;font-weight:bold"
+                                                [ngStyle]="{'color': in.colorIndicador}">{{in.ponderacionTotal}} %
+                                            </p>
+                                            <p *ngIf="in.resolucionUsuario!=''"
+                                                [ngStyle]="{'color': in.colorIndicador}">{{in.resolucionUsuario}}
+                                            </p>
+                                            <div>
+
+                                            </div>
+                                            <div style="text-align: center;">
+                                                <div class="btn-comenzar">
+                                                    <button  routerLink="/salud-financiera-ejercicio{{in.sectionEcosistema-1}}"
+                                                        class="btnMain4">Comenzar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

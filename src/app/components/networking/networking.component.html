@@ -1,0 +1,193 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+
+<div>
+    <div class="d-block d-xl-none d-lg-none imgMovil" style="width:100%;height:600px;
+            margin-top: -39px;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span class="crumbModulo"><b>Networking</b></span>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+            <h1 class="tituloModulo">¡Todo para crecer tu red de contactos!</h1>
+        </div>
+    </div>
+    <div class="d-none d-lg-block" style="width:100%;height:449px;
+    background-image: url('assets/img/itt2/networking/networking.png'), linear-gradient(90deg, #068468 50%,  #84d8c6 50%);
+    background-position: right 350px bottom, right bottom;
+    background-repeat: no-repeat,no-repeat;
+    margin-top: -39px;
+    background-size: 236px 399px, contain;">
+        <div
+            style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+            <div style="margin-left: 19.1%;">
+                <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+                <span [routerLink]="['/networking']" routerLinkActive="router-link-active" class="crumbModulo"><b>Networking </b></span>
+            </div>
+        </div>
+        <h1 class="tituloModulo">
+            ¡Todo para crecer tu
+            <br>
+            red de contactos!
+        </h1>
+        <button *ngIf="login.isActive()" class="btnVerde" style="margin-top: 55px; margin-left:10%;"
+            [routerLink]="['/networking-servicio']" routerLinkActive="router-link-active" >Únete aquí</button>
+        <button *ngIf="!login.isActive()" class="btnVerde" style="margin-top: 55px; margin-left:10%;"
+            (click)="login.goLogin()">Quiero unirme</button>
+    </div>
+    <div class="container">
+        <div class="row m-4">
+            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <div class="row">
+                        <div class="social-cont">
+                                <div class="social">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://ecodesascco.grupomok.com.co/curriculumhome"
+                                                        target="_blank" class="icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="http://twitter.com/share?url=http://ecodesascco.grupomok.com.co" target="_blank"
+                                                        class="icon-twitter"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://ecodesascco.grupomok.com.co"
+                                                        target="_blank" class="icon-linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                                            </ul>
+                                    </div>
+                            </div>
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <h2 class="font-weight-bold text-secondary text-left mt-5 mb-5">
+                            ¿Sabes cómo el networking hace crecer tu negocio?
+                        </h2>
+                        <p>En nuestro ecosistema de servicios podrás aprovechar la más grande red de emprendedores,
+                            autónomos y desarrolladores de nuevas ideas de negocio. Ahora podrás hacer parte de una gran
+                            comunidad de emprendedores como tú </p>
+
+                        <p>Entra y aprende cómo empezar a fortalecer tu idea por medio de una red de trabajo. Podrás
+                            buscar
+                            aliados para empezar tu idea de negocio o marca personal.</p>
+
+                        <p>Encuentra los aliados perfectos para desarrollarte. Con tu networking, busca a esa persona
+                            ideal para
+                            trabajar y poder posicionar una marca o negocio específico.</p>
+
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div style="width:100%;" class="text-center">
+                    <iframe class="mt-4" style="max-width:988px;width:100%;height: 555px;border: 0px"
+                        src="https://player.vimeo.com/video/378909246"></iframe>
+                </div>
+                <app-video-material tipoMateriales="des_curriculumhome"></app-video-material>
+            </div>
+        </div>
+        <div class="row m-4">
+            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <p>El networking se ha convertido en una estrategia de negocio muy interesante. El ecosistema de
+                            servicios de seguros Scotiabank Cardif, permite crear una red de trabajo con personas afines
+                            a nuestra
+                            idea de emprendimiento.</p>
+
+                        <p>Manteniéndote actualizado, podrás agendar tu asistencia a eventos en los que se intercambian
+                            ideas
+                            para emprender. </p>
+
+                        <p>La esencia del networking es la cooperación entre saberes y experiencias. Así, un emprendedor
+                            que
+                            tenga ideas comunes con otro, puede retroalimentar su concepto y empezar a trabajar en
+                            equipo. </p>
+
+                        <div style="width:100%;border-bottom: 1px solid lightgray;"
+                            class="pt-4 mt-5 mb-5">
+                            <!-- ;border-top: 1px solid lightgray -->
+                            <!-- <h3 style="font-size: 20px !important;font-weight: bold;color: #333333 !important;">
+                                ¿Cómo acceder a tu branding digital dentro del ecosistema de servicios?
+                            </h3>
+                            <table border="0" class="tablaHomePasos mt-5 mb-5">
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">1</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Debes contar con tu seguro activo</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">2</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">Regístrate e ingresa tus datos de tu marca personal,
+                                            idea o negocio.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="circuloNumero">3</div>
+                                    </td>
+                                    <td>
+                                        <p class="tituloHomePasos">
+                                            Solicita tu consultoría en branding digital con un experto y al final,
+                                            recibirás el feedback
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table> -->
+                            <!-- <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                           
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-md-12 text-center">
+                        <p>
+                            Establece contactos estratégicos y crea alianzas para hacer exitoso tu emprendimiento
+                        </p>
+                    </div>
+                    <div class="col-md-12 text-center mt-3 mb-5">
+                        <button *ngIf="!login.isActive()" class="btnMain" (click)="login.goLogin()">Quiero
+                            unirme</button>
+                        <button *ngIf="login.isActive()" class="btnMain" [routerLink]="['/networking-servicio']" routerLinkActive="router-link-active" >Únete aquí</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-interest-material tipoMateriales="itt_networking"></app-interest-material>
+    <div class="container d-block d-xl-none d-lg-none quieroUnirmeMovile" (click)="login.goLogin()"
+        *ngIf="!login.isActive()">
+        <p><i class="icon-Login iconSize"></i>&nbsp;&nbsp;&nbsp;Quiero unirme</p>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+<app-block-loader [blocked]="loader"></app-block-loader>
+<div>
+  <div class="d-block d-xl-none d-lg-none imgMovil" style="width:100%;height:600px;
+            margin-top: -39px;">
+    <!-- <div style="width:100%;height:300px;
+        background: url('assets/img/digital-branding/fondoDigitalBranding.png') no-repeat left bottom, linear-gradient(256deg, #8bd15a, #448019);
+        ;position:absolute;margin-top: -39px;"> -->
+    <div style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);color: white;padding-top: 5px">
+      <div style="margin-left: 19.1%;">
+        <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+        <span class="crumbModulo"><b>Compara tu salario</b></span>
+      </div>
+    </div>
+    <h1 class="tituloModulo">¿Dudas sobre <br>
+      tu salario?</h1>
+    <!-- <button *ngIf="login.isActive()" class="btnTop2" style="margin-top: 55px; margin-left:17.5%;" (click)="increment()">MEJORAR MI HOJA DE VIDA <i style="color:#ffb400" class="fa fa-angle-right"></i></button>
+            <button *ngIf="!login.isActive()" class="btnTop2" style="margin-top: 55px; margin-left:17.5%;" (click)="login.goLogin()">QUIERO UNIRME <i style="color:#ffb400" class="fa fa-angle-right"></i></button> -->
+  </div>
+  <div class="d-none d-lg-block" style="width:100%;height:499px;
+  background-image: url('assets/img/desempleo2/salary/salary.png'), linear-gradient(90deg, #068468 50%,  #84d8c6 50%);
+  background-position: right 350px bottom -10px, right bottom;
+  background-repeat: no-repeat,no-repeat;
+  margin-top: -39px;
+  background-size: 218px 399px, contain;">
+    <div
+      style="width:100%;height:40px;background-color: rgba(0,0,0,0.1);margin-top: 39px;color: white;padding-top: 5px;">
+      <div style="margin-left: 19.1%;">
+        <span routerLink="/inicio" class="crumbModulo">Inicio > </span>
+        <span class="crumbModulo"><b>Compara tu salario </b></span>
+      </div>
+    </div>
+    <h1 class="tituloModulo">¿Dudas sobre <br>
+      tu salario? </h1>
+    <button *ngIf="login.isActive()" class="btnGreen" style="width:265px;margin-top: 55px; margin-left:10%;"
+      routerLink="/comparar-salario-servicio">Compara tu salario </button>
+    <button *ngIf="!login.isActive()" class="btnGreen" style="width:265px;margin-top: 55px; margin-left:10%;"
+      (click)="login.goLogin()">QUIERO UNIRME </button>
+  </div>
+  <div class="container">
+
+    <div class="row m-4">
+      <div class="social-cont">
+        <div class="social">
+          <ul>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://ecodesascco.grupomok.com.co/curriculumhome"
+                target="_blank" class="icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="http://twitter.com/share?url=http://ecodesascco.grupomok.com.co" target="_blank"
+                class="icon-twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://ecodesascco.grupomok.com.co"
+                target="_blank" class="icon-linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-0"></div>
+      <div class="col-lg-10 col-md-10 col-sm-12">
+
+
+        <div class="row">
+
+          <div class="col-lg-2 col-md-1 col-sm-0"></div>
+          <div class="col-lg-8 col-md-10 col-sm-12">
+
+            <h2 class="font-weight-bold text-secondary text-left mt-5 mb-5">Alguna vez has pensado, ¿Cuánto te gustaría
+              ganar? </h2>
+            <p>Sabemos cuánto quieres crecer laboralmente, por esa razón ponemos a tu disposión un calculador salarial
+              para que entiendas cómo está tu remunerado tu trabajo y de paso lo compares con otras industrias. </p>
+          </div>
+          <div class="col-lg-2 col-md-1 col-sm-0"></div>
+          <div style="width:100%;" class="text-center">
+            <iframe class="mt-4" style="max-width:988px;width:100%;height: 555px;border: 0px"
+              src="https://player.vimeo.com/video/373927614">
+            </iframe>
+            <app-video-material tipoMateriales="des_curriculumhome"></app-video-material>
+          </div>
+        </div>
+
+        <div class="row m-4">
+          <div class="row">
+            <div class="col-lg-2 col-md-1 col-sm-0"></div>
+            <div class="col-lg-8 col-md-10 col-sm-12">
+              <p>Este servicio se calcula teniendo en cuenta diferentes variables como: el sector donde trabajas, tu
+                cargo, el tamaño de la empresa y tu nivel jerarquicio. Así mismo, conoce cuál sería tu posible plan de
+                carrera profesional.</p>
+
+              <p>Conoce y compara tu salario actual y la oferta de paquetes de remuneración en el mercado laboral, a
+                través de un estudio basado en datos de industria, cargo, carrera y experiencia entre otros.</p>
+
+              <p>Úsalo cuantas veces quieras y proyéctate una meta de crecimiento profesional</p>
+
+              <div style="width:100%;border-top: 1px solid lightgray;" class="pt-4 mt-5 mb-5">
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-1 col-sm-0"></div>
+            <div class="col-md-12 text-center mt-3 mb-5">
+              <button *ngIf="!login.isActive()" class="btnMain" (click)="login.goLogin()">Únete ahora </button>
+              <button *ngIf="login.isActive()" class="btnMain"
+                (click)="AddLog('comparar-salario','Ingresó a comparar salario')"
+                routerLink="/comparar-salario-servicio">Compara tu salario </button>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <app-interest-material tipoMateriales="des_salary"></app-interest-material>
+  <div class="container d-block d-xl-none d-lg-none quieroUnirmeMovile" (click)="login.goLogin()"
+    *ngIf="!login.isActive()">
+    <p><i class="icon-Login iconSize"></i>&nbsp;&nbsp;&nbsp;Quiero unirme</p>
+  </div>
+</div>

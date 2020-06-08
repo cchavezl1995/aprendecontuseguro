@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'iconBDB';
+  src:  url('fonts/iconBDB.eot?s1n90d');
+  src:  url('fonts/iconBDB.eot?s1n90d#iefix') format('embedded-opentype'),
+    url('fonts/iconBDB.ttf?s1n90d') format('truetype'),
+    url('fonts/iconBDB.woff?s1n90d') format('woff'),
+    url('fonts/iconBDB.svg?s1n90d#iconBDB') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iconBDB' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-back:before {
+  content: "\e900";
+  color: #034797;
+}
+.icon-Facebook:before {
+  content: "\e901";
+  color: #034797;
+}
+.icon-fullscreen:before {
+  content: "\e902";
+  color: #034797;
+}
+.icon-Home:before {
+  content: "\e903";
+  color: #034797;
+}
+.icon-Linkedin:before {
+  content: "\e904";
+  color: #034797;
+}
+.icon-Login:before {
+  content: "\e905";
+  color: #034797;
+}
+.icon-Mail:before {
+  content: "\e906";
+  color: #034797;
+}
+.icon-phone:before {
+  content: "\e907";
+  color: #00448d;
+}
+.icon-scroll:before {
+  content: "\e908";
+  color: #034797;
+}
+.icon-services:before {
+  content: "\e909";
+  color: #034797;
+}
+.icon-user:before {
+  content: "\e90a";
+  color: #034797;
+}
+.icon-web:before {
+  content: "\e90b";
+  color: #034797;
+}

@@ -1,0 +1,1448 @@
+/*HOME*/
+$des_eco0_backColor: #ff969c;
+/*HOJA VIDA*/
+$des_eco1_backColor: #feba89;
+/*COURSERA*/
+$des_eco2_backColor: #91ddf8;
+/*ENTREVISTAS*/
+$des_eco3_backColor: #afa8f6;
+/*SALARIO*/
+$des_eco4_backColor: #84d8c6;
+/*OFERTAS*/
+$des_eco5_backColor: #ff979e;
+/*LEGAL*/
+$des_eco6_backColor: #4d4d4d;
+
+/*BRANDING DIGITAL*/
+$des_eco7_backColor: #feba89;
+/*COURSERA*/
+$des_eco8_backColor: #91ddf8;
+/*NETWORKING*/
+$des_eco9_backColor: #84d8c6;
+/*COWORKING*/
+$des_eco10_backColor: #afa8f6;
+/*LEGAL*/
+$des_eco11_backColor: #4d4d4d;
+
+/*SCORE DIGITAL*/
+$des_eco12_backColor:  #84d8c6;
+/*ALERTAS*/
+$des_eco13_backColor: #feba89;
+/*SALUD FINANCIERA*/
+$des_eco14_backColor:  #91ddf8;
+/*CURSOS FINANZAS*/
+$des_eco15_backColor: #afa8f6;
+/*SEGURIDAD INFORMATICA*/
+$des_eco16_backColor: #4d4d4d;
+
+ 
+:root{
+    --colorTextoTab: #034797;
+}
+
+.slideAutomatico{
+    border-right: 0px !important;
+}
+  
+.mt-5, .my-5 {
+    margin-top: 3.8rem!important;
+    font-size: 42px;
+}
+
+.mt-4 {
+    //margin-top: 3.8rem!important;
+    width: 452px;
+    height: 84px;
+    font-family: OpenSans;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: right;
+    color: #ffffff;
+}
+
+.nav-link {
+    display: block;
+    height: 120px;
+    border:1px solid lightgray
+}
+.nav{
+    margin-right: 0px !important;
+}
+.home {
+    color: #fff;
+    background: $des_eco0_backColor !important;
+    height: 720px;
+}
+.homeItt {
+    color: #fff;
+    background: $des_eco0_backColor !important;
+    height: 720px;
+}
+.curriculum {
+    color: #fff;
+    background:$des_eco1_backColor !important;
+    height: 720px;
+}
+.brandingDigital{
+    color: #fff;
+    background: $des_eco7_backColor !important;
+    height: 720px;
+}
+
+.study {
+    color: #fff;
+    background: $des_eco2_backColor !important;
+    height: 720px;
+}
+
+.itt-study {
+    color: #fff;
+    background: $des_eco8_backColor !important;
+    height: 720px;
+}
+
+.entreview {
+    color: #fff;
+    background: $des_eco3_backColor !important;
+    height: 720px;
+}
+
+.salary {
+    color: #fff;
+    background: $des_eco4_backColor !important;
+    height: 720px;
+}
+
+.joboffers {
+    color: #fff;
+    background: $des_eco5_backColor !important;
+    height: 720px;
+}
+
+.advisory {
+    color: #fff;
+    background: $des_eco6_backColor !important;
+    height: 720px;
+}
+.networking{
+    color: #fff;
+    background: $des_eco9_backColor !important;
+    height: 720px;
+}
+.coworking{
+    color: #fff;
+    background: $des_eco10_backColor !important;
+    height: 720px;
+}
+.advisory-itt{
+    color: #fff;
+    background: $des_eco11_backColor !important;
+    height: 720px;
+}
+.score{
+    color: #fff;
+    background: $des_eco12_backColor !important;
+    height: 720px;
+}
+.alertas{
+    color: #fff;
+    background: $des_eco13_backColor !important;
+    height: 720px;
+}
+.pruebaSalud{
+    color: #fff;
+    background: $des_eco14_backColor !important;
+    height: 720px;
+}
+.cursosFinanzas{
+    color: #fff;
+    background: $des_eco15_backColor !important;
+    height: 720px;
+}
+.seguridad{
+    color: #fff;
+    background: $des_eco16_backColor !important;
+    height: 720px;
+}
+
+.sidebar {
+    height: calc(100% - 4rem);
+    overflow-y: auto;
+    // padding-bottom: 0;
+    // padding-left: .0rem;
+    // padding-right: .0rem;
+    // padding-top: 0;
+}
+.elevation-4 {
+    box-shadow: 0 14px 28px rgba(0,0,0,0),0 10px 10px rgba(0,0,0,0)!important;
+}
+
+// .background {
+//     background-color: #eea800;
+//     height: 100%;
+// }
+
+.foto1{
+    position:absolute; z-index: 1;
+    margin-left: 6%;
+    margin-top: 60px;
+    width: 400px;
+    height: 660px;
+
+}
+
+.foto2{
+    position:absolute; z-index: 2;
+    margin-left: 6%;
+}
+
+.mensaje {
+    margin-top: 70px;
+    text-align: right;
+    margin-right: 150px;
+    font-size: 16px;
+    z-index:5
+}
+.boton {
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 150px;
+    width:200px;
+}
+
+.tituloTabHome {
+    // text-align: left !important;
+    font-family: GoogleSans;
+    font-size: 38px;
+    color: white;
+    margin-top: 50px;
+    font-weight: bold;
+
+}
+.btnTop, .btnTop2, .btnBottom{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-width: 1px;
+}
+.boton > .btnTop{
+    border-color: #ffb400 2px solid;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: #ffb400;
+    color: #034797;
+    padding: 10px 15px;
+    width:320px;
+}
+.boton > .btnTop2{
+    border-color: #034797 2px solid;
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: #034797;
+    color: white;
+    padding: 10px 15px;
+    width:320px;
+}
+.boton > .btnBottom{
+    border-radius: 50px;
+    border: white 2px solid;
+    font-size: 16px !important;
+    background-color: transparent;
+    color: white;
+    padding: 10px 15px;
+    width:320px;
+}
+.mensaje > p{
+    margin-top: 30px;
+}
+.ico{
+    width:100%;
+    height: 50px;
+    margin-top: 13px;
+    background-size: auto;
+}
+.RightTabEcosistema{
+    width:100%;
+    height:150px;
+    border: 0px solid lightgray;
+    margin: 0px !important;
+    padding-left:10px;
+}
+
+.eco1{
+    text-align: center;
+    padding:0px;
+    color: --colorTextoTab;
+}
+.eco1.active, .eco1:hover{
+    background-color: #ff936f !important;
+    color:white !important;
+    
+}
+.itt-eco1,.itt-eco2,.itt-eco3,.itt-eco4,.itt-eco5{
+    text-align: center;
+    padding-top:10px;
+    color: --colorTextoTab;
+}
+.itt-eco1.active, .itt-eco1:hover{
+    background-color: #ff936f !important;
+    color:white !important;   
+}
+.itt-eco2.active, .itt-eco2:hover{
+    background-color: #4fb6db !important;
+    color:white !important;
+}
+.itt-eco3.active, .itt-eco3:hover{
+    background-color: #39af96 !important;
+    color:white !important;
+}
+.itt-eco4.active, .itt-eco4:hover{
+    background-color: #966fca !important;
+    color:white !important;
+}
+.itt-eco5.active, .itt-eco5:hover{
+    background-color: #403c3c !important;
+    color:white !important;
+}
+
+.itt-eco1 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/itt/branding.svg") no-repeat center;
+}
+.itt-eco2 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/itt/coursera.svg") no-repeat center;
+}
+.itt-eco3 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/itt/networking.svg") no-repeat center;
+}
+.itt-eco4 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/itt/coworking.svg") no-repeat center;
+}
+.itt-eco5 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/itt/legal.svg") no-repeat center;
+}
+.itt-eco1.active > .RightTabEcosistema > .ico, .itt-eco1:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/itt/selected/branding.svg") no-repeat center;
+}
+.itt-eco2.active > .RightTabEcosistema > .ico, .itt-eco2:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/itt/selected/coursera.svg") no-repeat center;
+}
+.itt-eco3.active > .RightTabEcosistema > .ico, .itt-eco3:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/itt/selected/networking.svg") no-repeat center;
+}
+.itt-eco4.active > .RightTabEcosistema > .ico, .itt-eco4:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/itt/selected/coworking.svg") no-repeat center;
+}
+.itt-eco5.active > .RightTabEcosistema > .ico, .itt-eco5:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/itt/selected/legal.svg") no-repeat center;
+}
+
+
+.fra-eco1,.fra-eco2,.fra-eco3,.fra-eco4,.fra-eco5{
+    text-align: center;
+    padding-top:10px;
+    color: --colorTextoTab;
+}
+.fra-eco1.active, .fra-eco1:hover{
+    background-color: #39af96 !important;
+    color:white !important;   
+}
+.fra-eco2.active, .fra-eco2:hover{
+    background-color: #ff936f !important;
+    color:white !important;
+}
+.fra-eco3.active, .fra-eco3:hover{
+    background-color: #4fb6db !important;
+    color:white !important;
+}
+.fra-eco4.active, .fra-eco4:hover{
+    background-color: #966fca !important;
+    color:white !important;
+}
+.fra-eco5.active, .fra-eco5:hover{
+    background-color: #403c3c !important;
+    color:white !important;
+}
+
+.fra-eco1 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/fraude/socore.svg") no-repeat center;
+}
+.fra-eco2 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/fraude/alerts.svg") no-repeat center;
+}
+.fra-eco3 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/fraude/finantial.svg") no-repeat center;
+}
+.fra-eco4 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/fraude/finanzas.svg") no-repeat center;
+}
+.fra-eco5 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/fraude/security.svg") no-repeat center;
+}
+.fra-eco1.active > .RightTabEcosistema > .ico, .fra-eco1:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/fraude/selected/socore.svg") no-repeat center;
+}
+.fra-eco2.active > .RightTabEcosistema > .ico, .fra-eco2:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/fraude/selected/alerts.svg") no-repeat center;
+}
+.fra-eco3.active > .RightTabEcosistema > .ico, .fra-eco3:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/fraude/selected/finantial.svg") no-repeat center;
+}
+.fra-eco4.active > .RightTabEcosistema > .ico, .fra-eco4:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/fraude/selected/finanzas.svg") no-repeat center;
+}
+.fra-eco5.active > .RightTabEcosistema > .ico, .fra-eco5:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/fraude/selected/security.svg") no-repeat center;
+}
+
+.eco1 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/hv.svg") no-repeat center;
+}
+
+.eco2 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/coursera.svg") no-repeat center;
+}
+.eco3 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/entreview.svg") no-repeat center;
+}
+.eco4 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/salary.svg") no-repeat center;
+}
+.eco5 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/offers.svg") no-repeat center;
+}
+.eco6 > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/legal.svg") no-repeat center;
+}
+
+.eco1.active > .RightTabEcosistema > .ico, .eco1:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/selected/hv.svg") no-repeat center;
+}
+
+.eco2.active > .RightTabEcosistema > .ico, .eco2:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/selected/coursera.svg") no-repeat center;
+}
+.eco3.active > .RightTabEcosistema > .ico, .eco3:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/selected/entreview.svg") no-repeat center;
+}
+.eco4.active > .RightTabEcosistema > .ico, .eco4:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/selected/salary.svg") no-repeat center;
+}
+.eco5.active > .RightTabEcosistema > .ico, .eco5:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/selected/offers.svg") no-repeat center;
+}
+.eco6.active > .RightTabEcosistema > .ico, .eco6:hover > .RightTabEcosistema > .ico{
+    background: url("/assets/icons/desempleo/selected/legal.svg") no-repeat center;
+}
+
+.eco2{
+    text-align: center;
+    padding:0px;
+    color: --colorTextoTab;
+}
+
+.eco2.active, .eco2:hover{
+    background-color: #4fb6db !important;
+    color:white !important;
+}
+
+.itt-eco2{
+    text-align: center;
+    padding:0px;
+    color: --colorTextoTab;
+}
+.eco3{
+    text-align: center;
+    padding:0px;
+    color: --colorTextoTab;
+}
+
+.eco3.active, .eco3:hover{
+    background-color: #966fca !important;
+    color:white !important;
+}
+.eco4{
+    text-align: center;
+    padding:0px;
+    color: --colorTextoTab;
+}
+.eco4.active, .eco4:hover{
+    background-color: #39af96 !important;
+    color:white !important;
+}
+.eco5{
+    text-align: center;
+    padding:0px;
+    color: --colorTextoTab;
+}
+.eco5.active, .eco5:hover{
+    background-color: #e54349 !important;
+    color:white !important;
+}
+.eco6{
+    text-align: center;
+    padding:0px;
+    color: --colorTextoTab;
+}
+
+.eco6.active, .eco6:hover{
+    background-color: #403c3c    !important;
+    color:white !important;
+}
+
+//////@at-root
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: -50px;
+}
+
+.nav-tabs.flex-column {
+    border-bottom: 0;
+    border-right: 0px solid #dee2e6;
+}
+
+// .RightTabEcosistema[_ngcontent-vwo-c3] {
+//     width: 100%;
+//     height: 70px;
+//     border: 0px solid lightgray !important;
+//     padding: 0px !important;
+//     margin: 0px !important;
+// }
+.titleCards {
+font-family: GoogleSans;
+  font-size: 32px;
+  font-weight: 500;     
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.75;
+  letter-spacing: -0.15px;
+  text-align: center;
+  color: #034797;
+}
+.titleCard {
+    width: 255px;
+    height: 64px;
+    font-family: GoogleSans;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.45;
+    letter-spacing: -0.1px;
+    color: #034797;
+  }
+.titleBody{
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  color: #58595b;
+}
+.cardImg{
+    margin:auto;
+    width:70px;
+    height: 95px;
+}
+.pPreguntas{
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    color: #58595b;
+}
+.tPreguntas{
+    font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.22;
+  letter-spacing: -0.45px;
+  color: #414141;
+}
+.btnPreguntas{
+    border-color: #034797 2px solid;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: #034797;
+    color: white;
+    padding: 15px 15px;
+    width:350px;
+    margin:auto;
+}
+
+@media only screen and (max-width: 992px) {
+    .ico{
+        margin-top:10px;
+    }
+    .tituloTabHome{
+        font-size:30px;
+        font-weight: bold;
+    }
+    .bloque-info-mail{
+        display: none;
+    }
+}
+@media only screen and (max-width: 769px) {
+    .ico{
+        width: 130px;
+        float: left;
+        margin-top: 0px !important;
+    }
+    .tabEco{
+        height:80px !important;
+        background-color: white !important;
+        border-right: 0px;
+
+    }
+
+    .RightTabEcosistema{
+        padding-top:15px !important;
+        height: 80px;
+        text-align: center !important;
+    }
+
+    .eco1 > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/hv.svg") no-repeat center;
+    }
+    
+    .eco2 > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/coursera.svg") no-repeat center;
+    }
+    .eco3 > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/entreview.svg") no-repeat center;
+    }
+    .eco4 > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/salary.svg") no-repeat center;
+    }
+    .eco5 > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/offers.svg") no-repeat center;
+    }
+    .eco6 > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/legal.svg") no-repeat center;
+    }
+    
+    .eco1.active > .RightTabEcosistema > .ico{
+        background: url("/assets/img/ICO/blancos/HV bl.png") no-repeat center;
+    }
+    
+    .eco2.active > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/selected/coursera.svg") no-repeat center;
+    }
+    .eco3.active > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/selected/entreview.svg") no-repeat center;
+    }
+    .eco4.active > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/selected/salary.svg") no-repeat center;
+    }
+    .eco5.active > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/selected/offers.svg") no-repeat center;
+    }
+    .eco6.active > .RightTabEcosistema > .ico{
+        background: url("/assets/icons/desempleo/selected/legal.svg") no-repeat center;
+    }
+
+
+}
+.nav-pills >.nav-link{
+    background-color: white !important;
+}
+.nav-pills >.nav-link.active{
+    background-color: #eca105 !important;
+}
+.nav-link{
+    cursor: pointer;
+    color: #696969;
+    font-size: 16px;
+
+}
+#rowEcosistemas > .nav-link{
+    padding-top:15px;
+    height:60px;
+}
+.tabEco5{
+    height:144px !important;
+
+}
+
+.display{
+    position: relative;
+    -webkit-animation: animDisplay var(--tiempo); /* Safari 4.0 - 8.0 */
+    -webkit-animation-direction: normal; /* Safari 4.0 - 8.0 */
+    animation: animDisplay var(--tiempo);
+    animation-direction: normal;
+}
+@-webkit-keyframes animDisplay {
+    0%   {left: var(--aHor);top: var(--aVer);opacity: 0;position:relative}
+    100% {left: 0px;top:0px;opacity:1;position:relative}
+  }
+  
+  @keyframes animDisplay {
+    0%   {left: var(--aHor);top: var(--aVer);opacity: 0;position:relative}
+    100% {left: 0px;top: 0px;opacity:1;position:relative}
+  }
+
+  .numero{
+    font-family: GoogleSans;
+    font-size: 24px;
+    color: #ec1c24;
+    padding-top: 3px;
+  }
+
+  .botonVolver {
+    // font-size: 16px;
+    // background-color: transparent;
+    // color: white;
+    // padding: 10px 15px;
+    // width:320px;
+    // display: inline-block;
+    // cursor: pointer;
+    // border-width: 1px;
+    // margin-top: 30px;
+    // text-align: right;
+    // margin-right: 90px;
+    // width:200px;
+    // right: 30px;
+    // position: absolute;
+    font-size: 16px;
+    /* background-color: transparent; */
+    color: white;
+    /* padding: 10px 15px; */
+    /* width: 320px; */
+    /* display: inline-block; */
+    cursor: pointer;
+    border-width: 1px;
+    /* margin-top: 30px; */
+    /* text-align: right; */
+    margin-right: 90px;
+    /* width: 200px; */
+    right: 45px;
+    position: absolute;
+    bottom: 40px;
+    z-index: 2;
+}
+.Puasar{
+    width: 49px;
+    height: 28px;
+    font-family: FrutigerCE-Roman;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+.Combined-Shape{
+   width: 38.8px;
+   height: 38.1px;
+   background-color: #ffffff;
+}
+
+.botonGhostAzul:hover{
+    background: honeydew !important;
+    color: #ec1c24!important;
+}
+
+.botonGhostAmarillo:hover{
+    background: honeydew !important;
+    color: #eea800 !important;
+}
+
+.botonGhostMorado:hover{
+    background: honeydew !important;
+    color: #810262 !important;
+}
+
+.botonGhostNaranja:hover{
+    background: honeydew !important;
+    color: #ea8927 !important;
+}
+
+.botonGhostGris:hover{
+    background: honeydew !important;
+    color: #7d8489 !important;
+}
+
+.botonGhostAgua:hover{
+    background: honeydew !important;
+    color: #228f99 !important;
+}
+.negrilla{
+    color: #414141 !important;
+  }
+  .btn.btn-link{
+    padding-top: 0px !important;
+  }
+  .oval{
+    width: 28px;
+    height: 28px;
+    // border: solid 1px #034797;
+    padding: 0px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    position: absolute;
+    float: right;
+    right: 0px;
+    top: 10px;
+  }
+  .oval > .abrirMas{
+    display: none;
+    color: #696969;
+  }
+  .oval.collapsed > .abrirMas{
+    display: block;
+    color: #696969;
+  }
+  .oval > .abrirMenos{
+    display: block;
+    margin-top:-2px;
+    color: #ec1c24;
+  }
+  .oval.collapsed > .abrirMenos{
+    display: none;
+  }
+
+  .btn-link{
+    text-decoration: none;
+  }
+  .btn-link:hover{
+    text-decoration: none;
+  }
+  .btn-link:focus{
+    text-decoration: none;
+  }
+  .btn-link:active{
+    text-decoration: none;
+  }
+  .pPregunta{
+    color: #58595b !important;
+    margin-top: 20px;
+  }
+  
+  .scrollConoceMas {
+    width: 30px;
+    height: 50px;
+    color: #f0f0f0;
+    cursor: pointer;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-animation: bounce 1.5s infinite;
+            animation: bounce 1.5s infinite;
+  }
+  
+  @keyframes bounce {
+    0% {
+        transform:translateY(-35%);
+    
+    }
+    50% {
+        transform:translateY(-0%);
+        
+    }
+    100% {
+        transform:translateY(-35%);
+        
+    }
+  }
+  .conoceMas{
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    bottom: -45px;
+    left: 46%;
+   pointer-events: none;
+  }
+  .conoceMas > p{
+    font-size: 14px;
+    color:white;
+    margin-left: -43px;
+    margin-top: -10px;
+
+  }
+
+  .conoceMasHome{
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    left: 46%;
+   pointer-events: none;
+   margin-top: 700px;
+  }
+  .conoceMasHome > p{
+    font-size: 14px;
+    color:white;
+    margin-left: -43px;
+    margin-top: -10px;
+
+  }
+.btnTopCierraModal {
+    border: 0px;
+    border-radius: 50px;
+    font-size: px;
+    /* color: white; */
+    padding: 0px;
+    width: 44px;
+    height: 44px;
+    margin-top: 5px;
+    color: #034797;
+    font-size: 20px
+  }
+  
+  .slideMovil{
+    visibility: visible;
+    width: 100% !important; 
+    overflow: hidden;
+    text-align: center;
+    padding: 42px;
+    height: 650px;
+  }
+  .slideMovil > p{
+    color: white;
+  }
+  .slideMovil > h2{
+    color: white;
+  } 
+  #des_eco0{
+    background-color: $des_eco0_backColor;
+    background-image: url("/assets/img/desempleo2/img-woman-min.png") !important;
+    background-size: 280px;
+    background-position: center bottom -40px;
+    background-repeat: no-repeat;
+  }
+  #des_eco1{
+    background-color: $des_eco1_backColor;
+    background-image: url("/assets/img/desempleo2/curriculum/curriculum-woman.png") !important;
+    background-size: 210px, 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+  #des_eco2{ 
+    background-color: $des_eco2_backColor;
+    background-image: url("/assets/img/desempleo2/coursera/coursera-woman.png") !important;
+    background-size: 300px, 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+  #des_eco3{
+    background-color: $des_eco3_backColor;
+    background-image: url("/assets/img/desempleo2/entreview/entreview-woman.png") !important;
+    background-size: 270px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+  #des_eco4{ 
+    background-color: $des_eco4_backColor;
+    background-image: url("/assets/img/fraude/img-man-8-min.png") !important;
+    background-size: 200px,100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+  #des_eco5{
+    background-color: $des_eco5_backColor;
+    background-image: url("/assets/img/desempleo2/joboffers/offers-woman.png") !important;
+    background-size: 200px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+  #des_eco6{
+    background-color: $des_eco6_backColor;
+    background-image: url("/assets/img/desempleo2/advisory/advisory-man.png") !important;
+    background-size: 230px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  #itt-eco1{
+    background-color: $des_eco7_backColor;
+    background-image: url("/assets/img/home/img-women-2.png") !important;
+    background-size: 250px, 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  #itt-eco2{
+    background-color: $des_eco8_backColor;
+    background-image: url("/assets/img/study/group-2.png") !important;
+    background-size: 370px, 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  #itt-eco3{
+    background-color: $des_eco9_backColor;
+    background-image: url("/assets/img/itt/img-man-woman-4-min.png") !important;
+    background-size: 200px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  #itt-eco4{ 
+    background-color: $des_eco10_backColor;
+    background-image: url("/assets/img/itt/img-man-woman-1-min.png") !important;
+    background-size: 290px, 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  #itt-eco5{
+    background-color: $des_eco11_backColor;
+    background-image: url("/assets/img/advisory/img-man-3-2.png") !important;
+    background-size: 165px, 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  #fra-eco1{
+    background-color: $des_eco12_backColor;
+    background-image: url("/assets/img/fraude/img-woman-8-min.png") !important;
+    background-size: 250px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    
+  }
+  #fra-eco2{
+    background-color: $des_eco13_backColor;
+    background-image: url("/assets/img/fraude/img-man-8-min.png") !important;
+    background-size: 185px, 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+  #fra-eco3{
+    background-color: $des_eco14_backColor;
+    background-image: url("/assets/img/fraude/img-woman-22-min.png") !important;
+    background-size: 290px, 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    
+  }
+  #fra-eco4{
+    background-color: $des_eco15_backColor;
+    background-image: url("/assets/img/fraude/img-man-21-min.png") !important;
+    background-size: 290px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    
+  }
+  #fra-eco5{
+    background-color: $des_eco16_backColor;
+    background-image: url("/assets/img/fraude/img-woman-11-min.png") !important;
+    background-size: 290px, 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    
+  }
+
+
+  .acceptcookies{
+    width: 126px;
+    height: 42px;
+    border-radius: 25px;
+    border: solid 1px #40495c;
+    background-color: white;
+    color:#40495c
+  }
+  .acceptcookies:hover{
+      background-color: #40495c;
+      color:white;
+  }
+
+  .tc{
+      color:#333333;
+      letter-spacing: 0.15;
+      font-size: 22px;
+  }
+
+  .titulo{
+    color:#333333;
+    letter-spacing: 0.15;
+    font-size: 32px;
+  }
+
+  .fondo{
+      background: #ffffff !important;
+  }
+
+  .number {
+    width: 38px;
+    height: 38px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-box-shadow: inset 0px 3px 0px 1px rgba(239, 239, 239, 1);
+    -moz-box-shadow: inset 0px 3px 0px 1px rgba(239, 239, 239, 1);
+    box-shadow: inset 0px 3px 0px 1px rgba(239, 239, 239, 1);
+    text-align: center;
+    padding: 0 0 0 0;
+    position: relative;
+    top: -20px;
+    left: 7%;
+    font-weight: bold;
+  }
+  
+  .homeEcosistema1_r{
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    font-size: 30px;
+    cursor: pointer;
+    background: white;
+    height: 336px;
+    background-color: #84d8c6;
+    background-image: url("/assets/img/home/img-woman-1.png");
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: bottom -170px center;
+  }
+  .homeEcosistema1{
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    font-size: 30px;
+    cursor: pointer;
+    background: white;
+    height: 810px;
+    background-color: #84d8c6;
+    background-image: url("/assets/img/home/img-woman-1.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  .homeEcosistema1 > p{
+    font-weight: bold;
+    font-family: Scotia !important;
+  }
+  .homeEcosistema1:hover{
+      font-size: 35px; 
+  }
+  
+  .homeEcosistema2_r{
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    font-size: 30px;
+    cursor: pointer;
+    background: white;
+    height: 336px;background-color: #feba89;
+    background-image: url("/assets/img/itt2/branding/branding.png");
+    background-repeat: no-repeat;
+    background-size: 245px;
+    background-position: bottom -75px center;
+}
+.homeEcosistema2{
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  font-size: 30px;
+  cursor: pointer;
+  background: white;
+  height: 810px;background-color: #feba89;
+  background-image: url("/assets/img/home/img-man-6.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+.homeEcosistema2 > p{
+  font-weight: bold;
+  font-family: Scotia !important;
+}
+.homeEcosistema2:hover{
+    font-size: 35px;
+}
+
+.homeEcosistema3_r{
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    font-size: 30px;
+    cursor: pointer;
+    background: white;
+    height: 336px;
+    background-color: #afa8f6;
+    background-image: url("/assets/img/home/img-woman-10.png");
+    background-repeat: no-repeat;
+    background-position: bottom -90px center;
+    background-size: 166px;
+}
+.homeEcosistema3{
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    font-size: 30px;
+    cursor: pointer;
+    background: white;
+    height: 810px;
+    background-color: #afa8f6;
+    background-image: url("/assets/img/home/img-woman-10.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.homeEcosistema3 > p{
+  font-weight: bold;
+  font-family: Scotia !important;
+}
+.homeEcosistema3:hover{
+    font-size: 35px;
+}
+.modalCerrarEcosistemas{
+    width: 44px;
+    height: 44px;
+    border-radius: 100px;
+    background-color: white;
+    color: #ec1c24;
+    font-size: 50px;
+    margin-top: 50px;
+    margin-left: 5%;
+    font-size: 30px;
+    padding-left: 13px;
+    cursor:pointer;
+}
+
+.modalCerrarEcosistemasRes{
+    width: 44px;
+    height: 44px;
+    border-radius: 100px;
+    background-color: white;
+    color: #ec1c24;
+    font-size: 50px;
+    margin-top: 50px;
+    margin-right: 50px;
+    font-size: 30px;
+    padding-left: 13px;
+    cursor: pointer;
+    float: right;
+}
+.btnAbrirModalEcoHomeRes{
+    width: 40px;
+    height: 40px;
+    color: #ed0000;
+    background-color: white;
+    text-align: center;
+    font-size: 27px;
+    border-radius: 100px;
+    position: absolute;
+    float: right;
+    right: 30px;
+    bottom: 50px;
+    cursor: pointer;
+}
+
+/* circle */
+
+.wheels-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .wheel {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 30px;
+  }
+  
+  $radial-size: 40px;
+  // Radial border size
+  $radial-border-size: (5 * $radial-size) / 100;
+  // Radial color
+  $radial-color: white;
+  // Paint the area that is not filled
+  $radial-background: transparent;
+  
+  ///
+  // Overlay
+  ///
+  $radial-overlay-size: $radial-size - ($radial-border-size * 2);
+  $radial-overlay-background: white;
+  ///
+  // Animation
+  // Change the animation time to see it better
+  ///
+  $radial-animation-time: 4.0s;
+  ///
+  // Elements position
+  ///
+  $radial-zindex-overlay: 20;
+  $radial-zindex-circle: 10;
+  
+  
+  // Radial styles
+  .wheels-container {
+      height: $radial-size;
+  }
+  .wheel {
+    position: absolute;
+      height: $radial-size;
+    width: $radial-size;
+    bottom: -10px;
+    left: -13px;
+  }
+  
+  .wrapper {
+      .overlay {
+          position: absolute;    
+          width: 32px;
+          height: 32px;
+          left: 150px;
+      display: table;
+           // This needs to be the same color as the container
+          border-radius: 50%;
+          margin-left: ($radial-size - $radial-overlay-size) / 2;
+          margin-top: ($radial-size - $radial-overlay-size) / 2;
+          text-align: center;
+          z-index: $radial-zindex-overlay;
+      .value-container {
+          
+        display:table-cell;
+        vertical-align:middle;
+              border-radius: 50%;
+      }
+          .value {
+              font-size: 3.8em;
+              line-height: 1em;
+              color: white;
+        text-align: center;
+        text-shadow: 0 1px 1px rgba(0,0,0,0.8);
+          }
+      }
+  }
+  
+  
+  
+  .wrapper {
+      position: absolute; // Enable clipping
+      right: 0;
+      width: $radial-size;
+      height: $radial-size;
+      border-radius: 50%;
+      float: right;   
+      background: $radial-background;
+      .circle-wrapper {
+          position: absolute;
+
+          width: $radial-size;
+          height: $radial-size;
+          clip: rect(0px, $radial-size, $radial-size, ($radial-size / 2) ); /* Hide half of the progress bar */
+      }
+  }
+  /* Set the sizes of the elements that make up the progress bar */
+  .circle {
+      width: $radial-size - ($radial-border-size * 2);
+      height: $radial-size - ($radial-border-size * 2);
+      border: $radial-border-size solid $radial-color;
+      border-radius: 50%;
+      position: absolute;
+      clip: rect(0px, ($radial-size / 2), $radial-size, 0px); 
+      z-index: $radial-zindex-circle;
+      backface-visibility: hidden;
+  }
+  
+  /**
+   * Using the data attributes for the animation selectors.
+   * Base settings for all animated elements
+   */
+  [data-anim~=base] {
+      animation-iteration-count: 1;  /* Only run once */
+      animation-fill-mode: forwards; /* Hold the last keyframe */
+      animation-timing-function: linear; /* Linear animation */
+  }
+  
+  [data-anim~=wrapper] {
+      animation-duration: 0.01s; /* Complete keyframes asap */
+      animation-name: close-wrapper; /* Keyframes name */
+      animation-timing-function: ease-out;
+  }
+  
+  
+  /* 180deg */
+  @keyframes deg180 { 
+      from { transform: rotate(0deg); }
+      to { transform: rotate(180deg); }
+  }
+  /* 270deg */
+  @keyframes deg270 { 
+      from { transform: rotate(0deg); }
+      to { transform: rotate(270deg); }
+  }
+  /* 360deg */
+  @keyframes deg360 { 
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+  }
+  
+  .value {
+      &3 {
+          [data-anim~=wrapper] { animation-delay: $radial-animation-time; }
+          .circle {
+              &[data-anim~=left] { animation-name: deg180; animation-duration: $radial-animation-time; } // Half Animation time
+              &[data-anim~=right] { animation-name: deg270; animation-duration: ($radial-animation-time * 1.5); } // Half Animation time
+          }
+      }
+      /* 360deg */ 
+      &4 {
+          [data-anim~=wrapper] { animation-delay: $radial-animation-time; }
+          .circle {
+              &[data-anim~=left] { animation-name: deg180; animation-duration: $radial-animation-time; } // Half Animation time
+              &[data-anim~=right] { animation-name: deg360; animation-duration: ($radial-animation-time * 2); } // Half Animation time
+          }
+      }
+  }
+  
+  @keyframes close-wrapper {
+      to { clip: rect(0px, $radial-size, $radial-size, 0 ); }
+  }
+  @-moz-keyframes close-wrapper {
+      to { clip-path: rect(0px, $radial-size, $radial-size, 0 ); }
+  }
+
+.cookie-x{
+     position: relative;   
+}
+
+.cerrar-cookies {
+    position: absolute;
+    border: none !important;
+    background-color: #ffffff00 !important;
+    top: -17px;
+    right: -60px;
+    font-weight: lighter;
+    color: #40495c;
+}
+.txt-nav {
+    font-size: 17.6px !important;
+}
+ 
+h5.text-secondary:hover, h5.text-secondary:focus, h5.text-secondary:active {
+    color: #ec1c24 !important;
+  }
+
+
+@media only screen and (max-width: 992px) {
+    .txt-inicio-movil {
+        font-size: 19px !important;
+    }
+    .txt-cont-inicio-movil{
+        font-size: 26px !important;
+    }
+    .txt2-cont-inicio-movil{
+        font-size: 26px !important; 
+    }
+    .divTituloPregunta{
+        font-size: 22px;
+    }
+    .pPreguntas {
+        font-size: 22px !important; 
+    }
+}
